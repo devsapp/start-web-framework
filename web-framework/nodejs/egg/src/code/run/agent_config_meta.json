@@ -1,0 +1,299 @@
+{
+  "keys": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+      "port": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+      "hostname": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js"
+    }
+  },
+  "middleware": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+  "view": {
+    "root": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+    "mapping": {
+      ".nj": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js"
+    },
+    "defaultViewEngine": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+    "defaultExtension": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/config/config.default.js",
+    "cache": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-session/config/config.default.js",
+    "logValue": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-session/config/config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "type": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "refererWhiteList": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "xframe": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "maxAge": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "ipExceptionList": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-watcher/config/config.default.js",
+    "eventSources": {
+      "default": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "allowArrayField": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js",
+      "disable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.prod.js",
+    "maxFiles": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.default.js",
+    "maxAge": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-static/config/config.prod.js"
+  },
+  "nunjucks": {
+    "autoescape": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view-nunjucks/config/config.default.js",
+    "cache": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg-view-nunjucks/config/config.default.js"
+  },
+  "env": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "name": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "cookies": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "maxIpsCount": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "maxProxyCount": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "version": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "description": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "private": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "egg": {
+      "declarations": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "dependencies": {
+      "egg": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "stop": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "dev": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "debug": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "test": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "cov": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "lint": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "ci": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "autod": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "url": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "license": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "textLimit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "strict": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "depth": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "onerror": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "env": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "level": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "coreLogger": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "allowDebugAtProd": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "logging": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+  "clusterClient": {
+    "maxWaitTime": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/jiangyu/Desktop/webframework/web-framework/nodejs/egg/src/code/node_modules/egg/config/config.default.js"
+}

@@ -94,7 +94,7 @@
               routeConfigs:
                 - path: '/*'
     ```
-3. 进行项目的一键部署：`s deploy --push-registry acr-internet --use-local -y`，此时系统就可以自动安装依赖、构建镜像，并将业务以Container形式部署到线上
+3. 进行项目的一键部署：`s deploy --use-local -y`，此时系统就可以自动安装依赖、构建镜像，并将业务以Container形式部署到线上
 
 -----
 

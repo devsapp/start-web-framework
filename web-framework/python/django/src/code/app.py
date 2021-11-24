@@ -1,0 +1,1 @@
+from HelloWorld.wsgi import application

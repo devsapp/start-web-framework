@@ -13,7 +13,7 @@ services:
     props: # 组件的属性值
       region: cn-beijing
       service:
-        name: web-framework1
+        name: web-framework
         description: 'Serverless Devs Web Framework Service'
       function:
         name: hapi

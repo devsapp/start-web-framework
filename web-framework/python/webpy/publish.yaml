@@ -1,0 +1,15 @@
+Type: Application
+Name: start-webpy
+Provider:
+  - 阿里云
+Version: 0.1.0
+Description: 快速部署一个Bottle框架到阿里云函数计算
+HomePage: https://github.com/devsapp/start-web-framework
+Tags:
+  - Web框架
+  - WebPy
+Category: Web框架
+Service:
+  函数计算:
+    Authorities:
+      - 管理员权限
