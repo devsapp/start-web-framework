@@ -55,7 +55,7 @@
     # Yaml参考文档：https://github.com/devsapp/fc/blob/main/docs/zh/yaml.md
     edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
     name: framework         #  项目名称
-    access: "default"       #  秘钥别名
+    access: "{{ access }}"       #  秘钥别名
     
     services:
       framework: # 服务名称
