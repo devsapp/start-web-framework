@@ -1,8 +1,4 @@
 import os
-import json
-import zipfile
-import requests
-
 
 def getContent(fileList):
     for eveFile in fileList:
