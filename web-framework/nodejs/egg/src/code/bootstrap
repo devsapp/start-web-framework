@@ -1,0 +1,2 @@
+#!/bin/bash
+npx --no-install egg-scripts start --workers=1

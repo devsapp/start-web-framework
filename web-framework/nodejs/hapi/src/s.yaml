@@ -1,0 +1,36 @@
+# Yaml参考文档：https://github.com/devsapp/fc/blob/main/docs/zh/yaml.md
+edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: framework         #  项目名称
+access: "default"       #  秘钥别名
+
+services:
+  framework: # 服务名称
+    component: fc  # 组件名称
+    actions:
+      pre-deploy: # 在deploy之前运行
+        - run: npm install --production  # 要运行的命令行
+          path: ./code # 命令行运行的路径
+    props: # 组件的属性值
+      region: cn-beijing
+      service:
+        name: web-framework1
+        description: 'Serverless Devs Web Framework Service'
+      function:
+        name: hapi
+        description: 'Serverless Devs Web Framework Hapi.js Function'
+        codeUri: './code'
+        runtime: custom
+        timeout: 60
+        caPort: 9000
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: '/*'
