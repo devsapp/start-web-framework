@@ -14,6 +14,11 @@ access: "{{ access }}"       #  秘钥别名
 services:
   framework: # 服务名称
     component: fc  # 组件名称
+    actions:
+      pre-deploy: # 在deploy之前运行
+        # 要运行的命令行
+        - run: composer create-project topthink/think tp5 dev-master --prefer-dist
+          path: ./code # 命令行运行的路径
     props: # 组件的属性值
       region: cn-beijing
       service:
