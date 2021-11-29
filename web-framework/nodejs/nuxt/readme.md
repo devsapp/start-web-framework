@@ -12,7 +12,7 @@
 - 进入项目后部署：`s deploy`
 - 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
 
-> 权限与Yaml配置可以参考 [FC Yaml 规范文档](https://github.com/devsapp/fc/blob/main/docs/zh/yaml.md)
+> 权限与Yaml配置可以参考 [FC Yaml 规范文档](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md)
 
 ## 相关命令
 
@@ -20,13 +20,13 @@
 
 | 构建&部署 | 可观测性 | 调用&调试 |  发布&配置  |  其他功能 |
 | --- | --- | --- |--- | --- |
-| [**部署 deploy**](https://github.com/devsapp/fc/blob/main/docs/zh/command/deploy.md)   | [指标查询 metrics](https://github.com/devsapp/fc/blob/main/docs/zh/command/metrics.md) | [**本地调用 local**](https://github.com/devsapp/fc/blob/main/docs/zh/command/local.md)      | [**版本 version**](https://github.com/devsapp/fc/blob/main/docs/zh/command/version.md)      | [**硬盘挂载 nas**](https://github.com/devsapp/fc/blob/main/docs/zh/command/nas.md) | 
-| [**构建 build**](https://github.com/devsapp/fc/blob/main/docs/zh/command/build.md)     | [日志查询 logs](https://github.com/devsapp/fc/blob/main/docs/zh/command/logs.md)       | [远程调用 invoke](https://github.com/devsapp/fc/blob/main/docs/zh/command/invoke.md)    | [**别名 alias**](https://github.com/devsapp/fc/blob/main/docs/zh/command/alias.md)         | [计划变更 plan](https://github.com/devsapp/fc/blob/main/docs/zh/command/plan.md)  | 
-| [移除 remove](https://github.com/devsapp/fc/blob/main/docs/zh/command/remove.md)   |                                              | [**端云联调 proxied**](https://github.com/devsapp/fc/blob/main/docs/zh/command/proxied.md) | [预留 provision](https://github.com/devsapp/fc/blob/main/docs/zh/command/provision.md)   | [查看函数 info](https://github.com/devsapp/fc/blob/main/docs/zh/command/info.md)  | 
-|                                          |                                              | [远程调试 remote](https://github.com/devsapp/fc/blob/main/docs/zh/command/remote.md)    | [按量资源 ondemand](https://github.com/devsapp/fc/blob/main/docs/zh/command/ondemand.md) |[**资源同步 sync**](https://github.com/devsapp/fc/blob/main/docs/zh/command/sync.md)  | 
-|                                          |                                              | [内存&并发度探测 eval](https://github.com/devsapp/fc/blob/main/docs/zh/command/eval.md)  | [层 layer](https://github.com/devsapp/fc/blob/main/docs/zh/command/layer.md) |      [压测 stress](https://github.com/devsapp/fc/blob/main/docs/zh/command/stress.md)               | 
-|                                          |                                              |   |  | [API调用 api](https://github.com/devsapp/fc/blob/main/docs/zh/command/api.md)                     | 
-|                                          |                                              |   |  |  [Fun项目迁移 fun2s](https://github.com/devsapp/fc/blob/main/docs/zh/command/fun2s.md)                   | 
+| [**部署 deploy**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/deploy.md)   | [指标查询 metrics](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/metrics.md) | [**本地调用 local**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/local.md)      | [**版本 version**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/version.md)      | [**硬盘挂载 nas**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/nas.md) | 
+| [**构建 build**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/build.md)     | [日志查询 logs](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/logs.md)       | [远程调用 invoke](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/invoke.md)    | [**别名 alias**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/alias.md)         | [计划变更 plan](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/plan.md)  | 
+| [移除 remove](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remove.md)   |                                              | [**端云联调 proxied**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/proxied.md) | [预留 provision](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/provision.md)   | [查看函数 info](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/info.md)  | 
+|                                          |                                              | [远程调试 remote](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remote.md)    | [按量资源 ondemand](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/ondemand.md) |[**资源同步 sync**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/sync.md)  | 
+|                                          |                                              | [内存&并发度探测 eval](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/eval.md)  | [层 layer](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/layer.md) |      [压测 stress](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/stress.md)               | 
+|                                          |                                              |   |  | [API调用 api](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/api.md)                     | 
+|                                          |                                              |   |  |  [Fun项目迁移 fun2s](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/fun2s.md)                   | 
 
 ## 依赖过大部署方案
 
@@ -52,7 +52,7 @@
     ```
 2. 编写资源描述文件（`s.yaml`）：
     ```yaml
-    # Yaml参考文档：https://github.com/devsapp/fc/blob/main/docs/zh/yaml.md
+    # Yaml参考文档：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md
     edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
     name: framework         #  项目名称
     access: "{{ access }}"       #  秘钥别名
@@ -79,7 +79,7 @@
             timeout: 60
             caPort: 9000
             customContainerConfig:
-              image: 'registry.cn-beijing.aliyuncs.com/custom-container/web-framework:0.0.1'
+              image: 'registry.cn-beijing.aliyuncs.com/custom-container/web-framework:0.0.1'    # 需要替换为自己的镜像地址，或者自己目标的镜像地址，需要开通阿里云容器镜像服务等
           triggers:
             - name: httpTrigger
               type: http
