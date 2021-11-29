@@ -6,7 +6,7 @@
     - 框架：Express
     - 运行时：Node.js运行时 （当然，也可以选择Custom运行时，可以参考[Express的Custom案例](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/express/src) ）
 - 使用流程
-    - 初始化项目：`s init devsapp/todolist-app`
+    - 初始化项目：`s init todolist-app`
     - 进入项目：`cd todolist-app`
     - 部署项目：`s deploy`
 

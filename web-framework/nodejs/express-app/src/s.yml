@@ -13,7 +13,7 @@ access: '{{access}}'    #  秘钥别名
 
 services:
   nodejsNext: #  服务名称
-    component: devsapp/nodejs-runtime
+    component: nodejs-runtime
     props: #  组件的属性值
       region: cn-hangzhou
       service:

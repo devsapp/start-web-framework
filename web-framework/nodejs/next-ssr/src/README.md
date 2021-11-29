@@ -2,7 +2,7 @@
 
 一款基于Node.JS的网页 Next ssr 应用
 
-- 初始化项目：`s init devsapp/next-ssr-app`
+- 初始化项目：`s init next-ssr-app`
 - 进入项目：`cd next-ssr-app`
 - 部署项目：`s deploy`
 

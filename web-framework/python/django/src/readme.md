@@ -8,7 +8,7 @@
 
 ## 快速体验
 
-- 初始化项目：`s init devsapp/start-django`
+- 初始化项目：`s init start-django`
 - 进入项目后部署：`s deploy`
 - 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
 
