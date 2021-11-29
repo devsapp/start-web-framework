@@ -1,11 +1,4 @@
-./web-framework/nodejs/connect
-./web-framework/nodejs/egg-app
-./web-framework/nodejs/express-app
-./web-framework/nodejs/thinkjs
-./web-framework/nodejs/nuxt-ssr
-./web-framework/nodejs/nuxt-spa
-./web-framework/nodejs/next-ssr
-./web-framework/nodejs/koa-ssr
+./web-framework/nodejs/koa-app
 ./web-framework/nodejs/nest
 ./example/django-blog
 ./example/todolist-app
