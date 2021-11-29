@@ -1,3 +1,8 @@
+./web-framework/nodejs/egg
+./web-framework/nodejs/express
+./web-framework/nodejs/hapi
+./web-framework/nodejs/koa
+./web-framework/nodejs/next
 ./web-framework/nodejs/nuxt
 ./web-framework/python/bottle
 ./web-framework/python/django
