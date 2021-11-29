@@ -1,0 +1,18 @@
+{
+  "name": "connect-app",
+  "version": "1.0.0",
+  "description": "快速部署一个Connect框架到阿里云函数计算",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "npm run start",
+    "deploy": "s deploy"
+  },
+  "dependencies": {
+    "@serverless-devs/fc-http": "latest",
+    "connect": "^3.7.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

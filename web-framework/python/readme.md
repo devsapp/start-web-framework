@@ -1,8 +1,8 @@
 常见的 Python 框架案例：
 
-- [Bottle](./bottle/src)
-- [Django](./django/src)
-- [Flask](./flask/src)
-- [Pyramid](./pyramid/src)
-- [Tornado](./tornado/src)
-- [Webpy](./webpy/src)
+- [Bottle [python3]](./bottle/src)
+- [Django [python3]](./django/src)
+- [Flask [python3]](./flask/src)
+- [Pyramid [python3]](./pyramid/src)
+- [Tornado [custom]](./tornado/src)
+- [Webpy [python3]](./webpy/src)

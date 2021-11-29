@@ -1,0 +1,219 @@
+{% load static %}
+{% load cache %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ articleData.title }} - {{ pageInformation.name }} - Powered by Liu Yu!</title>
+    <meta name="keyword" content="{% for eve in articleData.tag.all %}{{ eve.name }},{% endfor %}"/>
+    <meta name="description" content="{{ articleData.desc }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/css/main.css"/>
+    <script type="text/javascript"
+            src="//serverless-blog.oss-cn-beijing.aliyuncs.com/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet"
+          href="//serverless-blog.oss-cn-beijing.aliyuncs.com/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"
+          type="text/css"/>
+    <script type="text/javascript" src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/tagcloud.js"></script>
+    <script>
+        SyntaxHighlighter.all() //执行代码高亮
+    </script>
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        .img-warp {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 45%;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <!-- Header -->
+            <header id="header">
+                <a href="" class="logo"><strong>名言：</strong>{{ sentence }}</a>
+            </header>
+            <!-- Content -->
+            <section>
+                <header class="main">
+                    <h1>{{ articleData.title }}</h1>
+                </header>
+                <div class="box">
+                    浏览次数：{{ articleData.watched }}，发表日期：{{ articleData.publish }}
+                    <br>标签：{% for tag in articleData.tag.all %}
+                    {{ tag.name }}&nbsp;&nbsp;
+                {% endfor %}
+                </div>
+                {% autoescape off %}
+                    {{ articleData.content }}
+                {% endautoescape %}
+                <hr>
+                <h3>留言列表</h3>
+                {% for foo in commenList %}
+                    {% if not foo.reply %}
+                        <div class="box">
+                            &nbsp;&nbsp;用户&nbsp;<b>{{ foo.username }}</b>&nbsp;在<b>&nbsp;{{ foo.publish }}&nbsp;</b>说：{{ foo.content }}
+                        </div>
+                    {% else %}
+                        <div class="box">
+                            <b>博主回复</b>{{ foo.username }} 说：{{ foo.reply }}
+                            <hr>
+                            <blockquote>
+                                原留言是&nbsp;{{ foo.username }}&nbsp;在&nbsp;{{ foo.publish }}&nbsp;时评论的：{{ foo.content }}
+                            </blockquote>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <hr>
+                <h3>我要留言</h3>
+                <form method="post" action="" onsubmit="return checkall()">
+                    <div class="row uniform">
+                        <div class="6u 12u$(xsmall)">
+                            <input type="text" name="name" placeholder="姓名" id="name" value="{{ userData.username }}"
+                                   {% if userData.username %}readonly{% endif %}/>
+                        </div>
+                        <div class="6u$ 12u$(xsmall)">
+                            <input type="email" name="email" placeholder="邮箱" id="email" value="{{ userData.email }}"
+                                   {% if userData.username %}readonly{% endif %}/>
+                        </div>
+                        <div class="12u$">
+                            <textarea name="comment" placeholder="留言信息" rows="6" id="comment"></textarea>
+                        </div>
+                        <div class="12u$">
+                            <ul class="actions">
+                                <li><input type="submit" value="留言" class="special"/></li>
+                                <li><input type="reset" value="重置"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Search -->
+            <section id="search" class="alt">
+                <form method="get" action="/list">
+                    <input type="text" name="search" id="query" placeholder="搜索" value="{{ searchData }}"/>
+                </form>
+            </section>
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>分类列表</h2>
+                </header>
+                <ul>
+                    <li><a href="/list">全部</a></li>
+                    {% for cateDatum in categoryList %}
+                        <li>
+                            <a href="/list?cate={{ cateDatum.cid }}">{{ cateDatum.name }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>热门标签</h2>
+                </header>
+                <div class="box">
+                    <div class="wrapper">
+                        <div class="tagcloud">
+                            {% for eveTags in tagsList %}
+                                <a href="/list?tag={{ eveTags.tid }}"
+                                   style="text-decoration: none;">{{ eveTags.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div><!--wrapper-->
+                </div>
+            </nav><!-- Menu -->
+            <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>热门文章</h2>
+                </header>
+                <div class="mini-posts">
+                    {% for hot in hotList %}
+                        <article>
+                            <a href="/content?aid={{ hot.0.aid }}" class="image">
+                                <div class="img-warp">
+                                    <div class="img-box"><img src="{{ hot.1 }}" alt=""/></div>
+                                    <a href="/content?aid={{ hot.0.aid }}">{{ hot.0.title }}</a>
+                                </div>
+                            </a>
+
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">&copy; Powered By Liu Yu <br>&copy; WebSite Name: {{ pageInformation.name }}.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Scripts -->
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/jquery.min.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/skel.min.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/util.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/main.js"></script>
+<script type="text/javascript">
+    /*3D标签云*/
+    tagcloud({
+        selector: ".tagcloud",  //元素选择器
+        fontsize: 10,       //基本字体大小, 单位px
+        radius: 45,         //滚动半径, 单位px
+        mspeed: "normal",   //滚动最大速度, 取值: slow, normal(默认), fast
+        ispeed: "normal",   //滚动初速度, 取值: slow, normal(默认), fast
+        direction: 135,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+        keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+    });
+
+    function checkall() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("comment").value;
+        if (!name || !email || !message) {
+            alert("账号,邮箱和留言均不可为空");
+            return false;
+        }
+    }
+</script>
+{% if status %}
+    <script>
+        alert("{{ status }}");
+    </script>
+{% endif %}
+</body>
+</html>

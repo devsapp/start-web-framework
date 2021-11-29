@@ -1,0 +1,20 @@
+{
+  "name": "next-ssr",
+  "version": "1.0.0",
+  "description": "快速部署一个 Next SSR 应用",
+  "author": "liyuanfeng",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "s deploy",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@serverless-devs/fc-http": "latest",
+    "next": "9.5.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}

@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ pageInformation.title }} - {{ pageInformation.name }} - Powered by Liu Yu!</title>
+    <meta name="keyword" content="{{ pageInformation.webKeyword }}"/>
+    <meta name="description" content="{{ pageInformation.webDescription }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/css/jsdaima.com.css">
+    <link rel="stylesheet" href="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/css/main.css"/>
+    <script type="text/javascript" src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/tagcloud.js"></script>
+    <style>
+        .img-warp {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 45%;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
+
+        pre {
+            max-width: 100%;
+        }
+
+        p {
+            word-break: break-all;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <!-- Header -->
+            <header id="header">
+                <a href="" class="logo"><strong>名言：</strong>{{ sentence }}</a>
+            </header>
+            <!-- Banner -->
+            {% if pageNum == 1 and firstData %}
+                <section id="banner">
+                    <div class="content" style="max-width:100%;">
+                        <header>
+                            <h2>{{ firstData.title|slice:"18" }}{% if firstData.title|length > 18 %}
+                                ... {% endif %}</h2>
+                        </header>
+                        <p style="max-width:100%;">
+                            {{ firstData.desc|slice:"100" }}{% if firstData.desc|length > 100 %} ... {% endif %}</p>
+                        <ul class="actions">
+                            <li><a href="/content?aid={{ firstData.aid }}" class="button big">阅读全部</a></li>
+                        </ul>
+                    </div>
+                    <span class="image object"><img src="{{ firstPicData }}" style="max-height: 300px"/></span>
+                </section>
+            {% endif %}
+            <!-- Section -->
+            {% if not articleResult %}
+                <section>
+                    <header>
+                        <h2>暂无更多</h2>
+                    </header>
+                </section>
+            {% else %}
+                <section>
+                    {% if pageNum == 1 %}
+                        <header class="major">
+                            <h2>文章列表</h2>
+                        </header>
+                    {% endif %}
+                    <div class="posts">
+                        {% for foo in articleResult %}
+                            <article>
+                                <a href="/content?aid={{ foo.0.aid }}" class="image">
+                                    <div class="img-warp">
+                                        <div class="img-box">
+                                            <img id="pic" src="{{ foo.1 }}" width="100%" height=width/>
+                                        </div>
+                                    </div>
+                                </a>
+                                <h3 style="width: 300px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                    <a href="/content?aid={{ foo.0.aid }}">{{ foo.0.title }}</a>
+                                </h3>
+                                <p>{{ foo.0.desc| slice:"37" }}{% if foo.0.desc|length > 37 %} ... {% endif %}</p>
+                                <ul class="actions">
+                                    <li><a href="/content?aid={{ foo.0.aid }}" class="button">阅读</a></li>
+                                </ul>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                <center>
+                    <ul class="pagination">
+                        {% if articleList.number|add:-1 < 1 %}
+                            <li><a class="button disabled">Prev</a></li>
+                        {% else %}
+                            <li>
+                                <a href="?{% if category %}cate={{ category }}&{% endif %}{% if tag %}tag={{ tag }}&{% endif %}page={{ articleList.number|add:-1 }}"
+                                   class="button">Prev</a></li>
+                        {% endif %}
+                        <li><a href="#" class="page active">{{ articleList.number }}</a></li>
+                        {% if articleList.number|add:1 <= articleList.paginator.num_pages %}
+                            <li>
+                                <a href="?{% if category %}cate={{ category }}&{% endif %}{% if tag %}tag={{ tag }}&{% endif %}page={{ articleList.number|add:1 }}"
+                                   class="button">NEXT</a></li>
+                        {% else %}
+                            <li><a href="#" class="button disabled">NEXT</a></li>
+                        {% endif %}
+                    </ul>
+                </center>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+            <!-- Search -->
+            <section id="search" class="alt">
+                <form method="get" action="/list">
+                    <input type="text" name="search" id="query" placeholder="搜索" value="{{ searchData }}"/>
+                </form>
+            </section>
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>分类列表</h2>
+                </header>
+                <ul>
+                    <li><a href="/list">全部</a></li>
+                    {% for cateDatum in categoryList %}
+                        <li>
+                            <a href="/list?cate={{ cateDatum.cid }}">{{ cateDatum.name }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>热门标签</h2>
+                </header>
+                <div class="box">
+                    <div class="wrapper">
+                        <div class="tagcloud">
+                            {% for eveTags in tagsList %}
+                                <a href="/list?tag={{ eveTags.tid }}">{{ eveTags.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div><!--wrapper-->
+                </div>
+            </nav><!-- Menu -->
+
+
+            <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>热门文章</h2>
+                </header>
+                <div class="mini-posts">
+                    {% for hot in hotList %}
+                        <article>
+                            <a href="/content?aid={{ hot.0.aid }}" class="image">
+                                <div class="img-warp">
+                                    <div class="img-box"><img src="{{ hot.1 }}" alt=""/></div>
+                                    <a href="/content?aid={{ hot.0.aid }}">{{ hot.0.title }}</a>
+                                </div>
+                            </a>
+
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">&copy; Powered By Liu Yu <br>&copy; WebSite Name: {{ pageInformation.name }}.</p>
+            </footer>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/jquery.min.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/skel.min.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/util.js"></script>
+<script src="//serverless-blog.oss-cn-beijing.aliyuncs.com/blog/js/main.js"></script>
+<script type="text/javascript">
+    /*3D标签云*/
+    tagcloud({
+        selector: ".tagcloud",  //元素选择器
+        fontsize: 10,       //基本字体大小, 单位px
+        radius: 45,         //滚动半径, 单位px
+        mspeed: "normal",   //滚动最大速度, 取值: slow, normal(默认), fast
+        ispeed: "normal",   //滚动初速度, 取值: slow, normal(默认), fast
+        direction: 135,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+        keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+    });
+</script>
+</body>
+</html>

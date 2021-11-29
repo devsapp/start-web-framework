@@ -1,0 +1,1 @@
+from ServerlessBlog.wsgi import application

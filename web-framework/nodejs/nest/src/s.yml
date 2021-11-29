@@ -1,0 +1,44 @@
+# ------------------------------------
+#   欢迎您使用阿里云函数计算 FC 组件进行项目开发
+#   组件仓库地址/帮助文档：https://github.com/devsapp/fc
+#   Yaml参考文档：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md
+#   快速入门：
+#      快速创建应用：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/quick_start_application.md
+#      快速使用命令：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/quick_start_function.md
+# ------------------------------------
+
+edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: nest-app       # 项目名称
+access: '{{access}}'    #  秘钥别名
+
+services:
+  nodejsNext: #  服务名称
+    component: devsapp/nest-runtime
+    props: #  组件的属性值
+      region: cn-hangzhou
+      service:
+        name: nodejs-service
+        logConfig: auto
+      function:
+        name: nest-app
+        description: nest runtime app
+        runtime: nodejs12
+        codeUri: ./
+        handler: index.handler
+        memorySize: 256
+        timeout: 6
+        # environmentVariables:
+        #   NODE_DEBUG: net
+      triggers:
+        - name: http-trigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
