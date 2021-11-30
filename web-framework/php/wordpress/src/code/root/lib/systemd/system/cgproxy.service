@@ -1,0 +1,13 @@
+[Unit]
+Description=Cgroup management proxy
+ConditionVirtualization=container
+After=cgmanager.service
+
+[Service]
+Type=simple
+ExecStart=/sbin/cgproxy
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

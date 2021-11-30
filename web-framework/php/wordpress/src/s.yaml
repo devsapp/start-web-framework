@@ -15,10 +15,11 @@ services:
   framework: # 服务名称
     component: fc  # 组件名称
     props: # 组件的属性值
-      region: cn-zhangjiakou
+      region: cn-qingdao
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
+        nasConfig: auto
       function:
         name: wordpress
         description: 'Serverless Devs Web Framework Wordpress Function'
