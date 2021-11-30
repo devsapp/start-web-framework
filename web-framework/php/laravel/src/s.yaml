@@ -15,18 +15,18 @@ services:
   framework: # 服务名称
     component: fc  # 组件名称
     props: # 组件的属性值
-      region: cn-beijing
+      region: cn-zhangjiakou
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
+        logConfig: auto
       function:
-        name: think-php
-        description: 'Serverless Devs Web Framework ThinkPHP Function'
+        name: laravel
+        description: 'Serverless Devs Web Framework Laravel Function'
         codeUri: './code'
         runtime: custom
         timeout: 60
         memorySize: 256
-        caPort: 9000
       triggers:
         - name: httpTrigger
           type: http
@@ -43,7 +43,7 @@ services:
           routeConfigs:
             - path: /*
               serviceName: web-framework
-              functionName: think-php
+              functionName: laravel
               methods:
                 - GET
                 - POST

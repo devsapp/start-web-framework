@@ -135,5 +135,4 @@ c
 .s
 node_modules
 
-mylaravel
-tp5
+web-framework/php/laravel/src/code/root
