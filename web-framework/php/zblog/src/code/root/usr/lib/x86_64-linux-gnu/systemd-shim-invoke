@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+# We rely on cgmanager to setup /sys/fs/cgroup
+if ! mountpoint -q /sys/fs/cgroup; then
+	echo "cgmanager has not setup /sys/fs/cgroup or is not running, exiting"
+	exit 1
+fi
+
+# Mount legacy cgroup controller at /sys/fs/cgroup/systemd
+if ! mountpoint -q /sys/fs/cgroup/systemd; then
+	mkdir -p /sys/fs/cgroup/systemd
+	mount -t cgroup -o nosuid,noexec,nodev,none,name=systemd systemd /sys/fs/cgroup/systemd
+fi
+
+mkdir -p /run/systemd
+
+exec /usr/lib/x86_64-linux-gnu/systemd-shim

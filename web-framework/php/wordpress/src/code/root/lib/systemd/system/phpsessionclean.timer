@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean PHP session files every 30 mins
+
+[Timer]
+OnCalendar=*-*-* *:09,39:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

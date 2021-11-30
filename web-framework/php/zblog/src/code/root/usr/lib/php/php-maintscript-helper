@@ -1,0 +1,286 @@
+#!/bin/sh
+#
+# php-maintscript-helper - PHP helper function for maintainer scripts
+#
+# Copyright (C) 2012 Arno Töll <debian@toell.net>
+#               2013 Ondřej Surý <ondrej@sury.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+#
+# VARIABLES
+#
+
+
+# global environment variables used by php-maintscript-helper:
+# * PHP_MAINTSCRIPT_DEBUG:
+#				set this to any non-zero value to get debug output
+# * PHP_MAINTSCRIPT_HELPER_QUIET:
+#				set this to any non-zero value to omit any output
+# * EXPORT_PHP_MAINTSCRIPT_HELPER:
+#				will be defined by php-maintscript-helper
+#				to avoid inclusion loops. Do not set this
+#				variable manually
+# * PHP_MAINTSCRIPT_NAME
+# * PHP_MAINTSCRIPT_PACKAGE
+# * PHP_MAINTSCRIPT_METHOD
+# * PHP_MAINTSCRIPT_ARGUMENT
+#				these variables contain information about the
+#				maintainer script which is calling the
+#				maintscript-helper. It contains arguments which
+#				dpkg supplies to maintainer scripts and similar
+#				information. These variables are an
+#				implementation detail and not to be changed.
+#
+#				You might want to set them manually only if you
+#				are calling php-maintscript-helper from
+#				some place which does not preserve the original
+#				script arguments for example when calling from
+#				a subfunction instead of the main function in
+#				your maintainer script
+
+#
+# INITIALIZATION
+#
+
+if [ -n "${EXPORT_PHP_MAINTSCRIPT_HELPER:-}" ] ; then
+	return
+else
+	EXPORT_PHP_MAINTSCRIPT_HELPER=1
+
+	if [ -n "${PHP_MAINTSCRIPT_DEBUG:-}" ] ; then
+		set -x
+	fi
+
+	if [ -z "$1" ] ; then
+		echo "You must invoke php-maintscript-helper with an unmodified environment when sourcing it" >&2
+		return 1
+	fi
+
+	PHP_MAINTSCRIPT_NAME="$DPKG_MAINTSCRIPT_NAME"
+	[ "$PHP_MAINTSCRIPT_NAME" ] || PHP_MAINTSCRIPT_NAME="${0##*.}"
+
+	case "$PHP_MAINTSCRIPT_NAME" in
+		preinst|prerm|postrm|postinst)
+			# yay - recognized script
+		;;
+		*)
+			echo "php-maintscript-helper invoked from an unrecognized maintainer script: exiting" >&2
+			return 1
+		;;
+	esac
+
+	PHP_MAINTSCRIPT_PACKAGE="$DPKG_MAINTSCRIPT_PACKAGE"
+	if [ -z "$PHP_MAINTSCRIPT_PACKAGE" ]; then
+		PHP_MAINTSCRIPT_PACKAGE="${0##*/}"
+		PHP_MAINTSCRIPT_PACKAGE="${PHP_MAINTSCRIPT_PACKAGE%.*}"
+	fi
+
+	if [ -z "$PHP_MAINTSCRIPT_METHOD" ] ; then
+		PHP_MAINTSCRIPT_METHOD="$1"
+	fi
+
+	case "$PHP_MAINTSCRIPT_METHOD" in
+		install|upgrade|abort-upgrade|configure|abort-remove|abort-deconfigure|remove|failed-upgrade|purge|disappear|abort-install)
+			# yay - recognized script
+		;;
+		*)
+			echo "php-maintscript-helper invoked from a modified environment. Please hint required arguments manually" >&2
+			return 1
+		;;
+	esac
+
+	if [ -z "$PHP_MAINTSCRIPT_ARGUMENT" ] ; then
+		PHP_MAINTSCRIPT_ARGUMENT="${2:-}"
+	fi
+
+fi
+
+#
+# FUNCTIONS
+#
+
+#
+# Function php_msg
+#	print out a warning to both, the syslog and a local standard output.
+#	This function should generally be used to display messages related to
+#	the web server in maintainer scripts.
+# Parameters:
+#	priority
+#		The message priority. Recognized values are the same as defined
+#		by syslog(3), thus: one among debug, info, notice, warning,
+#		err, crit, alert, emerg.
+#		If no known priority is recognized, the priority is set to
+#		"warning".
+#	message
+#		The message as a string. It is printed out verbatim.
+# Behavior:
+#	No message is displayed if PHP_MAINTSCRIPT_HELPER_QUIET is defined
+# Returns:
+#	this function always returns 0
+# Since: 5.5.0+dfsg-7
+php_msg()
+(
+	PRIORITY="$1"
+	MSG="$2"
+	case "$PRIORITY" in
+		debug|info|notice|warning|err|crit|alert|emerg)
+		;;
+		*)
+			PRIORITY="warning"
+		;;
+	esac
+	if [ -n "${PHP_MAINTSCRIPT_DEBUG:-}" ] || [ "$PRIORITY" != "debug" ]; then
+	    [ -z "$PHP_MAINTSCRIPT_HELPER_QUIET" ] && echo "$MSG" >&2
+	fi
+	[ -x /usr/bin/logger ] || return 0
+	LOGGER="/usr/bin/logger -p daemon.$PRIORITY -t $PHP_MAINTSCRIPT_PACKAGE "
+	$LOGGER "$MSG" || return 0
+)
+
+#
+# Function php_invoke
+#	invokes an PHP configuration helper to enable or disable a
+#	particular piece of configuration, a site or a module. It carefully
+#	checks whether the supplied configuration snippet exists and reloads the
+#	web server if the site administrator desires that by call dpkg trigger
+#       /etc/php/VERSION/SAPI/conf.d which is defined for apache2, apache2filter and fpm.
+#
+# Parameters:
+#	command - The command to invoke. Recognized commands are "enconf",
+#		"enmod", "ensite", "disconf", "dismod", "dissite"
+#
+#       sapi - Either the specific SAPI (apache2, apache2filter, fpm,
+#              cgi, cli, embed, phpdbg) or ALL
+#
+#	arguments
+#		- A single argument (e.g. a module) which shall be
+#		  enabled or disabled respectively.
+#
+# Returns
+#	0 if the changes could be activated
+#	1 otherwise
+# Since: 5.5.0+dsfg-7
+php_invoke()
+(
+    CMD=$1
+    VERSION=$2
+    SAPI=$3
+    MOD=$4
+    sapi_list=""
+
+    [ -x "/usr/sbin/php$CMD" ] || return 1
+    [ -x "/usr/sbin/phpquery" ] || return 1
+
+    case "$VERSION" in
+	ALL)
+	    version_list=$(phpquery -V)
+	    ;;
+	*)
+	    version_list="$VERSION"
+	    # FIXME - check if the version is supported
+	    ;;
+    esac
+
+    for version in $version_list; do
+	case "$SAPI" in
+	    apache2|apache2filter|fpm|cli|cgi|embed|phpdbg)
+		sapi_list="$SAPI"
+		;;
+	    ALL)
+		sapi_list=$(phpquery -S -v "$version")
+		case "$CMD" in
+		    enmod|dismod)
+			"php$CMD" -q -v "$version" -m -r "$MOD" || return 1
+			;;
+		    *)
+			return 1
+			;;
+		esac
+		;;
+	    *)
+		return 1
+		;;
+	esac
+
+	for sapi in $sapi_list; do
+	    case "$CMD" in
+		enmod)
+		    phpquery_ret=0
+		    phpquery -v "$version" -s "$sapi" -m "$MOD" > /dev/null 2>&1 || phpquery_ret=$?
+		    if [ "$phpquery_ret" -eq 0 ] ; then
+			# configuration is already enabled
+			"php$CMD" -m -v "$version" -s "$sapi" -q "$MOD" > /dev/null 2>&1 || return 1
+			php_msg "debug" "php_invoke $MOD: already enabled for PHP $version $sapi sapi"
+			PHP_NEED_ACTION=1
+		    elif [ "$phpquery_ret" -eq 32	 ] ; then
+			# the maintainer disabled the module
+			php_msg "info" "php_invoke $MOD: no action - module was disabled by maintainer for PHP $version $sapi sapi"
+			return 0
+		    else
+			# coming here either means:
+			# a) we have no clue about the module (e.g. for upgrades prior to maintscript-helper
+			# b) it's a fresh install
+			PHP_NEED_ACTION=1
+			"php$CMD" -m -v "$version" -s "$sapi" -q "$MOD" > /dev/null 2>&1 || return 1
+			php_msg "debug" "php_invoke: Enabled module $MOD for $sapi sapi"
+		    fi
+		    ;;
+		dismod)
+		    phpquery_ret=0
+		    phpquery -v "$version" -s "$sapi" -m "$MOD" > /dev/null 2>&1 || phpquery_ret=$?
+		    if [ "$phpquery_ret" -eq 0 ] ; then
+			if [ "$PHP_MAINTSCRIPT_NAME" = 'postrm' ] && [ "$PHP_MAINTSCRIPT_METHOD" = "purge" ] ; then
+			    "php$CMD" -p -f -v "$version" -s "$sapi" -q "$MOD" || return 1
+			    php_msg "debug" "php_invoke $PHP_MAINTSCRIPT_NAME: Purging module $MOD for PHP $version $sapi sapi"
+			    PHP_NEED_ACTION=1
+			elif [ "$PHP_MAINTSCRIPT_NAME" = 'postrm' ] || [ "$PHP_MAINTSCRIPT_NAME" = 'prerm' ] || [ "$PHP_MAINTSCRIPT_NAME" = 'preinst' ] ; then
+			    if [ "$PHP_MAINTSCRIPT_METHOD" = "remove" ] || [ "$PHP_MAINTSCRIPT_METHOD" = "upgrade" ] ; then
+				"php$CMD" -m -f -v "$version" -s "$sapi" -q "$MOD" || return 1
+				php_msg "debug" "php_invoke $PHP_MAINTSCRIPT_NAME: Disabled module $MOD for PHP $version $sapi sapi"
+				PHP_NEED_ACTION=1
+			    fi
+			else
+			    php_msg "error" "php_invoke: module $MOD not supported in $PHP_MAINTSCRIPT_NAME for PHP $version $sapi sapi"
+			    return 1
+			fi
+		    elif [ "$phpquery_ret" -eq 32 ] || [ "$phpquery_ret" -eq 33 ] ; then
+			if [ "$PHP_MAINTSCRIPT_NAME" = 'postrm' ] && [ "$PHP_MAINTSCRIPT_METHOD" = "purge" ] ; then
+			    php_msg "debug" "php_invoke $PHP_MAINTSCRIPT_NAME: Purging state for $MOD for PHP $version $sapi sapi"
+			    # this will return RC=1
+			    ( "php$CMD" -p -f -v "$version" -s "$sapi" -q "$MOD" > /dev/null 2>&1 )
+			else
+			    php_msg "debug" "php_invoke $MOD $PHP_MAINTSCRIPT_NAME: No action required for PHP $version $sapi sapi"
+			fi
+		    else
+			php_msg "debug" "php_invoke $MOD $PHP_MAINTSCRIPT_NAME: No action required for PHP $version $sapi sapi"
+		    fi
+		    ;;
+		*)
+		    return 1
+		    ;;
+	    esac
+	    if [ -n "${PHP_NEED_ACTION:-}" ]; then
+		dpkg-trigger "/etc/php/$version/$sapi/conf.d"
+	    fi
+	done
+    done
+)
+
+# vim: syntax=sh sw=8 sts=8 sr noet

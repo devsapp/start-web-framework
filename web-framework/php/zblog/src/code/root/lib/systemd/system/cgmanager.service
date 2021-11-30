@@ -1,0 +1,14 @@
+[Unit]
+Description=Cgroup management daemon
+ConditionVirtualization=!container
+Before=cgproxy.service
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/sbin/cgmanager -m name=systemd
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

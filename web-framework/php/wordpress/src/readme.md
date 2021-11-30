@@ -9,7 +9,10 @@
 ## 快速体验
 
 - 初始化项目：`s init start-wordpress`
-- 进入项目后部署：`s deploy`
+- 进入项目后：
+  - 初始化 NAS: `s nas init`
+  - 上传 wordpress 工程到 NAS：`s nas upload -r code/wordpress/ /mnt/auto/wordpress`
+  - 部署：`s deploy`
 - 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
 
 > 权限与 Yaml 配置可以参考 [FC Yaml 规范文档](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md)

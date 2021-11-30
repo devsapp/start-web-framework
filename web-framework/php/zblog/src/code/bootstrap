@@ -3,9 +3,8 @@ set +e
 
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
-mkdir -p /tmp/var/sessions/
 
-chown -R www-data:www-data /code/Z-Blog
+chown -R www-data:www-data /mnt/auto/Z-Blog
 
 echo "start php-fpm"
 php-fpm7.2 -c /code/root/usr/lib/php/7.2/php.ini-production -y /code/root/etc/php/7.2/fpm/php-fpm.conf
