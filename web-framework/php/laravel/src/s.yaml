@@ -19,7 +19,6 @@ services:
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
-        logConfig: auto
       function:
         name: laravel
         description: 'Serverless Devs Web Framework Laravel Function'

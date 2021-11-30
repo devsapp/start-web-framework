@@ -1,0 +1,21 @@
+geoip for Debian
+----------------
+
+The library comes with a free country database which does not contain all
+the information that can be accessible via the GeoIP API. To find other
+database editions, please visit http://www.maxmind.com/ (all of them except
+for the one included in the package require you to purchase a license from
+MaxMind)
+
+If you have obtained the license, you must install the geoip-bin package and
+copy the /etc/GeoIP.conf.default file to /etc/GeoIP.conf and edit it entering
+the licensing data.
+
+
+Updating databases
+------------------
+
+If you need to update your database very frequency, then you can install
+the geoip-database-contrib package.
+
+-- Patrick Matthäi <pmatthaei@debian.org>  Sat, 15 Jan 2011 19:13:05 +0100
