@@ -4,5 +4,6 @@
 ./web-framework/php/thinkphp
 ./web-framework/php/laravel
 ./web-framework/php/wordpress
+./web-framework/php/zblog
 ./example/django-blog
 ./example/todolist-app
