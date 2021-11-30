@@ -3,5 +3,6 @@
 ./web-framework/java/springboot
 ./web-framework/php/thinkphp
 ./web-framework/php/laravel
+./web-framework/php/wordpress
 ./example/django-blog
 ./example/todolist-app
