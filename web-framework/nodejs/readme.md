@@ -11,7 +11,7 @@
 - [Connect [custom]](./connect/src)
 
 > 考虑到部分用户在使用 Nuxt 等框架时，有 SSR 或者 SPA 的目的，所以本仓库也提供了类似的案例：
-> - [next-ssr](./next-ssr/src): `s init start-next-ssr`
+<!-- > - [next-ssr](./next-ssr/src): `s init start-next-ssr` -->
 > - [nuxt-ssr](./nuxt-ssr/src): `s init start-nuxt-ssr`
 > - [nuxt-spi](./nuxt-spa/src): `s init start-nuxt-spa`     
 > 为了对比Custom运行时和编程语言原生运行时的框架迁移区别，可以参考以下案例进行自行对比：
