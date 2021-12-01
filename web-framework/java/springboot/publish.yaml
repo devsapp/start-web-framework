@@ -10,6 +10,6 @@ Tags:
   - Spring Boot
 Category: Web框架
 Service: 
-  - Name: 函数计算
+  函数计算:
     Authorities:
       - 管理员权限
