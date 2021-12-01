@@ -87,7 +87,7 @@
 > 考虑到部分用户在使用 Nuxt 等框架时，有 SSR 或者 SPA 的目的，所以本仓库也提供了类似的案例：
 > - [next-ssr](./web-framework/nodejs/next-ssr/src): `s init start-next-ssr`
 > - [nuxt-ssr](./web-framework/nodejs/nuxt-ssr/src): `s init start-nuxt-ssr`
-> - [nuxt-spi](./web-framework/nodejs/nuxt-spa/src): `s init start-nuxt-spa`     
+> - [nuxt-spa](./web-framework/nodejs/nuxt-spa/src): `s init start-nuxt-spa`     
 > 为了对比Custom运行时和编程语言原生运行时的框架迁移区别，可以参考以下案例进行自行对比：
 >
 > | 框架名 | Custom运行时 | Node.js 12运行时 |
