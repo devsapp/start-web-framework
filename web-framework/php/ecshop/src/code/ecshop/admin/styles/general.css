@@ -1,0 +1,104 @@
+/*
+$Id: general.css 13504 2007-11-08 09:51:13Z weberliu $
+*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #3a3b40;
+  font: 12px/1.5 Microsoft Yahei, Arial, Verdana, sans-serif;
+}
+
+th {
+  font-weight: bold;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select,
+button,
+td,
+th {
+  font-size: 12px;
+}
+
+input,
+textarea {
+  outline: 0;
+}
+
+a {
+  color: #41a5e1;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #2b9bde;
+  text-decoration: underline;
+}
+
+.clear {
+  clear: both;
+  float: none;
+  font-size: 0px;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cl-green {
+  color: #278296 !important;
+}
+
+.cl-orange {
+  color: #f18030 !important;
+}
+
+.cl-red {
+  color: #FF0000 !important;
+}
+
+.cl-link {
+  color: #41a5e1 !important;
+}
+
+.cl-light-green {
+  color: #80bdcb !important;
+}
+
+.cl-link-blue {
+  color: #41A5E1 !important;
+}
+
+.cal {
+  width: 30px;
+  height: 30px;
+  background-color: #dbe4eb;
+  border: 1px solid #c0c8cf;
+  margin-left: -1px;
+  margin-top: 1px;
+  vertical-align: -2px;
+}
+
+.cal-group input {
+  vertical-align: top;
+}
+
+.cal-group .cal {
+  margin-top: 0;
+}

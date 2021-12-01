@@ -1,0 +1,9 @@
+﻿https://segmentfault.com/|
+.stream-list .title a|
+.widget-answers .post-offset .answer p|
+.widget-question__item .post-offset .fmt|
+|
+|
+|
+https://segmentfault.com
+|程序员问答(<a href="https://segmentfault.com/" target="_blank">https://segmentfault.com/</a>)|0

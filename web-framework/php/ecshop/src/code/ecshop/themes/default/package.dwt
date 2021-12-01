@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{$template_dir}/images/css.css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --><script>
+    $(function() {		   
+			$(".navs_m ul li a").eq(2).addClass("visited");   
+    });  
+</script>
+<script language='javascript' src='{$template_dir}/js/fd30_time.js' type='text/javascript' charset='utf-8'></script>
+<!--当前位置 start-->
+<div class="block box">
+  <div id="ur_here"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+<!--当前位置 end-->
+<div class="blank"></div>
+<div class="block">
+
+
+  <!-- {foreach from=$list item=val} -->
+  <div class="TRANSFORM1 clearfix">
+    <div class="TABLE1_2s">
+      <ul class="TABLE1_2">
+        <li class="visited">
+          {$val.act_name} 
+        </li>
+      </ul>
+      <P> <div class="fd30_time" dayh="1" endtime="{$val.end_time}" starttime="{$val.start_time}"></div>
+      </P> </div>
+    <div class="cxjinfo GoodsPackageWrap">
+      <div class="item">
+        <div class="itemwrap">
+          <table cellpadding="0" cellspacing="0">
+            <tr valign="top">
+              <!-- {foreach name=package_goods from=$val.goods_list item=goods} -->
+              <td class="kbprc"><dl>
+                  <dt class="goodpic"> <a href="goods.php?id={$goods.goods_id}" target="_blank"> <img src="{$goods.goods_thumb}"  alt="{$goods.goods_name}"/></a> </dt>
+                  <dd class="name"><a href="goods.php?id={$goods.goods_id}"   target="_blank">{$goods.goods_name}</a> </dd>
+                  <dd><span class="fontcolorBlack fontbold">{$goods.rank_price}</span>×
+                    <t>{$goods.goods_number}</t>
+                  </dd>
+                </dl></td>
+              <!-- {if !$smarty.foreach.package_goods.last} -->
+              <td class="plus">+</td>
+              <!-- {/if} -->
+              <!-- {/foreach} -->
+            </tr>
+          </table>
+        </div>
+        <ul class="priceinfo">
+          <li class='intro'>{$val.act_desc}</li>
+          <li class="price1"> {$lang.package_price}：<span>{$val.package_price}</span></li>
+          <li class="mktprice1">{$lang.orgtotal}：{$val.subtotal}</li>
+          <li class="huered">{$lang.saving}：<strong>{$val.saving}</strong></li>
+          <li>
+            <div class="clear10"></div>
+            <a class="btn_pkg_buy" href="javascript:addPackageToCart({$val.act_id})">购买组合</a></li>
+        </ul>
+      </div>
+      <div class="clear0"></div>
+    </div>
+  </div>
+  <a name="{$val.act_id}"></a>
+  <div class="blank5"></div>
+  <br />
+  <!-- {/foreach} -->
+</div>
+<div class="blank5"></div>
+<!--帮助-->
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!--帮助-->
+<!--友情链接 start-->
+<!--{if $img_links  or $txt_links }-->
+<div id="bottomNav" class="box">
+  <div class="box_1">
+    <div class="links clearfix">
+      <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+      <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+      <!--结束图片类型的友情链接{/foreach}-->
+      <!-- {if $txt_links} -->
+      <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+      [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+      <!--结束文字类型的友情链接{/foreach}-->
+      <!-- {/if} -->
+    </div>
+  </div>
+</div>
+<!--{/if}-->
+<!--友情链接 end-->
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

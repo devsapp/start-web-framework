@@ -1,0 +1,9 @@
+﻿http://ask.273.cn/|
+#index_list .link a|
+#other_answer .inner p|
+#question .content p|
+#accept_answer .inner p|
+|
+|
+
+|273二手车问答(<a href="http://ask.273.cn/" target="_blank">http://ask.273.cn/</a>)|0

@@ -1,0 +1,48 @@
+.tags .tag .fa{
+	cursor:pointer;
+	margin-left:20px;
+}
+.tags .tag {
+	margin-right:10px;
+}
+.dongtai .tags{
+	margin-top:10px;
+}
+.txt_taginput {
+ width: 230px;
+    border: solid 1px #0085ee;
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+.dongtai .fa-search{
+	color: #0085ee;
+    font-size: 15px;
+    position: relative;
+    left: -30px;
+}
+.tagsearch{
+	background:#fff;
+	position:absolute;
+	width:200px;
+	min-height:100px;
+	max-height:500px;
+	border:solid 1px #eee;
+	z-index:999999;
+	overflow:scroll;
+	display:none;
+}
+.tagsearch .tagitem{
+	    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+}
+.tagsearch .tagitem:hover{
+		color: #0085ee;
+}

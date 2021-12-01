@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="ipl ipl0">
+  <h2><span><i></i>热门点评</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+  <div class="basic-neweggcomment hover" >
+    <ul class="TABLE_S">
+    </ul>
+    <div class="cxjad_m"><span class="updown up"></span><span class="updown down"></span>
+      <ul class="cxjinfo">
+        <!--{foreach from=$my_comments item=comments}-->
+        <li class="cxjitem plprc">
+          <div class="goodsImg"><i>热</i><a href="goods.php?id={$comments.id_value}"><img src="{$comments.goods_thumb}" alt="{$comments.goods_name}"  height="120" width="120" /></a></div>
+          <div class="goodsImg_right">
+            <h5><a target="_blank" href="goods.php?id={$comments.id_value}">{$comments.goods_name}</a></h5>
+            <p>{$comments.content|truncate:30:""}</p>
+          </div>
+        </li>
+       <!--{/foreach}-->
+      </ul>
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+<style>
+.plprc{ float:left; width:384px; text-align:left; }
+.plprc .goodsImg{ float:left; padding-right:10px;position:relative}
+.plprc .goodsImg i{ display:block; width:33px; height:28px; line-height:28px; text-indent:7px; text-align:left; font-size:14px; color:#FFF; background:URL(images/ibg.gif) no-repeat; position:absolute; left:0px; top:0px;}
+.goodsImg_right{ float:left; width:209px;}
+.goodsImg_right h5{ line-height:25px;padding:0px; margin:0px; font-weight:normal; text-align:left; background:none}
+.goodsImg_right h5 a{ color:#4165a3; font-size:14px}
+.goodsImg_right p{ padding-top:7px; line-height:18px; color:#949494;}
+.basic-neweggcomment .cxjad_m{ overflow:hidden; position:relative;width:1154px; margin:auto}</style>
+<script>$(function (){
+	var pgnum=$(".basic-neweggcomment .cxjitem").size();
+ for (var i=0;i<pgnum/3;i++)
+{
+$(".basic-neweggcomment .TABLE_S").append("<b class=cxjli></b>");
+};
+
+$(".basic-neweggcomment").textSlider({speeds:5000,lines:3,offset:7000,direc:1,qnum:3})})</script>

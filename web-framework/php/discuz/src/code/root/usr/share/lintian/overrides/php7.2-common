@@ -1,0 +1,5 @@
+php7.2-common: maintainer-script-empty prerm
+php7.2-common: non-standard-dir-perm var/lib/php/7.2/sessions/ 1733 != 0755
+php7.2-common: package-contains-empty-directory usr/lib/php/7.2/libexec/
+php7.2-common: missing-dependency-on-phpapi
+php7.2-common: embedded-library usr/lib/php/*/fileinfo.so: file

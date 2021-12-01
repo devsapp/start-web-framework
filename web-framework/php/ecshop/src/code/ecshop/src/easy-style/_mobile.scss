@@ -1,0 +1,134 @@
+//==use mobile base
+$default-platform: MB;
+
+$ex-support-for-mozilla: true; //FireFox
+$ex-support-for-webkit: true; //Webkit
+$ex-support-for-owg: true; //safari or chrome old version
+$ex-support-for-webkit533: true; //Webkit533, for android 2.3.x
+$ex-support-for-opera: false; //Opera
+$ex-support-for-microsoft: false; //IE
+$ex-support-for-ie6: false; //IE6
+$ex-support-for-ie7: false; //IE7
+$ex-support-for-ie8: false; //IE8
+$ex-support-for-ie9: false; //IE9
+$ex-support-for-ie10: false; //IE10
+$ex-support-for-ie11: false; //IE11
+
+@import "base/mixin";
+@import "base/mixin/normal";
+@import "mobile/fx";
+
+//==default page color
+// ...color: #8F4F30;
+
+@mixin add-to-home {
+  //Main container
+  #addToHomeScreen {
+    z-index: 9999;
+    box-sizing: border-box;
+    width: 208px;
+    padding: 10px;
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 130%;
+    color: #333333;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    user-select: none;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #ffffff), color-stop(0.02, #eeeeee), color-stop(0.98, #cccccc), color-stop(1, #a3a3a3));
+    background-clip: padding-box;
+    border: 1px solid #505050;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+    //The 'wide' class is added when the popup contains the touch icon
+    &.wide {
+      width: 240px;
+    }
+
+    //The balloon arrow
+    .arrow {
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin-left: -8px;
+      background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, rgba(204, 204, 204, 0)), color-stop(0.4, rgba(204, 204, 204, 0)), color-stop(0.4, #cccccc));
+      border-color: #505050;
+      border-style: solid;
+      border-width: 0 1px 1px 0;
+      border-bottom-right-radius: 2px;
+      box-shadow: inset -1px -1px 0 #a9a9a9;
+      transform: rotateZ(45deg);
+    }
+
+    //The balloon arrow for iPad
+    .ipad .arrow {
+      top: -9px;
+      bottom: auto;
+      left: 50%;
+      background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, rgba(238, 238, 238, 0)), color-stop(0.4, rgba(238, 238, 238, 0)), color-stop(0.4, #eeeeee));
+      box-shadow: inset -1px -1px 0 #ffffff;
+      transform: rotateZ(-135deg);
+    }
+
+    //Close button
+    .close {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      box-sizing: border-box;
+      width: 14px;
+      height: 14px;
+      font-size: 13px;
+      line-height: 10px;
+      color: #707070;
+      text-align: center;
+      text-indent: 1px;
+      background: rgba(0, 0, 0, 0.12);
+      border-radius: 7px;
+      box-shadow: 0 1px 0 #ffffff;
+    }
+
+    //The '+' icon, displayed only on iOS < 4.2
+    .plus {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    //The 'share' icon, displayed only on iOS >= 4.2
+    .share {
+      display: inline-block;
+      width: 18px;
+      height: 15px;
+      overflow: hidden;
+      text-indent: -9999em;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg==);
+      background-repeat: no-repeat;
+      background-size: 18px 15px;
+    }
+
+    //The touch icon (if available)
+    .touchIcon {
+      display: block;
+      float: left;
+      width: 44px;
+      height: 44px;
+      margin: 0 10px 5px 0;
+      background-repeat: none;
+      background-clip: padding-box;
+      background-size: 44px 44px;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.9);
+    }
+
+    //The 'share' icon for retina display
+    @media all and (-webkit-min-device-pixel-ratio: 2) {
+      #addToHomeScreen .share {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+      }
+    }
+  }
+}

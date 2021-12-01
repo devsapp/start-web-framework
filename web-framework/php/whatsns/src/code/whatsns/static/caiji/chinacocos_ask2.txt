@@ -1,0 +1,10 @@
+﻿http://www.cocoachina.com/ios/list_69_{#num}.html|
+.middle>.m-wrap>li .newstitle a[target="_blank"]|
+#comments>.con|
+.detail-main>.field_body|
+|
+#comments>.author a|
+#comments>.fl img|
+http://www.cocoachina.com
+|CocoaChina 苹果开发中文站(<a href="http://www.cocoachina.com" target="_blank">http://www.cocoachina.com</a>)|
+0

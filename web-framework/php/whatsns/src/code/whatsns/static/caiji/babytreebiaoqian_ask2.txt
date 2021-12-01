@@ -1,0 +1,10 @@
+﻿http://www.babytree.com/ask/tag_keyword_list.php?keyword=%E6%B4%97%E5%A4%B4%E5%8F%91|
+.queslisttable a[href*='/detail/']|
+.qa-answer-list .answer-text|
+|
+.best-content .answer-text|
+.username .color-blue|
+.useravatar img|
+http://www.babytree.com|
+babytree育儿问答(<a href="http://www.babytree.com/ask/tag_keyword_list.php?keyword=%E6%B4%97%E5%A4%B4%E5%8F%91" target="_blank">http://www.babytree.com/ask/</a>)
+|0

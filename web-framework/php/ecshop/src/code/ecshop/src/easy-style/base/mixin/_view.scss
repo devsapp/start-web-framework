@@ -1,0 +1,343 @@
+//@descrip: 页面视图相关mixin
+
+//= 页面宽度容器
+//= @param: $width:页面宽度;
+//= @param: $margin:外边距，默认为0 auto;
+//= @param: $class:是否带有class名，为true时默认命名container，并且可扩展;
+
+@mixin container($width: $default-container-width, $margin: 0, $class: false) {
+  @if $class {
+    @if $class == true {
+      $class: container;
+    }
+
+    .#{$class} {
+      @include rect($width, $margin: $margin);
+      @include clear(fix);
+
+      @content;
+    }
+  }
+
+  @else {
+    @include rect($width, $margin: $margin);
+    @include clear(fix);
+  }
+}
+
+//= 页面列表类元素first one
+@mixin first($class: first, $direct: left) {
+  @include list-one($class, $direct);
+}
+
+//= 页面列表类元素last one
+@mixin last($class: last, $direct: right) {
+  @include list-one($class, $direct);
+}
+
+//= 跨浏览器的inline-block方式，只有在块元素用于inline-block时才需要hack。
+//= @param: $vertical:垂直对齐方式;
+//= @param: $hack:默认加入hack;
+
+@mixin inline-block($vertical: false, $hack: true) {
+  @include display(inb, $hack);
+
+  @if $vertical {
+    vertical-align: $vertical;
+  }
+}
+
+//= 链接颜色
+//= @param: $value:默认颜色;
+//= @param: $hover, $active, $visited, $focus:其它状态颜色;
+
+@mixin link-colors($value: $default-link-color, $hover: false, $active: false, $visited: false, $focus: false) {
+  color: $value;
+
+  @if typeof($hover) == color {
+    &:hover {
+      color: $hover;
+    }
+  }
+
+  @if typeof($active) == color {
+    &:active {
+      color: $active;
+    }
+  }
+
+  @if typeof($visited) == color {
+    &:visited {
+      color: $visited;
+    }
+  }
+
+  @if typeof($focus) == color {
+    &:focus {
+      color: $focus;
+    }
+  }
+}
+
+//= 元素hover时相关属性
+@mixin hover($decoration: underline, $color: false, $bg: false, $border: false, $selector: null) {
+  &:hover #{$selector} {
+    @if $decoration {
+      text-decoration: $decoration;
+    }
+
+    @if $color {
+      @if $color == true {
+        $color: $default-hover-color;
+      }
+
+      color: $color;
+    }
+
+    @if $bg {
+      @include background($bg);
+    }
+
+    @if $border {
+      @include border($border);
+    }
+
+    @content;
+  }
+}
+
+//= 图片无锯齿缩放，默认支持ie
+@mixin zoom-img($ie: true) {
+  image-rendering: optimizequality;
+
+  @if fix(ie) and $ie {
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+//= 设置图片尺寸
+//= @param: $width, $height:图片宽高;
+//= @param: $max:是否为最大宽高;
+//= @param: $vertical-align:垂直对齐方式;
+//= @param: $zoom:是否加入图片无锯齿缩放;
+
+@mixin img-size($width: false, $height: false, $max: false, $vertical-align: false, $zoom: false, $hack: false) {
+  $max: if($max, max-, unquote(""));
+  $height: if($height == true, $width, $height);
+
+  @if $width {
+    #{$max}width: $width;
+  }
+
+  @if $height {
+    @if $height == true {
+      $height: $width;
+    }
+
+    #{$max}height: $height;
+  }
+
+  @if $hack {
+    @if $width {
+      #{$hack}width: $width;
+    }
+
+    @if $height {
+      #{$hack}height: $height;
+    }
+  }
+
+  @if $vertical-align {
+    vertical-align: if($vertical-align == true, middle, $vertical-align);
+  }
+
+  @if $zoom {
+    @include zoom-img;
+  }
+}
+
+//= hr的初始化，包含四边颜色及宽度
+@mixin hr($color, $width: $default-border-width, $left-color: $gf, $right-color: $gf, $top-color: $gf) {
+  border-top: $default-border-width $default-border-style $top-color;
+  border-right: $default-border-width $default-border-style $right-color;
+  border-bottom: $width $default-border-style $color;
+  border-left: $default-border-width $default-border-style $left-color;
+
+  @include height(0);
+}
+
+//= 盒模型的css属性及是否需要hack
+//= @param: $width/$height/$line(-height)/$overflow/$border/$background/$display 分别代表各自属性;
+//= @param: 其中$height为true时等于width，为all/hidden时等同$overflow;$line为all/hidden/x/y时等同$overflow;
+//= @param: $border/$background/$overflow支持列表值，请用空格或括号分隔;
+//= @param: $hack-width/$hack-height/$hack-line(-height) 分别对应宽高行高的hack, $type 代表hack类型;
+
+@mixin box($width: $default-box-size, $height: false, $line: false, $overflow: false, $border: false, $background: false, $display: false, $hack-width: false, $hack-height: false, $hack-line: false, $type: "_") {
+  @if chk($display) {
+    @include display($display);
+  }
+
+  @include width($width, $hack-width, $type);
+
+  @if $height {
+    @if $height == true {
+      $height: $width;
+    }
+
+    @else if $height == all or $height == hidden {
+      $overflow: $height;
+      $height: false;
+    }
+
+    @else if chk($height) {
+      @if $line == all or $line == hidden {
+        $overflow: $line;
+        $line: false;
+      }
+    }
+  }
+
+  @if $line == all or $line == x or $line == y {
+    $overflow: $line;
+  }
+
+  @include height($height, $line, $hack-height, $hack-line, $type);
+
+  @if chk($border) {
+    @include border($border);
+  }
+
+  @if chk($background) {
+    @include background($background);
+  }
+
+  @if $overflow {
+    @include overflow($overflow);
+  }
+}
+
+//= 正方形
+//= @param: $side:边长;
+//= @param: 其余属性等同于box();
+
+@mixin square($side: $default-box-size, $display: false, $border: false, $overflow: false, $border: false, $background: false, $line: false, $hack-side: false, $hack-line: false, $type: "_") {
+  @include box($side, $side, $line, $overflow, $border, $background, $display, $hack-side, $hack-side, $hack-line, $type);
+}
+
+//= 矩形/盒模型属性，按顺序生成为display,position,left/top/right/bottom,z-index,background,opacity,float,width,height,line-height,padding,margin,border,border-radius,box-shadow
+@mixin rect($width: false, $height: false, $padding: false, $margin: false, $float: false, $line: false, $border: false, $background: false, $display: false, $overflow: false, $position: false, $z-index: false, $opacity: false, $clear: false, $radius: false, $shadow: false) {
+  @if $display {
+    @include display($display);
+  }
+
+  @if $position {
+    @include position($position);
+  }
+
+  @if typeof($z-index) == number {
+    z-index: $z-index;
+  }
+
+  @if $background {
+    @include background($background);
+  }
+
+  @if typeof($opacity) == number {
+    @include opacity($opacity);
+  }
+
+  @if $float {
+    @include float($float);
+  }
+
+  @if $width {
+    $w-type: "min-";
+    $w-hack: false;
+
+    @if typeof($width) == list {
+      @if length($width) == 3 {
+        $w-type: nth($width, 3);
+      }
+
+      $w-hack: nth($width, 2);
+      $width: nth($width, 1);
+    }
+
+    @include width($width, $w-hack, $w-type);
+  }
+
+  @if $height {
+    @if $height == true {
+      $height: $width;
+    }
+
+    @else if $height == center or $height == c {
+      @if typeof($padding) == list {
+        $margin: nth($padding, 1) auto n($padding, 2);
+      }
+
+      @else {
+        $margin: if($padding != false, $padding, 0) auto;
+      }
+
+      $height: false;
+      $padding: false;
+    }
+
+    @else if typeof($height) == list and n($height, 2, false) != null {
+      $line: nth($height, 2);
+    }
+
+    @if $height != false {
+      @include height($height, $line);
+    }
+  }
+
+  @if $overflow {
+    @include overflow($overflow);
+  }
+
+  @if $padding {
+    @include padding($padding);
+  }
+
+  @if $margin {
+    @include margin($margin);
+  }
+
+  @if $border {
+    @include border($border);
+  }
+
+  @if $radius {
+    @include border-radius($radius);
+  }
+
+  @if $shadow {
+    @include box-shadow($shadow);
+  }
+
+  @if $clear {
+    @include clear($clear);
+  }
+}
+
+//= 滤镜实现灰度效果，暂不兼容ff
+@mixin grayscale($value: 100%) {
+  @if fix(webkit) {
+    -webkit-filter: grayscale($value);
+  }
+
+  @if fix(moz) {
+    -moz-filter: grayscale($value);
+  }
+
+  @if fix(ms) {
+    // filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); //标准写法
+    filter: Gray; //简写
+
+    @if fix(ie7) {
+      *zoom: 1;
+    }
+  }
+}

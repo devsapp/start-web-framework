@@ -1,0 +1,57 @@
+.littledown{
+	display:none;
+}
+.littledown .inner {
+    overflow: hidden;
+    height: 220px;
+    background:#0085ee;
+    background-size: 100% 200px;
+    position: relative;
+    padding-top: 20px;
+}
+.littledown .inner .tit {
+    height: 50px;
+    line-height: 50px;
+    font-size: 36px;
+    color: #FFFFFF;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+.littledown .inner .exp {
+    line-height: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.littledown .inner .btnarea {
+    overflow: hidden;
+    font-size: 0;
+}
+.littledown .inner .btnarea .btn1 {
+    display: inline-block;
+    padding: 0 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    background: #00C1DE;
+    overflow: hidden;
+    text-decoration: none;
+    margin-right: 12px;
+}
+.littledown .inner .btnarea .btn2 {
+    display: inline-block;
+    padding: 0 36px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px #fff solid;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    overflow: hidden;
+    text-decoration: none;
+        background: transparent;
+            box-sizing: border-box;
+}

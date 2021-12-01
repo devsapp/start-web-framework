@@ -1,0 +1,9 @@
+﻿http://www.fodizi.net/wd_{#num}.htm|
+.common .node .title h2 a|
+|
+|
+#fdzb|
+|
+|
+http://www.fodizi.net
+|佛学问答(<a href="http://www.fodizi.net/wd_1.htm" target="_blank">http://www.fodizi.net</a>)|0

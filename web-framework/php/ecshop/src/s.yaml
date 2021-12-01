@@ -1,0 +1,60 @@
+# ------------------------------------
+#   欢迎您使用阿里云函数计算 FC 组件进行项目开发
+#   组件仓库地址/帮助文档：https://github.com/devsapp/fc
+#   Yaml参考文档：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md
+#   快速入门：
+#      快速创建应用：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/quick_start_application.md
+#      快速使用命令：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/quick_start_function.md
+# ------------------------------------
+
+edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: framework         #  项目名称
+access: default       #  秘钥别名
+
+services:
+  framework: # 服务名称
+    component: fc  # 组件名称
+    actions:
+      pre-deploy:
+        - run: s framework nas init
+          path: ./
+        - run: s framework nas upload -r code/ecshop/ /mnt/auto/ecshop
+          path: ./
+    props: # 组件的属性值
+      region: cn-hangzhou
+      service:
+        name: web-framework
+        description: 'Serverless Devs Web Framework Service'
+        nasConfig: auto
+      function:
+        name: ecshop
+        description: 'Serverless Devs Web Framework ecshop Function'
+        codeUri: './code'
+        runtime: custom
+        timeout: 30
+        memorySize: 1536
+        instanceConcurrency: 12
+        environmentVariables:
+          PATH: /code/root/usr/bin:/code/root/usr/sbin:/code/root/sbin:/code/root/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin
+          LD_LIBRARY_PATH: /code/root/usr/lib:/code/root/usr/lib/x86_64-linux-gnu:/code/root/lib:/code/root/lib/x86_64-linux-gnu:/code:/code/lib:/usr/local/lib
+          PHP_INI_SCAN_DIR: /code/root/usr/lib/php/7.2
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
+              methods:
+                - GET
+                - POST
+                - PUT
+                - DELETE

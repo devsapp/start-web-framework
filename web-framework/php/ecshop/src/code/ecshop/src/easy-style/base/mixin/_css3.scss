@@ -1,0 +1,339 @@
+@import "utilities";
+
+//@descrip: css3属性mixin。
+
+//= CSS3 圆角. border-radius(5px) ,border-radius(5px 6px/5px 4px)
+//= @param: $value:支持多种参数形式，比如5px, 5px 6px, 5px/8px, 5px 6px/5px 4px, 百分数，比如50%即正圆形;
+
+@mixin border-radius($value...) {
+  @if not $value {
+    $value: $default-border-radius;
+  }
+
+  @include cross-browser(border-radius, $value);
+}
+
+//= CSS3 阴影.
+//= @param: $value:支持多种参数，多重阴影，数量不限，如inset 1px 1px 2px #ccc, 2px 2px 5px rgba(255,255,255,0.5);
+
+@mixin box-shadow($value...) {
+  @if not $value {
+    $value: $default-box-shadow;
+  }
+
+  @include cross-browser(box-shadow, $value, $ms: false);
+}
+
+//= css3 是否可选中页面中的内容
+//= @param: $value:auto, none, text, element, all, 默认为none;
+
+@mixin user-select($value: none) {
+  @include cross-browser(user-select, $value);
+}
+
+//= css3 resize属性
+//= @param: $value:none, both, horizontal, vertical, inherit, 默认none不允许;
+
+@mixin resize($value: none) {
+  @include cross-browser(resize, $value, $ms: false);
+}
+
+//= ie滤镜实现垂直或水平渐变
+//= @param: $start, $end: 渐变开始/结束颜色;
+//= @param: $type: 渐变类型, 0为垂直，1为水平;
+
+@mixin filter-gradient($start, $end: $start, $type: 0) {
+  filter: progid:DXImageTransform.Microsoft.Gradient(enabled=true, gradientType=#{$type}, startColorstr='#{iehex($start)}', endColorstr='#{iehex($end)}') \9;
+}
+
+//= css3 线性渐变，支持IE垂直或水平渐变，支持分开传开始/结束颜色（必须）。
+//= @param: $colors: 渐变开始/结束颜色,可包含每个颜色的位置，更可以包含多组颜色(写法支持多种形式);
+//= @param: $ms: 默认不提供对ie的支持，如需要请改为true，并且渐变颜色只支持第一个颜色到最后一个颜色的渐变;
+//= @param: $point: 渐变的位置及角度，默认为垂直无角度渐变，如果传0则为水平无角度渐变，其它请参考http://www.w3cplus.com/content/css3-gradient;
+
+@mixin linear-gradient($colors, $ms: false, $point: null, $property: background-image) {
+  @if typeof($colors) == color and typeof($ms) == color {
+    $colors: join($colors, $ms, comma);
+    $ms: $point;
+    $point: null;
+  }
+
+  $mstype: if(chk($point) and $point != top and point != bottom, 1, 0);
+
+  @include linear($colors, $point, $property);
+
+  @if fix(8) and $ms {
+    @if $ms == true {
+      $start: nth($colors, 1);
+      $end: nth($colors, length($colors));
+
+      @include filter-gradient($start, $end, $mstype);
+    }
+
+    @else {
+      @include background($ms);
+    }
+  }
+}
+
+//= css3 径向渐变，支持分开传开始/结束颜色。
+//= @param: $colors:渐变开始/结束颜色,可包含每个颜色的位置，更可以包含多组颜色(写法支持多种形式);
+//= @param: $point:径向的位置方向，默认为从中心点开始向外扩散渐变;
+//= @param: $shape:径向梯度，指定渐变的形状（圆形或椭圆形）和大小（最近端，最近角，最远端，最远角，包含或覆盖 (closest-side, closest-corner, farthest-side, farthest-corner, contain or cover)），其它请参考http://www.w3cplus.com/content/css3-gradient;
+
+@mixin radial-gradient($colors, $point: null, $shape: null, $ms: false, $property: background-image) {
+  @if typeof($colors) == color and typeof($point) == color {
+    $colors: join($colors, $point, comma);
+    $point: null;
+  }
+
+  $point: join($point, $shape, comma);
+
+  @include radial($colors, $point, $property);
+
+  @if fix(8) and $ms {
+    @include background($ms);
+  }
+}
+
+//= css3 box sizing
+@mixin box-sizing($type: $default-box-sizing) {
+  @include cross-browser(box-sizing, $type);
+}
+
+//= css3 box align
+@mixin box-align($value) {
+  @include cross-browser(box-align, $value);
+}
+
+//= css3 background size
+@mixin background-size($value) {
+  @include cross-browser(background-size, $value);
+}
+
+//= css3 background clip
+@mixin background-clip($value) {
+  @include cross-browser(background-clip, $value);
+}
+
+//= css3 background origin
+@mixin background-origin($value) {
+  @include cross-browser(background-origin, $value);
+}
+
+//= css3 transition
+@mixin transition($value...) {
+  @include cross-browser(transition, $value);
+}
+
+@mixin transition-timing-function($eff: $default-eff) {
+  @include cross-browser(transition-timing-function, $eff);
+}
+
+@mixin transition-duration($time: $default-time) {
+  @include cross-browser(transition-duration, $time, $moz: false, $o: false);
+}
+
+//= css3 text-align-last
+@mixin text-align-last($value: justify) {
+  @include cross-browser(text-align-last, $value, $o: false);
+}
+
+//= css3 transform
+@mixin transform($value, $time: null) {
+  @include cross-browser(transform, $value, $o: false);
+
+  @if $time {
+    @include transition-duration($time);
+  }
+}
+
+//= css3 scale
+@mixin scale($value: $default-scale, $time: null) {
+  @include cross-browser(transform, scale($value), $moz: false, $o: false);
+
+  @if $time {
+    @include transition-duration($time);
+  }
+}
+
+//= css3 rotate
+@mixin rotate($deg: $default-deg, $time: null) {
+  @include cross-browser(transform, rotate($deg), $moz: false, $o: false);
+
+  @if $time {
+    @include transition-duration($time);
+  }
+}
+
+@mixin placeholder($color: $g9, $selector: null) {
+  @if $color {
+    @if fix(webkit) {
+      #{$selector}::-webkit-input-placeholder {
+        color: $color;
+
+        @content;
+      }
+    }
+
+    @if fix(moz) {
+      #{$selector}::-moz-placeholder {
+        color: $color;
+
+        @content;
+      } // firefox 19+
+
+      #{$selector}:-moz-placeholder {
+        color: $color;
+
+        @content;
+      }
+    }
+
+    @if fix(ie10) {
+      #{$selector}:-ms-input-placeholder {
+        color: $color;
+
+        @content;
+      }
+    }
+
+    @if fix(ie9) {
+      #{$selector}.placeholder {
+        color: $color;
+
+        @content;
+      }
+    }
+  }
+}
+
+@mixin appearance($value: none) {
+  @include cross-browser(appearance, $value, $o: false);
+}
+
+@mixin filter($value: none) {
+  @include cross-browser(filter, $value, $o: false, $ms: true);
+}
+
+@mixin text-size-adjust($value: none) {
+  @include cross-browser(text-size-adjust, $value, $o: false, $ms: true);
+}
+
+@mixin animation($value...) {
+  @include cross-browser(animation, $value);
+}
+
+@mixin animation-duration($value) {
+  @include cross-browser(animation-duration, $value);
+}
+
+@mixin animation-fill-mode($value) {
+  @include cross-browser(animation-fill-mode, $value);
+}
+
+@mixin animation-name($value) {
+  @include cross-browser(animation-name, $value);
+}
+
+@mixin calc($prop, $value) {
+  @if fix(webkit) {
+    #{$prop}: -webkit-calc(#{$value});
+  }
+
+  @if fix(moz) {
+    #{$prop}: -moz-calc(#{$value});
+  }
+
+  #{$prop}: calc(#{$value});
+}
+
+@mixin keyframe($name, $prop: null, $from: null, $to: null) {
+  @if fix(moz) {
+    @-moz-keyframes #{$name} {
+      from {
+        #{$prop}: $from;
+      }
+
+      to {
+        #{$prop}: $to;
+      }
+    }
+  }
+
+  @if fix(webkit) {
+    @-webkit-keyframes #{$name} {
+      from {
+        #{$prop}: $from;
+      }
+
+      to {
+        #{$prop}: $to;
+      }
+    }
+  }
+
+  @if fix(opera) {
+    @-o-keyframes #{$name} {
+      from {
+        #{$prop}: $from;
+      }
+
+      to {
+        #{$prop}: $to;
+      }
+    }
+  }
+
+  @keyframes #{$name} {
+    from {
+      #{$prop}: $from;
+    }
+
+    to {
+      #{$prop}: $to;
+    }
+  }
+}
+
+@mixin slide($name, $from: null, $to: null) {
+  @include keyframe($name, top, $from, $to);
+}
+
+@mixin fade($name, $from: null, $to: null) {
+  @include keyframe($name, opacity, $from, $to);
+}
+
+// @mixin keyframes($name, $deprecated-prefixes...) {
+// $warned: warn-about-useless-prefix-arguments($deprecated-prefixes...);
+
+//     @include with-each-prefix(css-animation, $animation-support-threshold) {
+//         @if fix(moz) {
+//             @-moz-keyframes #{$name} {
+//                 @content;
+//             }
+//         }
+
+//         @if fix(webkit) {
+//             @-webkit-keyframes #{$name} {
+//                 @content;
+//             }
+//         }
+
+//         @if fix(o) {
+//             @-o-keyframes #{$name} {
+//                 @content;
+//             }
+//         }
+
+//         @if fix(ms) {
+//             @-ms-keyframes #{$name} {
+//                 @content;
+//             }
+//         }
+
+//         @keyframes #{$name} {
+//             @content;
+//         }
+//     }
+// }

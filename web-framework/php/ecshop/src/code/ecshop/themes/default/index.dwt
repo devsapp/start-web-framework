@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<style>
+.classmenu{visibility:visible}
+</style>
+<script language='javascript' src='{$template_dir}/js/cxjc0.js' type='text/javascript' charset='utf-8'></script>
+  <div class="clear0"></div>
+ <!-- TemplateBeginEditable name="首页却换主广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+<div class="index_body">
+  <div class="index_0">
+    <div class="fl">
+      <div class="hide_show">
+        <div class="show_title"><span cid="4" class="v">特价抢购<i></i></span> <span cid="2">精品推荐<i></i></span> <span cid="3">新品上市<i></i></span> <span cid="1">本周热销<i></i></span>
+          <div class="clear0"></div>
+        </div>
+        <div class="show_info">
+          <div class="shows show4"> <!-- #BeginLibraryItem "/library/recommend_promotion.lbi" --> <!-- #EndLibraryItem --></div>
+          <div class="shows show2" style="display:none"><!-- TemplateBeginEditable name="精品推荐" -->
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+
+<!-- {if $best_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<DIV class="i_prclist_t"><SPAN>精品推荐</SPAN><a href="../search.php?intro=best" class="more">查看更多></a> </DIV>
+<div id="show_best_area" class="clearfix i_prclist">
+  <!-- {/if} -->
+  <!--{foreach from=$best_goods item=goods name=best_goods}-->
+  <div class="cxjitem  <!-- {if $smarty.foreach.best_goods.first} -->cxjitem_f<!-- {/if} -->">
+    <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+    <div class="i">
+      <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+        <!-- {if $goods.brief} -->
+        <em class="brief">{$goods.brief}</em>
+        <!--{/if}-->
+        </a></h3>
+      <ul class="prices">
+        <li class="gel-price">
+          <!-- {if $goods.promote_price neq ""} -->
+          {$lang.promote_price}<em>{$goods.promote_price}</em>
+          <!-- {else}-->
+          销售价：<em>{$goods.shop_price}</em>
+          <!--{/if}-->
+        </li>
+        <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+      </ul>
+    </div>
+  </div>
+  <!--{/foreach}-->
+  <!-- {if $cat_rec_sign neq 1} -->
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></div>
+          <div class="shows show3" style="display:none"> <!-- TemplateBeginEditable name="新品上市" -->
+<!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
+
+<!-- {if $new_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<DIV class="i_prclist_t"><SPAN>新品速递</SPAN><a href="../search.php?intro=new" class="more">查看更多></a></DIV>
+<div id="show_new_area" class="clearfix i_prclist">
+  <!-- {/if} -->
+  <!--{foreach from=$new_goods item=goods name=new_goods}-->
+  <div class="cxjitem <!-- {if $smarty.foreach.new_goods.first} -->cxjitem_f<!-- {/if} -->">
+    <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+    <div class="i">
+      <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+        <!-- {if $goods.brief} -->
+        <em class="brief">{$goods.brief}</em>
+        <!--{/if}-->
+        </a></h3>
+      <ul class="prices">
+        <li class="gel-price">
+          <!-- {if $goods.promote_price neq ""} -->
+          {$lang.promote_price}<em>{$goods.promote_price}</em>
+          <!-- {else}-->
+          销售价：<em>{$goods.shop_price}</em>
+          <!--{/if}-->
+        </li>
+        <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+      </ul>
+    </div>
+  </div>
+  <!--{/foreach}-->
+  <!-- {if $cat_rec_sign neq 1} -->
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --></div>
+          <div class="shows show1" style="display:none"> <!-- TemplateBeginEditable name="本周热销" -->
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+
+<!-- {if $hot_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<DIV class="i_prclist_t"><SPAN>热卖商品</SPAN> <a href="../search.php?intro=hot" class="more"> 更多热卖商品></a></DIV>
+<div class="i_prclist">
+  <!-- {/if} -->
+  <!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+  <div class="cxjitem <!-- {if $smarty.foreach.hot_goods.first} -->cxjitem_f<!-- {/if} -->">
+    <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+    <div class="i">
+      <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+        <!-- {if $goods.brief} -->
+        <em class="brief">{$goods.brief}</em>
+        <!--{/if}-->
+        </a></h3>
+      <ul class="prices">
+        <li class="gel-price">
+          <!-- {if $goods.promote_price neq ""} -->
+          {$lang.promote_price}<em>{$goods.promote_price}</em>
+          <!-- {else}-->
+          销售价：<em>{$goods.shop_price}</em>
+          <!--{/if}-->
+        </li>
+        <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+      </ul>
+    </div>
+  </div>
+  <!--{/foreach}-->
+  <!-- {if $cat_rec_sign neq 1} -->
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+        </div>
+        <div class="clear0"></div>
+      </div>
+    </div>
+    <div class="fr">
+
+      <!-- TemplateBeginEditable name="公告广告" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+<div class="box article_item"><div class="box_1">
+  <h3><span>商城公告</span></h3>
+  <div class="boxCenterList">
+    <ul>
+      <!--{foreach from=$articles item=article_item}-->
+      <li> <a href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a> <span>{$article_item.add_time}</span></li>
+      <!--{/foreach}-->
+    </ul>
+  </div></div>
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/order_query.lbi" -->
+
+<!--{if empty($order_query)}-->
+<script>var invalid_order_sn = "{$lang.invalid_order_sn}"</script>
+<div class="box">
+ <div class="box_1">
+  <h3><span>{$lang.order_query}</span></h3>
+  <div class="boxCenterList">
+    <form name="ecsOrderQuery">
+    <input type="text" name="order_sn" class="inputBg" /><br />
+    <div class="blank5"></div>
+    <input type="button" value="{$lang.query_order}" class="bnt_blue_2" onclick="orderQuery()" />
+    </form>
+    <div id="ECS_ORDER_QUERY" style="margin-top:8px;">
+      <!--{else}-->
+      <!--{if $order_query.user_id}-->
+<b>{$lang.order_number}：</b><a href="user.php?act=order_detail&order_id={$order_query.order_id}" class="f6">{$order_query.order_sn}</a><br>
+  <!--{else}-->
+<b>{$lang.order_number}：</b>{$order_query.order_sn}<br>
+  <!--{/if}-->
+<b>{$lang.order_status}：</b><br><font class="f1">{$order_query.order_status}</font><br>
+  <!--{if $order_query.invoice_no }-->
+<b>{$lang.consignment}：</b>{$order_query.invoice_no}<br>
+  <!--{/if}-->
+      {if $order_query.shipping_date}：{$lang.shipping_date} {$order_query.shipping_date}<br>
+  <!--{/if}-->
+  <!--{/if}-->
+    </div>
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="clear10 fd30_goods_pic"></div>
+  <div class="index_f index_f1" id="f1"><span class="allf">1F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f1_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> <div class="fd30_wordmenu"></div> <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f1_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="index_f index_f2" id="f2"><span class="allf">2F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f2_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> <div class="fd30_wordmenu"></div> <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f2_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="index_f index_f3" id="f3"><span class="allf">3F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f3_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> <div class="fd30_wordmenu"></div> <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f3_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="index_f index_f4" id="f4"><span class="allf">4F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f4_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --><div class="fd30_wordmenu"></div>  <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f4_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="index_f index_f5" id="f5"><span class="allf">5F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f5_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> <div class="fd30_wordmenu"></div> <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f5_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="index_f index_f6" id="f6"><span class="allf">6F</span>
+    <div class="fl"> <!-- TemplateBeginEditable name="f6_图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div id="Tr_cs{$ads_id}">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> <div class="fd30_wordmenu"></div> <div class="clear0"></div></div>
+    <div class="fr"> <!-- TemplateBeginEditable name="f6_商品" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> </div>
+    <div class="clear0"></div>
+  </div>
+
+  <script>$(function (){
+		 for (var i = 0; i < $(".Tr_cs1 .cxjitem").size(); i++){
+ 							 var imgsrc=$(".Tr_cs1 .cxjitem>a>img").eq(i).attr("src");
+			 $(".Tr_cs1 .cxjitem").eq(i).css({'background-image':'url('+imgsrc+')'});
+ 							 };
+        $(".Tr_cs1").textSlider({
+            speeds: 5000,
+            lines: 1,
+            offset: 7000,
+            direc: 4,
+            qnum: 1
+        });
+$(".show_title span").hover(function(){
+  var type=$(this).attr("cid");
+  $(".show_title span[cid]").removeClass("v");
+  $(this).addClass("v");
+  $(".show_info>div").hide();
+  $(".show_info>div.show"+type).show();
+ });
+$(".show_title0 span").hover(function(){
+  var type=$(this).attr("cid");
+  $(".show_title0 span[cid]").removeClass("v");
+  $(this).addClass("v");
+  $(".show_info0>div").hide();
+  $(".show_info0>div.show"+type).show();
+ });
+var f_top = $(".fd30_goods_pic").offset().top-50;
+$(window).scroll(function() {  
+   var s_top=$(window).scrollTop();
+	$('.index_f').each(function(i) {
+	   if(s_top>=f_top+i*420){
+		 $("#gotop").show();
+	     $(".allf>li").removeClass("li_v");
+		 $('.allf>li.f'+i).addClass('li_v');
+        }
+       });
+
+	if(s_top<f_top){
+	     $(".allf>li").removeClass("li_v");
+		 $("#gotop").hide();
+         }
+
+ });
+var fright = $(window).width() - 1190;
+$("#gotop").css({"right":fright/2-55});
+
+});
+</script>
+  <div class="clear10"></div>
+  <div class="index_footad opacity"> <!-- TemplateBeginEditable name="底部广告" -->
+<!-- TemplateEndEditable -->   <div class="clear0"></div></div>
+  <div class="clear10"></div>
+</div>
+<!-- #BeginLibraryItem "/library/index_allf.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

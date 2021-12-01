@@ -1,0 +1,9 @@
+﻿http://ask.bitauto.com/browse/l0/p{#num}/|
+.wt-data-list .tit-s-w a|
+#AnswerListDiv .da-list-box .hd_txt_box|
+.ask-infor-box .ask-con|
+.zjda_box .da-list-box .hd_txt_box|
+.respon_txt .p_1 a|
+|
+http://ask.bitauto.com
+|易车汽车问答分类检索(<a href="http://ask.bitauto.com/browse/" target="_blank">http://ask.bitauto.com/browse/</a>)|0

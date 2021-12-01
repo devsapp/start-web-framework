@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+/*导航条背景色*/
+.nav2, .nav_list {
+  
+    background: #ea644a;
+   
+}
+/*导航条菜单点击选中背景色和文字*/
+.nav2 ul li.nav2_current {
+    background: #D25F48;
+    color: #fff;
+}
+/*导航条菜单鼠标放上和聚焦背景色*/
+
+.nav2 ul li a:hover {
+    background: #D25F48;
+
+}
+/*顶部搜索框按钮颜色--提问按钮颜色*/
+.search .i_s_c .btnquestion{
+	    background: #ea644a;
+}
+/*顶部搜索框按钮颜色--搜索按钮颜色*/
+.search .i_s_c .btnup{
+	background: #ea644a;
+}
+/*搜索框按钮颜色*/
+.search .i_text1 {
+   
+    border: 1px solid #ea644a;
+    outline:none;
+}
+/*搜索框菜单背景颜色*/
+.search ul li.i_s_current {
+    background: #ea644a;
+    color: #fff;
+}
+/*控制首页最新问题，悬赏问题，已解决问题tab的文字颜色*/
+.ask_item h3.ask_title .cGray {
+    color: #ea644a;
+}
+/*首页banner右侧状态框没有登录时候得背景颜色*/
+.answer-question-section .user-button-item {
+   
+    background-color: #E6684F;
+   
+}
+.answer-question-section {
+    height: 60px;
+    background-color: #D8391B;
+    margin-top: 13px;
+}
+/*首页最新问题，悬赏问题，已解决问题列表的问题标题文字大小和颜色*/
+.ask_item_main_item_list_title .qyer_spam_text_filter {
+    font-size: 16px;
+    color: #777;
+}
+/*全局标签颜色*/
+.label {
+    background-color: #867775;
+    border-radius: .15em;
+}
+/*全局按钮颜色*/
+.btn-success {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    background-color: #564E4C;
+    border-color: #454E46;
+}
+.btn-success.active, .btn-success:active, .btn-success:focus, .btn-success:hover, .open .dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #564E4C;
+    border-color: #564E4C;
+    -webkit-box-shadow: 0 2px 1px rgba(0,0,0,.1);
+    box-shadow: 0 2px 1px rgba(0,0,0,.1);
+}
+/*问题详情页面取消关注按钮背景色*/
+.jsaddquestionatten {
+   
+    background: #564E4C;
+   display:none;
+}
+/*文章详情页评论按钮*/
+.btn-cm-submit {
+    background: #3B4640;
+     border-radius: 5px;
+}
+/*文章详情页评论框*/
+.comment-area {
+    width: 100%;
+    height: 200px;
+    border: solid 1px #988E8E;
+    border-radius: 5px;
+}
+/*全局文字颜色*/
+.text-success {
+    color: #525453;
+}
+/*下拉菜单背景色*/
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #8E8686;
+}
+/*首页问题列表标签聚集背景色和文字颜色*/
+.ask_tag_add:hover {
+    background: #363836;
+    color: #F2F7F4;
+    text-decoration: none;
+}
+.ask_tag_add {
+    background: #3E3A3A;
+    color: #FBF9F9;
+    
+}

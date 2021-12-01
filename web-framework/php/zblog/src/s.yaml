@@ -14,8 +14,14 @@ access: "{{ access }}"       #  秘钥别名
 services:
   framework: # 服务名称
     component: fc  # 组件名称
+    actions:
+      pre-deploy:
+        - run: s framework nas init
+          path: ./
+        - run: s framework nas upload -r code/Z-Blog/ /mnt/auto/Z-Blog
+          path: ./
     props: # 组件的属性值
-      region: cn-qingdao
+      region: cn-hangzhou
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
@@ -47,8 +53,6 @@ services:
           protocol: HTTP
           routeConfigs:
             - path: /*
-              serviceName: web-framework
-              functionName: zblog
               methods:
                 - GET
                 - POST

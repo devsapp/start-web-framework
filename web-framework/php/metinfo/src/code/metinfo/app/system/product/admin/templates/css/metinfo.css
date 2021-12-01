@@ -1,0 +1,42 @@
+/* 米拓企业建站系统 Copyright (C) 长沙米拓信息技术有限公司 (https://www.metinfo.cn). All rights reserved. */
+.v52fmbx dl dd{ color:#333;  }
+.v52fmbx dl dd .input-group-addon{ padding:6px;  }
+dd.standard .popover{ min-width:330px; }
+dd.standard span.option{ display:inline-block; position:relative; margin-right:6px; padding:6px 12px; border:1px solid #ddd; border-radius:4px; color:#333; }
+dd.standard .panel-heading{ position:relative;}
+dd.standard span.option:hover span,dd.standard .panel-heading:hover span{ display:block!important;}
+dd.standard span.close{ 
+position: absolute;
+right: -8px;
+top: -8px;
+width: 18px;
+height: 18px;
+line-height: 18px;
+text-align: center;
+background: #666;
+border-radius: 9px;
+font-size: 16px;
+color: #fff;
+font-weight: normal;
+opacity: 0.8;
+}
+dd.standard .option-list{ display:inline-block; }
+dl.stock .table{color:#333;}
+dl.stock .table th{ font-weight:normal; }
+dl.stock .table td{ vertical-align:middle; border:1px solid #ddd; }
+
+.met_affix_save{ position: fixed;bottom: 0px; z-index:999; height:45px; line-height:45px; margin-left:-10px; width:100%; }
+.met_affix_save button{ margin-left:20px; }
+
+.orderby-arrow.desc:before{ content: '\2193'; }
+.orderby-arrow.asc:before{ content: '\2191'; }
+.orderby-arrow{ margin-left:5px;}
+@media (max-height: 800px) {
+	.auto-sent-modal iframe{height: 600px;}
+}
+@media (max-height: 700px) {
+	.auto-sent-modal iframe{height: 500px;}
+}
+@media (max-height: 600px) {
+	.auto-sent-modal iframe{height: 400px;}
+}

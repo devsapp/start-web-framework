@@ -1,0 +1,5 @@
+/* chartist-plugin-tooltip
+ * Copyright © 2015 Gion Kunz
+ * Free to use under the MIT license.
+ */
+.chartist-tooltip{font-size:12px;font-weight:400;position:absolute;z-index:1;display:inline-block;padding:3px 8px;text-align:center;text-align:center;pointer-events:none;color:#fff;border-radius:3px;background-color:rgba(0,0,0,.7)}

@@ -1,0 +1,309 @@
+<!-- $Id: shop_config.htm 16865 2009-12-10 06:05:32Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/region.js"}
+<div class="tab-div">
+    <!-- tab bar -->
+    <div id="tabbar-div">
+        <p>
+            {foreach from=$group_list item=group name="bar_group"}<span class="tab-front" id="{$group.code}-tab">{$group.name}</span>{/foreach}
+        </p>
+    </div>
+    <!-- tab body -->
+    <div id="tabbody-div" style="width: 90%; margin: 0 auto; border: 0;">
+        <form action="mobile_setting.php?act=pay_input_one" method="post">
+            <table cellspacing="0px" width="100%"  style ="border-collapse:collapse">
+            <tr style="background-color: #f4f4f4" height="35px">
+                <th colspan="2" align="left" style="padding-left: 10px"><span style="background-color: #2F9DB5; border-radius: 3px;color: white;padding-left: 5px;padding-right: 5px">微信小程序支付配置</span></th>
+            </tr>
+            <tr><th height="15px"></th><td></td></tr>
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">小程序支付APPID:</th>
+                <td height="45px"><input type="text"  name="pay_small_id" value="{$pay.id}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">商户号:</th>
+                <td height="45px"><input type="text" name="pay_small_sw"  value="{$pay.sw}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">支付KEY:</th>
+                <td height="45px"><input type="text"  name="pay_small_key" value="{$pay.key}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">APPSECRET:</th>
+                <td height="45px"><input type="text"  name="pay_small_secret"  value="{$pay.secret}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">回调验证地址:</th>
+                <td height="45px"><input type="text"  name="pay_small_home" value="{$pay.home}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">回调接收地址:</th>
+                <td height="45px"><input type="text"  name="pay_small_gethome" value="{$pay.gethome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+            </tr>
+
+            <tr>
+                <th width="20%" style="padding-right: 5%" align="right">是否使用:</th>
+                <td height="45px"><input type="checkbox"  name="is_use_small" {if $pay.is_use eq 'on'}checked{/if}>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td align="right" height="35px" style="padding-right: 1%"><input type="submit" value="提交" name="pay_small_submit" style="background-color: #dcdcdc;width: 80px;height: 28px;border-radius: 2px;border: 1px solid #bcb8c7"></td>
+            </tr>
+        </table>
+        </form>
+
+        <form action="mobile_setting.php?act=pay_input_two" method="post">
+            <table cellspacing="0px" width="100%"  style ="border-collapse:collapse">
+                <tr style="background-color: #f4f4f4" height="35px">
+                    <th colspan="2" align="left" style="padding-left: 10px"><span style="background-color: #2F9DB5; border-radius: 3px;color: white;padding-left: 5px;padding-right: 5px">微信H5支付配置</span></th>
+                </tr>
+                <tr><th height="15px"></th><td></td></tr>
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">H5支付APPID:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_id" value="{$hfivepay.hfiveid}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">redirect_url:</th>
+                    <td height="45px"><input type="text" name="pay_hfive_page"  value="{$hfivepay.hfivepage}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">商户号:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_sw"  value="{$hfivepay.hfivesw}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">支付KEY:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_key"  value="{$hfivepay.hfivekey}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">APPSECRET:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_secret"  value="{$hfivepay.hfivesecret}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调验证地址:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_home"  value="{$hfivepay.hfivehome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调接收地址:</th>
+                    <td height="45px"><input type="text"  name="pay_hfive_gethome"  value="{$hfivepay.hfivegethome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">是否使用:</th>
+                    <td height="45px"><input type="checkbox"  name="is_use_hfive" {if $hfivepay.is_use eq 'on'}checked{/if}></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td align="right" height="35px" style="padding-right: 1%"><input type="submit" value="提交" name="pay_hfive_submit" style="background-color: #dcdcdc;width: 80px;height: 28px;border-radius: 2px;border: 1px solid #bcb8c7"></td>
+                </tr>
+            </table>
+        </form>
+
+        <form action="mobile_setting.php?act=pay_input_three" method="post">
+            <table cellspacing="0px" width="100%"  style ="border-collapse:collapse">
+                <tr style="background-color: #f4f4f4" height="35px">
+                    <th colspan="2" align="left" style="padding-left: 10px"><span style="background-color: #2F9DB5; border-radius: 3px;color: white;padding-left: 5px;padding-right: 5px">微信APP支付配置</span></th>
+                </tr>
+                <tr><th height="15px"></th><td></td></tr>
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">APP支付APPID:</th>
+                    <td height="45px"><input type="text"  name="pay_app_id" value="{$apppay.appid}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">商户号:</th>
+                    <td height="45px"><input type="text"  name="pay_app_sw" value="{$apppay.appsw}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">支付KEY:</th>
+                    <td height="45px"><input type="text"  name="pay_app_key" value="{$apppay.appkey}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">APPSECRET:</th>
+                    <td height="45px"><input type="text"  name="pay_app_secret" value="{$apppay.appsecret}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调验证地址:</th>
+                    <td height="45px"><input type="text"  name="pay_app_home" value="{$apppay.apphome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调接收地址:</th>
+                    <td height="45px"><input type="text"  name="pay_app_gethome" value="{$apppay.appgethome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">是否使用:</th>
+                    <td height="45px"><input type="checkbox"  name="is_use_app" {if $apppay.is_use eq 'on'}checked{/if}></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td align="right" height="35px" style="padding-right: 1%"><input type="submit" value="提交" name="pay_app_submit" style="background-color: #dcdcdc;width: 80px;height: 28px;border-radius: 2px;border: 1px solid #bcb8c7"></td>
+                </tr>
+            </table>
+        </form>
+
+        <form action="mobile_setting.php?act=pay_input_four" method="post">
+            <table cellspacing="0px" width="100%"  style ="border-collapse:collapse">
+                <tr style="background-color: #f4f4f4" height="35px">
+                    <th colspan="2" align="left" style="padding-left: 10px"><span style="background-color: #2F9DB5; border-radius: 3px;color: white;padding-left: 5px;padding-right: 5px">支付宝支付配置</span></th>
+                </tr>
+                <tr><th height="15px"></th><td></td></tr>
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">H5支付地址:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_id" value="{$zhifupay.zid}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">支付宝网关地址:</th>
+                    <td height="45px"><input type="text" name="pay_zhifu_wg" value="{$zhifupay.zwg}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">APPID:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_appid" value="{$zhifupay.zappid}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">开发者私钥:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_sy" value="{$zhifupay.zsy}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">支付宝公钥:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_gy" value="{$zhifupay.zgy}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调验证地址:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_home" value="{$zhifupay.zhome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调接收地址:</th>
+                    <td height="45px"><input type="text"  name="pay_zhifu_gethome" value="{$zhifupay.zgethome}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">H5地址:</th>
+                    <td height="45px"><input type="text"  name="alipay_h5_url" value="{$zhifupay.alipay_h5_url}" placeholder="请填写移动端地址" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">是否使用:</th>
+                    <td height="45px"><input type="checkbox"  name="is_use_zhifu" {if $zhifupay.is_use eq 'on'}checked{/if}></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td align="right" height="35px" style="padding-right: 1%"><input type="submit" value="提交" name="pay_zhifu_submit" style="background-color: #dcdcdc;width: 80px;height: 28px;border-radius: 2px;border: 1px solid #bcb8c7"></td>
+                </tr>
+            </table>
+        </form>
+
+        <form action="mobile_setting.php?act=pay_input_ccb" method="post">
+            <table cellspacing="0px" width="100%"  style ="border-collapse:collapse">
+                <tr style="background-color: #f4f4f4" height="35px">
+                    <th colspan="2" align="left" style="padding-left: 10px"><span style="background-color: #2F9DB5; border-radius: 3px;color: white;padding-left: 5px;padding-right: 5px">龙支付支付配置</span></th>
+                </tr>
+                <tr><th height="15px"></th><td></td></tr>
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">商户代码:</th>
+                    <td height="45px"><input type="text"  name="merchant" value="{$ccb.merchant}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">商户柜台代码:</th>
+                    <td height="45px"><input type="text"  name="pos" value="{$ccb.pos}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">分行代码:</th>
+                    <td height="45px"><input type="text"  name="branch" value="{$ccb.branch}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">公钥后 30 位:</th>
+                    <td height="45px"><input type="text"  name="pub" value="{$ccb.pub}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;"></td>
+                </tr>
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">回调地址:</th>
+                    <td height="45px"><input type="text"  name="pay_ccb_url" value="{$ccb.pay_ccb_url}" style="padding-left: 5px;width:98%;height:30px;border-radius: 2px;border: 1px solid #dddddd;">
+<!--                        <p>接口域名/Pay/ccbNotify.php</p>-->
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th width="20%" style="padding-right: 5%" align="right">是否使用:</th>
+                    <td height="45px"><input type="checkbox"  name="is_use_ccb" {if $ccb.is_use_ccb eq 'on'}checked{/if}></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td align="right" height="35px" style="padding-right: 1%"><input type="submit" value="提交" name="pay_app_submit" style="background-color: #dcdcdc;width: 80px;height: 28px;border-radius: 2px;border: 1px solid #bcb8c7"></td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+</div>
+{insert_scripts files="tab.js,validator.js"}
+{literal}
+<script language="JavaScript">
+    region.isAdmin = true;
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
+    var ReWriteSelected = null;
+    var ReWriteRadiobox = document.getElementsByName("value[209]");
+
+    for (var i=0; i<ReWriteRadiobox.length; i++)
+    {
+        if (ReWriteRadiobox[i].checked)
+        {
+            ReWriteSelected = ReWriteRadiobox[i];
+        }
+    }
+
+    function ReWriterConfirm(sender)
+    {
+        if (sender == ReWriteSelected) return true;
+        var res = true;
+        if (sender != ReWriteRadiobox[0]) {
+            var res = confirm('{$rewrite_confirm}');
+        }
+
+        if (res==false)
+        {
+            ReWriteSelected.checked = true;
+        }
+        else
+        {
+            ReWriteSelected = sender;
+        }
+        return res;
+    }
+</script>
+{/literal}
+{include file="pagefooter.htm"}

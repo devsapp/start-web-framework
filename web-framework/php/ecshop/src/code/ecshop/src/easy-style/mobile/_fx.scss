@@ -1,0 +1,140 @@
+// Fade
+@import "fx/fade";
+
+// Dissolve
+@import "fx/dissolve";
+
+// Pop
+@import "fx/pop";
+
+// Slide Left
+@import "fx/slide_left";
+
+// Slide Right
+@import "fx/slide_right";
+
+// Slide Up
+@import "fx/slide_up";
+
+// Slide Down
+@import "fx/slide_down";
+
+// Flip Left
+@import "fx/flip_left";
+
+// Flip Right
+@import "fx/flip_right";
+
+// Swap Right
+@import "fx/swap_right";
+
+// Swap Left
+@import "fx/swap_left";
+
+// Cube Left
+@import "fx/cube_left";
+
+// Cube Right
+@import "fx/cube_right";
+
+@mixin fx($top: 0, $right: 0, $bottom: 0, $left: 0, $namespace: emb) {
+  @if typeof($top) != number {
+    $namespace: $top;
+    $top: 0;
+  }
+
+  ##{$namespace} {
+    position: absolute;
+    top: $top;
+    right: $right;
+    left: $left;
+    float: left;
+    width: 100%;
+    height: 100%;
+
+    //bottom: $bottom;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    user-select: none;
+
+    .selectable,
+    input,
+    textarea {
+      user-select: auto;
+    }
+
+    &.notransform {
+      transform: none !important;
+    }
+  }
+
+  ##{$namespace} > .action-page {
+    position: absolute;
+    z-index: 0;
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  ##{$namespace} > .current {
+    z-index: 10;
+    display: block !important;
+  }
+
+  ##{$namespace} .in,
+  ##{$namespace} .out {
+    animation-duration: 250ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  ##{$namespace} .in {
+    z-index: 10;
+  }
+
+  ##{$namespace} .out {
+    z-index: 0 !important;
+  }
+
+  ##{$namespace}.supports3d {
+    -webkit-perspective: 800;
+    transform-style: preserve-3d;
+  }
+
+  ##{$namespace}.supports3d > .action-page {
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+  }
+
+  ##{$namespace} .fx-box {
+    -webkit-perspective: 800;
+    transform-style: flat;
+  }
+
+  ##{$namespace} .fx-box .fx-item {
+    transform: translate(0) rotate(0) scale(1);
+  }
+
+  ##{$namespace} .fx-item {
+    position: absolute;
+  }
+
+  ##{$namespace} .fx-box > .current {
+    z-index: 10;
+    display: block;
+  }
+
+  @include fx-fade($namespace);
+  @include fx-dissolve($namespace);
+  @include fx-pop($namespace);
+  @include fx-slide-left($namespace);
+  @include fx-slide-right($namespace);
+  @include fx-slide-up($namespace);
+  @include fx-slide-down($namespace);
+  @include fx-flip-left($namespace);
+  @include fx-flip-right($namespace);
+  @include fx-swap-right($namespace);
+  @include fx-swap-left($namespace);
+  @include fx-cube-left($namespace);
+  @include fx-cube-right($namespace);
+}

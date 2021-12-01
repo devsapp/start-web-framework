@@ -1,0 +1,138 @@
+@font-face {
+    font-family: yticon;
+    font-weight: normal;
+    font-style: normal;
+    src: url("https://at.alicdn.com/t/font_1425989_xr43djpxs5m.ttf?t=1575990680944") format("truetype");
+}
+
+.yticon {
+    font-family: "yticon" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixiu:before {
+    content: "\e63a";
+}
+
+.icon-dengdaifukuan:before {
+    content: "\e60e";
+}
+
+.icon-shouye:before {
+    content: "\e630";
+}
+
+.icon-miaosha2:before {
+    content: "\e614";
+}
+
+.icon-refund:before {
+    content: "\e629";
+}
+
+.icon-fenxiao1:before {
+    content: "\e605";
+}
+
+.icon-shezhi_:before {
+    content: "\e631";
+}
+
+.icon-miaosha:before {
+    content: "\e665";
+}
+
+.icon-libao:before {
+    content: "\e609";
+}
+
+.icon-lishi:before {
+    content: "\e608";
+}
+
+.icon-pintuan3:before {
+    content: "\e61d";
+}
+
+.icon-tixian1:before {
+    content: "\e600";
+}
+
+.icon-shenqing:before {
+    content: "\e60c";
+}
+
+.icon-qianbao:before {
+    content: "\e632";
+}
+
+.icon-method-draw-image:before {
+    content: "\e603";
+}
+
+.icon-fenxiaodingdanbiaoshi:before {
+    content: "\e6f4";
+}
+
+.icon-dizhi:before {
+    content: "\e681";
+}
+
+.icon-jifenduihuan:before {
+    content: "\e60b";
+}
+
+.icon-baobiao2:before {
+    content: "\e601";
+}
+
+.icon-fenxiao:before {
+    content: "\e611";
+}
+
+.icon-pintuan:before {
+    content: "\e700";
+}
+
+.icon-tixianjilu:before {
+    content: "\e672";
+}
+
+.icon-chart:before {
+    content: "\e6f8";
+}
+
+.icon-fenxiaodingdan:before {
+    content: "\e638";
+}
+
+.icon-daishouhuo:before {
+    content: "\e617";
+}
+
+.icon-baobiao:before {
+    content: "\e655";
+}
+
+.icon-pintuan1:before {
+    content: "\e62c";
+}
+
+.icon-quanbudingdan:before {
+    content: "\e63f";
+}
+
+.icon-shoucang:before {
+    content: "\e60f";
+}
+
+.icon-fenxiang:before {
+    content: "\e602";
+}
+
+.icon-tianjiapinglun:before {
+    content: "\e621";
+}

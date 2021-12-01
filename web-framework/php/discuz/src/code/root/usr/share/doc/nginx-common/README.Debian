@@ -1,0 +1,45 @@
+Noteworthy Changes Wheezy => Jessie
+===================================
+
+* Disabled SSLv3 by default
+
+  After POODLE we followed suit and disabled SSLv3 by default.
+
+* /var/log/nginx permissions
+
+  /var/log/nginx/ is now not readable by default (www-data:adm 750),
+  If you depend on that you can add a manual override with dpkg-statoverride.
+
+* New upgrade & rotate initscript commands
+
+  You can now upgrade the nginx binary on the fly with /etc/init.d/nginx upgrade
+  (Read more on http://nginx.org/en/docs/control.html#upgrade)
+
+* Synced configuration files are with upstream
+
+  Unfortunately that might break existing configuration for some users, especially
+  fastcgi scripts. /usr/share/doc/nginx-common/NEWS.Debian.gz contains some
+  more information about the changes made.
+
+* Changed document root to /var/www/html
+
+  The default document root has now changed to /var/www/html/.
+
+* Added a snippets directory
+
+  A /etc/nginx/snippets has been added, it contains common configuration
+  stangas. For now we ship a snakeoil.conf (self-signed ssl) and a simple
+  fastcgi-php.conf.
+
+* Switched to graceful stop
+
+  Both systemd and the initscript's stop function try to graceful stop
+  nginx (SIGQUIT) before stopping it fast (SIGTERM). That allows nginx to
+  serve connected clients before shutting down.
+
+* Dropped nginx-naxsi
+
+  Packaging naxsi was not trivial and, unfortunately, none of the
+  maintainers uses it. That's the reason nginx-naxsi was not in a good
+  shape and we are not feeling comfortable to release and support it.
+

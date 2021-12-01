@@ -1,0 +1,38 @@
+{
+    "css": [
+        "{$metui_url2}vendor/formvalidation/formValidation.min.css",
+        "{$metui_url2}vendor/webui-popover/webui-popover.min.css",
+        "{$metui_url3}plugin/lightGallery/css/lightgallery.min.css",
+        "{$metui_url3}plugin/PhotoSwipe/photoswipe.min.css",
+        "{$metui_url3}plugin/PhotoSwipe/default-skin/default-skin.min.css",
+        "{$metui_url3}fonts/iconfont/iconfont.css",
+        "{$metui_url3}plugin/slick/slick.min.css",
+        "{$metui_url3}plugin/slick/slick-theme.min.css",
+        "{$metui_url3}plugin/swiper/swiper-3.3.1.min.css"
+    ],
+    "js": [
+        "{$metui_url2}vendor/jquery-appear/jquery.appear.min.js",
+        "{$metui_url2}js/Plugin/jquery-appear.min.js",
+        "{$metui_url2}vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
+        "{$metui_url2}vendor/webui-popover/jquery.webui-popover.min.js",
+        "{$metui_url2}js/Plugin/webui-popover.min.js",
+        "{$metui_url2}/vendor/s2t/jquery.s2t.js",
+        "{$metui_url2}vendor/formvalidation/formValidation.min.js",
+        "{$metui_url2}vendor/masonry/masonry.pkgd.min.js",
+        "{$metui_url3}plugin/lightGallery/js/lightgallery.min.js",
+        "{$metui_url3}plugin/lightGallery/js/lg-fullscreen.min.js",
+        "{$metui_url3}plugin/lightGallery/js/lg-thumbnail.min.js",
+        "{$metui_url3}plugin/lightGallery/js/lg-zoom.min.js",
+        "{$metui_url3}plugin/PhotoSwipe/photoswipe.min.js",
+        "{$metui_url3}plugin/PhotoSwipe/photoswipe-ui-default.min.js",
+        "{$metui_url3}plugin/PhotoSwipe/photoswipe-plugin.js",
+        "{$metui_url3}plugin/jquery.lazyload.min.js",
+        "{$metui_url3}plugin/swiper/swiper-3.3.1.jquery.min.js",
+        "{$metui_url3}plugin/slick/slick.min.js",
+        "{$metui_url3}js/editor.js",
+        "{$metui_url3}js/img_slick.js",
+        "{$metui_url3}js/form.js",
+        "{$metui_url3}js/job.js",
+        "{$metui_url3}js/pager.js"
+    ]
+}

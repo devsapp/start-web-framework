@@ -1,0 +1,319 @@
+@import "../function";
+
+//@descrip: 工具性mixin，一般不做外部调用
+
+//= CSS3 跨浏览器工具函数
+//= @param: $property:css3属性;
+//= @param: $value:属性值;
+//= @param: 是否需支持以下浏览器:$official 原生, $moz firefox, $webkit chrome and safari, $o opera, $ms 微软IE, $khtml KDE
+@mixin cross-browser($property, $value, $official: true, $moz: $ex-support-for-mozilla, $webkit: $ex-support-for-webkit, $o: $ex-support-for-opera, $ms: $ex-support-for-microsoft, $khtml: $ex-support-for-khtml) {
+  @if $webkit and fix(webkit) {
+    -webkit-#{$property}: $value;
+  }
+
+  @if $moz and fix(ff) {
+    -moz-#{$property}: $value;
+  }
+
+  @if fix(pc) {
+    @if $khtml and fix(khtml) {
+      -khtml-#{$property}: $value;
+    }
+
+    @if $ms and fix(ie) {
+      -ms-#{$property}: $value;
+    }
+
+    @if $o and fix(o) {
+      -o-#{$property}: $value;
+    }
+  }
+
+  @if $official {
+    #{$property}: $value;
+  }
+}
+
+//= css3 渐变支持
+//= @param: $value:渐变色值;
+//= @param: $point:渐变方位及角度;
+//= @param: $property:对什么属性进行渐变，目前已知的有background(-image),mask(-image),list-style(-image),border-image;
+//= @param: $type:线性or径向;
+//= @param: $repeating:是否重复渐变;
+
+@mixin gradient($value, $point: null, $property: background-image, $type: linear, $repeating: false) {
+  @if typeof($value) != list {
+    $value: $value, $gf;
+  }
+
+  $image: null;
+
+  @if $point == 0 or point == 0% {
+    $point: to right;
+  }
+
+  @else if not chk($point) {
+    $point: to bottom;
+  }
+
+  @if $repeating {
+    @if $type == radial {
+      $image: repeating-radial-gradient($point, $value);
+    }
+
+    @else {
+      $image: repeating-linear-gradient($point, $value);
+    }
+  }
+
+  @else {
+    @if $type == radial {
+      $image: radial-gradient($point, $value);
+    }
+
+    @else {
+      $image: linear-gradient($point, $value);
+    }
+  }
+
+  @if fix(svg) {
+    background-size: 100%;
+  }
+
+  #{$property}: $image;
+}
+
+//= gradient的四种快捷方式，分别对应线性渐变，径向渐变，线性重复渐变，径向重复渐变
+@mixin linear($value, $point: null, $property: background-image) {
+  @include gradient($value, $point, $property);
+}
+
+@mixin radial($value, $point: null, $property: background-image) {
+  @include gradient($value, $point, $property, radial);
+}
+
+@mixin repeating-linear($value, $point: null, $property: background-image) {
+  @include gradient($value, $point, $property, linear, true);
+}
+
+@mixin repeating-radial($value, $point: null, $property: background-image) {
+  @include gradient($value, $point, $property, radial, true);
+}
+
+//= 设置尺寸，用于带长度的属性-宽高/行高
+//= @param: $property:要设置的属性;
+//= @param: $value:属性值;
+//= @param: $hack:是否hack/hack值，或者为min/max;
+//= @param: $type:hack的类型;
+
+@mixin set-size($property: width, $value: $default-box-size, $hack: false, $type: null) {
+  @if chk($value) and not index(min max, $hack) {
+    #{$property}: $value;
+  }
+
+  @if chk($hack) {
+    @if ($property == width or $property == height) and $value {
+      @if index(min max, $hack) {
+        #{splice($hack $property)}: $value;
+
+        @if $hack == min and fix(ie6) {
+          _#{$property}: $value;
+        }
+      }
+    }
+
+    @if typeof($hack) == string and not index(min max, $hack) {
+      $type: $hack;
+    }
+
+    @if chk($type) {
+      @if typeof($hack) == number {
+        #{$type}#{$property}: $hack;
+      }
+
+      @else if $value and not index(min max, $hack) {
+        #{$type}#{$property}: $value;
+      }
+    }
+  }
+}
+
+//= 获取并设置元素的内外边距和边框这种带方向性的属性
+//= @param: $type:要设置的属性;
+//= @param: $value:属性值;
+//= @param: $merge:单独设置各边值还是缩写;
+//= @param: $hack:是否hack;
+
+@mixin set-patch($property: padding, $value: null, $merge: true, $hack: false) {
+  @if chk($value) {
+    @if $merge == true {
+      @if typeof($value) == list {
+        @if length($value) == 2 and n($value, 1) == n($value, 2) {
+          $value: n($value, 1);
+        }
+
+        @else if length($value == 3) and n($value, 1) == n($value, 3) {
+          $value: n($value, 1) n($value, 2);
+        }
+
+        @else if length($value == 4) and n($value, 1) == n($value, 3) and n($value, 2) == n($value, 4) {
+          $value: n($value, 1) n($value, 2);
+        }
+      }
+
+      #{property($property, null, $hack)}: $value;
+    }
+
+    @else {
+      $property: property($property, $merge, $hack);
+
+      @if typeof($property) == list {
+        $i: 1;
+
+        @each $v in $property {
+          #{$v}: n($value, $i);
+
+          $i: $i + 1;
+        }
+      }
+
+      @else {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+//= 用于生成border所有属性，并且包含多种属性值的情况
+//= @param: $property:border中的属性;
+//= @param: $value:属性值;
+//= @param: $merge:是否缩写，如果不缩写就表示为对应的border属性;
+//= @param: $hack:是否需hack，只能加到属性上做为前缀;
+
+@mixin border-property($property, $value: null, $merge: true, $hack: false) {
+  @if index($default-direction, $property) {
+    @if $merge == true {
+      @if $value == 0 or $value == none {
+        $value: 0 none;
+      }
+
+      @else {
+        $value: border-value($value);
+      }
+    }
+
+    @else if $merge == false {
+      @if typeof($value) == color {
+        $merge: color;
+      }
+
+      @else if typeof($value) == number {
+        $merge: width;
+      }
+
+      @else if typeof($value) == string {
+        $merge: style;
+      }
+
+      @else if typeof($value) == list {
+        $prop: false;
+
+        @each $v in $value {
+          @if typeof($v) == color {
+            $prop: color;
+          }
+
+          @else if typeof($v) == number {
+            $prop: width;
+          }
+
+          @else if typeof($v) == string {
+            $prop: style;
+          }
+
+          @include set-patch(border-#{$property}, $v, $prop, $hack);
+        }
+      }
+    }
+
+    @if $merge != false or $merge == false and typeof($value) != list {
+      @include set-patch(border-#{$property}, $value, $merge, $hack);
+    }
+  }
+
+  @else if index(width color style, $property) {
+    @if $merge == false {
+      @if typeof($value) == list {
+        $i: 1;
+
+        @each $v in $default-direction {
+          @if $i <= length($value) {
+            $merge: if($merge == false, $v, join($merge, $v));
+          }
+
+          $i: $i + 1;
+        }
+      }
+    }
+
+    @include set-patch(border $property, $value, $merge, $hack);
+  }
+}
+
+//= 根据$pos的位置拼接$property和$which为属性,并等于$value值
+@mixin calc-value($value, $property: text, $which: align, $pos: 0) {
+  $prop: "";
+
+  @if typeof($which) == list and typeof($value) == list {
+    $i: 1;
+
+    @each $w in $which {
+      @if nth($value, $i) {
+        @if $pos == 0 {
+          $prop: splice($property $w);
+        }
+
+        @else {
+          $prop: splice($w $property);
+        }
+
+        #{$prop}: nth($value, $i);
+      }
+
+      $i: $i + 1;
+    }
+  }
+
+  @else if $value {
+    #{splice($property $which)}: unquote($value);
+  }
+}
+
+//= 用于列表类多种元素排列布局，最先/最后的元素
+@mixin list-one($class, $direct: right) {
+  @if $class {
+    .#{class} {
+      margin-#{$direct}: 0;
+
+      @content;
+    }
+  }
+
+  @else {
+    margin-#{$direct}: 0;
+  }
+}
+
+//= 设置文本各种基本属性
+@mixin text-base($type: align, $value: $default-text-align) {
+  @include calc-value($value, text, $type, 0);
+}
+
+//= 设置单词或字符间距
+@mixin text-spacing($type: letter, $value: $default-letter-spacing) {
+  @if typeof($value) == list or $type == both {
+    $type: letter word;
+  }
+
+  @include calc-value($value, spacing, $type, 1);
+}

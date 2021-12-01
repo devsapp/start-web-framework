@@ -1,0 +1,8 @@
+﻿http://wenda.gaotie.cn/?c-1/2/{#num}.html|
+.content>.clist>.li1>a[href*="q-"]|
+.qita>.qtcont>#mc1|
+.wenti>#mydescription|
+|
+.qita>.hyxinxi>.name>a|
+.qita>.touxiang>img|
+|高铁问答网(<a href="http://wenda.gaotie.cn" target="_blank">http://wenda.gaotie.cn</a>)|1

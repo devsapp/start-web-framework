@@ -1,0 +1,21 @@
+
+{include file="pageheader.htm"}
+<form action="mobile_setting.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="img">
+    {if $url}
+    <img src="{$url}" alt="" width="50px" height="50px">
+    {/if}
+    版本信息：
+    <input type="text" name="version_name" value="{$version}">
+    <input type="hidden" name="act" value="img_edit">
+    客服电话：
+    <input type="text" name="tel" value="{$tel}">
+
+    工作时间：
+    <input type="text" name="day" value="{$day}">
+
+    <button type="submit"> 提交 </button>
+
+</form>
+
+{include file="pagefooter.htm"}

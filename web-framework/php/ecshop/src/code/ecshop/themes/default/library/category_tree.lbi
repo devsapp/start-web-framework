@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="fd30_left_cart leftbox">
+  <div class="lt">产品分类</div>
+  <!--{foreach from=$categories item=cat name=catename }-->
+  <div class="Cate_item"  id="catO{$cat.id}">
+    <h4><a href="{$cat.url}">{$cat.name|escape:html}</a> </h4>
+    <div class="catTw_Th" >
+      <!--{if $cat.cat_id}-->
+      <!--{foreach from=$cat.cat_id item=child name=childname}--><div class="citem">
+      <a id="catTw{$child.id}" href="{$child.url}"  
+      <!-- {if $smarty.foreach.childname.first} -->
+      class="fore"
+      <!-- {/if} -->
+      >{$child.name|escape:html}</a>
+      <!--{if $child.cat_id}--><div class="catTh">
+      <!--{foreach from=$child.cat_id item=childer}-->
+      <a href="{$childer.url}" id="catTh{$childer.id}">{$childer.name|escape:html}</a>
+      <!--{/foreach}--></div>
+      <!--{/if}--></div>
+      <!--{/foreach}-->
+      <!--{/if}-->
+    </div>
+  </div>
+  <!--{/foreach}-->
+</div>
+<style>
+.fd30_left_cart{ margin-top:0px;border-top: 2px solid #999;}
+.fd30_left_cart .lt{background:#f7f7f7; color:#333;}
+.Cate_item{ width:85%; margin:10px auto;}
+.fd30_left_cart .Cate_item a{ display:block; line-height:30px;  text-indent:0px; position:relative; font-size:14px}
+.fd30_left_cart .Cate_item h4{ background:URL(../images/jia.gif) 10px center no-repeat; padding-left:33px;}
+.fd30_left_cart .Cate_item .catTw_Th{ display:none; padding-left:35px; padding-right:15px;}
+.fd30_left_cart .Cate_item .catTw_Th a{ color:#666} 
+.fd30_left_cart .Cate_item .catTw_Th a:hover{ color:#333}
+.fd30_left_cart .Cate_item_k .catTw_Th{ display:block}
+.catTh{ display:none}
+.citem_k .catTh{ display:block; padding-left:25px;}
+.fd30_left_cart .Cate_item_k h4{ background:URL(../images/jian.gif) 10px center no-repeat #f5f5f5;}
+.fd30_left_cart .Cate_item .catTw_Th a.av{ color:#6BA103}
+</style> 
+<input type="hidden" class="i_gcatid" name="cat_id" value="{$goods.cat_id}">
+<script>
+var gcid="{$category}";
+if(gcid=="")
+{gcid="{$goods.cat_id}";
+}
+$("#catO"+gcid).addClass("Cate_item_k");
+$("#catTw"+gcid).parent().parent().parent().addClass("Cate_item_k");
+$("#catTw"+gcid).addClass("av");
+$("#catTw"+gcid).parent().addClass("citem_k");
+
+$("#catTh"+gcid).parent().parent().parent().parent().addClass("Cate_item_k");
+$("#catTh"+gcid).addClass("av");
+$("#catTh"+gcid).parent().parent().addClass("citem_k");
+
+</script>
+<div class="blank5"></div>

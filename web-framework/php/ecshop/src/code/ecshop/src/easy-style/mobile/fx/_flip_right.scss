@@ -1,0 +1,33 @@
+@mixin fx-flip-right($namespace: emb) {
+  ##{$namespace} .flipright {
+    -webkit-backface-visibility: hidden;
+  }
+
+  ##{$namespace} .flipright.in {
+    -webkit-animation-name: flipRightIn;
+  }
+
+  ##{$namespace} .flipright.out {
+    -webkit-animation-name: flipRightOut;
+  }
+
+  @-webkit-keyframes flipRightIn {
+    0% {
+      -webkit-transform: rotateY(-180deg) scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: rotateY(0deg) scale(1);
+    }
+  }
+
+  @-webkit-keyframes flipRightOut {
+    0% {
+      -webkit-transform: rotateY(0deg) scale(1);
+    }
+
+    100% {
+      -webkit-transform: rotateY(180deg) scale(0.8);
+    }
+  }
+}

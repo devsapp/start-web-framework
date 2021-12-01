@@ -3,15 +3,13 @@
 - [快速体验](#快速体验)
 - [相关命令](#相关命令)
 - [依赖过大部署方案](#依赖过大部署方案)
-- [最佳实践案例](#最佳实践案例)
-  - [通过 Container 进行部署](#通过Container进行部署)
 
 ## 快速体验
 
 - 初始化项目：`s init start-wordpress`
 - 进入项目后：
   - 初始化 NAS: `s nas init`
-  - 上传 wordpress 工程到 NAS：`s nas upload -r code/wordpress/ /mnt/auto/wordpress`
+  - 上传工程到 NAS：`s nas upload -r code/wordpress/ /mnt/auto/wordpress`
   - 部署：`s deploy`
 - 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
 
@@ -41,65 +39,6 @@
 2. 大于 100M 的代码包，可以：
    - 将 `nasConfig` 配置为 `auto`，然后基于 nas 指令将大文件（可能是训练集/依赖包）传输到 NAS 指定位置，然后配置相应的环境变量到 `s.yml` 中的函数配置中；
    - 将非 custom-container 的函数转换成 custom-container，这需要对代码进行一定的改造，并新增 dockerfile，然后创建这个函数（此方式冷启动时间相对其他 runtime 会有一点点的延长）；
-
-### 最佳实践案例
-
-#### 通过 Container 进行部署
-
-1. 在项目下，创建 Dockerfile 文件，例如：
-
-   ```dockerfile
-   FROM node:12-slim
-
-   WORKDIR /home/code
-   COPY . .
-   ```
-
-2. 编写资源描述文件（`s.yaml`）：
-
-   ```yaml
-   # Yaml参考文档：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md
-   edition: 1.0.0 #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
-   name: framework #  项目名称
-   access: '{{ access }}' #  秘钥别名
-
-   services:
-     framework: # 服务名称
-       component: fc # 组件名称
-       actions:
-         pre-deploy: # 在deploy之前运行
-           - run: npm install --production # 要运行的命令行
-             path: ./code # 命令行运行的路径
-       props: # 组件的属性值
-         region: cn-beijing
-         service:
-           name: web-framework
-           description: 'Serverless Devs Web Framework Service'
-         function:
-           name: egg
-           description: 'Serverless Devs Web Framework Egg.js Function'
-           codeUri: './code'
-           runtime: custom-container
-           timeout: 60
-           caPort: 9000
-           customContainerConfig:
-             image: 'registry.cn-beijing.aliyuncs.com/custom-container/web-framework:0.0.1' # 需要替换为自己的镜像地址，或者自己目标的镜像地址，需要开通阿里云容器镜像服务等
-             command: '["./bootstrap"]'
-         triggers:
-           - name: httpTrigger
-             type: http
-             config:
-               authType: anonymous
-               methods:
-                 - GET
-         customDomains:
-           - domainName: auto
-             protocol: HTTP
-             routeConfigs:
-               - path: '/*'
-   ```
-
-3. 进行项目的一键部署：`s deploy --use-local -y`，此时系统就可以自动安装依赖、构建镜像，并将业务以 Container 形式部署到线上
 
 ---
 

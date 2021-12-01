@@ -1,0 +1,87 @@
+a, abbr, acronym, address, applet, audio, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, mark, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, time, tt, u, ul, var, video, input, textarea, keygen, select, button, section, article, nav, main, header, footer, option {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    font-family: "微软雅黑","Helvetica Neue", "Helvetica", sans-serif; 
+   
+}
+
+
+
+a img {
+    border: 0 none;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    tap-highlight-color: transparent;
+    focus-ring-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -moz-focus-ring-color: transparent;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+/*
+语法：
+ime-mode : auto | active | inactive | disabled 
+参数：
+auto : 默认值。不影响全角半角的输入。与不指定 ime-mode 属性时相同 
+active : 当焦点移到该控件时，自动激活本地语言输入法并且是全角状态。用户可以改成半角
+inactive : 当焦点移到该控件时，自动激活非本地语言输入法但是半角状态。用户可以改成全角
+disabled : 完全禁止本地语言输入法，用户也不能修改
+说明：
+如果想让用户只输入半角字符，可以把ime-mode设成disabled；
+如果想让用户默认输入半角字符，可以把ime-mode设成inactive；
+如果想让用户默认输入全角字符，可以把ime-mode设成active； 
+*/
+.ime-disabled {
+    ime-mode: disabled
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;overflow: hidden;}
+.clearfix {zoom: 1;}
+.tc {text-align: center;}
+.textunder {text-decoration: underline;}
+.fl {float: left;}
+.fr {float: right;}
+.bold {font-weight: 600;}
+.posrel {position: relative;}
+.posabs {position: absolute;}
+.posfix {position: fixed;}
+.wid100 {width: 100%;}
+.hei100 {height: 100%;}
+.overhid {overflow: hidden;}
+.blk {
+    display: block;
+}
+.ilblk {
+    display: inline-block;
+}
+.fff {
+    color: #fff;
+}
+.bg-fff {
+    background: #fff;
+}
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
+}
+

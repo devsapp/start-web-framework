@@ -1,0 +1,9 @@
+﻿http://www.7wenta.com/subject/g3-c1.html|
+.question>.questionItem>.question_cont|
+#q_answers>.q_cnt_bd>.q_cnt|
+.q_cnt_img_wrp|
+|
+.uInfo>.username0|
+.uInfo>.u_headImg>img|
+|作业问题去问他(<a href="http://www.7wenta.com" target="_blank">http://www.7wenta.com</a>)
+|0

@@ -1,0 +1,54 @@
+@import "utilities";
+
+//@descrip: grid 栅格化相关
+
+//= 栅格化页面宽度
+@mixin grid-container($width: $default-container-width) {
+  width: $width;
+  margin-right: auto;
+  margin-left: auto;
+}
+//= 栅格中的某行
+@mixin grid-row($class: col, $gutter: $default-grid-gutter) {
+  // margin-left: - $gutter;
+  // margin-right: - $gutter;
+  @include clear(fix);
+
+  [class*="#{$class}"]:first-child {
+    margin-left: 0;
+  }
+}
+//= 栅格默认属性
+@mixin grid-column($gutter: $default-grid-gutter, $direction: left) {
+  @include float($direction);
+
+  margin-#{$direction}: $gutter;
+}
+
+@mixin grid-column-width($prefix: '.col', $columns: 1, $width: $default-grid-col, $gutter: $default-grid-gutter) {
+  @if $prefix {
+    #{$prefix}-#{$columns} {
+      width: span($columns, $width, $gutter);
+
+      @content;
+    }
+  }
+
+  @else {
+    width: span($columns, $width, $gutter);
+  }
+}
+
+@mixin grid-column-offset($prefix: '.offset', $columns: 1, $width: $default-grid-col, $gutter: $default-grid-gutter, $direction: left) {
+  @if $prefix {
+    #{$prefix}-#{$columns} {
+      margin-#{$direction}: span-outer($columns, $width, $gutter);
+
+      @content;
+    }
+  }
+
+  @else {
+    margin-#{$direction}: span-outer($columns, $width, $gutter);
+  }
+}

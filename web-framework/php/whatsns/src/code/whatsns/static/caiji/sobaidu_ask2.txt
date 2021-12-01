@@ -1,0 +1,10 @@
+﻿http://zhidao.baidu.com/search?lm=0&rn=10&pn=0&fr=search&ie=gbk&word=%B5%A4%B6%AB|
+.list-wraper>#wgt-list>.ti|
+.qslim-ans-info>.answer-text|
+#qb-content .q-content|
+.wgt-best>.best-text|
+#wgt-answers>a[alog-action="qb-username"]|
+|
+|
+百度知道问答搜索页面采集(<a href="http://zhidao.baidu.com" target="_blank">http://zhidao.baidu.com</a>)
+|0

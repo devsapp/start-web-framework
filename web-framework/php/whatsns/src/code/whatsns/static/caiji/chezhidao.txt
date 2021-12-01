@@ -1,0 +1,9 @@
+﻿http://ask.webcars.com.cn/|
+.allproblem_content .p_title a[href*="qa"]|
+.zhuanjia_answer_txt|
+|
+|
+|
+|
+http://ask.webcars.com.cn/
+|车知道首页列表采集(<a href="http://ask.webcars.com.cn/" target="_blank">http://ask.webcars.com.cn/</a>)|0

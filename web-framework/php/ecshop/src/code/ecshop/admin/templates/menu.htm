@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP Menu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+{literal}
+<link href="styles/nav.css" rel="stylesheet" type="text/css" />
+{/literal}
+<script>
+<!--
+var noHelp   = "<p align='center' style='color: #666'>{$lang.no_help}</p>";
+var helpLang = "{$help_lang}";
+//-->
+</script>
+</head>
+<body class="nav">
+<div class="menu">
+  <div id="logo-div">
+    <a href="index.php"><img width="87" class="logo" src="images/ecshop_logo@2x.png" alt="ECSHOP - power for e-commerce" /></a>
+    {if $http_host=='localhost' or !$single_url}
+    <a href="javascript:;" class="noauthorize"><img src="images/noauthorize.png" class="icon" width="12"> 未授权用户</a>
+    {else}
+    <a class="{if $authorization}authorize{else}noauthorize{/if}" href="{$single_url}" target="_blank"><img src="images/{if $authorization}authorize{else}noauthorize{/if}.png" class="icon" width="12"> {if $authorization}{$authorize_name}{else}未授权用户{/if}</a>
+    {/if}
+  </div>
+  <div id="license-div"></div>
+  <!-- <div id="tabbar-div">
+    <p>
+      <span class="tab-front" id="menu-tab">{$lang.menu}</span>
+    </p>
+  </div> -->
+  <div id="main-div">
+    <div id="menu-list">
+      <ul class="menu" id="menu-ul">
+      {foreach from=$menus item=menu key=k}
+      {if $menu.action}
+        <li><a href="{$menu.action}" target="main-frame">{$menu.label}</a></li>
+      {else}
+        <li key="{$k}" class="icon-{$menu.icon}" data-url="{$menu.url}" data-key="{$menu.key}" name="menu" onclick="showsub(this)">
+          {$menu.label}
+          {if $menu.children}
+          <div class="submenu">
+            <div class="title">{$menu.label}</div>
+            <ul>
+            {foreach from=$menu.children key=key item=child}
+              <li id="sub-menu-{$key}" class="menu-item" onclick="showact(this, event)"><a href="{$child.action}" target="main-frame">{$child.label}</a></li>
+            {/foreach}
+            </ul>
+          </div>
+          {/if}
+        </li>
+      {/if}
+      {/foreach}
+      </ul>
+      <script language="JavaScript" src="http://api.ecshop.com/menu_ext.php?charset={$charset}&lang={$help_lang}"></script>
+    </div>
+    <div id="help-div" style="display:none">
+      <h1 id="help-title"></h1>
+      <div id="help-content"></div>
+    </div>
+  </div>
+  <div id="foot-div" onmouseover="showBar(this)" onmouseout="hideBar(this)">
+    <a href="privilege.php?act=modif" target="main-frame">{$admin_name}</a>
+    <div class="panel-hint">
+      <ul>
+        <li>
+          <a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">{$lang.clear_cache}</a>
+        </li>
+        <li class="btn-exit">
+          <a href="privilege.php?act=logout" target="_top" class="fix-submenu">{$lang.signout}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{insert_scripts files="../js/global.js,../js/utils.js,../js/transport.js"}
+{insert_scripts files="./js/menu.js"}
+<script language="JavaScript">
+window.setInterval(crontab,30000);
+function crontab(){
+  Ajax.call('cloud.php?is_ajax=1&act=load_crontab','','', 'GET', 'JSON');
+}
+function showBar(item){
+  var silb = item.lastElementChild;
+  silb.style.display = "block";
+}
+function hideBar(item){
+  var silb = item.lastElementChild;
+  silb.style.display = "none";
+}
+function showsub(el) {
+  var act = el.parentNode.getElementsByClassName('active');
+  var url = el.getAttribute('data-url') || '';
+  var key = el.getAttribute('data-key') || '';
+
+  if (act.length) {
+    Array.prototype.slice.call(act).forEach(function(el) {
+      el.className = el.className.replace(/\sactive\b/i, '');
+    });
+  }
+  el.className = el.className + ' active';
+  top.document.getElementById('frame-body').cols = '240,*';
+  if (url) {
+    top.document.getElementById('main-frame').src=url;
+    document.getElementById('sub-menu-'+key).className = 'menu-item active';
+  }
+}
+function showact(el, e) {
+  e.stopPropagation();
+  var act = el.parentNode.getElementsByClassName('active');
+  if (act.length) {
+    Array.prototype.slice.call(act).forEach(function(el) {
+      el.className = el.className.replace(/\sactive\b/i, '');
+    });
+  }
+  el.className = el.className + ' active';
+}
+{literal}
+
+/**
+ * 创建XML对象
+ */
+function createDocument()
+{
+  var xmlDoc;
+
+  // create a DOM object
+  if (window.ActiveXObject)
+  {
+    try
+    {
+      xmlDoc = new ActiveXObject("Msxml2.DOMDocument.6.0");
+    }
+    catch (e)
+    {
+      try
+      {
+        xmlDoc = new ActiveXObject("Msxml2.DOMDocument.5.0");
+      }
+      catch (e)
+      {
+        try
+        {
+          xmlDoc = new ActiveXObject("Msxml2.DOMDocument.4.0");
+        }
+        catch (e)
+        {
+          try
+          {
+            xmlDoc = new ActiveXObject("Msxml2.DOMDocument.3.0");
+          }
+          catch (e)
+          {
+            alert(e.message);
+          }
+        }
+      }
+    }
+  }
+  else
+  {
+    if (document.implementation && document.implementation.createDocument)
+    {
+      xmlDoc = document.implementation.createDocument("","doc",null);
+    }
+    else
+    {
+      alert("Create XML object is failed.");
+    }
+  }
+  xmlDoc.async = false;
+
+  return xmlDoc;
+}
+
+{/literal}
+</script>
+
+</body>
+</html>

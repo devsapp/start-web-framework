@@ -1,0 +1,10 @@
+﻿http://iask.sina.com.cn/search?searchWord=%E5%AE%B6%E7%94%A8%E7%BA%AF%E6%B0%B4%E6%9C%BA%E9%80%89%E8%B4%AD&page={#num}|
+.search_list .search_item h2 >a|
+.answer_item ul>li .answer_info .answer_txt span pre|
+|
+.good_answer .answer_text span pre|
+.author_name|
+|
+http://iask.sina.com.cn|
+新浪爱问(<a href="http://iask.sina.com.cn" target="_blank">http://iask.sina.com.cn</a>)
+|0

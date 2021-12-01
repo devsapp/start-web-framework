@@ -1,0 +1,10 @@
+﻿http://iask.sina.com.cn/c/74.html|
+.question-title a[href*="/b/"]|
+.answer_item ul>li .answer_info .answer_txt span pre|
+|
+.good_answer .answer_text span pre|
+.author_name|
+|
+http://iask.sina.com.cn|
+新浪爱问(<a href="http://iask.sina.com.cn" target="_blank">http://iask.sina.com.cn</a>)
+|0

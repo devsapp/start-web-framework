@@ -1,0 +1,9 @@
+﻿http://wenda.tianya.cn/index.jsp?start=90&count=30&totalCount=1000&tab=closed|
+.question>.qTit a[href*="/question/"]|
+.answerItem>.arrowsCon|
+.questionShow|
+|
+.answerItem>.user-name|
+.answerItem>.userFace img|
+|
+天涯问答(<a href="http://wenda.tianya.cn" target="_blank">http://wenda.tianya.cn</a>)|0

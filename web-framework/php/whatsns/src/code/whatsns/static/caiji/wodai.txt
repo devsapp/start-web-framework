@@ -1,0 +1,10 @@
+﻿http://www.wodai.com/wenda/c-133/1/{#num}.html|
+.what a|
+.other .content|
+.article .content|
+.best .text|
+.other .one .meta a|
+|
+http://www.wodai.com|
+我贷网页面采集(<a href="http://www.wodai.com/wenda/c-133.html" target="_blank">http://www.wodai.com/wenda/c-133.html</a>)
+|0

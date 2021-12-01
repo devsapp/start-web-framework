@@ -1,0 +1,2 @@
+libgeoip1: spelling-error-in-binary
+libgeoip1: no-symbols-control-file usr/lib/*/libGeoIP.so.*

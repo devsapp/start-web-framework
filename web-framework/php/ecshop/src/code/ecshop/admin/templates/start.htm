@@ -1,0 +1,317 @@
+<!-- $Id: start.htm 17216 2011-01-19 06:03:12Z liubo $ -->
+{include file="pageheader.htm"}
+<!-- directory install start -->
+<ul id="cloud_list" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
+ 
+</ul>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+  // Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
+    // function cloud_api(result)
+    // {
+    //   //alert(result.content);
+    //   if(result.content=='0')
+    //   {
+    //     document.getElementById("cloud_list").style.display ='none';
+    //   }
+    //   else
+    //    {
+    //      document.getElementById("cloud_list").innerHTML =result.content;
+    //   }
+    // } 
+   // function cloud_close(id)
+   //  {
+   //    Ajax.call('cloud.php?is_ajax=1&act=close_remind&remind_id='+id,'', cloud_api, 'GET', 'JSON');
+   //  }
+  //-->
+ </script> 
+<ul id="lilist" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
+  {if $update_message}
+  <li class="Start315" style="background-color: #efb21a;color: #fbfbff">{$update_message}</li>
+  {/if}
+  {foreach from=$warning_arr item=warning}
+  <li class="Start315">{$warning}</li>
+  {/foreach}
+</ul>
+<ul style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
+ <!-- <script type="text/javascript" src="http://bbs.ecshop.com/notice.php?v=1&n=8&f=ul"></script>-->
+</ul>
+<!-- directory install end -->
+<!-- banner area-->
+<div class="ban-area" style="margin-bottom: 10px">
+  <div class="inn">
+    <iframe class="first" width="450" height="300" src="{$pmp_desktop}" frameborder="0" scrolling="no"></iframe>
+    <iframe width="450" height="300" src="{$pmp_market}" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+<!-- banner area-->
+
+<!-- start personal message -->
+{if $admin_msg}
+<div class="list-div" style="border: 1px solid #CC0000">
+  <table cellspacing='1' cellpadding='3'>
+    <tr>
+      <th>{$lang.pm_title}</th>
+      <th>{$lang.pm_username}</th>
+      <th>{$lang.pm_time}</th>
+    </tr>
+    {foreach from=$admin_msg item=msg}
+      <tr align="center">
+        <td align="left"><a href="message.php?act=view&id={$msg.message_id}">{$msg.title|truncate:60:"..."}</a></td>
+        <td>{$msg.user_name}</td>
+        <td>{$msg.send_date}</td>
+      </tr>
+    {/foreach}
+  </table>
+  </div>
+<br />
+{/if}
+<!-- end personal message -->
+<!-- start order statistics -->
+<div class="panel">
+  <h2 class="group-title">{$lang.order_stat}</h2>
+  <table cellspacing='1' cellpadding='3'>
+    <tr>
+      <th width="12%"><a href="order.php?act=list&composite_status={$status.await_ship}">{$lang.await_ship}</a></th>
+      <td width="21%"><strong style="color: red">{$order.await_ship}</strong></td>
+      <th width="12%"><a href="order.php?act=list&composite_status={$status.unconfirmed}">{$lang.unconfirmed}</a></th>
+      <td width="21%"><strong>{$order.unconfirmed}</strong></td>
+      <th width="12%"><a href="order.php?act=list&composite_status={$status.await_pay}">{$lang.await_pay}</a></th>
+      <td width="21%"><strong>{$order.await_pay}</strong></td>
+    </tr>
+    <tr>
+      <th><a href="order.php?act=list&composite_status={$status.finished}">{$lang.finished}</a></td>
+      <td><strong>{$order.finished}</strong></th>
+      <th><a href="goods_booking.php?act=list_all">{$lang.new_booking}</a></td>
+      <td><strong>{$booking_goods}</strong></th>
+      <th><a href="user_account.php?act=list&process_type=1&is_paid=0">{$lang.new_reimburse}</a></th>
+      <td><strong>{$new_repay}</strong></td>
+    </tr>
+    <tr>
+      <th><a href="order.php?act=list&composite_status={$status.shipped_part}">{$lang.shipped_part}</a></th>
+      <td><strong>{$order.shipped_part}</strong></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<!-- end order statistics -->
+<div class="clearfix" style="min-width: 1090px">
+  <div class="panel analysis">
+    <!-- start goods statistics -->
+    <table class="zebra-table">
+      <caption class="group-title">{$lang.goods_stat}</caption>
+      <tbody>
+        <tr>
+          <th>{$lang.goods_count}</th>
+          <td>{$goods.total}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&stock_warning=1">{$lang.warn_goods}</a></th>
+          <td><strong style="color: red">{$goods.warn}</strong></td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_new">{$lang.new_goods}</a></th>
+          <td>{$goods.new}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_best">{$lang.recommed_goods}</a></th>
+          <td>{$goods.best}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_hot">{$lang.hot_goods}</a></th>
+          <td>{$goods.hot}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_promote">{$lang.sales_count}</a></th>
+          <td>{$goods.promote}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Virtual Card -->
+    <table class="zebra-table">
+      <caption class="group-title">{$lang.virtual_card_stat}</caption>
+      <tbody>
+        <tr>
+          <th>{$lang.goods_count}</th>
+          <td>{$virtual_card.total}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;stock_warning=1&amp;extension_code=virtual_card">{$lang.warn_goods}</a></th>
+          <td><strong style="color: red">{$virtual_card.warn}</strong></td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_new&amp;extension_code=virtual_card">{$lang.new_goods}</a></th>
+          <td>{$virtual_card.new}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_best&amp;extension_code=virtual_card">{$lang.recommed_goods}</a></th>
+          <td>{$virtual_card.best}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_hot&amp;extension_code=virtual_card">{$lang.hot_goods}</a></th>
+          <td>{$virtual_card.hot}</td>
+        </tr>
+        <tr>
+          <th><a href="goods.php?act=list&amp;intro_type=is_promote&amp;extension_code=virtual_card">{$lang.sales_count}</a></th>
+          <td>{$virtual_card.promote}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- end -->
+  </div>
+  <!-- start access statistics -->
+  <ul class="access-list" style="margin: 10px 0 0">
+    <li>
+      <div class="item">
+        <img src="images/index/users.png" alt="">
+        <p>{$lang.acess_today}</p>
+        <b>{$today_visit}</b>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <img src="images/index/onlines.png" alt="">
+        <p>{$lang.online_users}</p>
+        <b>{$online_users}</b>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <img src="images/index/message.png" alt="">
+        <p><a href="user_msg.php?act=list_all">{$lang.new_feedback}</a></p>
+        <b>{$feedback_number}</b>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <img src="images/index/comments.png" alt="">
+        <p><a href="comment_manage.php?act=list">{$lang.new_comments}</a></p>
+        <b>{$comment_number}</b>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- end access statistics -->
+<!-- start system information -->
+<div class="panel">
+<table cellspacing='1' cellpadding='3'>
+  <caption class="group-title">{$lang.system_info}</caption>
+  <tr>
+    <th width="12%">{$lang.os}</th>
+    <td width="21%">{$sys_info.os} ({$sys_info.ip})</td>
+    <th width="12%">{$lang.web_server}</th>
+    <td width="21%">{$sys_info.web_server}</td>
+    <th width="12%">{$lang.php_version}</th>
+    <td width="21%">{$sys_info.php_ver}</td>
+  </tr>
+  <tr>
+    <th>{$lang.mysql_version}</th>
+    <td>{$sys_info.mysql_ver}</td>
+    <th>{$lang.safe_mode}</th>
+    <td>{$sys_info.safe_mode}</td>
+    <th>{$lang.safe_mode_gid}</th>
+    <td>{$sys_info.safe_mode_gid}</td>
+  </tr>
+  <tr>
+    <th>{$lang.socket}</th>
+    <td>{$sys_info.socket}</td>
+    <th>{$lang.timezone}</th>
+    <td>{$sys_info.timezone}</td>
+    <th>{$lang.gd_version}</th>
+    <td>{$sys_info.gd}</td>
+  </tr>
+  <tr>
+    <th>{$lang.zlib}</th>
+    <td>{$sys_info.zlib}</td>
+    <th>{$lang.ip_version}</th>
+    <td>{$sys_info.ip_version}</td>
+    <th>{$lang.max_filesize}</th>
+    <td>{$sys_info.max_filesize}</td>
+  </tr>
+  <tr>
+    <th>{$lang.ecs_version}</th>
+    <td>{$ecs_version} RELEASE {$ecs_release}</td>
+    <th>{$lang.install_date}</th>
+    <td>{$install_date}</td>
+    <th>{$lang.ec_charset}</th>
+    <td>{$ecs_charset}</td>
+  </tr>
+</table>
+</div>
+
+{literal}
+{insert_scripts files="../js/utils.js"}
+<script type="Text/Javascript" language="JavaScript">
+<!--
+onload = function()
+{
+  /* 检查订单 */
+  startCheckOrder();
+}
+  // Ajax.call('index.php?is_ajax=1&act=main_api','', start_api, 'GET', 'TEXT','FLASE');
+  //Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
+   // function start_api(result)
+   //  {
+   //    apilist = document.getElementById("lilist").innerHTML;
+   //    document.getElementById("lilist").innerHTML =result+apilist;
+   //    if(document.getElementById("Marquee") != null)
+   //    {
+   //      var Mar = document.getElementById("Marquee");
+   //      lis = Mar.getElementsByTagName('div');
+   //      //alert(lis.length); //显示li元素的个数
+   //      if(lis.length>1)
+   //      {
+   //        api_styel();
+   //      }      
+   //    }
+   //  }
+ 
+      function api_styel()
+      {
+        if(document.getElementById("Marquee") != null)
+        {
+            var Mar = document.getElementById("Marquee");
+            if (Browser.isIE)
+            {
+              Mar.style.height = "52px";
+            }
+            else
+            {
+              Mar.style.height = "36px";
+            }
+            
+            var child_div=Mar.getElementsByTagName("div");
+
+        var picH = 16;//移动高度
+        var scrollstep=2;//移动步幅,越大越快
+        var scrolltime=30;//移动频度(毫秒)越大越慢
+        var stoptime=4000;//间断时间(毫秒)
+        var tmpH = 0;
+        
+        function start()
+        {
+          if(tmpH < picH)
+          {
+            tmpH += scrollstep;
+            if(tmpH > picH )tmpH = picH ;
+            Mar.scrollTop = tmpH;
+            setTimeout(start,scrolltime);
+          }
+          else
+          {
+            tmpH = 0;
+            Mar.appendChild(child_div[0]);
+            Mar.scrollTop = 0;
+            setTimeout(start,stoptime);
+          }
+        }
+        setTimeout(start,stoptime);
+        }
+      }
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

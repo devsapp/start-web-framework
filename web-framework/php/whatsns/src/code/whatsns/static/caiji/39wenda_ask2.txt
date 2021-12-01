@@ -1,0 +1,9 @@
+﻿http://ask.39.net/browse/2398-1-{#num}.html|
+#list_ask>.cap a[href*='question']|
+.tbox>span[id*="replyContent_"]|
+.t_right>.user_p|
+|
+.tbox>.user_name>a[href*="http://my.39.net/"]|
+.user_img>img[src*="http://askimg.39.net/doctor/"]|
+http://ask.39.net
+|乙肝_39健康问答_39健康问答频道(<a href="http://ask.39.net" target="_blank">http://ask.39.net</a>)|0

@@ -1,0 +1,15 @@
+/* 米拓企业建站系统 Copyright (C) 长沙米拓信息技术有限公司 (https://www.metinfo.cn). All rights reserved. */
+.met_sms .head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.met_sms-right .user div,
+.met_sms-right .user a {
+  padding: 0 10px;
+  line-height: 35px;
+}

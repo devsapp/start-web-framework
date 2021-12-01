@@ -1,0 +1,9 @@
+﻿http://zhihu.sogou.com/zhihu?query=%E9%9A%86%E9%BC%BB&ie=utf8&w=&sut=6750&sst0=1467810761156&lkt=15%2C1467810754344%2C1467810761047|
+.about-list-title a|
+#zh-question-answer-wrap .zm-editable-content|
+.zm-editable-content|
+|
+|
+|
+
+|知乎采集(<a href="http://zhihu.sogou.com/" target="_blank">http://zhihu.sogou.com/</a>)|0

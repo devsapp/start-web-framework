@@ -1,0 +1,9 @@
+﻿http://so.51credit.com/cse/search?s=12455798804538985593&entry=1&nsid=2&q=%E4%BF%A1%E7%94%A8%E5%8D%A1|
+#results .c-title a[href*='/wenda/']|
+.main-box-l .answer-box ul li|
+.main-box-l .content|
+|
+|
+|
+
+|我爱卡问答检索页面(<a href="http://so.51credit.com/cse/search?s=12455798804538985593&entry=1&nsid=2&q=%E4%BF%A1%E7%94%A8%E5%8D%A1" target="_blank">http://www.51credit.com</a>)|0

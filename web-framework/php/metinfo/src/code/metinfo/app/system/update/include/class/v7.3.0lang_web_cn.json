@@ -1,0 +1,2261 @@
+{
+    "system": {
+        "name": "system",
+        "value": "系统参数",
+        "site": "0",
+        "no_order": "1",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "search": {
+        "name": "search",
+        "value": "搜索",
+        "site": "0",
+        "no_order": "16",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "home": {
+        "name": "home",
+        "value": "网站首页",
+        "site": "0",
+        "no_order": "17",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "success": {
+        "name": "success",
+        "value": "操作成功!",
+        "site": "0",
+        "no_order": "19",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Title": {
+        "name": "Title",
+        "value": "标题",
+        "site": "0",
+        "no_order": "24",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Content": {
+        "name": "Content",
+        "value": "内容",
+        "site": "0",
+        "no_order": "25",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Online": {
+        "name": "Online",
+        "value": "在线交流",
+        "site": "0",
+        "no_order": "30",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Noinfo": {
+        "name": "Noinfo",
+        "value": "没有了",
+        "site": "0",
+        "no_order": "32",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "displayimg": {
+        "name": "displayimg",
+        "value": "展示图片",
+        "site": "0",
+        "no_order": "40",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "default": {
+        "name": "default",
+        "value": "默认",
+        "site": "0",
+        "no_order": "41",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membercode": {
+        "name": "membercode",
+        "value": "验证码错误！",
+        "site": "0",
+        "no_order": "1",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberpassno": {
+        "name": "memberpassno",
+        "value": "密码错误！",
+        "site": "0",
+        "no_order": "3",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "access": {
+        "name": "access",
+        "value": "您没有阅读该信息的权限！",
+        "site": "0",
+        "no_order": "4",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "login": {
+        "name": "login",
+        "value": "登录",
+        "site": "0",
+        "no_order": "5",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "register": {
+        "name": "register",
+        "value": "注册",
+        "site": "0",
+        "no_order": "6",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Page": {
+        "name": "Page",
+        "value": "页",
+        "site": "0",
+        "no_order": "2",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "PagePre": {
+        "name": "PagePre",
+        "value": "上一页",
+        "site": "0",
+        "no_order": "6",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "PageNext": {
+        "name": "PageNext",
+        "value": "下一页",
+        "site": "0",
+        "no_order": "7",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "PageGo": {
+        "name": "PageGo",
+        "value": "转至第",
+        "site": "0",
+        "no_order": "8",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberLogin": {
+        "name": "memberLogin",
+        "value": "会员登录",
+        "site": "0",
+        "no_order": "2",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberPassword": {
+        "name": "memberPassword",
+        "value": "请输入密码",
+        "site": "0",
+        "no_order": "4",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberName": {
+        "name": "memberName",
+        "value": "会员名",
+        "site": "0",
+        "no_order": "6",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberImgCode": {
+        "name": "memberImgCode",
+        "value": "验证码",
+        "site": "0",
+        "no_order": "8",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberTip1": {
+        "name": "memberTip1",
+        "value": "看不清？点击更换验证码",
+        "site": "0",
+        "no_order": "9",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberGo": {
+        "name": "memberGo",
+        "value": "登录",
+        "site": "0",
+        "no_order": "11",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberRegister": {
+        "name": "memberRegister",
+        "value": "立即注册",
+        "site": "0",
+        "no_order": "12",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberForget": {
+        "name": "memberForget",
+        "value": "忘记密码？",
+        "site": "0",
+        "no_order": "14",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberIndex3": {
+        "name": "memberIndex3",
+        "value": "会员中心",
+        "site": "0",
+        "no_order": "17",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberIndex9": {
+        "name": "memberIndex9",
+        "value": "个人信息",
+        "site": "0",
+        "no_order": "23",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberIndex10": {
+        "name": "memberIndex10",
+        "value": "退出登录",
+        "site": "0",
+        "no_order": "24",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbasicUserName": {
+        "name": "memberbasicUserName",
+        "value": "用户名",
+        "site": "0",
+        "no_order": "32",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbasicCell": {
+        "name": "memberbasicCell",
+        "value": "手机",
+        "site": "0",
+        "no_order": "38",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbasicLoginNum": {
+        "name": "memberbasicLoginNum",
+        "value": "登录次数",
+        "site": "0",
+        "no_order": "40",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbasicLastIP": {
+        "name": "memberbasicLastIP",
+        "value": "最后登录IP",
+        "site": "0",
+        "no_order": "42",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbasicType": {
+        "name": "memberbasicType",
+        "value": "会员类型",
+        "site": "0",
+        "no_order": "50",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberReg": {
+        "name": "memberReg",
+        "value": "会员注册",
+        "site": "0",
+        "no_order": "58",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberDetail": {
+        "name": "memberDetail",
+        "value": "查看",
+        "site": "0",
+        "no_order": "60",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "messageeditorReply": {
+        "name": "messageeditorReply",
+        "value": "管理员回复留言",
+        "site": "0",
+        "no_order": "74",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getNotice": {
+        "name": "getNotice",
+        "value": "会员找回密码",
+        "site": "0",
+        "no_order": "83",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "NoidJS": {
+        "name": "NoidJS",
+        "value": "没有此用户",
+        "site": "0",
+        "no_order": "87",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getTip1": {
+        "name": "getTip1",
+        "value": "您的密码重置请求已经得到验证。请点击以下链接输入您的新密码：",
+        "site": "0",
+        "no_order": "89",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getTip2": {
+        "name": "getTip2",
+        "value": "取回密码的方法已经通过 Email 发送到您的信箱中。请在 3 天之内到网站修改您的密码。",
+        "site": "0",
+        "no_order": "90",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getTip3": {
+        "name": "getTip3",
+        "value": "您提交的找回密码邮件发送失败！请联系网站管理员！。",
+        "site": "0",
+        "no_order": "91",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getTip5": {
+        "name": "getTip5",
+        "value": "密码找回",
+        "site": "0",
+        "no_order": "93",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getOK": {
+        "name": "getOK",
+        "value": "发送成功",
+        "site": "0",
+        "no_order": "97",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getFail": {
+        "name": "getFail",
+        "value": "发送失败",
+        "site": "0",
+        "no_order": "98",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membernodo": {
+        "name": "membernodo",
+        "value": "该用户尚未激活，请即时与管理员联系!",
+        "site": "0",
+        "no_order": "99",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "hello": {
+        "name": "hello",
+        "value": "您好！",
+        "site": "0",
+        "no_order": "100",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "fileOK": {
+        "name": "fileOK",
+        "value": "文件上传成功",
+        "site": "0",
+        "no_order": "1",
+        "array": "5",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js1": {
+        "name": "js1",
+        "value": "操作失败！",
+        "site": "0",
+        "no_order": "1",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js2": {
+        "name": "js2",
+        "value": "管理员身份登录！",
+        "site": "0",
+        "no_order": "2",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js4": {
+        "name": "js4",
+        "value": "无法激活此用户,请与管理员联系！",
+        "site": "0",
+        "no_order": "4",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js5": {
+        "name": "js5",
+        "value": "已成功激活,请登录！",
+        "site": "0",
+        "no_order": "5",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js6": {
+        "name": "js6",
+        "value": "用户名输入有误!",
+        "site": "0",
+        "no_order": "6",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js7": {
+        "name": "js7",
+        "value": "用户名不能小于3位",
+        "site": "0",
+        "no_order": "7",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js10": {
+        "name": "js10",
+        "value": "两次密码输入不一致",
+        "site": "0",
+        "no_order": "10",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js14": {
+        "name": "js14",
+        "value": "请输入验证码！",
+        "site": "0",
+        "no_order": "14",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js15": {
+        "name": "js15",
+        "value": "此用户名已经被使用",
+        "site": "0",
+        "no_order": "15",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js16": {
+        "name": "js16",
+        "value": "会员激活",
+        "site": "0",
+        "no_order": "16",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js18": {
+        "name": "js18",
+        "value": "请您点击",
+        "site": "0",
+        "no_order": "18",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js23": {
+        "name": "js23",
+        "value": "文件格式不允许上传。",
+        "site": "0",
+        "no_order": "23",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js25": {
+        "name": "js25",
+        "value": "注册成功！",
+        "site": "0",
+        "no_order": "25",
+        "array": "6",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Download": {
+        "name": "Download",
+        "value": "点击下载",
+        "site": "0",
+        "no_order": "8",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Submit": {
+        "name": "Submit",
+        "value": "提交信息",
+        "site": "0",
+        "no_order": "16",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "TextLink": {
+        "name": "TextLink",
+        "value": "文字链接",
+        "site": "0",
+        "no_order": "34",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "PictureLink": {
+        "name": "PictureLink",
+        "value": "图片链接",
+        "site": "0",
+        "no_order": "35",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Contact": {
+        "name": "Contact",
+        "value": "联系方式",
+        "site": "0",
+        "no_order": "36",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "ApplyLink": {
+        "name": "ApplyLink",
+        "value": "申请友情链接",
+        "site": "0",
+        "no_order": "37",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SubmitInfo": {
+        "name": "SubmitInfo",
+        "value": "提交留言",
+        "site": "0",
+        "no_order": "39",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Reply": {
+        "name": "Reply",
+        "value": "管理员回复",
+        "site": "0",
+        "no_order": "42",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Feedback1": {
+        "name": "Feedback1",
+        "value": "请不要在",
+        "site": "0",
+        "no_order": "49",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Feedback2": {
+        "name": "Feedback2",
+        "value": "秒内重复提交信息，谢谢合作！",
+        "site": "0",
+        "no_order": "50",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Feedback3": {
+        "name": "Feedback3",
+        "value": "反馈信息中不能包含",
+        "site": "0",
+        "no_order": "51",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Feedback5": {
+        "name": "Feedback5",
+        "value": "反馈已经被关闭",
+        "site": "0",
+        "no_order": "52",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "AddTime": {
+        "name": "AddTime",
+        "value": "提交时间",
+        "site": "0",
+        "no_order": "55",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SourcePage": {
+        "name": "SourcePage",
+        "value": "来源页面",
+        "site": "0",
+        "no_order": "56",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Feedback4": {
+        "name": "Feedback4",
+        "value": "反馈信息已成功提交，谢谢！",
+        "site": "0",
+        "no_order": "57",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Choice": {
+        "name": "Choice",
+        "value": "请选择",
+        "site": "0",
+        "no_order": "58",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Empty": {
+        "name": "Empty",
+        "value": "不能为空",
+        "site": "0",
+        "no_order": "59",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "MessageInfo1": {
+        "name": "MessageInfo1",
+        "value": "在线留言",
+        "site": "0",
+        "no_order": "63",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "MessageInfo2": {
+        "name": "MessageInfo2",
+        "value": "您的留言已成功提交，谢谢！",
+        "site": "0",
+        "no_order": "64",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "MessageInfo5": {
+        "name": "MessageInfo5",
+        "value": "该留言功能已经被关闭",
+        "site": "0",
+        "no_order": "67",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SearchInfo1": {
+        "name": "SearchInfo1",
+        "value": "请输入搜索关键词！",
+        "site": "0",
+        "no_order": "71",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SearchInfo2": {
+        "name": "SearchInfo2",
+        "value": "全站搜索",
+        "site": "0",
+        "no_order": "72",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SearchInfo3": {
+        "name": "SearchInfo3",
+        "value": "没有含有",
+        "site": "0",
+        "no_order": "73",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "SearchInfo4": {
+        "name": "SearchInfo4",
+        "value": "的信息内容",
+        "site": "0",
+        "no_order": "74",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Job1": {
+        "name": "Job1",
+        "value": "不限",
+        "site": "0",
+        "no_order": "75",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "cvtitle": {
+        "name": "cvtitle",
+        "value": "在线应聘",
+        "site": "0",
+        "no_order": "78",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "cv": {
+        "name": "cv",
+        "value": "查看简历",
+        "site": "0",
+        "no_order": "79",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "wap": {
+        "name": "wap",
+        "value": "手机版",
+        "site": "0",
+        "no_order": "87",
+        "array": "7",
+        "app": "0",
+        "lang": "cn"
+    },
+    "fliptext1": {
+        "name": "fliptext1",
+        "value": "查看更多",
+        "site": "0",
+        "no_order": "48",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "fliptext2": {
+        "name": "fliptext2",
+        "value": "加载中...",
+        "site": "0",
+        "no_order": "49",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "downloadtext1": {
+        "name": "downloadtext1",
+        "value": "下载",
+        "site": "0",
+        "no_order": "50",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "tagweb": {
+        "name": "tagweb",
+        "value": "标签",
+        "site": "0",
+        "no_order": "66",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror1": {
+        "name": "formerror1",
+        "value": "请填写此字段。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror2": {
+        "name": "formerror2",
+        "value": "请从这些选项中选择一个。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror3": {
+        "name": "formerror3",
+        "value": "请输入正确的手机号码。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror4": {
+        "name": "formerror4",
+        "value": "请输入正确的Email地址。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror5": {
+        "name": "formerror5",
+        "value": "两次输入的密码不一致，请重新输入。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror6": {
+        "name": "formerror6",
+        "value": "请输入至少&metinfo&个字符。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror7": {
+        "name": "formerror7",
+        "value": "输入不能超过&metinfo&个字符。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formerror8": {
+        "name": "formerror8",
+        "value": "输入的字符数必须在&metinfo&之间。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "read": {
+        "name": "read",
+        "value": "阅读",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js46": {
+        "name": "js46",
+        "value": "不能重复",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailchecktips1": {
+        "name": "emailchecktips1",
+        "value": "感谢您的注册！激活链接已经发送到您的邮箱",
+        "site": "0",
+        "no_order": "103",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailchecktips2": {
+        "name": "emailchecktips2",
+        "value": "点击邮件里的链接即可激活账户",
+        "site": "0",
+        "no_order": "104",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailchecktips3": {
+        "name": "emailchecktips3",
+        "value": "还没收到确认邮件？",
+        "site": "0",
+        "no_order": "105",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailchecktips4": {
+        "name": "emailchecktips4",
+        "value": "尝试到广告邮件、垃圾邮件目录里找找看",
+        "site": "0",
+        "no_order": "106",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailchecktips5": {
+        "name": "emailchecktips5",
+        "value": "再次发送确认邮件",
+        "site": "0",
+        "no_order": "107",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsafe": {
+        "name": "accsafe",
+        "value": "账号安全",
+        "site": "0",
+        "no_order": "108",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "resend": {
+        "name": "resend",
+        "value": "重发",
+        "site": "0",
+        "no_order": "109",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getmemberImgCode": {
+        "name": "getmemberImgCode",
+        "value": "获取验证码",
+        "site": "0",
+        "no_order": "110",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "password": {
+        "name": "password",
+        "value": "密码",
+        "site": "0",
+        "no_order": "113",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userhave": {
+        "name": "userhave",
+        "value": "用户名已存在",
+        "site": "0",
+        "no_order": "114",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailhave": {
+        "name": "emailhave",
+        "value": "邮箱已被注册",
+        "site": "0",
+        "no_order": "115",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberemail": {
+        "name": "memberemail",
+        "value": "邮箱",
+        "site": "0",
+        "no_order": "116",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberMoreInfo": {
+        "name": "memberMoreInfo",
+        "value": "更多资料",
+        "site": "0",
+        "no_order": "117",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "select": {
+        "name": "select",
+        "value": "选择",
+        "site": "0",
+        "no_order": "118",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "acchave": {
+        "name": "acchave",
+        "value": "已有账号？",
+        "site": "0",
+        "no_order": "119",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accpassword": {
+        "name": "accpassword",
+        "value": "帐号密码",
+        "site": "0",
+        "no_order": "120",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsaftips1": {
+        "name": "accsaftips1",
+        "value": "用于保护帐号信息和登录安全",
+        "site": "0",
+        "no_order": "121",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modify": {
+        "name": "modify",
+        "value": "修改",
+        "site": "0",
+        "no_order": "122",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accemail": {
+        "name": "accemail",
+        "value": "邮箱绑定",
+        "site": "0",
+        "no_order": "123",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsaftips2": {
+        "name": "accsaftips2",
+        "value": "邮箱绑定可以用于登录帐号，重置密码或其他安全验证",
+        "site": "0",
+        "no_order": "124",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "acctel": {
+        "name": "acctel",
+        "value": "手机绑定",
+        "site": "0",
+        "no_order": "125",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsaftips3": {
+        "name": "accsaftips3",
+        "value": "手机绑定可以用于登录帐号，重置密码或其他安全验证",
+        "site": "0",
+        "no_order": "126",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifypassword": {
+        "name": "modifypassword",
+        "value": "密码修改",
+        "site": "0",
+        "no_order": "127",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "oldpassword": {
+        "name": "oldpassword",
+        "value": "原密码",
+        "site": "0",
+        "no_order": "128",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "newpassword": {
+        "name": "newpassword",
+        "value": "新密码",
+        "site": "0",
+        "no_order": "129",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "confirm": {
+        "name": "confirm",
+        "value": "确定",
+        "site": "0",
+        "no_order": "130",
+        "array": "1",
+        "app": "1",
+        "lang": "cn"
+    },
+    "cancel": {
+        "name": "cancel",
+        "value": "取消",
+        "site": "0",
+        "no_order": "131",
+        "array": "1",
+        "app": "1",
+        "lang": "cn"
+    },
+    "emailaddress": {
+        "name": "emailaddress",
+        "value": "邮箱地址",
+        "site": "0",
+        "no_order": "132",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "telnum": {
+        "name": "telnum",
+        "value": "手机号码",
+        "site": "0",
+        "no_order": "134",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "teluse": {
+        "name": "teluse",
+        "value": "手机号码已被绑定",
+        "site": "0",
+        "no_order": "135",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "telok": {
+        "name": "telok",
+        "value": "请输入正确的手机号码",
+        "site": "0",
+        "no_order": "136",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifyacctel": {
+        "name": "modifyacctel",
+        "value": "修改手机绑定",
+        "site": "0",
+        "no_order": "137",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifyinfo": {
+        "name": "modifyinfo",
+        "value": "保存资料",
+        "site": "0",
+        "no_order": "138",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailnow": {
+        "name": "emailnow",
+        "value": "当前邮箱：",
+        "site": "0",
+        "no_order": "139",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "newemail": {
+        "name": "newemail",
+        "value": "新邮箱",
+        "site": "0",
+        "no_order": "140",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifyaccemail": {
+        "name": "modifyaccemail",
+        "value": "修改绑定邮箱",
+        "site": "0",
+        "no_order": "142",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "renewpassword": {
+        "name": "renewpassword",
+        "value": "重复密码",
+        "site": "0",
+        "no_order": "144",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "inputcode": {
+        "name": "inputcode",
+        "value": "请输入验证码",
+        "site": "0",
+        "no_order": "145",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "next": {
+        "name": "next",
+        "value": "下一步",
+        "site": "0",
+        "no_order": "146",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "logintips": {
+        "name": "logintips",
+        "value": "用户名\/邮箱\/手机",
+        "site": "0",
+        "no_order": "147",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "otherlogin": {
+        "name": "otherlogin",
+        "value": "其它方式登录",
+        "site": "0",
+        "no_order": "148",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "logintips1": {
+        "name": "logintips1",
+        "value": "没有账号？现在去注册",
+        "site": "0",
+        "no_order": "149",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "rememberImgCode": {
+        "name": "rememberImgCode",
+        "value": "重发验证码",
+        "site": "0",
+        "no_order": "150",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "relogin": {
+        "name": "relogin",
+        "value": "返回登录",
+        "site": "0",
+        "no_order": "151",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "getpasswordtips": {
+        "name": "getpasswordtips",
+        "value": "邮箱\/手机",
+        "site": "0",
+        "no_order": "152",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "regclose": {
+        "name": "regclose",
+        "value": "注册功能已关闭",
+        "site": "0",
+        "no_order": "153",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "regfail": {
+        "name": "regfail",
+        "value": "注册失败",
+        "site": "0",
+        "no_order": "154",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "codetimeout": {
+        "name": "codetimeout",
+        "value": "验证码已超时",
+        "site": "0",
+        "no_order": "155",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "telcheckfail": {
+        "name": "telcheckfail",
+        "value": "手机号码与短信验证号码不一致",
+        "site": "0",
+        "no_order": "156",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "regsuc": {
+        "name": "regsuc",
+        "value": "注册成功！",
+        "site": "0",
+        "no_order": "157",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "activesuc": {
+        "name": "activesuc",
+        "value": "激活成功，请登录！",
+        "site": "0",
+        "no_order": "158",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailvildtips1": {
+        "name": "emailvildtips1",
+        "value": "验证信息错误",
+        "site": "0",
+        "no_order": "159",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailvildtips2": {
+        "name": "emailvildtips2",
+        "value": "验证信息错误或已超时",
+        "site": "0",
+        "no_order": "160",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "telreg": {
+        "name": "telreg",
+        "value": "手机号已被注册",
+        "site": "0",
+        "no_order": "161",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Sendfrequent": {
+        "name": "Sendfrequent",
+        "value": "发送过于频繁，请稍后再试",
+        "site": "0",
+        "no_order": "162",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailsuc": {
+        "name": "emailsuc",
+        "value": "邮件发送成功！",
+        "site": "0",
+        "no_order": "163",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailfail": {
+        "name": "emailfail",
+        "value": "邮件发送失败，请确认邮箱是否正确或联系网站管理人员解决。",
+        "site": "0",
+        "no_order": "164",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifysuc": {
+        "name": "modifysuc",
+        "value": "修改成功",
+        "site": "0",
+        "no_order": "165",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "binding": {
+        "name": "binding",
+        "value": "绑定",
+        "site": "0",
+        "no_order": "166",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "notbound": {
+        "name": "notbound",
+        "value": "未绑定",
+        "site": "0",
+        "no_order": "167",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accnotmodify": {
+        "name": "accnotmodify",
+        "value": "帐号无法修改",
+        "site": "0",
+        "no_order": "168",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailsuclink": {
+        "name": "emailsuclink",
+        "value": "邮件发送成功！请点击邮件里的验证链接完成操作！",
+        "site": "0",
+        "no_order": "169",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "bindingok": {
+        "name": "bindingok",
+        "value": "绑定成功",
+        "site": "0",
+        "no_order": "170",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "opfail": {
+        "name": "opfail",
+        "value": "操作失败",
+        "site": "0",
+        "no_order": "171",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "modifypasswordsuc": {
+        "name": "modifypasswordsuc",
+        "value": "密码修改成功！",
+        "site": "0",
+        "no_order": "172",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "lodpasswordfail": {
+        "name": "lodpasswordfail",
+        "value": "原密码错误",
+        "site": "0",
+        "no_order": "173",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror1": {
+        "name": "membererror1",
+        "value": "用户名或密码错误",
+        "site": "0",
+        "no_order": "174",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror2": {
+        "name": "membererror2",
+        "value": "请开启session！",
+        "site": "0",
+        "no_order": "175",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror3": {
+        "name": "membererror3",
+        "value": "授权失败",
+        "site": "0",
+        "no_order": "176",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror4": {
+        "name": "membererror4",
+        "value": "未知错误",
+        "site": "0",
+        "no_order": "177",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror6": {
+        "name": "membererror6",
+        "value": "账号未激活，请联系管理员",
+        "site": "0",
+        "no_order": "174",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailsucpass": {
+        "name": "emailsucpass",
+        "value": "密码找回邮件已经发送至您的邮箱，点击邮件里的链接即可重设密码。",
+        "site": "0",
+        "no_order": "178",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailvildtips3": {
+        "name": "emailvildtips3",
+        "value": "请输入正确的邮箱或手机号码",
+        "site": "0",
+        "no_order": "179",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "membererror5": {
+        "name": "membererror5",
+        "value": "发送失败！错误码：",
+        "site": "0",
+        "no_order": "180",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "noempty": {
+        "name": "noempty",
+        "value": "此项不能为空",
+        "site": "0",
+        "no_order": "181",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "usernamecheck": {
+        "name": "usernamecheck",
+        "value": "用户名必须在2-30个字符之间",
+        "site": "0",
+        "no_order": "182",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "passwordcheck": {
+        "name": "passwordcheck",
+        "value": "密码必须在6-30个字符之间",
+        "site": "0",
+        "no_order": "183",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "passwordsame": {
+        "name": "passwordsame",
+        "value": "两次密码输入不一致",
+        "site": "0",
+        "no_order": "184",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "emailcheck": {
+        "name": "emailcheck",
+        "value": "请输入正确的Email地址",
+        "site": "0",
+        "no_order": "184",
+        "array": "4",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Previous_news": {
+        "name": "Previous_news",
+        "value": "上一篇",
+        "site": "0",
+        "no_order": "9",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "Next_news": {
+        "name": "Next_news",
+        "value": "下一篇",
+        "site": "0",
+        "no_order": "10",
+        "array": "3",
+        "app": "0",
+        "lang": "cn"
+    },
+    "close": {
+        "name": "close",
+        "value": "关闭",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "browserupdatetips": {
+        "name": "browserupdatetips",
+        "value": "你正在使用一个过时的浏览器。请升级你的浏览器，以提高您的体验。",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "newFeedback": {
+        "name": "newFeedback",
+        "value": "收到了新的反馈",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "opfailed": {
+        "name": "opfailed",
+        "value": "操作失败",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "jobPrompt": {
+        "name": "jobPrompt",
+        "value": "收到了新的简历",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "reMessage1": {
+        "name": "reMessage1",
+        "value": "您的网站",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "reMessage2": {
+        "name": "reMessage2",
+        "value": "，请尽快登录网站后台查看",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "messagePrompt": {
+        "name": "messagePrompt",
+        "value": "收到了新的留言",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "formaterror": {
+        "name": "formaterror",
+        "value": "格式错误",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "listcom": {
+        "name": "listcom",
+        "value": "推荐",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "listnew": {
+        "name": "listnew",
+        "value": "最新",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "listhot": {
+        "name": "listhot",
+        "value": "热门",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "weball": {
+        "name": "weball",
+        "value": "全部",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "columnall": {
+        "name": "columnall",
+        "value": "全部栏目",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsaftips4": {
+        "name": "accsaftips4",
+        "value": "绑定用户证实身份信息",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "rnvalidate": {
+        "name": "rnvalidate",
+        "value": "实名认证",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "notauthen": {
+        "name": "notauthen",
+        "value": "未认证",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "authen": {
+        "name": "authen",
+        "value": "已认证",
+        "site": "0",
+        "no_order": "9",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "realname": {
+        "name": "realname",
+        "value": "真实姓名",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "idcode": {
+        "name": "idcode",
+        "value": "身份证号码",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "idvalidok": {
+        "name": "idvalidok",
+        "value": "实名认证成功",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "idvalidfailed": {
+        "name": "idvalidfailed",
+        "value": "实名认证失败",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "cn"
+    },
+    "systips1": {
+        "name": "systips1",
+        "value": "您没有权限访问这个内容！请登录后访问！",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "systips2": {
+        "name": "systips2",
+        "value": "您所在用户组没有权限访问这个内容！",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "usercheckok": {
+        "name": "usercheckok",
+        "value": "验证成功！",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "usereadinfo": {
+        "name": "usereadinfo",
+        "value": "阅读权限值必需大于0",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userselectname": {
+        "name": "userselectname",
+        "value": "选项卡",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userwenxinclose": {
+        "name": "userwenxinclose",
+        "value": "微信登录功能已关闭",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userwenboclose": {
+        "name": "userwenboclose",
+        "value": "微博登录功能已关闭",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userqqclose": {
+        "name": "userqqclose",
+        "value": "QQ登录功能已关闭",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userbuy": {
+        "name": "userbuy",
+        "value": "购买",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "userbuylist": {
+        "name": "userbuylist",
+        "value": "订单",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "usesendcode": {
+        "name": "usesendcode",
+        "value": "验证码为",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "usesendcodeinfo": {
+        "name": "usesendcodeinfo",
+        "value": "请及时输入验证",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "feedbackinquiry": {
+        "name": "feedbackinquiry",
+        "value": "在线询价",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "templatesusererror": {
+        "name": "templatesusererror",
+        "value": "当前语言模板未配置或模板文件不存在",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "phonecode": {
+        "name": "phonecode",
+        "value": "获取手机验证码",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "phonecodeerror": {
+        "name": "phonecodeerror",
+        "value": "手机验证码错误",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "memberbuytitle": {
+        "name": "memberbuytitle",
+        "value": "付费升级会员组",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "img_px_tips": {
+        "name": "img_px_tips",
+        "value": "图片尺寸超出系统限制(图片宽高不超过2600px)",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "member_cv": {
+        "name": "member_cv",
+        "value": "简历",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "please_login": {
+        "name": "please_login",
+        "value": "请先登录！",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "user_agreement": {
+        "name": "user_agreement",
+        "value": "用户协议",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "user_agreement_tips1": {
+        "name": "user_agreement_tips1",
+        "value": "我已认真阅读",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "user_agreement_tips2": {
+        "name": "user_agreement_tips2",
+        "value": "并同意注册",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "user_agreement_tips3": {
+        "name": "user_agreement_tips3",
+        "value": "请阅读并勾选同意",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "tag": {
+        "name": "tag",
+        "value": "TAG标签",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "columnSearchInfo": {
+        "name": "columnSearchInfo",
+        "value": "请输入你感兴趣的关键词",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "advancedSearchInfo": {
+        "name": "advancedSearchInfo",
+        "value": "请输入你感兴趣的关键词",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "notemptips": {
+        "name": "notemptips",
+        "value": "当前语言没有设置网站模板，请到“风格-网站模板”中选择1套模板",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "AddDate": {
+        "name": "AddDate",
+        "value": "发布时间",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "listsales": {
+        "name": "listsales",
+        "value": "销量",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "jsok": {
+        "name": "jsok",
+        "value": "操作成功",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "jslang3": {
+        "name": "jslang3",
+        "value": "没有选中的记录",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "delete_information": {
+        "name": "delete_information",
+        "value": "您确定要删除该信息吗？删除之后无法再恢复。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "js49": {
+        "name": "js49",
+        "value": "撤销。",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "weixinunbind": {
+        "name": "weixinunbind",
+        "value": "你确定是否要解绑微信？",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "bindweixin": {
+        "name": "bindweixin",
+        "value": "微信绑定",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "accsaftips5": {
+        "name": "accsaftips5",
+        "value": "微信绑定可以用于登录帐号，消息通知等功能",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "bound": {
+        "name": "bound",
+        "value": "已绑定",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "unbind": {
+        "name": "unbind",
+        "value": "解绑",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "weixin_login_error": {
+        "name": "weixin_login_error",
+        "value": "当前语言不可使用微信登录",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "login_ok": {
+        "name": "login_ok",
+        "value": "登录成功",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "cn"
+    },
+    "new_registe_email_content": {
+        "name": "new_registe_email_content",
+        "value": "你的网站 {webname} 收到新用户：{username} 的注册请求，请登录网站后台查看。",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "new_registe_sms_content": {
+        "name": "new_registe_sms_content",
+        "value": "你的网站 {webname} 收到新用户：{username} 的注册请求，请登录网站后台查看。",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    },
+    "new_regist_notice": {
+        "name": "new_regist_notice",
+        "value": "网站新增会员通知",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "cn"
+    }
+}

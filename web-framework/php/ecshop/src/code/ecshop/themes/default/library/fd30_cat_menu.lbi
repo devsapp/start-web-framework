@@ -1,0 +1,105 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.fd30_cat{width:218px;}
+.fd30_cat .t{width:218px;line-height:33px; height:33px;text-indent:35px; color:#fff; font-size:14px; position:relative; background:#3B5C9F; font-weight:bold; border-top:1px solid #5071B0; cursor:pointer;}
+.fd30_cat .t span{ display:block; width:19px; height:20px;background:url(../images/t_span.gif) left no-repeat; position:absolute; right:13px; top:6px;} 
+/*.fd30_cat .classmenu_i{visibility:visible}
+.navs .hover_h .classmenu{ visibility:visible;}
+.fd30_cat .classmenu{ position:absolute; left:-7px; width:218px; padding-left:7px; padding-right:7px; background:URL(classmenu.png)  left top repeat-y ; visibility:hidden}*/
+.classmenu{ position:relative; z-index:99}
+.fd30_cat{ background:URL(nav_hor_bg.png)  left  bottom repeat-x #5679BE ; padding-bottom:2px;}
+.fd30_cat ul{background:#fff ;}
+.fd30_cat ul li.cat_lv1{ padding:5px 10px 5px 10px; margin:0px; float:none;  }
+.fd30_cat ul li a{margin:0px; padding:0px; display:block; color:#737D8C; font-size:14px; font-weight:normal}
+.fd30_cat ul li a:hover{ color:#a21a20}
+.fd30_cat ul li.cat_lv1 h4 a{ text-indent:38px; line-height:40px;  background-image:URL(../images/classmenu.gif); background-repeat:no-repeat; font-size:16px}
+.fd30_cat ul li .cat_p{ display:none; position:absolute; z-index:1;left:218px; width:576px;  top:0px;  margin:0px; padding:0px 5px 0px 0px;background:URL(../images/pbg.png) left top repeat-y;}
+.fd30_cat ul li .cat_pbg{ padding:10px 20px 10px 20px;width:536px; margin:0px; position:relative; overflow:hidden;border-bottom:2px solid #5679BE;}
+.fd30_cat ul li .cat_p dl dt a{ line-height:40px; font-size:16px; color:#3D5FA5; z-index:4; position:relative}
+.fd30_cat ul li .cat_p dl dd{ clear:both; padding:0px; margin:0px; list-style:none}
+.fd30_cat ul li .cat_p dl dd a{ padding:0px 25px 0px 0px; float:left; white-space:nowrap; line-height:25px;background:URL(../images/shu.gif) right  no-repeat; position:relative; z-index:5}
+.fd30_cat ul li .cat_p .cat_brand{ border-top:1px solid #CCC; color:#333; padding:10px 0px 10px 0px; font-size:14px; font-weight:bold; width:100%; clear:both; margin-top:30px;}
+.fd30_cat ul li .cat_p .cat_brand h2{ padding:0px; margin:0px; line-height:25px; height:35px; color:#333; font-size:14px;}
+.fd30_cat ul li .cat_p .cat_brand p{ padding:0px; margin:0px; text-align:left;}
+.fd30_cat ul li .cat_p .cat_brand a{ float:left} 
+.fd30_cat ul li .cat_p .cat_brand img{ width:80px; border:1px solid #ddd; height:40px;}
+.fd30_cat ul li .cat_p .cat_brand span{ display:block; text-align:center; font-size:12px; line-height:25px;}
+.fd30_cat ul li.hover_h{  cursor:pointer}
+.fd30_cat ul li.hover_h h4 a{ color:#fff; background-color:#4062A7}
+.fd30_cat ul li.hover_h .cat_p{ display:block}
+.fd30_cat ul h4.a0 a { background-position:10px 13px;}
+.fd30_cat ul h4.a1 a { background-position:10px -45px;}
+.fd30_cat ul h4.a2 a { background-position:10px -100px;}
+.fd30_cat ul h4.a3 a { background-position:10px -155px;}
+.fd30_cat ul h4.a4 a { background-position:10px -210px;}
+.fd30_cat ul h4.a5 a { background-position:10px -268px;}
+.fd30_cat ul h4.a6 a { background-position:10px -320px;}
+.fd30_cat ul h4.a7 a { background-position:10px -378px;}
+.fd30_cat ul h4.a8 a { background-position:10px -434px;}
+.fd30_cat ul h4.a9 a { background-position:10px -491px;}
+.fd30_cat ul h4.a10 a { background-position:10px -485px;}
+.fd30_cat ul h4.a11 a { background-position:10px -268px;}
+.fd30_cat ul h4.a12 a { background-position:10px -320px;}
+.fd30_cat ul li.hover_h h4.a0 a { background-position:10px -422px;}
+.fd30_cat ul li.hover_h h4.a1 a { background-position:10px -477px;}
+.fd30_cat ul li.hover_h h4.a2 a { background-position:10px -532px;}
+.fd30_cat ul li.hover_h h4.a3 a { background-position:10px -587px;}
+.fd30_cat ul li.hover_h h4.a4 a { background-position:10px -642px;}
+.fd30_cat ul li.hover_h h4.a5 a { background-position:10px -700px;}
+.fd30_cat ul li.hover_h h4.a6 a { background-position:10px -755px;}
+.fd30_cat ul li.hover_h h4.a7 a { background-position:10px -827px;}
+.fd30_cat ul li.hover_h h4.a8 a { background-position:10px -882px;}
+.fd30_cat ul li.hover_h h4.a9 a { background-position:10px -491px;}
+.fd30_cat ul li.hover_h h4.a10 a { background-position:10px -485px;}
+.fd30_cat ul li.hover_h h4.a11 a { background-position:10px -268px;}
+.fd30_cat ul li.hover_h h4.a12 a { background-position:10px -320px;}
+</style>
+<div class="fd30_cat">
+  <div class="t">全部商品分类  <span> </span></div>
+  <div class="classmenu">
+    <ul>
+    <!--{foreach from=$categories1 item=cat name=catename }-->
+    <li class="cat_lv1 hover">  
+      <h4><a href="{$cat.url}">{$cat.name|escape:html}</a> </h4>
+ 
+      <div class="cat_p">   <div class="cat_pbg">
+     
+          <!--{if $cat.cat_id}-->
+          <!--{foreach from=$cat.cat_id item=child name=childname}-->
+          <dl <!-- {if $smarty.foreach.childname.first} -->
+          class="fore"
+          <!-- {/if} -->
+          >
+          <dt><a href="{$child.url}">{$child.name|escape:html}</a></dt>
+          <!--{if $child.cat_id}-->
+          <dd>
+            <!--{foreach from=$child.cat_id item=childer}-->
+            <a href="{$childer.url}">{$childer.name|escape:html}</a>
+            <!--{/foreach}-->
+          <!--{/if}-->
+          </dl>
+          <!--{/foreach}-->
+          <!--{/if}-->
+        <div class="cat_brand">
+            <h2>推荐品牌</h2>
+            <p>
+              <!--{foreach from=get_cat_brands($this->_var['cat']['id']) item=brandCat}-->
+              <a href="{$brandCat.url}"><img src="data/brandlogo/{$brandCat.brand_logo}" alt="" /><span>{$brandCat.brand_name}</span></a>
+              <!--{/foreach}-->
+            </p>
+          </div>
+          
+      </div></div>
+    </li>
+    <!--{/foreach}-->
+   </ul>
+  </div>
+</div>
+<div class="blank"></div>
+<script>
+$('.fd30_cat .cat_lv1').each(function(i){ $(this).find("h4").addClass("a" + i);
+									      if($(this).find("span").size()==0){
+													$(this).children().children().find("div").detach();
+															  }															  
+										 });
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拒绝退款</title>
+</head>
+<body>
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 600px;">
+        <form action="order.php?act=return_gun" method="post" >
+            <p style="text-align: center">请填写您的理由</p>
+            <input type="hidden" value="{$r_id}" name="r_id">
+            <textarea name="input" cols="80" rows="10"></textarea>
+            <button type="submit"> 提交 </button>
+    </div>
+</div>
+</form>
+</body>
+</html>

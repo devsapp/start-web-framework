@@ -1,0 +1,10 @@
+﻿https://zhidao.baidu.com/list?type=highScore&cid=110|
+.question-title a|
+.qslim-ans-info>.answer-text|
+#qb-content .q-content|
+.wgt-best>.best-text|
+#wgt-answers>a[alog-action="qb-username"]|
+|
+|
+百度知道问答(<a href="http://zhidao.baidu.com" target="_blank">http://zhidao.baidu.com</a>)
+|0

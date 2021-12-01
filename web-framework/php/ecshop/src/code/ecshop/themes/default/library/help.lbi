@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="footer_wrap"><div class="our_services footer">
+  <div class="c c1">
+    <DIV class=weixin>
+      <DIV class=pic><IMG alt="ECshop测试站移动商城" src="{$template_dir}/images/wx.jpg" width="70"></DIV>
+      <H4>ECshop测试站移动商城</H4>
+      <DIV class=desc>文字内容修改位置：模板管理-库项目管理-help.lbi-帮助内容</DIV>
+    </DIV>
+    
+  </div>
+  <!--{if $helps}-->
+  <!-- {foreach from=$helps item=help_cat} -->
+  <div class="c c2"><i></i>
+    <dt>{$help_cat.cat_name}</dt>
+    <!-- {foreach from=$help_cat.article item=item} -->
+    <dd><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
+    <!-- {/foreach} -->
+  </div>
+  <!-- {/foreach} -->
+  <!--{/if}-->
+  <div class="clear10"></div>
+</div></div>

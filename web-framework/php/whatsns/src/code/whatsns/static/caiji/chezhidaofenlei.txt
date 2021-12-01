@@ -1,0 +1,9 @@
+﻿http://ask.webcars.com.cn/volkswagen/3.html|
+.ppTitle a[href*="qa"]|
+.zhuanjia_answer_txt|
+|
+|
+|
+|
+http://ask.webcars.com.cn/
+|车知道分类采集(<a href="http://ask.webcars.com.cn/volkswagen/3.html" target="_blank">http://ask.webcars.com.cn/</a>)|0

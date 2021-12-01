@@ -1,0 +1,421 @@
+body, html {
+    padding-top: 0px;
+}
+.sign {
+	
+	min-height:750px;
+	text-align:center;
+	font-size:14px;
+	background-color:#f1f1f1
+}
+.sign:before {
+	content:"";
+	display:inline-block;
+	height:85%;
+	vertical-align:middle
+}
+.sign .disable,.sign .disable-gray {
+	opacity:.5;
+	pointer-events:none
+}
+.sign .disable-gray {
+	background-color:#969696
+}
+.sign .tooltip-error {
+	font-size:14px;
+	line-height:25px;
+	white-space:nowrap;
+	background:none
+}
+.sign .tooltip-error .tooltip-inner {
+	max-width:280px;
+	color:#333;
+	border:1px solid #ffd100;
+	background-color:#fff
+}
+.sign .tooltip-error .tooltip-inner i {
+	position:static;
+	margin-right:5px;
+	font-size:20px;
+	color:#ffd100;
+	vertical-align:middle
+}
+.sign #verifycode{
+	position:absolute;
+	right:10px;
+	top:10px;
+	cursor:pointer;
+}
+
+.sign .tooltip-error .tooltip-inner span {
+	vertical-align:middle;
+	display:inline-block;
+	white-space:normal;
+	max-width:230px
+}
+.sign .tooltip-error.right .tooltip-arrow-border {
+	border-right-color:#ffd100
+}
+.sign .tooltip-error.right .tooltip-arrow-bg {
+	left:2px;
+	border-right-color:#fff
+}
+.sign .slide-error {
+	position:relative;
+	padding:10px 0;
+	border:1px solid #c8c8c8;
+	border-radius:4px
+}
+.sign .slide-error i {
+	position:static!important;
+	margin-right:10px;
+	color:#ffd100!important;
+	vertical-align:middle
+}
+.sign .slide-error span {
+	font-size:15px;
+	vertical-align:middle
+}
+.sign .slide-error div {
+	margin-top:10px;
+	font-size:13px
+}
+.sign .slide-error a {
+	color:#ffd100
+}
+.sign .js-sign-up-container .slide-error {
+	border-bottom:none;
+	border-radius:0
+}
+.sign .logo {
+	margin-top: 40px;
+}
+.sign .logo img {
+	width:100px
+}
+.sign .main {
+	width:400px;
+	margin:60px auto 0;
+	padding:50px 50px 30px;
+	background-color:#fff;
+	border-radius:4px;
+	box-shadow:0 0 8px rgba(0,0,0,.1);
+	vertical-align:middle;
+	display:inline-block
+}
+.sign .reset-title,.sign .title {
+	margin:0 auto 50px;
+	padding:10px;
+	font-weight:400;
+	color:#969696
+}
+.sign .reset-title a,.sign .title a {
+	padding:10px;
+	color:#969696
+}
+.sign .reset-title a:hover,.sign .title a:hover {
+	border-bottom:2px solid #ffd100
+}
+.sign .reset-title .active,.sign .title .active {
+	font-weight:700;
+	color:#ffd100;
+	border-bottom:2px solid #ffd100
+}
+.sign .reset-title b,.sign .title b {
+	padding:10px
+}
+.sign .reset-title {
+	color:#333;
+	font-weight:700
+}
+.sign form {
+	margin-bottom:30px
+}
+.sign form .input-prepend {
+	position:relative;
+	width:100%;
+	margin-bottom:20px
+}
+.sign form .input-prepend input {
+	width:340px;
+	height:35px;
+
+	padding:4px 12px 4px 45px;
+
+    margin-bottom:20px;
+	vertical-align:middle;
+	    border: solid 1px #f5f5f5;
+}
+.sign form .input-prepend i {
+	position:absolute;
+	top:12px;
+	left:10px;
+	font-size:18px;
+	color:#969696
+}
+.sign form .input-prepend span {
+	color:#333
+}
+.sign form .input-prepend .ic-show {
+	top:18px;
+	left:auto;
+	right:8px;
+	font-size:12px
+}
+.sign form .restyle {
+	margin-bottom:0
+}
+.sign form .restyle input {
+
+	border-radius:4px 4px 0 0
+}
+.sign form .no-radius input {
+	border-radius:0
+}
+.sign form .slide-security-placeholder {
+	height:32px;
+	background-color:hsla(0,0%,71%,.1);
+	border-radius:4px
+}
+.sign form .slide-security-placeholder p {
+	padding-top:7px;
+	color:#999;
+	margin-right:-7px
+}
+.sign .overseas-btn {
+	font-size:14px;
+	color:#999
+}
+.sign .overseas-btn:hover {
+	color:#2f2f2f
+}
+.sign .remember-btn {
+	float:left;
+	margin:15px 0
+}
+.sign .remember-btn span {
+	margin-left:5px;
+	font-size:13px;
+	color:#969696;
+	vertical-align:middle
+}
+.sign .forget-btn {
+	float:right;
+	position:relative;
+	margin:13px 0;
+	font-size:13px;
+}
+.sign .forget-btn a{
+	font-size:13px
+}
+.sign .forget-btn a {
+	color:#999
+}
+.sign .forget-btn a:hover {
+	color:#333
+}
+.sign .forget-btn .dropdown-menu {
+	top:20px;
+	left:auto;
+	right:0;
+	border-radius:4px
+}
+.sign .forget-btn .dropdown-menu a {
+	padding:10px 20px;
+	color:#333
+}
+.sign .sign-in-button,.sign .sign-up-button {
+	width:360px;
+	padding:9px 18px;
+	font-size:18px;
+	border:none;
+	border-radius:4px;
+	color:#fff;
+	background:#ffd100;
+	cursor:pointer;
+	outline:none;
+	display:block;
+	clear:both
+}
+.sign .sign-in-button:hover,.sign .sign-up-button:hover {
+	background:#ffd100
+}
+.sign .sign-in-button {
+	background:#ffd100
+}
+.sign .sign-in-button:hover {
+	background:#ffd100
+}
+.sign .btn-in-resend,.sign .btn-up-resend {
+	position:absolute;
+	top:7px;
+	right:4px;
+	width:100px;
+	height:36px;
+	font-size:13px;
+	color:#fff;
+	background-color:#ffd100;
+	border-radius:4px;
+	line-height:36px
+}
+.sign .btn-in-resend {
+	background-color:#ffd100
+}
+.sign .sign-up-msg {
+	margin:10px 0;
+	padding:0;
+	text-align:center;
+	font-size:12px;
+	line-height:20px;
+	color:#969696
+}
+.sign .sign-up-msg a,.sign .sign-up-msg a:hover {
+	color:#ffd100
+}
+.sign .overseas input {
+	padding-left:110px!important
+}
+.sign .overseas .overseas-number {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100px;
+	height:50px;
+	font-size:18px;
+	color:#969696;
+	border-right:1px solid #c8c8c8
+}
+.sign .overseas .overseas-number span {
+	margin-top:17px;
+	padding-left:35px;
+	text-align:left;
+	font-size:14px;
+	display:block
+}
+.sign .overseas .dropdown-menu {
+	width:100%;
+	max-height:285px;
+	font-size:14px;
+	border-radius:0 0 4px 4px;
+	overflow-y:auto
+}
+.sign .overseas .dropdown-menu li .nation-code {
+	width:65px;
+	display:inline-block
+}
+.sign .overseas .dropdown-menu li a {
+	padding:6px 20px;
+	font-size:14px;
+	line-height:20px
+}
+.sign .overseas .dropdown-menu li a::hover {
+	color:#fff;
+	background-color:#f5f5f5
+}
+.sign .more-sign {
+	margin-top:30px
+}
+.sign .more-sign h6 {
+	position:relative;
+	margin:0 0 20px;
+	font-size:12px;
+	color:#b5b5b5
+}
+.sign .more-sign h6:before {
+	left:30px
+}
+.sign .more-sign h6:after,.sign .more-sign h6:before {
+	content:"";
+	border-top:1px solid #b5b5b5;
+	display:block;
+	position:absolute;
+	width:60px;
+	top:5px
+}
+.sign .more-sign h6:after {
+	right:30px
+}
+.sign .more-sign ul {
+	margin-bottom:30px;
+	list-style:none
+}
+.sign .more-sign ul li {
+	margin:0 3px;
+	display:inline-block
+}
+.sign .more-sign ul a {
+	width:50px;
+	height:50px;
+	background-color:hsla(0,0%,71%,.2);
+	border-radius:50%;
+	line-height:50px;
+	display:block
+}
+.sign .more-sign ul i {
+	font-size:24px
+}
+.sign .more-sign .weibo {
+	background-color:#e05244
+}
+.sign .more-sign .weixin {
+	background-color:#00bb29
+}
+.sign .more-sign .qq {
+	background-color:#498ad5
+}
+.sign .more-sign .douban {
+	background-color:#00820f
+}
+.sign .more-sign .google {
+	background-color:#e05244
+}
+.sign .more-sign .fa {
+	color:#fff
+}
+.sign .more-sign .fa-more {
+	color:#787878;
+	font-size:12px;
+}
+.sign .reset-password-input {
+	border-radius:4px!important
+}
+.sign .return {
+	margin-left:-8px;
+	color:#969696
+}
+.sign .return:hover {
+	color:#333
+}
+.sign .return i {
+	margin-right:5px
+}
+.sign .icheckbox_square-green {
+	display:inline-block;
+	*display:inline;
+	vertical-align:middle;
+	margin:0;
+	padding:0;
+	width:18px;
+	height:18px;
+	border:none;
+	cursor:pointer;
+	background-position:0 0
+}
+.sign .icheckbox_square-green.hover {
+	background-position:-20px 0
+}
+.sign .icheckbox_square-green.checked {
+	background-position:-40px 0
+}
+.sign .icheckbox_square-green.disabled {
+	background-position:-60px 0;
+	cursor:default
+}
+.sign .icheckbox_square-green.checked.disabled {
+	background-position:-80px 0
+}
+@media (-webkit-min-device-pixel-ratio:1.25),(min-resolution:1.25dppx),(min-resolution:120dpi) {
+	.sign .icheckbox_square-green {
+	background-size:200px 20px
+}
+}

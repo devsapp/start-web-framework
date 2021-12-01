@@ -1,0 +1,20 @@
+
+{include file="pageheader.htm"}
+
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 350px;">
+        <form action="mobile_setting.php" method="post" enctype="multipart/form-data">
+            <p><h4>默认图片： <input type="file" name="default_image"></h4></p>
+            {if $default_image}
+            <img src="{$default_image}" alt="" width="50px" height="50px">
+            {/if}
+            <p><span></span><input type="text" name="default_image_url" value="" placeholder="图片外部URL"></p>
+<!--            <p><span>是否开启：</span><input type="radio" name="prompt_image_status" value="1" {if $prompt_image_status =='1' } checked{/if}>是-->
+<!--                <input type="radio" name="prompt_image_status" value="2" {if $prompt_image_status =='2' } checked{/if}>否</p>-->
+            <input type="hidden" name="act" value="up_default_image">
+            <button type="submit"> 提交 </button>
+        </form>
+    </div>
+</div>
+
+{include file="pagefooter.htm"}

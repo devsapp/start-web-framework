@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>ask2问答 发现音乐，分享音乐</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="generator" content="www.leipi.org" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+    <![endif]-->
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../dialogs/internal.js"></script>
+</head>
+<body>
+<div class="container" style="width:100%;"><div style="padding:10px;">
+
+	<select  name="site" id="9fm_site" class="span2" >
+		<option value="163">网易云音乐</option>
+		<option value="1ting">1听</option>
+		<option value="kugou" selected="selected">酷狗</option>
+		<option value="kuwo">酷我</option>
+		<option value="qq">QQ音乐</option>
+		<option value="xiami">虾米</option>
+		<option value="5sing">酷狗原创</option>
+		<option value="ttpod">天天动听</option>
+		<option value="migu">咪咕</option>
+	</select>
+	<input type="text" name="kwd" value="" id="9fm_kwd" placeholder="输入歌曲名称搜索"> <button class="btn" type="button" id="9fm_so" style="margin-bottom:10px"/><span style="color:#009be3"><span style="color:#FF0000"></span>ask2</span> 搜索</button>
+	<div>
+		<input type="text" class="span2" name="player_color" id="player_color" value=""placeholder="如：#E57478" style="margin-bottom:0px"> <a href="http://www.bootcss.com/p/websafecolors/" target="_blank" style="color:#f30">选择颜色</a>( 如：#E57478 )
+		<input type="checkbox" name="player_auto" id="player_auto" value="1" checked="checked"/>是否自动播放
+	</div>
+	<hr/>
+	<div id="9fm_loading" class="hide">搜索中....</div>
+	<table class="table table-striped table-hover table-bordered" id="9fm_table">
+		<tr>
+			<td>输入关键词搜索,如：喜欢你，她说，说好的幸福呢</td>
+		</tr>
+	</table>
+
+
+</div></div>
+<script type="text/javascript">
+window.onload = function() {
+}
+dialog.oncancel = function () {
+};
+dialog.onok = function (){
+};
+function cn9fmplayer(msg) {
+	$("#9fm_loading").hide();
+    if (msg.status == 1) {
+        var _0 = msg.info;
+        editor.execCommand('insertHtml', _0);
+		$("#9fm_loading").html("<code>已添加到编辑器...</code>").show(500);
+    } else {
+        alert('请求出错：' + msg.msg)
+    }
+}
+
+function cn9fmplayed(site, songid) {
+    var _3 = $("#player_color").val(),
+        _1 = $("#player_auto").is(':checked');
+    _1 = _1 ? 1 : 0;
+	$("#9fm_loading").html("获取中...").show(500);
+    $.ajax({
+        type: "post",
+        url: UE.api_9fmplayer,
+        dataType: "jsonp",
+        data: {
+            v: "1",
+            callback: "cn9fmplayer",
+            pcolor: _3,
+            pauto: _1,
+            site: site,
+            songid: songid
+        },
+        jsonp: 'cn9fmplayer',
+        success: function(msg) {}
+    })
+}
+
+function cn9fm(msg) {
+	$("#9fm_loading").hide(500);
+    if (msg.status == 1) {
+        var data = msg.info,
+            _0 = "";
+        for (var i in data) {
+            _0 += '<tr>';
+            _0 += '<td style="width:40%;">' + data[i]['name'] + '</td>';
+            _0 += '<td style="width:20%;">' + data[i]['author'] + '</td>';
+            _0 += '<td style="width:40%;"><a href="javascript:;" onclick="cn9fmplayed(\'' + data[i]['site'] + '\',\'' + data[i]['songid'] + '\')">选用</a>  <a href="http://9fm.fenliu.cn/sting?songid=' + data[i]['songid'] + '&from=' + data[i]['site'] + '" target="_5">试听</a></td>';
+            _0 += '</tr>'
+        }
+        $("#9fm_table").html(_0)
+    } else {
+        alert('请求出错：' + msg.msg)
+    }
+}
+$(function() {
+    $("#9fm_so").click(function() {
+        var _4 = $("#9fm_site").val(),
+            _2 = $("#9fm_kwd").val();
+        if (!_2) {
+            $("#9fm_kwd").css({
+                "border-color": "red"
+            });
+            return false
+        }
+		$("#9fm_loading").html("搜索中...").show(500);
+        $.ajax({
+            type: "post",
+            url: UE.api_9fmso,
+            dataType: "jsonp",
+            data: {
+                v: "1",
+                callback: "cn9fm",
+                site: _4,
+                kwd: _2
+            },
+            jsonp: 'cn9fm',
+            success: function(msg) {}
+        })
+    })
+});
+</script>
+</body>
+</html>

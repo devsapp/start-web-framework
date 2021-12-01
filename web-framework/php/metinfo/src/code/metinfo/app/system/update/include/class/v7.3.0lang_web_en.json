@@ -1,0 +1,2261 @@
+{
+    "system": {
+        "name": "system",
+        "value": "System parameters",
+        "site": "0",
+        "no_order": "1",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "search": {
+        "name": "search",
+        "value": "search for",
+        "site": "0",
+        "no_order": "16",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "home": {
+        "name": "home",
+        "value": "Home page",
+        "site": "0",
+        "no_order": "17",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "success": {
+        "name": "success",
+        "value": "Successful operation!",
+        "site": "0",
+        "no_order": "19",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "Title": {
+        "name": "Title",
+        "value": "title",
+        "site": "0",
+        "no_order": "24",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "Content": {
+        "name": "Content",
+        "value": "content",
+        "site": "0",
+        "no_order": "25",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "Online": {
+        "name": "Online",
+        "value": "online chating",
+        "site": "0",
+        "no_order": "30",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "Noinfo": {
+        "name": "Noinfo",
+        "value": "No more",
+        "site": "0",
+        "no_order": "32",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "displayimg": {
+        "name": "displayimg",
+        "value": "Show pictures",
+        "site": "0",
+        "no_order": "40",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "default": {
+        "name": "default",
+        "value": "default",
+        "site": "0",
+        "no_order": "41",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "membercode": {
+        "name": "membercode",
+        "value": "Verification code error!",
+        "site": "0",
+        "no_order": "1",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberpassno": {
+        "name": "memberpassno",
+        "value": "wrong password!",
+        "site": "0",
+        "no_order": "3",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "access": {
+        "name": "access",
+        "value": "You do not have permission to read this information!",
+        "site": "0",
+        "no_order": "4",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "login": {
+        "name": "login",
+        "value": "log in",
+        "site": "0",
+        "no_order": "5",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "register": {
+        "name": "register",
+        "value": "registered",
+        "site": "0",
+        "no_order": "6",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "Page": {
+        "name": "Page",
+        "value": "page",
+        "site": "0",
+        "no_order": "2",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "PagePre": {
+        "name": "PagePre",
+        "value": "Previous page",
+        "site": "0",
+        "no_order": "6",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "PageNext": {
+        "name": "PageNext",
+        "value": "Next page",
+        "site": "0",
+        "no_order": "7",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "PageGo": {
+        "name": "PageGo",
+        "value": "Go to No.",
+        "site": "0",
+        "no_order": "8",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberLogin": {
+        "name": "memberLogin",
+        "value": "Member Login",
+        "site": "0",
+        "no_order": "2",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberPassword": {
+        "name": "memberPassword",
+        "value": "Please enter the password",
+        "site": "0",
+        "no_order": "4",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberName": {
+        "name": "memberName",
+        "value": "Member name",
+        "site": "0",
+        "no_order": "6",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberImgCode": {
+        "name": "memberImgCode",
+        "value": "Verification code",
+        "site": "0",
+        "no_order": "8",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberTip1": {
+        "name": "memberTip1",
+        "value": "Can not see? Click to change verification code",
+        "site": "0",
+        "no_order": "9",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberGo": {
+        "name": "memberGo",
+        "value": "log in",
+        "site": "0",
+        "no_order": "11",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberRegister": {
+        "name": "memberRegister",
+        "value": "Sign up now",
+        "site": "0",
+        "no_order": "12",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberForget": {
+        "name": "memberForget",
+        "value": "forget password?",
+        "site": "0",
+        "no_order": "14",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberIndex3": {
+        "name": "memberIndex3",
+        "value": "Member Centre",
+        "site": "0",
+        "no_order": "17",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberIndex9": {
+        "name": "memberIndex9",
+        "value": "Personal information",
+        "site": "0",
+        "no_order": "23",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberIndex10": {
+        "name": "memberIndex10",
+        "value": "Logout",
+        "site": "0",
+        "no_order": "23",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbasicUserName": {
+        "name": "memberbasicUserName",
+        "value": "username",
+        "site": "0",
+        "no_order": "32",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbasicCell": {
+        "name": "memberbasicCell",
+        "value": "Phone",
+        "site": "0",
+        "no_order": "38",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbasicLoginNum": {
+        "name": "memberbasicLoginNum",
+        "value": "Login times",
+        "site": "0",
+        "no_order": "40",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbasicLastIP": {
+        "name": "memberbasicLastIP",
+        "value": "Finally login IP",
+        "site": "0",
+        "no_order": "42",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbasicType": {
+        "name": "memberbasicType",
+        "value": "Type of membership",
+        "site": "0",
+        "no_order": "50",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberReg": {
+        "name": "memberReg",
+        "value": "Sign Up",
+        "site": "0",
+        "no_order": "58",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberDetail": {
+        "name": "memberDetail",
+        "value": "View",
+        "site": "0",
+        "no_order": "60",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "messageeditorReply": {
+        "name": "messageeditorReply",
+        "value": "Administrator reply message",
+        "site": "0",
+        "no_order": "74",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getNotice": {
+        "name": "getNotice",
+        "value": "Member retrieve password",
+        "site": "0",
+        "no_order": "83",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "NoidJS": {
+        "name": "NoidJS",
+        "value": "Without this user",
+        "site": "0",
+        "no_order": "87",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getTip1": {
+        "name": "getTip1",
+        "value": "Your password reset request has been verified. Please click the following link to enter your new password:",
+        "site": "0",
+        "no_order": "89",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getTip2": {
+        "name": "getTip2",
+        "value": "The method of retrieving the password has been sent to your mailbox by email. Please change your password to the website within 3 days.",
+        "site": "0",
+        "no_order": "90",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getTip3": {
+        "name": "getTip3",
+        "value": "Your submitted password recovery email failed to send! Please contact the webmaster! .",
+        "site": "0",
+        "no_order": "91",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getTip5": {
+        "name": "getTip5",
+        "value": "recover password",
+        "site": "0",
+        "no_order": "93",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getOK": {
+        "name": "getOK",
+        "value": "Sent successfully",
+        "site": "0",
+        "no_order": "97",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getFail": {
+        "name": "getFail",
+        "value": "Failed to send",
+        "site": "0",
+        "no_order": "98",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membernodo": {
+        "name": "membernodo",
+        "value": "The user has not activated yet, please contact the administrator immediately!",
+        "site": "0",
+        "no_order": "99",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "hello": {
+        "name": "hello",
+        "value": "Hello!",
+        "site": "0",
+        "no_order": "100",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "fileOK": {
+        "name": "fileOK",
+        "value": "File upload is successful",
+        "site": "0",
+        "no_order": "1",
+        "array": "5",
+        "app": "0",
+        "lang": "en"
+    },
+    "js1": {
+        "name": "js1",
+        "value": "operation failed!",
+        "site": "0",
+        "no_order": "1",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js2": {
+        "name": "js2",
+        "value": "Administrator login!",
+        "site": "0",
+        "no_order": "2",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js4": {
+        "name": "js4",
+        "value": "Can not activate this user, please contact the administrator!",
+        "site": "0",
+        "no_order": "4",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js5": {
+        "name": "js5",
+        "value": "Has been activated, please login!",
+        "site": "0",
+        "no_order": "5",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js6": {
+        "name": "js6",
+        "value": "user name input error!",
+        "site": "0",
+        "no_order": "6",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js7": {
+        "name": "js7",
+        "value": "User name can not be less than 3 digits",
+        "site": "0",
+        "no_order": "7",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js10": {
+        "name": "js10",
+        "value": "The password input is inconsistent twice",
+        "site": "0",
+        "no_order": "10",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js14": {
+        "name": "js14",
+        "value": "please enter verification code!",
+        "site": "0",
+        "no_order": "14",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js15": {
+        "name": "js15",
+        "value": "This username has been used",
+        "site": "0",
+        "no_order": "15",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js16": {
+        "name": "js16",
+        "value": "Member activation",
+        "site": "0",
+        "no_order": "16",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js18": {
+        "name": "js18",
+        "value": "Please click",
+        "site": "0",
+        "no_order": "18",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js23": {
+        "name": "js23",
+        "value": "File format does not allow uploading.",
+        "site": "0",
+        "no_order": "23",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "js25": {
+        "name": "js25",
+        "value": "Registration is successful, please click the verification link in the mailbox to activate the account!!",
+        "site": "0",
+        "no_order": "25",
+        "array": "6",
+        "app": "0",
+        "lang": "en"
+    },
+    "Download": {
+        "name": "Download",
+        "value": "click to download",
+        "site": "0",
+        "no_order": "8",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Submit": {
+        "name": "Submit",
+        "value": "Submit Information",
+        "site": "0",
+        "no_order": "16",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "TextLink": {
+        "name": "TextLink",
+        "value": "Text link",
+        "site": "0",
+        "no_order": "34",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "PictureLink": {
+        "name": "PictureLink",
+        "value": "image link",
+        "site": "0",
+        "no_order": "35",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Contact": {
+        "name": "Contact",
+        "value": "Contact information",
+        "site": "0",
+        "no_order": "36",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "ApplyLink": {
+        "name": "ApplyLink",
+        "value": "Apply for a friendship link",
+        "site": "0",
+        "no_order": "37",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SubmitInfo": {
+        "name": "SubmitInfo",
+        "value": "Submit Message",
+        "site": "0",
+        "no_order": "39",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Reply": {
+        "name": "Reply",
+        "value": "Administrator reply",
+        "site": "0",
+        "no_order": "42",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Feedback1": {
+        "name": "Feedback1",
+        "value": "Please do not be there",
+        "site": "0",
+        "no_order": "49",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Feedback2": {
+        "name": "Feedback2",
+        "value": "Seconds to submit information, thank you for your cooperation!",
+        "site": "0",
+        "no_order": "50",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Feedback3": {
+        "name": "Feedback3",
+        "value": "Feedback can not be included",
+        "site": "0",
+        "no_order": "51",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Feedback5": {
+        "name": "Feedback5",
+        "value": "Feedback has been closed",
+        "site": "0",
+        "no_order": "52",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "AddTime": {
+        "name": "AddTime",
+        "value": "Submit time",
+        "site": "0",
+        "no_order": "55",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SourcePage": {
+        "name": "SourcePage",
+        "value": "Source page",
+        "site": "0",
+        "no_order": "56",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Feedback4": {
+        "name": "Feedback4",
+        "value": "Feedback has been submitted, thank you!",
+        "site": "0",
+        "no_order": "57",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Choice": {
+        "name": "Choice",
+        "value": "please choose",
+        "site": "0",
+        "no_order": "58",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "Empty": {
+        "name": "Empty",
+        "value": "Can not be empty",
+        "site": "0",
+        "no_order": "59",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "MessageInfo1": {
+        "name": "MessageInfo1",
+        "value": "Online message",
+        "site": "0",
+        "no_order": "63",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "MessageInfo2": {
+        "name": "MessageInfo2",
+        "value": "Your message has been successfully submitted, thank you!",
+        "site": "0",
+        "no_order": "64",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "MessageInfo5": {
+        "name": "MessageInfo5",
+        "value": "Message has been closed",
+        "site": "0",
+        "no_order": "67",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SearchInfo1": {
+        "name": "SearchInfo1",
+        "value": "Enter search keywords!",
+        "site": "0",
+        "no_order": "71",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SearchInfo2": {
+        "name": "SearchInfo2",
+        "value": "Site Search",
+        "site": "0",
+        "no_order": "72",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SearchInfo3": {
+        "name": "SearchInfo3",
+        "value": "Not included",
+        "site": "0",
+        "no_order": "73",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "SearchInfo4": {
+        "name": "SearchInfo4",
+        "value": "Information content",
+        "site": "0",
+        "no_order": "74",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "Job1": {
+        "name": "Job1",
+        "value": "Not limited to",
+        "site": "0",
+        "no_order": "75",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "cvtitle": {
+        "name": "cvtitle",
+        "value": "apply online",
+        "site": "0",
+        "no_order": "78",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "cv": {
+        "name": "cv",
+        "value": "View your resume",
+        "site": "0",
+        "no_order": "79",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "wap": {
+        "name": "wap",
+        "value": "Mobile version",
+        "site": "0",
+        "no_order": "87",
+        "array": "7",
+        "app": "0",
+        "lang": "en"
+    },
+    "fliptext1": {
+        "name": "fliptext1",
+        "value": "see more",
+        "site": "0",
+        "no_order": "48",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "fliptext2": {
+        "name": "fliptext2",
+        "value": "Loading...",
+        "site": "0",
+        "no_order": "49",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "downloadtext1": {
+        "name": "downloadtext1",
+        "value": "download",
+        "site": "0",
+        "no_order": "50",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "tagweb": {
+        "name": "tagweb",
+        "value": "label",
+        "site": "0",
+        "no_order": "66",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror1": {
+        "name": "formerror1",
+        "value": "Please fill in this field.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror2": {
+        "name": "formerror2",
+        "value": "Please choose one of these options.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror3": {
+        "name": "formerror3",
+        "value": "Please enter the correct phone number.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror4": {
+        "name": "formerror4",
+        "value": "Please enter the correct email address.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror5": {
+        "name": "formerror5",
+        "value": "The password entered twice is different. Please re-enter it.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror6": {
+        "name": "formerror6",
+        "value": "Please enter at least & metinfo & characters.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror7": {
+        "name": "formerror7",
+        "value": "Input can not exceed & metinfo & characters.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "formerror8": {
+        "name": "formerror8",
+        "value": "The number of characters entered must be between & metinfo &.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "read": {
+        "name": "read",
+        "value": "read",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "js46": {
+        "name": "js46",
+        "value": "Can not repeat",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailchecktips1": {
+        "name": "emailchecktips1",
+        "value": "Thank you for your registration! The activation link has been sent to your email",
+        "site": "0",
+        "no_order": "103",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailchecktips2": {
+        "name": "emailchecktips2",
+        "value": "Click the link in the email to activate the account",
+        "site": "0",
+        "no_order": "104",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailchecktips3": {
+        "name": "emailchecktips3",
+        "value": "Have not received confirmation email?",
+        "site": "0",
+        "no_order": "105",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailchecktips4": {
+        "name": "emailchecktips4",
+        "value": "Try to find the advertising mail, spam directory look",
+        "site": "0",
+        "no_order": "106",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailchecktips5": {
+        "name": "emailchecktips5",
+        "value": "Send a confirmation email again",
+        "site": "0",
+        "no_order": "107",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsafe": {
+        "name": "accsafe",
+        "value": "Account safe",
+        "site": "0",
+        "no_order": "108",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "resend": {
+        "name": "resend",
+        "value": "Resend",
+        "site": "0",
+        "no_order": "109",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getmemberImgCode": {
+        "name": "getmemberImgCode",
+        "value": "get verification code",
+        "site": "0",
+        "no_order": "110",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "password": {
+        "name": "password",
+        "value": "password",
+        "site": "0",
+        "no_order": "113",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "userhave": {
+        "name": "userhave",
+        "value": "Username already exists",
+        "site": "0",
+        "no_order": "114",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailhave": {
+        "name": "emailhave",
+        "value": "E-mail has been registered",
+        "site": "0",
+        "no_order": "115",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberemail": {
+        "name": "memberemail",
+        "value": "mailbox",
+        "site": "0",
+        "no_order": "116",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberMoreInfo": {
+        "name": "memberMoreInfo",
+        "value": "more info",
+        "site": "0",
+        "no_order": "117",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "select": {
+        "name": "select",
+        "value": "select",
+        "site": "0",
+        "no_order": "118",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "acchave": {
+        "name": "acchave",
+        "value": "Already have an account?",
+        "site": "0",
+        "no_order": "119",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accpassword": {
+        "name": "accpassword",
+        "value": "account password",
+        "site": "0",
+        "no_order": "120",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsaftips1": {
+        "name": "accsaftips1",
+        "value": "Used to protect account information and login security",
+        "site": "0",
+        "no_order": "121",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modify": {
+        "name": "modify",
+        "value": "modify",
+        "site": "0",
+        "no_order": "122",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accemail": {
+        "name": "accemail",
+        "value": "Mailbox binding",
+        "site": "0",
+        "no_order": "123",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsaftips2": {
+        "name": "accsaftips2",
+        "value": "Mailbox bindings can be used to log in to an account, reset password, or other security verification",
+        "site": "0",
+        "no_order": "124",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "acctel": {
+        "name": "acctel",
+        "value": "Phone binding",
+        "site": "0",
+        "no_order": "125",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsaftips3": {
+        "name": "accsaftips3",
+        "value": "Phone bindings can be used to log in to an account, reset password, or other security verification",
+        "site": "0",
+        "no_order": "126",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifypassword": {
+        "name": "modifypassword",
+        "value": "change Password",
+        "site": "0",
+        "no_order": "127",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "oldpassword": {
+        "name": "oldpassword",
+        "value": "old password",
+        "site": "0",
+        "no_order": "128",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "newpassword": {
+        "name": "newpassword",
+        "value": "new password",
+        "site": "0",
+        "no_order": "129",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "confirm": {
+        "name": "confirm",
+        "value": "determine",
+        "site": "0",
+        "no_order": "130",
+        "array": "1",
+        "app": "1",
+        "lang": "en"
+    },
+    "cancel": {
+        "name": "cancel",
+        "value": "cancel",
+        "site": "0",
+        "no_order": "131",
+        "array": "1",
+        "app": "1",
+        "lang": "en"
+    },
+    "emailaddress": {
+        "name": "emailaddress",
+        "value": "email address",
+        "site": "0",
+        "no_order": "132",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "telnum": {
+        "name": "telnum",
+        "value": "cellphone number",
+        "site": "0",
+        "no_order": "134",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "teluse": {
+        "name": "teluse",
+        "value": "Phone number is bound",
+        "site": "0",
+        "no_order": "135",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "telok": {
+        "name": "telok",
+        "value": "Please enter the correct phone number",
+        "site": "0",
+        "no_order": "136",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifyacctel": {
+        "name": "modifyacctel",
+        "value": "Modify phone binding",
+        "site": "0",
+        "no_order": "137",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifyinfo": {
+        "name": "modifyinfo",
+        "value": "Save the data",
+        "site": "0",
+        "no_order": "138",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailnow": {
+        "name": "emailnow",
+        "value": "Current email:",
+        "site": "0",
+        "no_order": "139",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "newemail": {
+        "name": "newemail",
+        "value": "new mail box",
+        "site": "0",
+        "no_order": "140",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifyaccemail": {
+        "name": "modifyaccemail",
+        "value": "Modify the binding mailbox",
+        "site": "0",
+        "no_order": "142",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "renewpassword": {
+        "name": "renewpassword",
+        "value": "Repeat password",
+        "site": "0",
+        "no_order": "144",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "inputcode": {
+        "name": "inputcode",
+        "value": "please enter verification code",
+        "site": "0",
+        "no_order": "145",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "next": {
+        "name": "next",
+        "value": "Next step",
+        "site": "0",
+        "no_order": "146",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "logintips": {
+        "name": "logintips",
+        "value": "Username \/ email \/ phone",
+        "site": "0",
+        "no_order": "147",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "otherlogin": {
+        "name": "otherlogin",
+        "value": "Other ways to log in",
+        "site": "0",
+        "no_order": "148",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "logintips1": {
+        "name": "logintips1",
+        "value": "No account? Register now",
+        "site": "0",
+        "no_order": "149",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "rememberImgCode": {
+        "name": "rememberImgCode",
+        "value": "Resend the verification code",
+        "site": "0",
+        "no_order": "150",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "relogin": {
+        "name": "relogin",
+        "value": "Back to login",
+        "site": "0",
+        "no_order": "151",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "getpasswordtips": {
+        "name": "getpasswordtips",
+        "value": "email \/ phone number",
+        "site": "0",
+        "no_order": "152",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "regclose": {
+        "name": "regclose",
+        "value": "Registration is turned off",
+        "site": "0",
+        "no_order": "153",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "regfail": {
+        "name": "regfail",
+        "value": "registration failed",
+        "site": "0",
+        "no_order": "154",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "codetimeout": {
+        "name": "codetimeout",
+        "value": "Verification code has timed out",
+        "site": "0",
+        "no_order": "155",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "telcheckfail": {
+        "name": "telcheckfail",
+        "value": "Phone number and SMS verification number is inconsistent",
+        "site": "0",
+        "no_order": "156",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "regsuc": {
+        "name": "regsuc",
+        "value": "registration success!",
+        "site": "0",
+        "no_order": "157",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "activesuc": {
+        "name": "activesuc",
+        "value": "Activation successful，please login now",
+        "site": "0",
+        "no_order": "158",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailvildtips1": {
+        "name": "emailvildtips1",
+        "value": "The verification information is wrong",
+        "site": "0",
+        "no_order": "159",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailvildtips2": {
+        "name": "emailvildtips2",
+        "value": "Verification information is incorrect or timed out",
+        "site": "0",
+        "no_order": "160",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "telreg": {
+        "name": "telreg",
+        "value": "Phone number has been registered",
+        "site": "0",
+        "no_order": "161",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "Sendfrequent": {
+        "name": "Sendfrequent",
+        "value": "Sent too often, please try again later",
+        "site": "0",
+        "no_order": "162",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailsuc": {
+        "name": "emailsuc",
+        "value": "Mail sent successfully!",
+        "site": "0",
+        "no_order": "163",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailfail": {
+        "name": "emailfail",
+        "value": "E-mail sent failed, please confirm that the mailbox is correct or contact Webmaster to solve.",
+        "site": "0",
+        "no_order": "164",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifysuc": {
+        "name": "modifysuc",
+        "value": "Successfully modified",
+        "site": "0",
+        "no_order": "165",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "binding": {
+        "name": "binding",
+        "value": "Bind",
+        "site": "0",
+        "no_order": "166",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "notbound": {
+        "name": "notbound",
+        "value": "Not bound",
+        "site": "0",
+        "no_order": "167",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "accnotmodify": {
+        "name": "accnotmodify",
+        "value": "Account can not be modified",
+        "site": "0",
+        "no_order": "168",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailsuclink": {
+        "name": "emailsuclink",
+        "value": "Mail sent successfully! Please click the verification link in the email to complete the operation!",
+        "site": "0",
+        "no_order": "169",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "bindingok": {
+        "name": "bindingok",
+        "value": "Bind success",
+        "site": "0",
+        "no_order": "170",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "opfail": {
+        "name": "opfail",
+        "value": "operation failed",
+        "site": "0",
+        "no_order": "171",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "modifypasswordsuc": {
+        "name": "modifypasswordsuc",
+        "value": "Password reset complete!",
+        "site": "0",
+        "no_order": "172",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "lodpasswordfail": {
+        "name": "lodpasswordfail",
+        "value": "The original password is wrong",
+        "site": "0",
+        "no_order": "173",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror1": {
+        "name": "membererror1",
+        "value": "wrong user name or password",
+        "site": "0",
+        "no_order": "174",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror2": {
+        "name": "membererror2",
+        "value": "Please open the session!",
+        "site": "0",
+        "no_order": "175",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror3": {
+        "name": "membererror3",
+        "value": "Authorization failed",
+        "site": "0",
+        "no_order": "176",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror4": {
+        "name": "membererror4",
+        "value": "unknown mistake",
+        "site": "0",
+        "no_order": "177",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror6": {
+        "name": "membererror6",
+        "value": "The account is not activated. Please contact the administrator",
+        "site": "0",
+        "no_order": "174",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailsucpass": {
+        "name": "emailsucpass",
+        "value": "Password recovery email has been sent to your email address, click the link in the email to reset your password.",
+        "site": "0",
+        "no_order": "178",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailvildtips3": {
+        "name": "emailvildtips3",
+        "value": "Please enter the correct email or phone number",
+        "site": "0",
+        "no_order": "179",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "membererror5": {
+        "name": "membererror5",
+        "value": "Failed to send! error code:",
+        "site": "0",
+        "no_order": "180",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "noempty": {
+        "name": "noempty",
+        "value": "This item can not be empty",
+        "site": "0",
+        "no_order": "181",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "usernamecheck": {
+        "name": "usernamecheck",
+        "value": "Username must be between 2-30 characters",
+        "site": "0",
+        "no_order": "182",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "passwordcheck": {
+        "name": "passwordcheck",
+        "value": "The password must be between 6 and 30 characters",
+        "site": "0",
+        "no_order": "183",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "passwordsame": {
+        "name": "passwordsame",
+        "value": "The password input is inconsistent twice",
+        "site": "0",
+        "no_order": "184",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "emailcheck": {
+        "name": "emailcheck",
+        "value": "Please enter the correct email address",
+        "site": "0",
+        "no_order": "184",
+        "array": "4",
+        "app": "0",
+        "lang": "en"
+    },
+    "Previous_news": {
+        "name": "Previous_news",
+        "value": "Previous",
+        "site": "0",
+        "no_order": "9",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "Next_news": {
+        "name": "Next_news",
+        "value": "Next",
+        "site": "0",
+        "no_order": "10",
+        "array": "3",
+        "app": "0",
+        "lang": "en"
+    },
+    "close": {
+        "name": "close",
+        "value": "shut down",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "browserupdatetips": {
+        "name": "browserupdatetips",
+        "value": "You are using a obsolete browser. Please upgrade your browser  to enhance your experience.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "newFeedback": {
+        "name": "newFeedback",
+        "value": "You received new feedback",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "opfailed": {
+        "name": "opfailed",
+        "value": "operation failed",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "jobPrompt": {
+        "name": "jobPrompt",
+        "value": "Received a new resume",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "reMessage1": {
+        "name": "reMessage1",
+        "value": "Your website",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "reMessage2": {
+        "name": "reMessage2",
+        "value": ", Please log in as soon as possible to view the website background",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "messagePrompt": {
+        "name": "messagePrompt",
+        "value": "Received a new message",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "formaterror": {
+        "name": "formaterror",
+        "value": "wrong format",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "listcom": {
+        "name": "listcom",
+        "value": "recommend",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "listnew": {
+        "name": "listnew",
+        "value": "update",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "listhot": {
+        "name": "listhot",
+        "value": "Popular",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "weball": {
+        "name": "weball",
+        "value": "All",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "columnall": {
+        "name": "columnall",
+        "value": "All columns",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsaftips4": {
+        "name": "accsaftips4",
+        "value": "Binding user confirmation of identity information",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "rnvalidate": {
+        "name": "rnvalidate",
+        "value": "Real name authentication",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "notauthen": {
+        "name": "notauthen",
+        "value": "Uncertified",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "authen": {
+        "name": "authen",
+        "value": "Certified",
+        "site": "0",
+        "no_order": "9",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "realname": {
+        "name": "realname",
+        "value": "Real name",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "idcode": {
+        "name": "idcode",
+        "value": "ID card No.",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "idvalidok": {
+        "name": "idvalidok",
+        "value": "Success of real name authentication",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "idvalidfailed": {
+        "name": "idvalidfailed",
+        "value": "Real name authentication failure",
+        "site": "0",
+        "no_order": "9",
+        "array": "2",
+        "app": "0",
+        "lang": "en"
+    },
+    "systips1": {
+        "name": "systips1",
+        "value": "You do not have permission to access this content! Please login to visit!",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "systips2": {
+        "name": "systips2",
+        "value": "Your user group does not have permission to access this content!",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "usercheckok": {
+        "name": "usercheckok",
+        "value": "Verification success!",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "usereadinfo": {
+        "name": "usereadinfo",
+        "value": "Reading permission value must be greater than 0",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userselectname": {
+        "name": "userselectname",
+        "value": "Tab",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userwenxinclose": {
+        "name": "userwenxinclose",
+        "value": "Wechat login is off",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userwenboclose": {
+        "name": "userwenboclose",
+        "value": "Weibo login is turned off",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userqqclose": {
+        "name": "userqqclose",
+        "value": "QQ login function is closed",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userbuy": {
+        "name": "userbuy",
+        "value": "buy",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "userbuylist": {
+        "name": "userbuylist",
+        "value": "Order",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "usesendcode": {
+        "name": "usesendcode",
+        "value": "The verification code is",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "usesendcodeinfo": {
+        "name": "usesendcodeinfo",
+        "value": "Please enter the verification in time",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "feedbackinquiry": {
+        "name": "feedbackinquiry",
+        "value": "Online Inquiry",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "templatesusererror": {
+        "name": "templatesusererror",
+        "value": "The current language template is not configured or the template file does not exist",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "phonecode": {
+        "name": "phonecode",
+        "value": "Get phone verification code",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "phonecodeerror": {
+        "name": "phonecodeerror",
+        "value": "Mobile phone verification code error",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "memberbuytitle": {
+        "name": "memberbuytitle",
+        "value": "Paid upgrade member group",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "img_px_tips": {
+        "name": "img_px_tips",
+        "value": "Picture size exceeds system limit (picture width not exceeding 2600px)",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "member_cv": {
+        "name": "member_cv",
+        "value": "curriculum vitae",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "please_login": {
+        "name": "please_login",
+        "value": "Log in first, please!",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "user_agreement": {
+        "name": "user_agreement",
+        "value": "User Agreement",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "user_agreement_tips1": {
+        "name": "user_agreement_tips1",
+        "value": "I have read it carefully",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "user_agreement_tips2": {
+        "name": "user_agreement_tips2",
+        "value": "And agree to register",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "user_agreement_tips3": {
+        "name": "user_agreement_tips3",
+        "value": "Please read and tick agree",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "tag": {
+        "name": "tag",
+        "value": "Tag",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "columnSearchInfo": {
+        "name": "columnSearchInfo",
+        "value": "Please enter the keywords you are interested in.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "advancedSearchInfo": {
+        "name": "advancedSearchInfo",
+        "value": "Please enter the keywords you are interested in.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "notemptips": {
+        "name": "notemptips",
+        "value": "There is no website template in the current language. Please go to Style-Website Template and select a set of templates.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "AddDate": {
+        "name": "AddDate",
+        "value": "Publish time",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "listsales": {
+        "name": "listsales",
+        "value": "sales",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "jsok": {
+        "name": "jsok",
+        "value": "Successful operation",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "jslang3": {
+        "name": "jslang3",
+        "value": "No records selected",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "delete_information": {
+        "name": "delete_information",
+        "value": "Are you sure you want to delete this information? Can not be restored after deleted.",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "js49": {
+        "name": "js49",
+        "value": "Undo",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "weixinunbind": {
+        "name": "weixinunbind",
+        "value": "Are you sure you want to unbind wechat",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "bindweixin": {
+        "name": "bindweixin",
+        "value": "Wechat binding",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "accsaftips5": {
+        "name": "accsaftips5",
+        "value": "Wechat binding can be used for login account, message notification and other functions",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "bound": {
+        "name": "bound",
+        "value": "Bound",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "unbind": {
+        "name": "unbind",
+        "value": "Unbind",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "weixin_login_error": {
+        "name": "weixin_login_error",
+        "value": "Wechat login is not allowed in the current language",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "login_ok": {
+        "name": "login_ok",
+        "value": "Login successful",
+        "site": "0",
+        "no_order": "0",
+        "array": "1",
+        "app": "0",
+        "lang": "en"
+    },
+    "new_registe_email_content": {
+        "name": "new_registe_email_content",
+        "value": "Your website {webname} has received a registration request from a new user: {user name}. Please log in to the website background to check.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "new_registe_sms_content": {
+        "name": "new_registe_sms_content",
+        "value": "Your website {webname} has received a registration request from a new user: {user name}. Please log in to the website background to check.",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    },
+    "new_regist_notice": {
+        "name": "new_regist_notice",
+        "value": "New member notice",
+        "site": "0",
+        "no_order": "0",
+        "array": "0",
+        "app": "0",
+        "lang": "en"
+    }
+}

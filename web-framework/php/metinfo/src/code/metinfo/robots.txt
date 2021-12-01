@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /app/
+Disallow: /admin/
+Disallow: /cache/
+Disallow: /config/
+Disallow: /include/
+Disallow: /public/
+Disallow: /install/
+Disallow: /templates/
+Disallow: /upload/
+Disallow: /member/
+Disallow: /wap/templates/
+Sitemap: http://localhost/sitemap.xml

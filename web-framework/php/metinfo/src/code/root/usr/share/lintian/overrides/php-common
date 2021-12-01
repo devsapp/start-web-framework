@@ -1,0 +1,8 @@
+# We are diverting files from old php5-cli to allow coinstalling with new PHP packaging
+php-common: diversion-for-unknown-file usr/bin/phar preinst:8
+php-common: diversion-for-unknown-file usr/share/man/man1/phar.1.gz preinst:11
+# Yes, we need this
+php-common: non-standard-dir-perm var/lib/php/sessions/ 1733 != 0755
+# Shell snippets, not to be run, but included
+php-common: script-not-executable usr/lib/php/php-helper
+php-common: script-not-executable usr/lib/php/php-maintscript-helper

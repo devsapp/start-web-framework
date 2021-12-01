@@ -1,0 +1,49 @@
+@mixin fx-swap-right($namespace: emb) {
+  ##{$namespace} .swapright {
+    -webkit-transform: perspective(800);
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  ##{$namespace} .swapright.in {
+    -webkit-animation-name: swapRightIn;
+  }
+
+  ##{$namespace} .swapright.out {
+    -webkit-animation-name: swapRightOut;
+  }
+
+  @-webkit-keyframes swapRightIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, -800px) rotateY(70deg);
+    }
+
+    35% {
+      opacity: 1;
+      -webkit-transform: translate3d(-180px, 0, -400px) rotateY(20deg);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+  }
+
+  @-webkit-keyframes swapRightOut {
+    0% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+
+    35% {
+      opacity: 0.5;
+      -webkit-transform: translate3d(180px, 0, -400px) rotateY(-20deg);
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, -800px) rotateY(-70deg);
+    }
+  }
+}

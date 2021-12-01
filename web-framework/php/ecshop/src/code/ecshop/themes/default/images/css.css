@@ -1,0 +1,31 @@
+.TABLE1_2s{ height:30px; line-height:30px; border-bottom:2px solid #E6541A;}
+.TABLE1_2s ul li{ float:left;  background:#F8F8F8;line-height:30px; padding-left:15px; padding-right:15px; display:inline; margin-right:5px; cursor:pointer; font-size:14px}
+/*.TABLE1_2s ul li h3{ font-size:14px; font-weight:normal;line-height:30px; padding:0px; margin:0px; background:#f9f9f9;padding-right:15px; _width:30px; white-space:nowrap;cursor:pointer;}*/
+.TABLE1_2s ul li.visited{ background:#E6541A;background:#E6541A;color:#FFFFFF;}
+ 
+ 
+.fd30_time{ float:right; margin-right:15px;color:#E6541A;  background:URL(../images/time.png) left no-repeat; line-height:30px; height:30px; padding-left:20px; font-size:14px}
+.fd30_time em{ font-style:normal; color:#666}
+
+.TRANSFORM1 .cxjinfo{ background:#F8F8F8; border:1px solid #E5E5E5; margin:0px; padding:5px;}
+.TRANSFORM1 .GoodsPackageWrap .itemwrap{ border:1px solid #E5E5E5; background:#FFFFFF; width:80%; padding:10px; overflow-y:hidden; float:left}
+.prcpage .TRANSFORM1 .GoodsPackageWrap .itemwrap{ width:77%; }
+.TRANSFORM1 .GoodsPackageWrap .priceinfo{ padding-top:15px; width:185px; float:right}
+.TRANSFORM1 .priceinfo li.intro{}
+.TRANSFORM1 .priceinfo li{ line-height:25px;}
+.TRANSFORM1 .price1{ font-size:12px; font-weight:normal; color:#333333}
+.TRANSFORM1 .price1 span{color:#FF0000; font-size:16px; font-family:Arial, Helvetica, sans-serif; font-weight:bold}
+.TRANSFORM1  a.btn_pkg_buy{ display:block;  text-align:center; width:81px; height:25px; line-height:25px; color:#FFFFFF; font-weight:bold; background:URL(btn_pkg_buy.png) left top no-repeat;}
+ 
+.kbprc dl{ width:130px; overflow:hidden}
+ 
+.TRANSFORM1 .cxjinfo .item{ border:0px; margin:0px; padding:0px;}
+.TRANSFORM1 .cxjinfo .itemwrap .goodpic img{ width:130px; height:130px;}
+.TRANSFORM1 .cxjinfo .itemwrap dl dd{ clear:both ; padding:0px; margin:0px; line-height:22px; text-align:center}
+.TRANSFORM1 .cxjinfo .itemwrap dl dd a{line-height:18px; display:block; padding-top:5px; overflow:hidden;width:100px; margin:auto; text-overflow:ellipsis; color:#666666 }
+.TRANSFORM1 .cxjinfo .itemwrap dl dd .fontbold{ font-weight:normal; color:#FF6600}
+.TRANSFORM1 .cxjinfo .plus{ color:#CF0000; padding:60px 5px 0px 5px; font-size:16px; font-weight:bold}
+.pdtdetail .goodsprop_ultra{ clear:both; padding:10px; border:1px solid #eee; background:#f5f5f5 ; margin-top:10px;}
+.pdtdetail .goodsprop_ultra .span-4{ line-height:25px;}
+.pdtdetail .goodsprop_ultra .span-4 a{ color:#999999}
+.pdtdetail .goodsprop_ultra .span-4 a:hover{color:#FF0000;} 
