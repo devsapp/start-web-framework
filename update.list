@@ -1,9 +1,4 @@
-./web-framework/php/thinkphp
-./web-framework/php/laravel
-./web-framework/php/wordpress
-./web-framework/php/zblog
-./web-framework/php/discuz
-./web-framework/php/echsop
+./web-framework/php/ecshop
 ./web-framework/php/metinfo
 ./web-framework/php/typecho
 ./web-framework/php/whatsns
