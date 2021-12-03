@@ -1,0 +1,42 @@
+@import "../var";
+
+//@descrip: 表单相关mixin
+
+//= form input:text
+@mixin input-text {
+  @if $default-platform == MB {
+    #{$default-text-class} {
+      padding: 3px 6px;
+      background-color: $gf;
+      border: 1px solid $text-border;
+
+      @include border-radius(3px);
+    }
+
+    #{$default-text-class}-input {
+      width: 100%;
+      height: 22px;
+      background: none;
+      border: none;
+      outline: none;
+      -webkit-appearance: none;
+
+      &.info {
+        color: #d9d9d9;
+      }
+    }
+  }
+}
+
+//= form
+@mixin form {
+  @if $default-platform == MB {
+    #{$default-form-class} {
+      #{$default-text-class} {
+        margin-bottom: 10px;
+      }
+
+      @include input-text;
+    }
+  }
+}

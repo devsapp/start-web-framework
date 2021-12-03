@@ -1,0 +1,1 @@
+report-with: php7.2-common php7.2-cli libphp7.2-embed libapache2-mod-php7.2 libapache2-mod-php7.2filter php7.2-cgi php7.2-fpm

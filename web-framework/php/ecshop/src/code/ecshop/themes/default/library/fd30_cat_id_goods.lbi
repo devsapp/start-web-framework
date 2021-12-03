@@ -1,0 +1,12 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{foreach from=$cat_id2_best_goods item=goods}-->
+     <div class="goodsItem" style="float:left ; margin-left:10px;" >
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" width="100" height="100" /></a><br />
+           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|truncate:7:true}</a></p>
+           <div class="shop_s" style="text-align:center; color:#CC0000 " >
+             <strong>
+            {$goods.shop_p}
+            </strong>
+           </div>
+     </div>
+<!--{/foreach}-->

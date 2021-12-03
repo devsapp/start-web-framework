@@ -1,0 +1,146 @@
+@import "../function";
+
+//@descrip: css reset, pc or mobile
+// stylelint-disable selector-list-comma-newline-after
+@mixin reset {
+  @if fix(pc) {
+    html {
+      background: $gf;
+    }
+
+    body,
+    h1, h2, h3, h4, h5, h6, p,
+    blockquote, pre,
+    dl, dd,
+    fieldset, form,
+    input, select, textarea,
+    button,
+    figure {
+      margin: 0;
+    }
+
+    ul, ol, menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    body {
+      font-size: 75%;
+      line-height: 1.5;
+    }
+
+    blockquote, q {
+      quotes: none;
+    }
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    fieldset, a img, iframe {
+      border: 0 none;
+    }
+
+    address, em, i {
+      font-style: normal;
+    }
+
+    abbr, acronym {
+      font-variant: normal;
+    }
+
+    hr {
+      display: block;
+      height: 1px;
+      padding: 0;
+      margin: 1em 0;
+      border: 0;
+      border-top: 1px solid $gc;
+    }
+
+    :active {
+      outline: 0 none;
+    }
+
+    input, select, button {
+      vertical-align: middle;
+    }
+
+    input, select, button, textarea {
+      font-family: inherit;
+      font-size: 100%;
+    }
+
+    @if fix(ie7) {
+      button {
+        *overflow: visible;
+      }
+    }
+
+    @if fix(ff) {
+      button,
+      input[type=reset], input[type=button], input[type=submit], input[type=file] > input[type=button] {
+        &::-moz-focus-inner {
+          padding: 0;
+          border: 0 none;
+        }
+      }
+    }
+
+    @include placeholder;
+  }
+
+  @else if fix(mobile) {
+    html {
+      font-family: sans-serif;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    ul, ol, menu {
+      list-style: none;
+    }
+
+    body {
+      font-size: 1em;
+      line-height: 1.5;
+      word-wrap: break-word;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-touch-callout: none;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    address, em, i {
+      font-style: normal;
+    }
+
+    input, select, button {
+      vertical-align: middle;
+    }
+
+    input, select, button, textarea {
+      font-family: inherit;
+      font-size: 100%;
+    }
+
+    a {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+  }
+}

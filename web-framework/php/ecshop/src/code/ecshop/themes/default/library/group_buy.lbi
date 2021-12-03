@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language='javascript' src='{$template_dir}/js/fd30_time.js' type='text/javascript' charset='utf-8'></script>
+<!-- {if $group_buy_goods} -->
+<div class="promotion_goods Tr_cs"  >
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+       <!--{foreach from=$group_buy_goods item=goods}-->
+      <div class="cxjitem"><a href="{$goods.url}" class="pic"><span class="new"></span><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg"  /></a>
+        <div class="fd30_time" dayh="0" endtime="{$goods.gmt_end_time}"></div>
+        <a  class="qgbtn" href="{$goods.url}"  >立即抢购</a> </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="TABLE_S">
+    <ul>
+    </ul>
+  </div>
+ </div>
+<!-- {/if} -->
+<style>
+.promotion_goods{height:350px; width:263px}
+.promotion_goods .cxjad_m{height:350px; width:263px}
+.promotion_goods .cxjitem{height:350px; width:263px; float:left}
+.promotion_goods .cxjitem img{height:288px; width:240px;}
+.promotion_goods .TABLE_S li.visited{background:#3B5C9F}
+.promotion_goods .cxjitem a.pic{ display:inline; height:auto;}
+</style>
+<script>
+
+$(function (){
+			$('.promotion_goods div.cxjitem').each(function(i){
+               $(".promotion_goods .TABLE_S ul").append("<li class=cxjli></li>");
+               });
+			
+			$(".promotion_goods").textSlider({speeds:5000,lines:1,offset:5000,direc:1,qnum:1})
+					})</script>

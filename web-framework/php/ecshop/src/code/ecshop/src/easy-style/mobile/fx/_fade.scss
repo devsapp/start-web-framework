@@ -1,0 +1,33 @@
+@mixin fx-fade($namespace: null) {
+  #{$namespace} .fade.in {
+    visibility: visible;
+    -webkit-animation-name: fadeIn;
+  }
+
+  #{$namespace} .fade.out {
+    visibility: hidden;
+    -webkit-animation-name: fadeOut;
+
+    @include opacity(0);
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}

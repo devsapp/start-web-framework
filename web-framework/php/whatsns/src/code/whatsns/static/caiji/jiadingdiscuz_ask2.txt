@@ -1,0 +1,9 @@
+﻿http://www.jdxc.sh.cn/forum-141-{#num}.html|
+.common>.xst|
+|
+.t_fsz>td[id*="postmessage_"]|
+|
+|
+|
+http://www.jdxc.sh.cn/
+|嘉定论坛网(<a href="http://www.jdxc.sh.cn" target="_blank">http://www.jdxc.sh.cn</a>)|0

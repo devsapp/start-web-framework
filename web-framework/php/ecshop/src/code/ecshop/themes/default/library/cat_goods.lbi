@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2><span>{$goods_cat.name|escape:html}</span><a href="{$goods_cat.url}" class="more">更多></a></h2>
+<div class="i_prclist hover" id="goods_cat{$goods_cat.id}"><a href="{$goods_cat.url}" class="pmore">更多{$goods_cat.name|escape:html}分类</a>
+  <div class="cxjad_m">
+    <div class="cxjinfo">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="cxjitem">
+        <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+            <!-- {if $goods.brief} -->
+            <em class="brief">{$goods.brief}</em>
+            <!--{/if}-->
+            </a></h3>
+          <ul class="prices">
+            <li class="gel-price">
+              <!-- {if $goods.promote_price neq ""} -->
+              {$lang.promote_price}<em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              销售价：<em>{$goods.shop_price}</em>
+              <!--{/if}-->
+            </li>
+            <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+          </ul>
+        </div>
+      </div>
+      <!--{/foreach}-->
+    </div>
+  </div>
+  <div class="clear0"></div>
+</div>
+
+<script>$(function (){					  
+					$(".post_cat{$goods_cat.id} dt a").clone().prependTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));					 	
+					$("#goods_cat{$goods_cat.id} .pmore").appendTo($("#goods_cat{$goods_cat.id}").parent().parent().children(".fl").children(".fd30_wordmenu"));
+					  })
+</script>

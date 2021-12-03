@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+@import "global";
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav {
+  background: $nav-bg;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.menu {
+  width: 120px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#logo-div {
+  background-color: #142030;
+  height: 100px;
+  text-align: center;
+
+  .logo {
+    margin-top: 28px;
+  }
+
+  a {
+    display: block;
+    margin-top: 5px;
+    line-height: 22px;
+    font-size: 11px;
+  }
+}
+
+/*云起激活页面 --by evelyn*/
+
+/* 授权标识 */
+
+.noauthorize {
+  color: $unavail-color;
+
+  .icon {
+    vertical-align: -3px;
+  }
+}
+
+.authorize {
+  color: $avail-color;
+}
+
+.tab-front {
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 10px;
+  height: 36px;
+  line-height: 36px;
+  border-right: 2px solid #335b64;
+  cursor: pointer;
+}
+
+.tab-back {
+  color: #F4FAFB;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: pointer;
+}
+
+.tab-hover {
+  color: #F4FAFB;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+  background: #2F9DB5;
+}
+
+#top-div {
+  padding: 3px 0 2px;
+  background: #BBDDE5;
+  margin: 5px;
+  text-align: center;
+}
+
+#main-div {
+  margin-top: 10px;
+
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+#menu-list {
+  padding: 0;
+  margin: 0;
+
+  > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    > li {
+      line-height: 30px;
+      color: $nav-fg;
+      cursor: pointer;
+      padding-left: 35px;
+      background: no-repeat 15px center;
+      -webkit-font-smoothing: antialiased;
+
+      &.active,
+      &:hover {
+        background-color: white;
+        color: $nav-fg-active;
+      }
+
+      &.active {
+        .submenu {
+          display: block;
+        }
+      }
+    }
+
+    @each $v in certificate, goods, promotion, order, banner, stats, content, members, priv, system, template, backup, sms, rec, email, lead {
+      .icon-#{$v} {
+        background-image: url(../images/nav/#{$v}.png);
+
+        &.active,
+        &:hover {
+          background-image: url(../images/nav/#{$v}.on.png);
+        }
+      }
+    }
+  }
+}
+
+.menu-item {
+  /*background: url(images/menu_arrow.gif) no-repeat 0 3px;*/
+  font-weight: normal;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 120px;
+  bottom: 0;
+  width: 120px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $nav-sub-bg;
+  border-right: 1px solid $border-color;
+
+  .title {
+    font-size: 14px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+    color: $gray;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    font-size: 12px;
+  }
+
+  a {
+    display: block;
+    padding-left: 18px;
+    line-height: 50px;
+    color: $nav-sub-fg;
+  }
+
+  li.active a,
+  a:hover {
+    background-color: #fff;
+    box-shadow: inset 0 -1px #ddd, inset 0 1px #ddd;
+  }
+
+  li:first-child {
+    &.active a,
+    a:hover {
+      box-shadow: inset 0 -1px #ddd;
+    }
+  }
+}
+
+#help-title {
+  font-size: 14px;
+  color: #000080;
+  margin: 5px 0;
+  padding: 0px;
+}
+
+#help-content {
+  margin: 0;
+  padding: 0;
+}
+
+.tips {
+  color: #CC0000;
+}
+
+.link {
+  color: #000099;
+}
+
+.menu::-webkit-scrollbar {
+  width: 5px;
+  background: #757575;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: #3f3f3f;
+  border-radius: 6px;
+}
+
+#foot-div {
+  position: fixed;
+  bottom: 0;
+  width: 120px;
+  line-height: 50px;
+  background-color: $primary-color;
+  text-align: center;
+  > a {
+    color: white;
+  }
+}
+
+.panel-hint {
+  display: none;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  bottom: 50px;
+  height: auto;
+  width: 120px;
+  padding-top: 10px;
+  background-color: white;
+
+  ul {
+    position: relative;
+    padding: 0;
+    list-style: none;
+    line-height: 25px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      right: 35px;
+      border: 5px solid transparent;
+      border-top: 5px solid #fff;
+    }
+  }
+}

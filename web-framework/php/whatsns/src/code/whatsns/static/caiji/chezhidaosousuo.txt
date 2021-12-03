@@ -1,0 +1,9 @@
+﻿http://so.webcars.com.cn/ask/%E5%A4%A7%E4%BC%97/1.html|
+.scont a[href*="qa"]|
+.zhuanjia_answer_txt|
+|
+|
+|
+|
+
+|车知道分类采集(<a href="http://so.webcars.com.cn/ask/%E5%A4%A7%E4%BC%97/1.html" target="_blank">http://ask.webcars.com.cn/</a>)|0

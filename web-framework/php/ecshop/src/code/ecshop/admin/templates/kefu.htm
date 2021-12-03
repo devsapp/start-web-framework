@@ -1,0 +1,15 @@
+
+{include file="pageheader.htm"}
+
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 435px;">
+        <form action="mobile_setting.php" method="post" enctype="multipart/form-data">
+
+            <p><span>客服电话：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="kefu_tel" value="{$kefu_tel}"><span style="color: red"> *(默认：18888888888)</span></p>
+            <input type="hidden" name="act" value="up_kefu">
+            <button type="submit"> 提交 </button>
+        </form>
+    </div>
+</div>
+
+{include file="pagefooter.htm"}

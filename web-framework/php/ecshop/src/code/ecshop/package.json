@@ -1,0 +1,37 @@
+{
+  "name": "ecshop",
+  "author": "shopex",
+  "version": "3.0.0",
+  "description": "ecshop",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^8.5.1",
+    "gulp": "^3.9.1",
+    "plumber": "^0.4.8"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-stats": "0.0.4",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.ishopex.cn:tiantao/ecshop.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "browserslist": [
+    "> 0.5% in CN",
+    "last 2 versions",
+    "ie >= 8"
+  ]
+}

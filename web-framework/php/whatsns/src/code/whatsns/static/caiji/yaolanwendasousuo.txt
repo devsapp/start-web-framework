@@ -1,0 +1,10 @@
+﻿http://search.yaolan.com/ask.do?searchWord=%E5%A6%88%E5%A6%88|
+#result #box_9 h3 .tt|
+#moreQuestion .expert_a p|
+|
+#best_answer .cont|
+#moreQuestion .expert_a .bar .left|
+.expert_img img|
+|
+摇篮问答关键词搜索采集(<a href="http://search.yaolan.com/ask.do?searchWord=%E5%A6%88%E5%A6%88" target="_blank">http://search.yaolan.com/ask.do?searchWord=%E5%A6%88%E5%A6%88</a>)
+|0

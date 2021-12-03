@@ -1,0 +1,10 @@
+﻿http://ask.ci123.com/categories/show/2/all?p={#num}|
+.list_u_down li>a.list_title|
+.a_green .ask2_inner .u_down[style^="background"]  table td>span|
+.a_green .ask2_inner  .u_down  table td>span|
+|
+.a_green .ask2_inner  .u_down  table td>p a[href^="http://user"]|
+.a_green .ask2_inner  .u_down  table td>a[href^="http://user"] img|
+http://ask.ci123.com|
+育儿问答(<a href="http://ask.ci123.com/categories/show/2/all?p=3" target="_blank">http://ask.ci123.com</a>)
+|0

@@ -134,3 +134,10 @@ dmypy.json
 c
 .s
 node_modules
+
+web-framework/php/laravel/src/code/root
+
+!web-framework/php/wordpress/src/code/root/*
+!web-framework/php/wordpress/src/code/root/usr/*
+!web-framework/php/zblog/src/code/root/*
+!web-framework/php/zblog/src/code/root/usr/*

@@ -1,0 +1,9 @@
+﻿https://p.baidu.com/|
+.feed-list-content .title a[href*='/question/']|
+.feed-list-content .content  .content-all|
+.article-title .content|
+|
+|
+|
+https://p.baidu.com
+|百度派(<a href="https://p.baidu.com/" target="_blank">https://p.baidu.com/</a>)|0

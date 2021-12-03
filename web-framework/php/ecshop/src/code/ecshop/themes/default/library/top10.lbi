@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="leftbox">
+  <div class="lt"> 畅销排行Top10</div>
+  <ul class="leftprc">
+    <!-- {foreach name=top_goods from=$top_goods item=goods}-->
+    <li>
+      <div class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="samllimg" /></a><i>{$smarty.foreach.top_goods.iteration}</i></div>
+      <div class="info"><i>{$smarty.foreach.top_goods.iteration}</i>
+        <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a> </p>
+        <div class="price"><span>{$lang.shop_price}</span>{$goods.price}</div>
+      </div>
+    </li>
+    <!-- {/foreach} -->
+  </ul>
+</div>
+<div class="clear10"></div>
+<script>  $(function() {
+$(".leftprc li").eq(0).addClass("lih");
+$(".leftprc li").hover(function(){ 
+		$(".leftprc li").removeClass("lih");
+		$(this).addClass('lih');
+})})
+</script>
+ <style>
+.leftprc a{font-size:14px; color:#999}
+.leftprc .pic{ position:relative; display:none; text-align:center; margin:auto; width:160px;}
+.leftprc .pic a img{ width:160px; height:auto }
+.leftprc .pic i{ background:URL(../images/Hotlisth.gif) no-repeat; color:#FFFFFF; width:32px; text-align:center; font:italic 16px/1.2 Arial; position:absolute; right:-15px; top:10px; display:block; padding-top:6px; height:26px;}
+.leftprc .info{ position:relative; padding-left:20px; padding-bottom:5px; padding-top:5px; line-height:20px;}
+.leftprc .info i{ font:italic 16px/1.2 Arial; position:absolute; left:3px; top:5px; display:block}
+.leftprc .info .price{ display:none}
+.leftprc .lih .pic{ display:block}
+.leftprc .lih .info{ background:#E4004F; color:#FFF;}
+.leftprc .lih .info a{ color:#FFF}
+</style>

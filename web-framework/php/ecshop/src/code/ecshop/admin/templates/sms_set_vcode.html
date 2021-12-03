@@ -1,0 +1,116 @@
+<!-- $Id: shop_config.htm 16865 2009-12-10 06:05:32Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/region.js"}
+<div class="tab-div">
+
+    <!-- tab body -->
+    <div id="tabbody-div" style="width: 90%; margin: 0 auto; border: 0;">
+        <form action="sms.php?act=sms_set_update" method="post">
+            <table style="width: 500px; margin: 0 auto">
+                <tr>
+                    <h2 style="text-align: center">阿里云短信配置(非ecshop自带)</h2>
+                </tr>
+
+                <tr class="tr" style="display: none;">
+                    <td style="font-weight: bold;font-size: 12px">accessKeyId:</td>
+                    <td><input type="text"  name="accessKeyId" value="{$data.accessKeyId}" style="width:300px;height:30px;">&nbsp;<a href="https://ak-console.aliyun.com/" target="_blank">前往获取</a></td>
+                </tr>
+
+                <tr class="tr" style="display: none;">
+                    <td style="font-weight: bold;font-size: 12px">accessKeySecret:</td>
+                    <td><input type="text" name="accessKeySecret"  value="{$data.accessKeySecret}" style="width:300px;height:30px;"></td>
+                </tr>
+
+                <tr class="tr" style="display: none;">
+                    <td style="font-weight: bold;font-size: 12px">短信签名:</td>
+                    <td><input type="text"  name="SignName" value="{$data.SignName}" style="width:300px;height:30px;">&nbsp;<a href="https://dysms.console.aliyun.com/dysms.htm#/develop/sign" target="_blank">前往设置</a></td>
+                </tr>
+                <tr class="tr" style="display: none;">
+                    <td style="font-weight: bold;font-size: 12px">验证码模板号:</td>
+                    <td><input type="text"  name="TemplateCode" value="{$data.TemplateCode}" style="width:300px;height:30px;">&nbsp;<a href="https://dysms.console.aliyun.com/dysms.htm#/develop/template" target="_blank">前往设置</a>&nbsp;<img src="images/notice.svg" width="16" height="16" border="0" title="*验证码模板仅有一个变量,请将变量设置为${code}"></td>
+
+                </tr>
+
+                <tr>
+                <td style="font-weight: bold;font-size: 12px">是否开启:</td>
+                <td><p><input type="radio" name="status" value="1" onclick="is_open('open')" {if $data.status =='1' } checked{/if}>是
+                    <input type="radio" name="status" value="2" onclick="is_open('close')" {if $data.status =='2' } checked{/if}>否
+                    <font color="red">* 开启后,将启用阿里云的短信配置.关闭后,将使用云起短信.</font>
+                </p>
+                    
+                </td>
+            </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="提交" name="pay_small_submit" style="width: 300px;height: 30px;margin-right: 86px"></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</div>
+{insert_scripts files="tab.js,validator.js"}
+{literal}
+<script language="JavaScript">
+    
+    if({$data.status} == '1')
+    {
+        is_open('open');
+    }
+    function is_open(status)
+    {
+        var tr = document.getElementsByClassName('tr');
+        if(status == 'open')
+        {
+            for(var i=0; i<tr.length; i++)
+            {
+                tr[i].style.display = '';
+            }
+        }
+        if(status == 'close')
+        {
+            for (var i=0; i<tr.length; i++)
+            {
+                tr[i].style.display = 'none';
+            }
+        }
+    }
+    region.isAdmin = true;
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
+    var ReWriteSelected = null;
+    var ReWriteRadiobox = document.getElementsByName("value[209]");
+
+    for (var i=0; i<ReWriteRadiobox.length; i++)
+    {
+        if (ReWriteRadiobox[i].checked)
+        {
+            ReWriteSelected = ReWriteRadiobox[i];
+        }
+    }
+
+    function ReWriterConfirm(sender)
+    {
+        if (sender == ReWriteSelected) return true;
+        var res = true;
+        if (sender != ReWriteRadiobox[0]) {
+            var res = confirm('{$rewrite_confirm}');
+        }
+
+        if (res==false)
+        {
+            ReWriteSelected.checked = true;
+        }
+        else
+        {
+            ReWriteSelected = sender;
+        }
+        return res;
+    }
+</script>
+{/literal}
+{include file="pagefooter.htm"}

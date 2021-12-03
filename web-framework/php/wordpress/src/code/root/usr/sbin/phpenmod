@@ -1,0 +1,278 @@
+#!/bin/sh
+#
+# phpenmod - a PHP module manager for Debian
+#
+# Copyright 2013-2015 Ondřej Surý <ondrej@sury.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+set -ue
+
+SCRIPT_NAME=${0##*/}
+QUIET=no
+NEED_RESTART=no
+MAINT_MODE=no
+
+. /usr/lib/php/php-helper
+
+usage() {
+    [ -n "$@" ] && warning $@
+    echo "usage: ${SCRIPT_NAME} [ -v ALL|php_version ] [ -s ALL|sapi_name ] module_name [ module_name_2 ]"
+    exit 1
+}
+
+resolve_versions() {
+    local versions=$1
+    if [ "$versions" = "ALL" ]; then
+	versions=$(phpquery -V)
+    fi
+    echo $versions
+}
+
+resolve_sapis() {
+    local version=$1
+    local sapis=$2
+    
+    if [ "$sapis" = "ALL" ]; then
+	sapis=$(phpquery -S -v $version)
+    fi
+    echo $sapis
+}
+
+enmods() {
+    local versions="$1"
+    local sapis="$2"
+    local mods="$3"
+    local register="$4"
+    local versions
+    local sapis
+    local version
+    local sapi
+    local mod
+    
+    for mod in $mods; do
+	for version in $(resolve_versions "$versions"); do
+	    for sapi in $(resolve_sapis "$version" "$sapis"); do
+		enmod_ret=0
+		enmod "$version" "$sapi" "$mod" || enmod_ret=$?
+		case $enmod_ret in
+		    0)
+			NEED_RESTART=yes
+			record_state enabled "$version" "$sapi" "$mod"
+			;;
+		esac
+	    done
+	    if [ "$register" = "yes" ]; then
+		mod_registry register "$version" "$mod"
+	    fi
+	done
+    done
+}
+
+dismods() {
+    local versions="$1"
+    local sapis="$2"
+    local mods="$3"
+    local register="$4"
+    local purge="$5"
+    local version
+    local sapi
+    local mod
+
+    for mod in $mods; do
+	for version in $(resolve_versions "$versions"); do
+	    for sapi in $(resolve_sapis "$version" "$sapis"); do
+		local dismod_ret=0
+		dismod "$version" "$sapi" "$mod" "$purge" || dismod_ret=$?
+		case $dismod_ret in
+		    0)
+			NEED_RESTART=yes
+			record_state disabled "$version" "$sapi" "$mod"
+			;;
+		esac
+	    done
+	done
+	if [ "$purge" = "yes" ]; then
+	    remove_state enabled "$version" "$sapi" "$mod"
+	    remove_state disabled "$version" "$sapi" "$mod"
+	    mod_registry unregister "$version" "$mod"
+	elif [ "$register" = "yes" ]; then
+	    mod_registry unregister "$version" "$mod"
+	fi
+    done
+}
+
+enmod() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+
+    if ! module_exists "$version" "$modname"; then
+	warning "Module $modname ini file doesn't exist under /etc/php/${version}/mods-available"
+	return 1
+    fi
+
+    local priority=$(get_priority "$version" "$sapi" "$modname")
+    local live_link=$(get_live_link "$version" "$sapi" "$modname" "$priority")
+    local live_link_content=$(get_live_link_content "$version" "$sapi" "$modname" "$priority")
+
+    local module_state=0
+    phpquery -q -v "$version" -s "$sapi" -m "$modname" || module_state=$?
+
+    case "$module_state" in
+	# module enabled, but re-enable the conf.d link just in case
+	0)
+	    ;;
+	# module not yet enabled
+	1)
+	    ;;
+	# module disabled by maintainer script
+	33)
+	    ;;
+	# module disabled by site administrator
+	# enable module only if not running in maintainer mode
+	32)
+	    if [ "$MAINT_MODE" = "yes" ]; then
+		warning "Not enabling the ${modname} module for PHP ${version} ${sapi} SAPI since the module"
+		warning "was disabled by local administrator."
+		return 1
+	    fi
+	    ;;
+	34)
+            warning "Not enabling the ${modname} module for PHP ${version} ${sapi} SAPI since module symlink"
+	    warning "already exists in /etc/php/${version}/${sapi}/conf.d with different content."
+	    return 1
+	    ;;
+	# fail if we get any different result
+	*)
+	    warning "Unable to get module state, run phpquery -v ${version} -s ${sapi} -m ${modname} manually"
+	    warning "and fix the module state."
+	    return 1
+    esac
+
+    if [ -d "/etc/php/${version}/$sapi/conf.d" ]; then
+	if [ ! -h "${live_link}" ]; then
+	    ln -s "${live_link_content}" "${live_link}"
+	fi
+    else
+	warning "Directory /etc/php/${version}/${sapi}/conf.d doesn't exist, not enabling the module"
+	return 1
+    fi
+
+    return 0
+}
+
+dismod() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+    local purge=$4
+
+    if ! module_exists "$version" "$modname"; then
+	if [ "$purge" = "no" ]; then
+	    warning "Module ${modname} ini file doesn't exist under /etc/php/${version}/mods-available"
+	    return 1
+	fi
+    fi
+
+    local priority=$(get_priority "$version" "$sapi" "$modname")
+    local live_link=$(get_live_link "$version" "$sapi" "$modname" "$priority")
+    local live_link_content=$(get_live_link_content "$version" "$sapi" "$modname" "$priority")
+
+    local module_state=0
+    phpquery -q -v "$version" -s "$sapi" -m "$modname" || module_state=$?
+
+    case $module_state in
+	# module enabled
+	0)
+	    ;;
+	# module not enabled, but re-remove the link just in case
+	1|32|33)
+	    ;;
+	34)
+	    warning "Not disabling module ${modname} for ${sapi} SAPI.  The configuration was"
+	    warning "modified by local administrator."
+	    return 1
+	    ;;
+	# fail if we get any different result
+	*)
+	    warning "Unable to get module state, run phpquery -v ${version} -s ${sapi} -m ${modname} manually"
+	    warning "and fix the module state."
+	    return 1
+    esac
+
+    if [ -d "/etc/php/${version}/${sapi}/conf.d" ]; then
+	if [ -h "$live_link" ]; then
+	    rm -f "$live_link"
+	fi
+    fi
+
+    return 0
+}
+
+versions=
+sapis=
+register=no
+purge=no
+while getopts pfv:s:mqr opt; do
+    case $opt in
+	r) register=yes;;
+	v)
+	    if [ "$versions" = "ALL" -o \( "$OPTARG" = "ALL" -a -n "$versions" \) ]; then
+		warning "You cannot specify ALL and individual versions"
+		usage
+	    fi
+	    versions="${versions}${versions:+ }$OPTARG"
+	    ;;
+	s)
+	    if [ "$sapis" = "ALL" -o \( "$OPTARG" = "ALL" -a -n "$sapis" \) ]; then
+		warning "You cannot specify ALL and individual sapis"
+		usage
+	    fi
+	    sapis="${sapis}${sapis:+ }$OPTARG"
+	    ;;
+	m) MAINT_MODE=yes;;
+	p) purge=yes;;
+	q) QUIET=yes;;
+	\?) usage;;
+    esac
+done
+shift $(expr $OPTIND - 1)
+mods=""
+for mod in $@; do
+    mods="${mods}${mods:+ }${mod%%/*}"
+done
+
+# If -v or -s was not specified run on every version and every SAPI
+[ -z "$versions" ] && versions=ALL
+[ -z "$sapis"    ] && sapis=ALL
+
+[ -z "$mods" ] && usage
+
+case "${SCRIPT_NAME}" in
+    phpenmod)
+	enmods "$versions" "$sapis" "$mods" "$register"
+	;;
+    phpdismod)
+	dismods "$versions" "$sapis" "$mods" "$register" "$purge"
+	;;
+    *)
+	usage
+	;;
+esac
+exit 0

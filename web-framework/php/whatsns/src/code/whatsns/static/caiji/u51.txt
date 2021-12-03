@@ -1,0 +1,9 @@
+﻿http://credit.u51.com/question/|
+.wenda-lists h3 a[href*='/question/']|
+#comment-lists .comment-wrap p.text|
+.ml .des-box .description|
+|
+.comment-lists .comment-wrap  .userInfo a[href*='/user/']|
+.comment-lists  .member-pic img|
+http://credit.u51.com
+|51信用卡问答(<a href="http://credit.u51.com" target="_blank">http://credit.u51.com</a>)|0

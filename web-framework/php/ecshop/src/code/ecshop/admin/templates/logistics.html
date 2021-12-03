@@ -1,0 +1,81 @@
+<!-- $Id: shop_config.htm 16865 2009-12-10 06:05:32Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,../js/region.js"}
+<div class="tab-div">
+    <!-- tab bar -->
+<!--    <div id="tabbar-div">-->
+<!--        <p>-->
+<!--            {foreach from=$group_list item=group name="bar_group"}<span class="tab-front" id="{$group.code}-tab">{$group.name}</span>{/foreach}-->
+<!--        </p>-->
+<!--    </div>-->
+    <!-- tab body -->
+    <div id="tabbody-div" style="width: 90%; margin: 0 auto; border: 0;">
+        <form action="mobile_setting.php?act=updata_logistics" method="post">
+            <table style="width: 500px; margin: 0 auto">
+                <tr>
+                    <h2 style="text-align: center">物流查询配置(快递鸟)</h2>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;font-size: 12px">用户ID:</td>
+                    <td><input type="text"  name="logistics_userId" value="{$logistics.logistics_userId}" style="width:300px;height:30px;"></td>
+                </tr>
+
+                <tr>
+                    <td style="font-weight: bold;font-size: 12px">API key:</td>
+                    <td><input type="text" name="logistics_key"  value="{$logistics.logistics_key}" style="width:300px;height:30px;"></td>
+                </tr>
+
+                <tr>
+                    <td style="font-weight: bold;font-size: 12px">物流公司编号:</td>
+                    <td><input type="text"  name="shippercode" value="{$logistics.shippercode}" style="width:300px;height:30px;"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><center><input type="submit" value="提交" name="pay_small_submit" style="width: 300px;height: 30px;margin-right: 86px"></center></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{insert_scripts files="tab.js,validator.js"}
+{literal}
+<script language="JavaScript">
+    region.isAdmin = true;
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
+    var ReWriteSelected = null;
+    var ReWriteRadiobox = document.getElementsByName("value[209]");
+
+    for (var i=0; i<ReWriteRadiobox.length; i++)
+    {
+        if (ReWriteRadiobox[i].checked)
+        {
+            ReWriteSelected = ReWriteRadiobox[i];
+        }
+    }
+
+    function ReWriterConfirm(sender)
+    {
+        if (sender == ReWriteSelected) return true;
+        var res = true;
+        if (sender != ReWriteRadiobox[0]) {
+            var res = confirm('{$rewrite_confirm}');
+        }
+
+        if (res==false)
+        {
+            ReWriteSelected.checked = true;
+        }
+        else
+        {
+            ReWriteSelected = sender;
+        }
+        return res;
+    }
+</script>
+{/literal}
+{include file="pagefooter.htm"}

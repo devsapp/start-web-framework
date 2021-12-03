@@ -1,0 +1,9 @@
+﻿http://wenwen.sogou.com/cate/?cid=83951616&tp=6&pg={#num}|
+.lib-list>a[id*="long_title"]|
+.answer-wrap>.answer-con|
+|
+.satisfaction-answer>.answer-con|
+|
+|
+http://wenwen.sogou.com
+|搜搜问答网(<a href="http://wenwen.sogou.com" target="_blank">http://wenwen.sogou.com</a>)|0

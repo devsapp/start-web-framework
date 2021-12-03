@@ -1,0 +1,9 @@
+﻿http://credit.u51.com/search2/question/?k=%E5%82%A8%E8%93%84%E5%8D%A1|
+.question-list li a[href*='/question/']|
+#comment-lists .comment-wrap p.text|
+.ml .des-box .description|
+|
+.comment-lists .comment-wrap  .userInfo a[href*='/user/']|
+.comment-lists  .member-pic img|
+http://credit.u51.com
+|51信用卡搜索问答(<a href="http://credit.u51.com/search2/question/?k=%E5%82%A8%E8%93%84%E5%8D%A1" target="_blank">http://credit.u51.com</a>)|0

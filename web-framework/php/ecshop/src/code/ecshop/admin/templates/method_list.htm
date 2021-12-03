@@ -1,0 +1,124 @@
+<!-- $Id: category_list.htm 17019 2010-01-29 10:10:34Z liuhui $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<form method="post" action="" name="listForm">
+<!-- start ad position list -->
+<div class="list-div" id="listDiv">
+{/if}
+
+<table width="100%" cellspacing="1" cellpadding="2" id="list-table">
+  <tr>
+    <th>配送名称</th>
+    <th>配送费用</th>
+    <th>排序</th>
+    <th>是否显示</th>
+<!--    <th>是否为凯宇配送</th>-->
+    <th>添加时间</th>
+    <th>操作</th>
+  </tr>
+  {foreach from=$cat_info item=cat}
+  <tr align="center" class="{$cat.level}" id="{$cat.level}_{$cat.cat_id}">
+    <td align="left" class="first-cell" >
+      <span>{$cat.delivery_name}</span>
+    </td>
+    <td width="10%">{$cat.cost}</td>
+    <td width="10%">{$cat.sort_order}</td>
+
+    <td width="10%"><img src="images/{if $cat.is_show eq 'true'}yes{else}no{/if}.svg" width="20" /></td>
+
+<!--    <td width="10%"><img src="images/{if $cat.k_status eq 'true'}yes{else}no{/if}.svg" width="20" /></td>-->
+
+    <td width="10%">{$cat.ctime}</td>
+
+    <td width="24%" align="center">
+      <a href="delivery_method.php?act=edit&amp;delivery_id={$cat.delivery_id}">{$lang.edit}</a> |
+<!--      <a href="delivery_method.php?act=edit&amp;delivery_id={$cat.delivery_id}" title="{$lang.remove}">{$lang.remove}</a>-->
+      <a href="javascript:confirm_redirect('是否确定删除该数据', 'delivery_method.php?act=remove&delivery_id={$cat.delivery_id}')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>
+  </tr>
+  {/foreach}
+</table>
+{if $full_page}
+</div>
+</form>
+
+{literal}
+<script language="JavaScript">
+<!--
+
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+}
+
+var imgPlus = new Image();
+imgPlus.src = "images/menu_plus.gif";
+
+/**
+ * 折叠分类列表
+ */
+function rowClicked(obj)
+{
+  // 当前图像
+  img = obj;
+  // 取得上二级tr>td>img对象
+  obj = obj.parentNode.parentNode;
+  // 整个分类列表表格
+  var tbl = document.getElementById("list-table");
+  // 当前分类级别
+  var lvl = parseInt(obj.className);
+  // 是否找到元素
+  var fnd = false;
+  var sub_display = img.src.indexOf('menu_minus.gif') > 0 ? 'none' : (Browser.isIE) ? 'block' : 'table-row' ;
+  // 遍历所有的分类
+  for (i = 0; i < tbl.rows.length; i++)
+  {
+      var row = tbl.rows[i];
+      if (row == obj)
+      {
+          // 找到当前行
+          fnd = true;
+          //document.getElementById('result').innerHTML += 'Find row at ' + i +"<br/>";
+      }
+      else
+      {
+          if (fnd == true)
+          {
+              var cur = parseInt(row.className);
+              var icon = 'icon_' + row.id;
+              if (cur > lvl)
+              {
+                  row.style.display = sub_display;
+                  if (sub_display != 'none')
+                  {
+                      var iconimg = document.getElementById(icon);
+                      iconimg.src = iconimg.src.replace('plus.gif', 'minus.gif');
+                  }
+              }
+              else
+              {
+                  fnd = false;
+                  break;
+              }
+          }
+      }
+  }
+
+  for (i = 0; i < obj.cells[0].childNodes.length; i++)
+  {
+      var imgObj = obj.cells[0].childNodes[i];
+      if (imgObj.tagName == "IMG" && imgObj.src != 'images/menu_arrow.gif')
+      {
+          imgObj.src = (imgObj.src == imgPlus.src) ? 'images/menu_minus.gif' : imgPlus.src;
+      }
+  }
+}
+//-->
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}
+{/if}

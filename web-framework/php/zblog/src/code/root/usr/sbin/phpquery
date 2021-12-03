@@ -1,0 +1,252 @@
+#!/bin/sh
+#
+# phpquery - a PHP module manager for Debian
+#
+# Copyright 2013-2015 Ondřej Surý <ondrej@sury.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+set -ue
+
+SCRIPT_NAME=${0##*/}
+QUIET=no
+
+. /usr/lib/php/php-helper
+
+usage() {
+    [ -n "$@" ] && warning $@
+    echo "usage: ${SCRIPT_NAME} [ -d ] [ -q ] -v version_name -s sapi_name [ -m module_name ] [ -M ] [ -S ] [ -V ]"
+    exit 1
+}
+
+check_mod() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+
+    if ! module_exists $version $modname; then
+	output "No module matches $modname"
+	return 1
+    fi
+
+    local priority=$(get_priority $version $sapi $modname)
+    local live_link=$(get_live_link $version $sapi $modname $priority)
+    local live_link_content=$(get_live_link_content $version $sapi $modname $priority)
+
+    found=no
+    local state_dir="$(get_state_dir $version $sapi)"
+    if [ -e "${live_link}" ] ; then
+	if [ -h "${live_link}" ] ; then
+	    local content="$(readlink "${live_link}")"
+	    if [ "${content}" = "${live_link_content}" ] ; then
+		if [ -e "${state_dir}/enabled_by_admin/$modname" ]; then
+		    output "$modname (Enabled for $sapi by local administrator)"
+		    return 0
+		elif [ -e "${state_dir}/enabled_by_maint/$modname" ]; then
+		    output "$modname (Enabled for $sapi by maintainer script)"
+		    return 0
+		fi
+		output "$modname (Enabled for $sapi by unknown)"
+		return 0
+	    else
+		output "Module $modname symlink was modified by local administrator."
+		return 34
+	    fi
+	fi
+    else
+	if [ -e "${state_dir}/disabled_by_admin/$modname" ]; then
+	    output "No module matches $modname (Disabled for $sapi by local administrator)"
+	    return 32
+	elif [ -e "${state_dir}/disabled_by_maint/$modname" ]; then
+	    output "No module matches $modname (Disabled for $sapi by maintainer script)"
+	    return 33
+	fi
+	output "No module matches $modname (Disabled for $sapi by unknown)"
+	return 1
+    fi
+}
+
+list_mod() {
+    local _version=$1
+    local _sapi=$2
+    local verbose=$3
+
+    if [ "$_version" = "ALL" ]; then
+	versions=$(list_version)
+    else
+	versions=$_version
+    fi
+
+    for version in $versions; do
+	local registry_dir="$(get_registry_dir "$version")"
+	if [ -d "$registry_dir" ]; then
+	    for mod in $(list_parts "$registry_dir"); do
+		if [ "$_sapi" = "ALL" ]; then
+		    sapis=$(list_sapi $version)
+		else
+		    sapis="$_sapi"
+		fi
+		if [ "$verbose" = "yes" ]; then
+		    for sapi in $sapis; do
+			check_mod $version $sapi $mod
+		    done
+		else
+		    echo $mod
+		fi
+	    done
+	fi
+    done
+    return 0
+}
+
+list_version() {
+    local version_dir="$(get_version_dir)"
+    if [ -d "$version_dir" ]; then
+	local version=
+	for version in $(list_parts_regex "$version_dir" '.*[0-9]\.[0-9]'); do
+	    echo $version;
+	done | sort -rn
+    fi
+}
+
+list_sapi() {
+    local version=$1
+    local sapi_dir="$(get_sapi_dir $version)"
+
+    if [ -d "$sapi_dir" ]; then
+	for sapi in $(list_parts "$sapi_dir"); do
+	    echo $sapi;
+	done
+    fi
+}
+
+check_version() {
+    local version=$1
+    local version_dir=$(get_version_dir)
+    if [ -d "$version_dir/$version" ]; then
+	return 0
+    fi
+    return 1
+}
+
+check_sapi() {
+    local version=$1
+    local sapi=$2
+    local sapi_dir="$(get_sapi_dir $version)"
+
+    if [ -e "$sapi_dir/$sapi" ]; then
+	return 0
+    fi
+    return 1
+}
+
+action() {
+    local action=$1
+    local version=$2
+    local sapi=$3
+    local mod=$4
+    local verbose=$5
+
+    ret=0
+    case "$action" in
+	check_mod)
+	    [ -z "$version" -o -z "$sapi" ] && usage "You need to specify version (-v) and sapi (-s)"
+	    check_version "$version" || usage "Invalid PHP version ($version) specified"
+	    check_sapi "$version" "$sapi" || usage "Invalid SAPI ($sapi) specified"
+	    check_mod "$version" "$sapi" "$mod" || ret=$?
+	    ;;
+	check_sapi)
+	    [ -z "$version" ] && usage "You need to specify version (-v)"
+	    check_version "$version" || usage "Invalid PHP version ($version) specified"
+	    check_sapi "$version" "$sapi" || ret=$?
+	    if [ "$ret" -eq 0 ]; then
+		output "$sapi"
+	    fi
+	    ;;
+	check_version)
+	    check_version $version || ret=$?
+	    if [ "$ret" -eq 0 ]; then
+		output "$sapi"
+	    fi
+	    ;;
+	list_version) list_version || ret=$?;;
+	list_mod) list_mod "$version" "$sapi" "$verbose" || ret=$?;;
+	list_sapi) list_sapi "$version" || ret=$?;;
+	*) usage "Unknown action $action"; ret=3;;
+    esac
+    return $ret
+}
+
+verbose=no
+action=
+version=
+sapi=
+mod=
+
+double_action() {
+    usage "Cannot use $1 and $2 at the same time, pick only one mode of operation.";
+}
+
+while getopts ds:m:SMqv:V opt; do
+    case $opt in
+	v)
+	    version="$OPTARG"
+	    ;;
+	V)
+	    [ -n "$action" ] && double_action $action list_version;
+	    action=list_version
+	    ;;
+	s)
+	    sapi="$OPTARG"
+	    ;;
+	S)
+	    [ -n "$action" ] && double_action $action list_sapi
+	    action="list_sapi"
+	    ;;
+	m)
+	    mod="$OPTARG"
+	    ;;
+	M)
+	    [ -n "$action" ] && double_action $action list_mod
+	    action="list_mod"
+	    ;;
+	q)
+	    QUIET=yes
+	    ;;
+	d)
+	    verbose=yes
+	    ;;
+	\?) usage "Unknown parameter specified";;
+    esac
+done
+shift $(expr $OPTIND - 1)
+
+if [ -z "$action" ]; then
+    if [ -n "$mod" ]; then
+	action=check_mod
+    elif [ -n "$sapi" ]; then
+	action=check_sapi
+    elif [ -n "$version" ]; then
+	action=check_version
+    else
+        usage "You need to specify at least one action."
+    fi
+fi
+
+action "$action" "$version" "$sapi" "$mod" "$verbose"
+exit $?

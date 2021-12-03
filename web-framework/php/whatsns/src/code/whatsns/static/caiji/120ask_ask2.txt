@@ -1,0 +1,9 @@
+﻿http://www.120ask.com/list/guke/all/{#num}/|
+.q-quename|
+.crazy_new p|
+#d_msCon p|
+|
+.b_answertl .b_sp1 a|
+.b_answertop .b_docface img|
+
+http:|120ask问答网(<a href="http://www.120ask.com/list/guke/all/1" target="_blank">http://www.120ask.com</a>)|0

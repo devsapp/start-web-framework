@@ -1,0 +1,69 @@
+@import "../../easy-style/screen";
+
+$ex-support-for-owg: false;
+$ex-support-for-webkit533: false;
+$ex-support-for-ie6: false;
+$ex-support-for-ie7: false;
+
+$blue: #41a5e1;
+$dark-blue: #262f3e;
+$dark-gray: #3a3b40;
+$shade-gray: #666666;
+$gray: #888888;
+$light-gray: #dddddd;
+$weak-gray: #f0f0f0;
+$white-gray: #f8f8f8;
+$cyan: #9aa5b1;
+$light-cyan: #c0c8cf;
+$navy: #dbe4eb;
+
+
+$body-bg: $white-gray;
+$body-fg: $dark-gray;
+$primary-color: $blue;
+$border-color: $light-gray;
+$link-color: $primary-color;
+$link-hover-color: darken($link-color, 5%);
+$unavail-color: #848f97;
+$avail-color: #fcb44e;
+$body-font-size: 12px;
+$body-line-height: 20px;
+$stress-font-size: 14px;
+
+$cat-font-size: 16px;
+$head-font-size: 20px;
+
+$nav-bg: $dark-blue;
+$nav-fg: $cyan;
+$nav-fg-active: #142030;
+$nav-sub-bg: $weak-gray;
+$nav-sub-fg: $shade-gray;
+$nav-font-size: $stress-font-size;
+
+$input-border: $light-cyan;
+$form-tip-fg: $gray;
+$dropdown-border: $navy;
+
+$btn-height: 30px;
+$btn-radius: 4px;
+$btn-padding: 36px;
+$btn-font-size: 12px;
+$btn-primary-bg: $primary-color;
+$btn-primary-fg: white;
+$btn-secondary-bg: white;
+$btn-secondary-fg: #888d99;
+$btn-outline-height: 35px;
+$btn-outline-padding: 10px;
+$btn-outline-border: $light-cyan;
+$btn-outline-fg: #0089ff;
+
+$switch-height: 20px;
+$switch-active: $primary-color;
+$switch-inactive: #bbbbbb;
+$switch-inactive-fg: $body-fg;
+
+// radio, checkbox
+
+
+// controllers
+// sorter, dropdown, options, uploader

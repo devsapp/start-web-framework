@@ -1,0 +1,9 @@
+﻿http://www.51credit.com/wenda/|
+dd ul li a[href*='/wenda/']|
+.main-box-l .answer-box ul li|
+.main-box-l .content|
+|
+|
+|
+http://www.51credit.com
+|我爱卡问答(<a href="http://www.51credit.com" target="_blank">http://www.51credit.com</a>)|0

@@ -1,0 +1,89 @@
+{if $full_page}
+<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<div class="form-div">
+    <a class="btn btn-right" href="order_time.php?act=add_order_time" style="margin-left: 1155px;">添加时间</a>
+</div>
+
+<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
+
+<!-- start users list -->
+<div class="list-div" id="listDiv">
+{/if}
+<!--用户列表部分-->
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>编号</th>
+    <th>配送时间</th>
+    <th>配送单量</th>
+    <th>添加时间</th>
+    <th>操作</th>
+  <tr>
+  {foreach from=$time_list item=order}
+  <tr>
+    <td><input type="checkbox" name="checkboxes[]" value="{$user.user_id}" notice="{if $user.user_money ne 0}1{else}0{/if}"/>{$order.id}</td>
+    <td class="first-cell">{$order.o_time}</td>
+    <td>{$order.quantity_order}</td>
+    <td align="center">{$order.ctime}</td>
+    <td align="center">
+      <a href="order_time.php?act=edit_order_time&id={$order.id}" title="{$lang.edit}">{$lang.edit}</a>
+      <a href="javascript:confirm_redirect('确定删除该数据么？', 'order_time.php?act=remove&id={$order.id}')" title="{$lang.remove}">{$lang.remove}</a>
+    </td>
+  </tr>
+  {foreachelse}
+  <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+  {/foreach}
+  <tr>
+      <td colspan="2">
+      <td align="right" nowrap="true" colspan="8">
+      {include file="page.htm"}
+      </td>
+  </tr>
+</table>
+
+{if $full_page}
+</div>
+<!-- end users list -->
+</form>
+<script type="text/javascript" language="JavaScript">
+<!--
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+
+{literal}
+onload = function()
+{
+    document.forms['searchForm'].elements['keyword'].focus();
+    // 开始检查订单
+    startCheckOrder();
+}
+
+
+function confirm_bath()
+{
+  userItems = document.getElementsByName('checkboxes[]');
+
+  cfm = '{$lang.list_remove_confirm}';
+
+  for (i=0; userItems[i]; i++)
+  {
+    if (userItems[i].checked && userItems[i].notice == 1)
+    {
+      cfm = '{$lang.list_still_accounts}' + '{$lang.list_remove_confirm}';
+      break;
+    }
+  }
+
+  return confirm(cfm);
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

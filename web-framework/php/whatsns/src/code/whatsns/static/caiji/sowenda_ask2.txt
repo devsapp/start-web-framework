@@ -1,0 +1,10 @@
+﻿http://wenda.so.com/c/164?filt=20&pn={#num}|
+.question-list .qus-title a[href*='/q/']|
+.other-ans-cnt|
+.q-cnt|
+.resolved-cnt|
+.answers > .ask-author|
+ .answers >.pic >img|
+http://wenda.so.com|
+360问答(<a href="http://wenda.so.com" target="_blank">http://wenda.so.com</a>)|
+0

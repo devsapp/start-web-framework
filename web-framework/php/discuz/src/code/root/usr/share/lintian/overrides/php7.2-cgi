@@ -1,0 +1,2 @@
+php7.2-cgi: embedded-library usr/bin/php-cgi7.2: file
+php7.2-cgi: embedded-library usr/lib/cgi-bin/php7.2: file

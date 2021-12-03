@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<div class="i_prclist">
+  <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+  <div class="cxjitem <!-- {if $smarty.foreach.promotion_foreach.first} -->cxjitem_f<!-- {/if} -->">
+    <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+    
+  
+    </div>
+    <div class="i">
+      <h3 class="promotion_h3"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+        <!-- {if $goods.brief} -->
+        <em class="brief">{$goods.brief}</em>
+        <!--{/if}-->
+        </a></h3>
+      <ul class="prices">
+        <li class="gel-price"> {$lang.promote_price}<em>{$goods.promote_price}</em> </li>
+        <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+      </ul>
+      <div class="clear0"></div>
+   
+    </div>
+  </div>
+  <!--{/foreach}-->
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->

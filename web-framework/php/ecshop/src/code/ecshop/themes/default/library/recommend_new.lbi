@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<DIV class="i_prclist_t"><SPAN>新品速递</SPAN><a href="../search.php?intro=new" class="more">查看更多></a></DIV>
+<div id="show_new_area" class="clearfix i_prclist">
+  <!-- {/if} -->
+  <!--{foreach from=$new_goods item=goods name=new_goods}-->
+  <div class="cxjitem <!-- {if $smarty.foreach.new_goods.first} -->cxjitem_f<!-- {/if} -->">
+    <div class="p"><a href="{$goods.url}" class="aimg"><img src="{$goods.thumb}" width="200" height="200" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+    <div class="i">
+      <h3><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}
+        <!-- {if $goods.brief} -->
+        <em class="brief">{$goods.brief}</em>
+        <!--{/if}-->
+        </a></h3>
+      <ul class="prices">
+        <li class="gel-price">
+          <!-- {if $goods.promote_price neq ""} -->
+          {$lang.promote_price}<em>{$goods.promote_price}</em>
+          <!-- {else}-->
+          销售价：<em>{$goods.shop_price}</em>
+          <!--{/if}-->
+        </li>
+        <li class="gel-mktprice"><em>市场价：</em>{$goods.market_price}</li>
+      </ul>
+    </div>
+  </div>
+  <!--{/foreach}-->
+  <!-- {if $cat_rec_sign neq 1} -->
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->
+<!-- {/if} -->

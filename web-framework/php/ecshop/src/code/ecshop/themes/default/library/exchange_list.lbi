@@ -1,0 +1,109 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="boxs">
+  <div class="box_1s">
+    <form method="GET" class="sort" name="listform">
+      
+      <div class="displaylist">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="listorder"><a href="exchange.php?category={$category}&display={$pager.display}&brand={$brand_id}&integral_min={$integral_min}&integral_max={$integral_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" class="display_a display_<!-- {if $pager.sort == 'goods_id'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->">上架时间</a> <a href="exchange.php?category={$category}&display={$pager.display}&brand={$brand_id}&integral_min={$integral_min}&integral_max={$integral_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=exchange_integral&order=<!-- {if $pager.sort == 'exchange_integral' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list" class="display_a display_<!-- {if $pager.sort == 'exchange_integral'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->">积分</a> <a href="exchange.php?category={$category}&display={$pager.display}&brand={$brand_id}&integral_min={$integral_min}&integral_max={$integral_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" class="display_a display_<!-- {if $pager.sort == 'last_update'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->">更新时间</a>
+              <input type="hidden" name="category" value="{$category}" />
+              <input type="hidden" name="display" value="{$pager.display}" id="display" />
+              <input type="hidden" name="integral_min" value="{$integral_min}" />
+              <input type="hidden" name="integral_max" value="{$integral_max}" />
+              <input type="hidden" name="page" value="{$pager.page}" /></td>
+            <td class="td_r">(共有<b>{$pager.record_count}</b>个商品)  共<b>{$pager.page_count}</b>页<a name='goods_list'></a></td>
+          </tr>
+        </table>
+      </div>
+    </form>
+    <div class="clear10"></div>
+    <form name="compareForm" method="post">
+      <!-- {if $pager.display == 'list'} -->
+      <div class="goodsList">
+        <!--{foreach name=goods_list from=$goods_list item=goods}-->
+        <ul class="clearfix bgcolor"
+        
+        
+        <!--{if $smarty.foreach.goods_list.index mod 2 eq 0}-->
+        id=""
+        <!--{else}-->
+        id="bgcolor"
+        <!--{/if}-->
+        >
+        <li class="thumb"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" /></a></li>
+        <li class="goodsName"> <a href="{$goods.url}" class="f6">
+          <!-- {if $goods.goods_style_name} -->
+          {$goods.goods_style_name}<br />
+          <!-- {else} -->
+          {$goods.goods_name}<br />
+          <!-- {/if} -->
+          </a>
+          <!-- {if $goods.goods_brief} -->
+          {$lang.goods_brief}{$goods.goods_brief}<br />
+          <!-- {/if} -->
+        </li>
+        <li style="float:right"> {$lang.exchange_integral}<font class="shop_s">{$goods.exchange_integral}</font> </li>
+        </ul>
+        <!--{/foreach}-->
+      </div>
+      <!-- {elseif $pager.display == 'grid'} -->
+ 
+        <div class="clearfix goodsBox" style="border:none;">
+          <!--{foreach from=$goods_list item=goods}-->
+          <!-- {if $goods.goods_id} -->
+          <div class="items-gallery_jf">
+            <div class="pic"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" width="210" height="210" /></a> <span class="xq"><a href="{$goods.url}">我要兑换</a></span> </div>
+            <div class="i">
+              <p class="name"><a href="{$goods.url}" title="{$goods.name}">{$goods.goods_name}
+                <!-- {if $goods.goods_brief} -->
+                <span class="brief">{$goods.goods_brief}</span>
+                <!--{/if}-->
+                </a></p>
+              <div class="gel-price"> {$lang.exchange_integral}<em> {$goods.exchange_integral}</em> </div>
+            </div>
+          </div>
+          <!--{/if}-->
+          <!--{/foreach}-->
+        </div>
+  
+      <!-- {elseif $pager.display == 'text'} -->
+      <div class="goodsList">
+        <!--{foreach from=$goods_list item=goods}-->
+        <ul class="clearfix bgcolor" 
+        
+        
+        <!--{if $smarty.foreach.goods_list.index mod 2 eq 0}-->
+        id=""
+        <!--{else}-->
+        id="bgcolor"
+        <!--{/if}-->
+        >
+        <li class="goodsName"> <a href="{$goods.url}" class="f6 f5">
+          <!-- {if $goods.goods_style_name} -->
+          {$goods.goods_style_name}<br />
+          <!-- {else} -->
+          {$goods.goods_name}<br />
+          <!-- {/if} -->
+          </a>
+          <!-- {if $goods.goods_brief} -->
+          {$lang.goods_brief}{$goods.goods_brief}<br />
+          <!-- {/if} -->
+        </li>
+        <li> {$lang.exchange_integral}<font class="shop_s">{$goods.exchange_integral}</font> </li>
+        </ul>
+        <!--{/foreach}-->
+      </div>
+      <!-- {/if} -->
+    </form>
+  </div>
+</div>
+<div class="blank5"></div>
+<script type="text/javascript">
+  window.onload = function()
+  {
+    Compare.init();
+    fixpng();
+  }
+  var button_compare = '';
+</script>

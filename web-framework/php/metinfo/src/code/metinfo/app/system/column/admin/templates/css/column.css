@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 米拓企业建站系统 Copyright (C) 长沙米拓信息技术有限公司 (https://www.metinfo.cn). All rights reserved. */
+#column-list tbody tr .td-column-name{position: relative;}
+#column-list tbody tr td{padding: 0;}
+#column-list tbody tr td>div{padding:.9rem 0.5rem;}
+#column-list tbody tr.hidden td>div{display: none;}
+#column-list tbody tr:not(.class1) .td-column-name:before,
+#column-list tbody tr:not(.class1) .td-column-name:after{content: ''; background: #eee; position: absolute;}
+#column-list tbody tr:not(.class1) .td-column-name:before {width: 1px;height: 100%;top: -50%;}
+#column-list tbody tr:not(.class1) .td-column-name:after{width: 12px;height: 1px;top: 50%;}
+#column-list tbody tr[data-index="0"] .td-column-name:before{height: calc(50% + 15px);top: -15px;}
+#column-list tbody tr.class2 .td-column-name:before,
+#column-list tbody tr.class2 .td-column-name:after{left: 20px;}
+#column-list tbody tr.class3 .td-column-name:before,
+#column-list tbody tr.class3 .td-column-name:after{left: 44px;}
+#column-list .move-column-list{max-height: 600px;}

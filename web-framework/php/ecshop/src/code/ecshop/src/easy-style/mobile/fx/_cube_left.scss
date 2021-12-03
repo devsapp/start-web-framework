@@ -1,0 +1,39 @@
+@mixin fx-cube-left($namespace: emb) {
+  ##{$namespace} .cubeleft {
+    -webkit-animation-duration: 0.55s;
+  }
+
+  ##{$namespace} .cubeleft.in {
+    -webkit-transform-origin: 100% 50%;
+    -webkit-animation-name: cubeLeftIn;
+  }
+
+  ##{$namespace} .cubeleft.out {
+    -webkit-transform-origin: 0% 50%;
+    -webkit-animation-name: cubeLeftOut;
+  }
+
+  @-webkit-keyframes cubeLeftIn {
+    0% {
+      opacity: 0.5;
+      -webkit-transform: rotateY(90deg) translateZ(100%) scale(0.5);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: rotateY(0deg) translateZ(0) scale(1);
+    }
+  }
+
+  @-webkit-keyframes cubeLeftOut {
+    0% {
+      opacity: 1;
+      -webkit-transform: rotateY(0deg) translateX(0) scale(1);
+    }
+
+    100% {
+      opacity: 0.5;
+      -webkit-transform: rotateY(-90deg) translateZ(100%) scale(0.5);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+﻿http://ask.chewen.com/list/1-0-1-88.html|
+.ask_list_ula a|
+.wd_list_wen_r .pa|
+.wd_list_wen_r p|
+|
+.wd_list_img_l .wzimg_a|
+.wd_list_img_l .arrimg_a img|
+
+|车问互动问答分类(<a href="http://ask.chewen.com/list/1-0-1-88.html" target="_blank">http://ask.chewen.com/</a>)|0

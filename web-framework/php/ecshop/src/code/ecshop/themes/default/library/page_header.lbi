@@ -1,0 +1,203 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='transport2.js,utils.js'}
+<link href="{$template_dir}/images/ec12.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script language='javascript' src='{$template_dir}/js/fdjs.js' type='text/javascript' charset='utf-8'></script>
+<script language='javascript' src='{$template_dir}/js/fdjs.json.js' type='text/javascript' charset='utf-8'></script>
+<a name="top"></a>
+<div class=fd_top0>
+  <div class=fd_top>
+  <div class=pull-left>
+      <table border=0>
+        <tbody>
+          <TR>
+            <td><font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font></td>
+            <td><div class=fd30_wordmenu><i class="toptel"></i><span>400-821-3016 位置：模板管理-库项目管理-page_header.lbi–页面顶部</span></div></td>
+          </TR>
+        </tbody>
+      </table>
+    </div>
+    <div class=pull-right>
+      <ul>
+        <li class=myorder><a href="user.php?act=order_list" class="order">我的订单</a></li>
+        <li class=li1><a onclick=addFavorite(window.location,document.title) href="#">收藏本站</a></li>
+        <li class="li3 cs_transform"><a href="">微信扫一扫<I></I><SPaN><IMG src="images/wechat.png"></SPaN></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class=clear0></div>
+</div>
+<div class="fd_top1">
+  <div class="fd_top">
+    <div class="logo1"><a href="../index.php" name="top"><img src="{$template_dir}/images/logo.gif" class="logo" /></a></div>
+    <div class="logo_r">
+      <div class="logo2 search">
+        <div class="search_label">
+          <form id="searchForm" name="searchForm" method="get" action="search.php"  class="SearchBar" onSubmit="return checkSearchForm()">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><select name="category" id="category" class="B_input" style="display:none">
+                    <option value="0">{$lang.all_category}</option>
+                    {$category_list}
+                  </select>
+                  <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="inputstyle keywords"  /></td>
+                <td><input name="imageField" type="submit" value="" title="搜索" class="btn_search" style="cursor:pointer;" /></td>
+                <td style="display:none"><a href="search.php?act=advanced_search">{$lang.advanced_search}</a></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div class="hot-keywords"> <span>热门搜索:</span>
+          <script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+    </script>
+          {if $searchkeywords}
+          {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}">{$val}</a> {/foreach}
+          {/if} </div>
+      </div>
+      <div class="logo3"><!-- #BeginlibraryItem "/library/cart.lbi" -->
+        <div class="cart" id="ECS_CaRTINFO"> {insert name='cart_info'} </div>
+        <!-- #EndlibraryItem --> </div>
+    </div>
+    <div class="clear0"></div>
+  </div>
+</div>
+<div class="fd_top2">
+  <div class="navs fd_top">
+    <div class="navs_l hover">
+      <div class="fd30_cat">
+        <div class="t">全部商品分类</div>
+        <div class="classmenu">
+          <ul>
+            <!--{foreach from=$categories item=cat name=catename }-->  <!-- {if $smarty.foreach.catename.index<6} -->
+            <li class="cat_lv1 hover  post_cat{$cat.id} li{$smarty.foreach.catename.iteration}">
+              <h4><a href="{$cat.url}">{$cat.name|escape:html}</a>
+              
+       
+                <span>></span><i></i></h4><div class="next_t">         <!--{if $cat.cat_id}-->
+                <!--{foreach   from=$cat.cat_id item=child name=childname}-->
+                <!-- {if $smarty.foreach.childname.index<=2} -->
+                <a class="xz" href="{$child.url}">{$child.name|escape:html}</a>
+                <!--{/if}-->
+                <!--{/foreach}-->
+                <!--{/if}--></div>
+              <div class="cat_p">
+                <div class="cat_cat">
+                  <!--{if $cat.cat_id}-->
+                  <!--{foreach from=$cat.cat_id item=child name=childname}-->
+                  <dl 
+                    
+                
+                  <!-- {if $smarty.foreach.childname.first} -->
+                  class="fore"
+                  <!-- {/if} -->
+                  >
+                  <dt><a class="at" href="{$child.url}">{$child.name|escape:html}</a></dt>
+                  <!--{if $child.cat_id}-->
+                  <dd>
+                    <!--{foreach from=$child.cat_id item=childer}-->
+                    <a href="{$childer.url}">{$childer.name|escape:html}</a>
+                    <!--{/foreach}-->
+                    <!--{/if}-->
+                  </dd>
+                  <div class="clear0"></div>
+                  </dl>
+                  <!--{/foreach}-->
+                  <!--{/if}-->
+                </div>
+                <div class="cat_brand">
+                  <h2>推荐品牌</h2>
+                  <div class="show_cat_brand">
+                    <!--{foreach from=get_cat_brands($this->_var['cat']['id']) item=brandCat}-->
+                    <div  class="cxjitem post_brand"> <a href="{$brandCat.url}"><img src="data/brandlogo/{$brandCat.brand_logo}" title="{$brandCat.brand_name}" /></a> </div>
+                    <!--{/foreach}-->   <div class="clear0"></div>
+                  </div>
+                </div>
+              </div>
+            </li>   <!--{/if}-->
+            <!--{/foreach}-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navs_m">
+      <ul class="Menulist">
+        <li class="li1"><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+        <!-- {if $smarty.foreach.nav_middle_list.index<6} -->
+        <!-- {if $smarty.foreach.nav_middle_list.last}-->
+        <li><a href="{$nav.url}" 
+          <!-- {if $nav.opennew eq 1} -->
+          target="_blank"
+          <!-- {/if} -->
+          >{$nav.name}</a></li>
+        <!-- {else} -->
+        <li><a href="{$nav.url}" 
+          <!-- {if $nav.opennew eq 1} -->
+          target="_blank"
+          <!-- {/if} -->
+          >{$nav.name}</a></li>
+        <!-- {/if} -->
+        <!-- {if $nav.active eq 1} -->
+        <!-- {/if} -->     <!-- {/if} -->
+        <!-- {/foreach} -->
+      </ul>
+    </div>
+    <div class="navs_r"> <a href="exchange.php"> 积分商城</a> | <a href="brand.php">全部品牌</a> </div>
+    <div class="clear0"></div>
+  </div>
+</div>
+<script>	
+function addFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("对不起您的浏览器不支持操作，请使用Ctrl+D进行添加");
+        }
+    }
+};
+$(function (){
+			
+			
+	/*		$('.navs_l .cat_lv1').each(function(i){ $(this).find("h4").addClass("a" + i);
+									      if($(this).find("span").size()==0){
+													$(this).children().children().find("div").detach();
+															  }															  
+										 });  */
+	$(".fd30_slideTog").hover(function(){
+     $(this).children(".slideTog_info").slideDown("slow");
+	 $(this).addClass("fd30_slideTog_v");
+},function () {	
+     $(this).children(".slideTog_info").hide();
+	 $(this).removeClass("fd30_slideTog_v");
+  });	
+				
+				}) 
+</script>

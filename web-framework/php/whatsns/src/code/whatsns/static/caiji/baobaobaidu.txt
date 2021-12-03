@@ -1,0 +1,10 @@
+﻿http://zhidao.baidu.com/search?fr=search&word=%E6%80%80%E5%AD%95|
+.list-wraper  .ti|
+.other-answer .answer-detail|
+.question-box .content|
+.answer-box .answer-detail|
+|
+|
+|
+百度宝宝搜索采集(<a href="http://baobao.baidu.com/browse" target="_blank">http://baobao.baidu.com/browse</a>)
+|0

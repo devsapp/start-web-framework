@@ -1,0 +1,584 @@
+//load exbase var exbase 全局变量文件
+//@descrip: 函数列表,直接函数名调用
+@import "var";
+
+//== 统一type-of type_of，与js保持一致
+@function typeof($var) {
+  @return type-of($var);
+}
+
+//== 判断是否需要修复特定的平台或特定版本的浏览器
+//== @param: $who:浏览器版本或平台，包括ie6-10, ff, safari, chrome, webkit, opera, khtml, svg, pie, mobile, pc;
+//== @return: 浏览器版本，由此可推导出$who的值;
+
+@function fix($who: ie6) {
+  @if typeof($who) == list {
+    $r: null;
+
+    @each $v in $who {
+      $r: if($r == null, fix($v), $r and fix($v));
+    }
+
+    @return $r;
+  }
+
+  @if ($who == 6 or $who == ie6) and ($ex-support-for-ie6 or $ex-support-for-ie7) and $default-platform != MB {
+    @return ie6;
+  }
+
+  @if ($who == 7 or $who == ie7) and $ex-support-for-ie7 and $default-platform != MB {
+    @return ie7;
+  }
+
+  @if ($who == 8 or $who == ie8) and $ex-support-for-ie8 and $default-platform != MB {
+    @return ie8;
+  }
+
+  @if ($who == 9 or $who == ie9) and ($ex-support-for-ie9 or $ex-support-for-microsoft) and $default-platform != MB {
+    @return ie9;
+  }
+
+  @if ($who == 10 or $who == ie10) and ($ex-support-for-ie10 or $ex-support-for-microsoft) {
+    @return ie10;
+  }
+
+  @if ($who == 11 or $who == ie11) and ($ex-support-for-ie11 or $ex-support-for-microsoft) {
+    @return ie11;
+  }
+
+  @if ($who == 12 or $who == edge) and ($ex-support-for-edge or $ex-support-for-microsoft) {
+    @return edge;
+  }
+
+  @if ($who == ie or $who == ms) and $ex-support-for-microsoft {
+    @return ie;
+  }
+
+  @if ($who == ff or $who == firefox or $who == moz) and $ex-support-for-mozilla {
+    @return ff;
+  }
+
+  @if ($who == sf or $who == safari) and $ex-support-for-webkit {
+    @return sf;
+  }
+
+  @if ($who == cr or $who == chrome) and $ex-support-for-webkit {
+    @return cr;
+  }
+
+  @if $who == webkit and $ex-support-for-webkit {
+    @return webkit;
+  }
+
+  @if ($who == webkit533 or $who == adr2) and $ex-support-for-webkit533 {
+    @return webkit533;
+  }
+
+  @if $who == owg and $ex-support-for-owg {
+    @return owg;
+  }
+
+  @if ($who == o or $who == opera) and $ex-support-for-opera {
+    @return op;
+  }
+
+  @if $who == khtml and $ex-support-for-khtml and $default-platform != MB {
+    @return khtml;
+  }
+
+  @if ($who == mobile or $who == mb or $who == MB or $who == adr or $who == android or $who == ios) and $default-platform == MB {
+    @return mobile;
+  }
+
+  @if ($who == PC or $who == pc or $who == SC) and ($default-platform == SC or $default-platform == PC) {
+    @return pc;
+  }
+
+  @if $who == svg and $ex-support-for-svg {
+    @return svg;
+  }
+
+  @if $who == pie and $ex-support-for-pie {
+    @return pie;
+  }
+
+  @return false;
+}
+
+//== 判断变量是否存在
+//== @return: true or false;
+
+@function chk($var) {
+  @return if($var == "" or $var == false or $var == null or $var == unquote(""), false, true);
+}
+
+//== 取变量第n个元素，并修复nth()函数遇到非list时报错问题
+//== @param: $value:要取的变量;
+//== @param: $n:列表第n个值;
+//== @param: $last:为true时n超出变量的下标就取变量的最后一个值，为false时n超出下标则返回null;
+
+@function n($value, $n: 1, $last: true) {
+  $v: null;
+
+  //@if typeof($value) == list or typeof($value) == arglist {
+  $len: length($value);
+
+  @if $n > $len and $last {
+    $v: nth($value, $len);
+  }
+
+  @else if $n <= $len {
+    $v: nth($value, $n);
+  }
+
+  //}
+  @return $v;
+}
+
+//== 把value中的颜色值转为16进制带alpha的颜色值，形如#FFc0c0c0
+//== @return: color or null;
+
+@function iehex($value: $default-color) {
+  $color: null;
+
+  @if typeof($value) == list {
+    @each $v in $value {
+      @if typeof($v) == color {
+        $color: $v;
+      }
+
+      @else if typeof($v) == list {
+        @each $w in $v {
+          @if typeof($w) == color {
+            $color: $w;
+          }
+        }
+      }
+    }
+  }
+
+  @else if typeof($value) == color {
+    $color: $value;
+  }
+
+  @if typeof($color) == color {
+    @return ie-hex-str($color);
+  }
+
+  @return null;
+}
+
+//== 去掉属性值中的!important
+@function no-important($value) {
+  $v: $value;
+
+  @if typeof($value) == list {
+    @if nth($value, length($value)) == !important {
+      $v: nth($value, 1);
+
+      @for $i from 2 through length($value) - 1 {
+        $v: join($v, nth($value, $i));
+      }
+    }
+  }
+
+  @return $v;
+}
+
+//== 十进制转十六进制
+@function dec-to-hex($d) {
+  $hex-vals: "ABCDEF";
+  $base: 16;
+  $quotient: $d;
+  $result: "";
+
+  @while $quotient != 0 {
+    $mod: $quotient % $base;
+    $quotient: floor($quotient / $base);
+
+    @if $mod > 9 {
+      $mod: str-slice($hex-vals, $mod - 9, $mod - 9);
+    }
+
+    $result: $mod + $result;
+  }
+
+  @return $result;
+}
+
+//== 拼接属性字符串
+//== @return: 以给定的$seq拼接后的结果，如$value不是list则返回原值;
+
+@function splice($value, $seq: "-") {
+  $str: null;
+
+  @if typeof($value) == list {
+    @each $v in $value {
+      @if chk($v) {
+        $str: if($str == null, $v, unquote("#{$str}#{$seq}#{$v}"));
+      }
+    }
+  }
+
+  @else {
+    $str: $value;
+  }
+
+  @return unquote($str);
+}
+
+//== 将给定的值或list转为逗号或空格分隔的list
+@function split($value, $seq: comma) {
+  $list: $null;
+
+  @if typeof($value) == list {
+    @each $v in $value {
+      @if chk($v) {
+        $list: if($list == null, $v, join($list, $v, $seq));
+      }
+    }
+  }
+
+  @else {
+    $list: $value;
+  }
+
+  @return $list;
+}
+
+//== 从给定的值中分离出$rules和其它值
+//== @param: $value:要分隔的列表;
+//== @param: $which:要返回的部分。0 去除$rules中的值;1 返回$rules中的值;
+//== @return: 返回$which指定的列表值;
+
+@function split-values($value, $which: 0, $rules: $default-direction) {
+  $z: null;
+
+  @if typeof($value) == list {
+    @each $v in $value {
+      @if $which == 0 and not index($rules, $v) or $which == 1 and index($rules, $v) {
+        $z: if($z == null, $v, join($z, $v, space));
+      }
+    }
+  }
+
+  @else {
+    @if $which == 0 and not index($rules, $value) or $which == 1 and index($rules, $value) {
+      $z: $value;
+    }
+  }
+
+  @return $z;
+}
+
+//== 根据$which拼出最终的属性
+//== @param: $value:一个或两个空格分隔的值;
+//== @param: $which:默认为四个方向;
+//== @param: $hack:如果有hack则拼接到属性最前面;
+//== @return: 一组css属性;
+
+@function property($value, $which: $default-direction, $hack: false) {
+  $property: null;
+
+  @if $which == true {
+    $which: null;
+  }
+
+  @if typeof($which) == list {
+    @each $v in $which {
+      $v: splice(n($value, 1) $v n($value, 2, false));
+      $property: if($property == null, $v, join($property, $v));
+    }
+  }
+
+  @else {
+    $property: splice(n($value, 1) $which n($value, 2, false));
+  }
+
+  @if chk($hack) {
+    @if typeof($property) == list {
+      @each $v in $property {
+        $v: #{$hack}#{$v};
+      }
+    }
+
+    @else {
+      $property: #{$hack}#{$property};
+    }
+  }
+
+  @return $property;
+}
+
+//== 按width, style, color重排border各项并补全缺少的值
+@function border-value($value1: null, $value2: null, $value3: null) {
+  $width: $default-border-width;
+  $style: $default-border-style;
+  $color: $default-border-color;
+
+  @if not $value1 {
+    @return null;
+  }
+
+  @if typeof($value1) == list {
+    $value3: n($value1, 3, false);
+    $value2: nth($value1, 2);
+    $value1: nth($value1, 1);
+  }
+
+  @if typeof($value1) == number {
+    $width: $value1;
+  }
+
+  @else if typeof($value2) == number {
+    $width: $value2;
+  }
+
+  @else if typeof($value3) == number {
+    $width: $value3;
+  }
+
+  @if typeof($value1) == color {
+    $color: $value1;
+  }
+
+  @else if typeof($value2) == color {
+    $color: $value2;
+  }
+
+  @else if typeof($value3) == color {
+    $color: $value3;
+  }
+
+  @if typeof($value1) == string {
+    $style: $value1;
+  }
+
+  @else if typeof($value2) == string {
+    $style: $value2;
+  }
+
+  @else if typeof($value3) == string {
+    $style: $value3;
+  }
+
+  @return $width $style $color;
+}
+
+//== css grid 跨度计算
+@function span($columns: 1, $width: $default-grid-col, $gutter: $default-grid-gutter) {
+  @if $columns == 1 {
+    @return $width;
+  }
+
+  @else {
+    @return $width * $columns + $gutter * ($columns - 1);
+  }
+}
+
+//== css grid 偏移量计算
+@function span-outer($columns: 1, $width: $default-gird-col, $gutter: $default-grid-gutter) {
+  @return $width * $columns + $gutter * $columns;
+}
+
+//== 取反方向
+@function opposite-position($direction) {
+  $direct: (top: bottom, bottom: top, right: left, left: right);
+
+  @return map-get($direct, $direction);
+}
+
+//== Remove the unit of a length
+// @param {Number} $number - Number to remove unit from
+// @return {Number} - Unitless number
+
+@function strip-unit($number) {
+  @if typeof($number) == number and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+//== Add the unit of a length
+@function join-unit($digital, $unitnumber) {
+  @return $digital * ($unitnumber * 0 + 1);
+}
+
+//== Round a number to specified digits.
+// @param  {Number} $number A number to round
+// @param  {Number} [$digits:0] Digits to output
+// @param  {String} [$mode:round] (round|ceil|floor) How to round a number
+// @return {Number} A rounded number
+
+@function round-dec($number, $digits: 0, $mode: round) {
+  $n: 1;
+
+  // $number must be a number
+  @if typeof($number) != number {
+    @warn "#{$number} is not a number.";
+
+    @return $number;
+  }
+
+  // $digits must be a unitless number
+  @if typeof($digits) != number {
+    @warn "#{$digits} is not a number.";
+
+    @return $number;
+  }
+
+  @else if not unitless($digits) {
+    @warn "#{$digits} has a unit.";
+
+    @return $number;
+  }
+
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  }
+
+  @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  }
+
+  @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  }
+
+  @else {
+    @warn "#{$mode} is undefined keyword.";
+
+    @return $number;
+  }
+}
+
+//== 计算sqrt函数，代替compass sqrt()
+@function sqrt($number) {
+  @if $number == 0 {
+    @return 0;
+  }
+
+  $num: strip-unit($number);
+  $x: 1;
+  $y: $x;
+
+  @for $i from 1 through 10 {
+    $y: $x - ($x * $x - abs($num)) / (2 * $x);
+    $x: $y;
+  }
+
+  $y: join-unit($y, $number);
+
+  @return if(unit($number) == px, round-dec($y, 1), $y);
+}
+
+//== 以下计算power函数，代替compass pow()
+@function pow($number, $exponent) {
+  $num: strip-unit($number);
+
+  @if round($exponent) != $exponent {
+    @return join-unit(exp($exponent * ln($num)), $number);
+  }
+
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $num;
+    }
+  }
+
+  @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $num;
+    }
+  }
+
+  @return join-unit($value, $number);
+}
+
+@function factorial($value) {
+  $result: 1;
+
+  @if $value == 0 {
+    @return $result;
+  }
+
+  @for $index from 1 through $value {
+    $result: $result * $index;
+  }
+
+  @return $result;
+}
+
+@function summation($iteratee, $input, $initial: 0, $limit: 100) {
+  $sum: 0;
+
+  @for $index from $initial to $limit {
+    $sum: $sum + call($iteratee, $input, $index);
+  }
+
+  @return $sum;
+}
+
+@function exp-maclaurin($x, $n) {
+  @return pow($x, $n) / factorial($n);
+}
+
+@function exp($value) {
+  @return summation(exp-maclaurin, $value, 0, 100);
+}
+
+@function ln-maclaurin($x, $n) {
+  @return pow(-1, $n + 1) / $n * pow($x - 1, $n);
+}
+
+@function ln($value) {
+  $ten-exp: 1;
+  $ln-ten: 2.30258509;
+
+  @while $value > pow(10, $ten-exp) {
+    $ten-exp: $ten-exp + 1;
+  }
+
+  @return summation(ln-maclaurin, $value / pow(10, $ten-exp), 1, 100) + $ten-exp * $ln-ten;
+}
+
+// @function linear-gradient($angle, $details...) {
+//   $legacy-syntax: $ex-support-for-owg;
+
+//   @if typeof($angle) != 'number' {
+//     $angle: compact($angle);
+//     $legacy-syntax: if(index($angle, 'to'), false, true);
+//   }
+
+//   @if $legacy-syntax {
+//     @return _linear-gradient_legacy($angle, $details...);
+//   }
+
+//   @else {
+//     @return _linear-gradient($angle, $details...);
+//   }
+// }
+
+// @function radial-gradient($angle, $details...) {
+//   $legacy-syntax: $ex-support-for-owg;
+
+//   @if typeof($angle) != 'number' {
+//     $angle: compact($angle);
+//     $legacy-syntax: if(index($angle, 'to'), false, true);
+//   }
+
+//   @if $legacy-syntax {
+//     @return _radial-gradient_legacy($angle, $details...);
+//   }
+
+//   @else {
+//     @return _radial-gradient($angle, $details...);
+//   }
+// }

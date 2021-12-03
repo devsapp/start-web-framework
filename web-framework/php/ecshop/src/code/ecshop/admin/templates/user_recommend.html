@@ -1,0 +1,61 @@
+<!-- $Id: tag_manage.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<form method="POST" action="user_recommend.php?act=batch_drop" name="listForm">
+    <!-- start tag list -->
+    <div class="list-div" id="listDiv">
+        {/if}
+
+        <table cellpadding="3" cellspacing="1">
+            <tr>
+                <th>
+                    {$lang.recommend_id}</a>
+                </th>
+                <!--                <th><a href="javascript:listTable.sort('tag_words'); ">{$lang.tag_words}</a>{$sort_tag_words}</th>-->
+                <th>{$lang.user_id}</th>
+                <th>{$lang.user_name}</th>
+                <th>{$lang.parent_id}</th>
+                <th>{$lang.recommend}</th>
+            </tr>
+            {foreach from=$tag_list item=tag}
+            <tr>
+                <td><span><input name="checkboxes[]" type="checkbox" value="{$tag.recommend_id}">{$tag.recommend_id}</span></td>
+                <td class="first-cell"><span>{$tag.user_id}</span></td>
+                <td align="left"><span>{$tag.user_name}</span></td>
+                <td align="left"><span>{$tag.parent_id}</span></td>
+                <td align="left"><span>{$tag.recommend}</span></td>
+            </tr>
+            {foreachelse}
+            <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+            {/foreach}
+            <tr>
+                <td colspan="2"><input type="submit" class="button" id="btnSubmit" value="{$lang.drop_tags}" disabled="true" /></td>
+                <td align="right" nowrap="true" colspan="3">{include file="page.htm"}</td>
+            </tr>
+        </table>
+
+        {if $full_page}
+    </div>
+    <!-- end tag list -->
+</form>
+
+<script type="text/javascript" language="JavaScript">
+    listTable.recordCount = {$record_count};
+    listTable.pageCount = {$page_count};
+
+    {foreach from=$filter item=item key=key}
+    listTable.filter.{$key} = '{$item}';
+    {/foreach}
+        {literal}
+        onload = function()
+        {
+            // 开始检查订单
+            startCheckOrder();
+        }
+        {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

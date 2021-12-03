@@ -1,0 +1,80 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script language='javascript' src='{$template_dir}/js/cloudzoom.js' type='text/javascript' charset='utf-8'></script>
+<link rel="stylesheet" type="text/css" href="{$template_dir}/images/cloudzoom.css" />
+<script type="text/javascript">
+            CloudZoom.quickStart();
+        </script>
+        
+        
+<div class="gmax_pic_box"><!-- {if $pictures}-->
+<a href="javascript:;" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;" target="_blank"> <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}" class="gmax_pic"/> </a>
+{$goods.goods_w}
+<!-- {else} -->
+<img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"  class="gmax_pic"/>
+<!-- {/if}-->
+</div>
+<!-- {if $pictures}-->
+<div class="picture" id="imglist"><div class="up_down up"><</div>
+  <DIV class="cxjad_m">
+    <DIV class="cxjinfo">
+      <!-- {foreach from=$pictures item=picture name=no}-->
+      <!-- {if $smarty.foreach.no.iteration < 2}  -->
+      <DIV class="gg cxjitem"><a  class="a_h" href="{$picture.img_url}" 
+        rev="{$picture.img_url}"
+        title="{$picture.img_desc|escape:html}" target="_blank"> <img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}" /></a></DIV>
+      <!-- {else}-->
+      <DIV class="gg cxjitem"> <a  href="{$picture.img_url}"
+        rev="{$picture.img_url}"
+        title="{$picture.img_desc|escape:html}" target="_blank"> <img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}" /></a></DIV>
+      <!-- {/if}-->
+      <!--{/foreach}-->
+    </DIV>
+  </DIV><div class="up_down down">></div>
+</div>
+<script> 
+    $(function() {$(".gmax_pic").attr('src',$(".picture .cxjitem a").first().attr("rev"));	
+        $(".picture").textSlider({
+            speeds: 5000,
+            lines: 1,
+            offset: 5000000,
+            direc: 1,
+            qnum: 5
+        });
+		$(".cxjitem a").hover(function(){ 
+	    $(".cxjitem a").removeClass("a_h");
+		$(this).addClass('a_h');
+		var imgSrc=$(this).attr("rev");
+		$(".gmax_pic").attr('src',imgSrc);		 		
+} 
+ );
+    });
+    
+    
+    
+    </script>
+<!-- {/if}-->
+<style>
+#goodsInfo .imgInfo{ width:40%}
+#goodsInfo .textInfo{ width:55%}
+.gmax_pic_box{ background:#FFF; margin-bottom:15px;}
+.gmax_pic{  width:400px; height:auto}
+.cxjitem img{ border:2px solid #eee; width:70px; height:70px;}
+.cxjitem .a_h img{ border:2px solid #6BA103;}
+.picture{ position:relative;z-index:1; width:460px;}
+.picture .cxjad_m{ position:relative; z-index:2; width:400px; overflow:hidden; float:left}
+.picture .cxjad_m .cxjinfo{ position:relative; margin:auto}
+.picture .cxjitem{ float:left; width:80px;float:left; text-align:center}
+
+.picture a{ display:block; width:100%; height:100%; }
+.picture .TABLE_2{ display:none}
+ 
+.picture  div.up_down{ width:20px; height:70px; text-align:center; line-height:70px; cursor:pointer; color:#333; font-family:"SimSun-ExtB"; font-size:26px; font-weight:normal; background:#f5f5f5;}
+.picture  div.up_down:hover{background:#ddd}
+
+.picture  div.down{ float:right; margin-left:10px;} 
+.picture  div.up{ float:left; margin-right:10px; }
+
+
+</style>
+<div class="clear10"></div>

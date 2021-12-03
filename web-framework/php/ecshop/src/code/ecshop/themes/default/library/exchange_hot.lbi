@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods}-->
+<div class="box">
+  <div class="box_1">
+    <h3 class="h3s"><span class="text">积分商城热卖商品</span></h3>
+    <div id="show_hot_area" class="clearfix  boxCenterList">
+      <!--{foreach from=$hot_goods item=goods}-->
+      <ul class="clearfix">
+        <li class="goodsimg"> <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a> </li>
+        <li> <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a><br />
+          {$lang.exchange_integral}<font class="f1">{$goods.exchange_integral}</font>	 </li>
+      </ul>
+      <!--{/foreach}-->
+    </div>
+  </div>
+</div>
+<div class="blank5"></div>
+<!-- {/if} -->

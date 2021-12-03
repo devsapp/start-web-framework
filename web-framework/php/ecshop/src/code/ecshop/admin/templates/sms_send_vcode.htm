@@ -1,0 +1,62 @@
+{if $full_page}
+<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+
+
+
+<!-- start users list -->
+<div class="list-div" id="listDiv">
+{/if}
+<!--用户列表部分-->
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>SMS_ID</th>
+    <th>手机号码</th>
+    <th>验证码</th>
+    <th>添加时间</th>
+
+  <tr>
+  {foreach from=$data item=item}
+  <tr>
+    <td class="first-cell">{$item.sms_id}</td>
+    <td>{$item.mobile}</td>
+    <td>{$item.vcode}</td>
+    <td>{$item.add_time}</td>
+  </tr>
+  {foreachelse}
+  <tr><td class="no-records" colspan="1">{$lang.no_records}</td></tr>
+  {/foreach}
+  <tr>
+
+      <td align="right" nowrap="true" colspan="8">
+      {include file="page.htm"}
+      </td>
+  </tr>
+</table>
+
+{if $full_page}
+</div>
+<!-- end users list -->
+<script type="text/javascript" language="JavaScript">
+<!--
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+
+{literal}
+
+
+/**
+ * 搜索用户
+ */
+
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

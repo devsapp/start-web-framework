@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*
+兼容样式
+米拓企业建站系统 Copyright (C) 长沙米拓信息技术有限公司 (https://www.metinfo.cn). All rights reserved.
+*/
+[hidden]{display: none !important;}
+/* 页面设置的按妞 */
+[m-id].set{border: 1px dashed #ccc !important;}
+[m-id].set-active{border: 1px solid #f00 !important;}
+.pageeditor-btn{z-index: 999999 !important;}
+.pageset-btn{z-index: 999998 !important;}
+.pageset-btn,
+.pageeditor-btn{
+	position: absolute;
+	-webkit-transform: translate(-50%,0) !important;
+	   -moz-transform: translate(-50%,0) !important;
+	    -ms-transform: translate(-50%,0) !important;
+	     -o-transform: translate(-50%,0) !important;
+	        transform: translate(-50%,0) !important;
+}
+.pageset-btn .btn,
+.pageeditor-btn .btn{vertical-align: top !important;}
+/*.pageset-btn .btn{display: none;}*/
+.pageeditor-editor{width: 20px !important;height: 20px !important;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+	border-radius: 100%;
+}
+.pageeditor-btn .editable-container{display: block;}
+.pageeditor-btn .editable-container .editableform{padding: 10px;border: 1px solid  #ddd;background: #fff;box-shadow: 0 1px 10px rgba(0, 0, 0,.2);border-radius: .3rem;}
+.pageeditor-btn .editable-container .editableform .form-group{margin-bottom: 0;}
+.pageeditor-btn .editable-container .editable-input .form-control{padding: 5px !important;}
+.pageeditor-btn .editable-container .editable-input .form-control,.pageeditor-btn .editable-container .editable-input input{min-width: 100px;max-width: 500px;font-size: 14px;}
+.pageeditor-btn .editable-container .editable-input input{height: 2rem;}
+.pageeditor-btn .editable-container .editable-buttons{margin-top: 5px;}
+.pageeditor-btn .editable-container .editable-buttons .btn{padding:2px 5px;padding:2px 15px;font-size: 16px;}
+.pageeditor-btn .editable-container .editable-buttons .editable-cancel{margin-left: 5px;}
+@media screen and (max-width:1249px){
+	.pageeditor-btn .editable-container .editable-input .form-control,.pageeditor-btn .editable-container .editable-input input{min-width: 150px;line-height: 1.5;}
+	.pageeditor-btn .editable-container .editable-input input{height: 2.5rem}
+}
+.pageset-edit-bg{z-index: 999997;}
+/* 页面设置对应的元素 */
+[met-id].set{outline: 1px solid #46be8a !important;}

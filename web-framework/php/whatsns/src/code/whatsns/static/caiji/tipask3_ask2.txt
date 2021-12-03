@@ -1,0 +1,9 @@
+﻿http://wenda.tipask.com/questions|
+.stream-list .title a|
+.widget-answers .content|
+.description .text-fmt |
+|
+|
+|
+
+|tipask3.0采集(<a href="http://wenda.tipask.com/questions" target="_blank">http://wenda.tipask.com/</a>)|0

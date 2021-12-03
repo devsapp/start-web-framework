@@ -1,0 +1,96 @@
+<!-- $Id: user_info.htm 16854 2009-12-07 06:20:09Z sxc_shop $ -->
+{include file="pageheader.htm"}
+<div class="main-div">
+<!--  <div style="width:100%;border:solid 1px #dddddd;padding: 25px;">-->
+<!--    <div style="margin: 0 auto;width: 350px;">-->
+<form method="post" action="order_time.php" name="theForm" onsubmit="return validate()">
+<table width="100%" >
+  <tr>
+    <td class="label">配送时间:</td>
+    <td><input type="text" name="o_time" maxlength="60" value="{$order.o_time}" />{$lang.require_field}</td>
+  </tr>
+  <tr>
+    <td class="label">配送单量:</td>
+    <td><input type="text" name="quantity_order" maxlength="60" value="{$order.quantity_order}" />{$lang.require_field}</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" value="{$lang.button_submit}" class="button" />
+      <input type="reset" value="{$lang.button_reset}" class="button" />
+      <input type="hidden" name="act" value="{$act}" />
+      <input type="hidden" name="id" value="{$order.id}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+<!--  </div>-->
+<!--</div>-->
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+<!--
+
+if (document.forms['theForm'].elements['act'].value == "insert")
+{
+  document.forms['theForm'].elements['username'].focus();
+}
+else
+{
+  document.forms['theForm'].elements['email'].focus();
+}
+
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.isEmail("email", invalid_email, true);
+
+    if (document.forms['theForm'].elements['act'].value == "insert")
+    {
+        validator.required("username",  no_username);
+        validator.required("password", no_password);
+        validator.required("confirm_password", no_confirm_password);
+        validator.eqaul("password", "confirm_password", password_not_same);
+
+        var password_value = document.forms['theForm'].elements['password'].value;
+        if (password_value.length < 6)
+        {
+          validator.addErrorMsg(less_password);
+        }
+        if (/ /.test(password_value) == true)
+        {
+          validator.addErrorMsg(passwd_balnk);
+        }
+    }
+    else if (document.forms['theForm'].elements['act'].value == "update")
+    {
+        var newpass = document.forms['theForm'].elements['password'];
+        var confirm_password = document.forms['theForm'].elements['confirm_password'];
+        if(newpass.value.length > 0 || confirm_password.value.length)
+        {
+          if(newpass.value.length >= 6 || confirm_password.value.length >= 6)
+          {
+            validator.eqaul("password", "confirm_password", password_not_same);
+          }
+          else
+          {
+            validator.addErrorMsg(password_len_err);
+          }
+        }
+    }
+
+    return validator.passed();
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

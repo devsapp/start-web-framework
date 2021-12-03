@@ -1,0 +1,203 @@
+@import "utilities";
+
+//@descrip: 文本与字体类mixin
+
+//= 基本字体属性size,family,style,weight,color,line-height etc.
+@mixin font($value: $default-color, $merge: true) {
+  @if typeof($value) == color {
+    color: $value;
+  }
+
+  @else if typeof($value) == number {
+    font-size: $value;
+  }
+
+  @else if typeof($value) == list {
+    @if length($value) == 2 and typeof(nth($value, 1)) == number and typeof(nth($value, 2)) == number {
+      font-size: nth($value, 1);
+      line-height: nth($value, 2);
+    }
+
+    @else if $merge == true {
+      font: $value;
+    }
+
+    @else if typeof($merge) == list {
+      $i: 1;
+
+      @each $v in $merge {
+        @if nth($value, $i) {
+          $lf: "";
+
+          @if $v == height or $v == line-height {
+            $lf: line-height;
+          }
+
+          @else if $v == color {
+            $lf: color;
+          }
+
+          @else {
+            $lf: font-#{$v};
+          }
+
+          #{$lf}: nth($value, $i);
+        }
+
+        $i: $i + 1;
+      }
+    }
+
+    @else {
+      $lf: if($merge == height, line, font);
+
+      #{splice($lf $merge)}: $value;
+    }
+  }
+}
+
+//= 基本文本属性align,overflow,white-space,decoration,indent,shadow,transform,letter/word-spacing,direction
+@mixin text($align: $default-text-align, $overflow: false, $space: false, $decoration: false, $indent: false, $shadow: false, $transform: false, $letter: false, $word: false, $direction: false) {
+  @if $overflow {
+    overflow: hidden;
+    white-space: nowrap;
+
+    @if $overflow == true {
+      $overflow: ellipsis;
+    }
+  }
+
+  @else if $space {
+    white-space: $space;
+  }
+
+  @include text-base(align decoration indent shadow overflow transform, $align $decoration $indent $shadow $overflow $transform);
+
+  @if $letter {
+    @include text-spacing(letter, $letter);
+  }
+
+  @if $word {
+    @include text-spacing(word, $word);
+  }
+
+  @if $direction {
+    direction: $direction;
+  }
+}
+
+//= 文本溢出不换行
+@mixin text-overflow($width: $default-width, $height: false, $line-height: false, $overflow: true) {
+  @if $width {
+    @include width($width);
+  }
+
+  @if $height != false {
+    @include height($height, $line-height);
+  }
+
+  @include text(false, $overflow);
+}
+
+//= 文本两端对齐，用于多行标题两边对齐
+@mixin text-justify($class: text-justify) {
+  .#{$class} {
+    @content;
+
+    text-align: justify;
+    text-justify: distribute-all-lines; //ie6-8
+
+    @include text-align-last; //ie9/ff/chrome 20+
+  }
+
+  //chrome/safari
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .#{$class}:after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      content: "\200B";
+    }
+  }
+}
+
+//= font face,支持ie6+主流浏览器的web字体
+//= @param: $font:字体集，不带后缀，同时也做为字体名称，也可带字体路径，路径在前，字体在后，以空格分隔;
+//= @param: $path:字体路径，带引号，且最后不要/;
+
+@mixin font-face($font, $path: null, $cls: icon, $type: "-", $attr: null) {
+  $name: $font;
+
+  @if typeof($font) == list {
+    $path: nth($font, 1);
+    $name: nth($font, 2);
+  }
+
+  $font: if($path, #{$path}/#{$name}, $name);
+
+  @font-face {
+    font-family: $name;
+    font-style: normal;
+    font-weight: normal;
+
+    @if fix(ie8) {
+      src: url("#{$font}.eot");
+    }
+
+    @if fix(ie9) and fix(pc) and (fix(moz) or fix(webkit)) {
+      src: url("#{$font}.eot?#ie9") format("embedded-opentype"), url("#{$font}.woff") format("woff"), url("#{$font}.ttf") format("truetype"), url("#{$font}.svg#webfontMFqI76bT") format("svg");
+    }
+
+    @else if fix(pc) and (fix(moz) or fix(webkit)) {
+      src: url("#{$font}.woff") format("woff"), url("#{$font}.ttf") format("truetype"), url("#{$font}.svg#webfontMFqI76bT") format("svg");
+    }
+
+    @else if fix(mb) and fix(webkit533) {
+      src: url("#{$font}.woff") format("woff"), url("#{$font}.ttf") format("truetype");
+    }
+
+    @else if fix(mb) {
+      src: url("#{$font}.woff") format("woff");
+    }
+  }
+
+  $selector: null;
+
+  @if $type == "." {
+    $selector: #{$type}#{$cls};
+  }
+
+  @else if not fix(ie6) {
+    $selector: unquote("[class^='#{$cls}#{$type}'], [class*=' #{$cls}#{$type}']");
+  }
+
+  @if $selector {
+    #{$selector} {
+      font-family: #{$name};
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+
+      // line-height: 1;
+
+      @if fix(webkit) {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      @if fix(moz) {
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      @content;
+
+      @if $attr {
+        &:before {
+          content: attr(#{$attr});
+        }
+      }
+    }
+  }
+}

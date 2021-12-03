@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>左箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1300.000000, -1520.000000)">
+            <g id="Group-2" transform="translate(1300.000000, 1520.000000)">
+                <circle id="Oval-Copy-3" fill-opacity="0.2" fill="#000000" transform="translate(26.000000, 26.000000) rotate(180.000000) translate(-26.000000, -26.000000) " cx="26" cy="26" r="26"></circle>
+                <g id="右箭头hover-32px-copy-3" transform="translate(24.000000, 26.500000) rotate(180.000000) translate(-24.000000, -26.500000) translate(17.000000, 15.000000)" fill="#FFFFFF">
+                    <g id="图层_1">
+                        <polygon id="XMLID_28_" points="1.70625 22.9178571 0.56875 21.6857143 10.725 11.5 0.56875 1.31428571 1.70625 0.0821428571 13 11.5"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

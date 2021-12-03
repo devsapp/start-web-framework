@@ -1,0 +1,9 @@
+﻿http://segmentfault.com/questions/hottest|
+.question-stream>.title a|
+.widget-answers>.post-offset>.answer|
+.widget-question__item>.question|
+|
+.widget-answers>.post-offset>.mr5|
+ |
+http://segmentfault.com|
+SegmentFault 程序员 问答(<a href="http://segmentfault.com" target="_blank">http://segmentfault.com</a>)|0

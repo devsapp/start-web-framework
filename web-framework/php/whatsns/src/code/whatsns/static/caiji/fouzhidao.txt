@@ -1,0 +1,9 @@
+﻿http://www.fozhidao.net/zhidao/list.php?fid=189&page={#num}|
+.list_label_list td a[href*='view.php']|
+.CenterListLong_2 .replaylist .recontent|
+|
+.CenterListLong_best .recontent|
+|
+|
+
+|佛知道(<a href="http://www.fozhidao.net/zhidao/list.php?fid=189" target="_blank">http://www.fozhidao.net</a>)|0

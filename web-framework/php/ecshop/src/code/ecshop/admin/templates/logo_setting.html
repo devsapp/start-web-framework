@@ -1,0 +1,19 @@
+
+{include file="pageheader.htm"}
+
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 350px;">
+        <form action="mobile_setting.php?act=up_logo_setting" method="post" enctype="multipart/form-data">
+            <p>首页的logo更换</p>
+            <input type="file" name="logo_image"><br>
+            {if $app_logo}
+            <img src="{$app_logo}" alt="" width="50px" height="50px">
+            {/if}
+            <p>图片外部URL</p>
+            <p><input type="text" name="image_url" value="" placeholder="(请带上http://或者https://)"></p>
+            <button type="submit"> 提交 </button>
+        </form>
+    </div>
+</div>
+
+{include file="pagefooter.htm"}

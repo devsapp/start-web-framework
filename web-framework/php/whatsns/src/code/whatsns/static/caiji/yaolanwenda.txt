@@ -1,0 +1,10 @@
+﻿http://ask.yaolan.com/period/3_1.html|
+#essence a[href*='/question/']|
+#moreQuestion .expert_a p|
+|
+#best_answer .cont|
+#moreQuestion .expert_a .bar .left|
+.expert_img img|
+http://ask.yaolan.com|
+摇篮问答分类采集(<a href="http://ask.yaolan.com/period/3_1.html" target="_blank">http://ask.yaolan.com/period/3_1.html</a>)
+|0

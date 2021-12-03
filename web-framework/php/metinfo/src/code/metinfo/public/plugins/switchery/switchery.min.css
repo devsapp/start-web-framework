@@ -1,0 +1,7 @@
+/*
+ *
+ * Main stylesheet for Switchery.
+ * http://abpetkov.github.io/switchery/
+ *
+ */
+.switchery{position:relative;display:inline-block;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;width:45px;height:24px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;border:1px solid #e4eaec;border-radius:20px;background-color:#fff;-webkit-background-clip:content-box;background-clip:content-box}.switchery>small{position:absolute;top:0;width:24px;height:24px;border-radius:100%;background:#fff;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.4);box-shadow:0 1px 3px rgba(0,0,0,.4)}.switchery-small{width:33px;height:20px;border-radius:20px}.switchery-small>small{width:20px;height:20px}.switchery-large{width:66px;height:36px;border-radius:36px}.switchery-large>small{width:36px;height:36px}

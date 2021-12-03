@@ -1,0 +1,9 @@
+﻿http://www.cheyisou.com/ask/%E8%BD%A6/|
+.c-container .link-set a[href*='detail']|
+#AnswerListDiv .da-list-box .hd_txt_box|
+.ask-infor-box .ask-con|
+.zjda_box .da-list-box .hd_txt_box|
+.respon_txt .p_1 a|
+|
+
+|易车汽车问答关键词搜索(<a href="http://www.cheyisou.com/ask/%E8%BD%A6/" target="_blank">http://ask.bitauto.com/browse/</a>)|0

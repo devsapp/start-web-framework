@@ -1,0 +1,60 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div  id="ECS_CARTINFO" class="fd30_slideTog ShopCartWrap">
+  <!-- {if $goods} -->
+  <h4 class="cs_transform"><a href="flow.php">购物车<b id="goodsCount">{$goods_number}</b>件</a> <i></i></h4>
+  <div id="cart_list" class="slideTog_info">
+    <div id="goodsList"> {foreach from=$goods item=goods name=goods}
+      <ul>
+        <li class="cart_img"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" /></a></li>
+        <li class="cart_name"><a  href="{$goods.url}">{$goods.short_name}</a>
+          <p><em>{$goods.goods_price}</em><a class="del" href="javascript:" onClick="deleteCartGoods({$goods.rec_id})">删除</a></p>
+        </li>
+        <div class="clear0"></div>
+      </ul>
+      {/foreach} </div>
+    <div class="total"><span>共<b id="goodsCount2">{$goods_number}</b>件商品，总计：￥<b id="goodsAmount">{$order_amount}</b></span><a class="btn" href="flow.php">去结算</a></div>
+  </div>
+  <!-- {else} -->
+ <h4 class="cs_transform"><a href="flow.php">购物车<b id="goodsCount">{$goods_number}</b>件</a> <i></i></h4>
+   <div id="cart_list" class="slideTog_info"><div class="noprc">您购物车暂商品，赶紧选购吧！</div></div>
+  <!-- {/if} -->
+</div>
+<script type="text/javascript">
+
+function deleteCartGoods(rec_id)
+
+{
+
+Ajax.call('delete_cart_goods.php', 'id='+rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+
+}
+
+/**
+
+* 接收删除后返回的信息
+
+*/
+
+function deleteCartGoodsResponse(res)
+
+{
+
+  if (res.error)
+
+  {
+
+    alert(res.err_msg);
+
+  }
+
+  else
+
+  {
+
+      document.getElementById('ECS_CARTINFO').innerHTML = res.content;
+
+  }
+
+}
+
+</script>

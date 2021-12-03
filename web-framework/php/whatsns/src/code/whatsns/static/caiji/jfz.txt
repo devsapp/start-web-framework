@@ -1,0 +1,10 @@
+﻿http://www.jfz.com/question/0-3-p{#num}.html|
+.pub_title a|
+.replied_item_table .pub_replier_cont|
+|
+|
+.replied_item_table .qa_reserve_wrap .name|
+|
+http://www.jfz.com|
+金斧子问答搜索页面采集(<a href="http://www.jfz.com/question/0-3-p1.html" target="_blank">http://www.jfz.com</a>)
+|0
