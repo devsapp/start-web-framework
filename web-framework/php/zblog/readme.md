@@ -8,7 +8,7 @@
 
 ## 快速体验
 
-- 初始化项目：`s init start-blog`
+- 初始化项目：`s init start-zblog`
 - 进入项目后：
   - 初始化 NAS: `s nas init`
   - 上传工程到 NAS：`s nas upload -r code/Z-Blog/ /mnt/auto/Z-Blog`
