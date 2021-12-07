@@ -21,7 +21,7 @@ $zbpvers['151626']='1.5 Zero Build 151626';
 define('ZC_VERSION_MAJOR', '1');
 define('ZC_VERSION_MINOR', '7');
 define('ZC_VERSION_BUILD', '1');
-define('ZC_VERSION_COMMIT', '2985');
+define('ZC_VERSION_COMMIT', '2995');
 define('ZC_VERSION_CODENAME', 'Tenet');
 define('ZC_VERSION', ZC_VERSION_MAJOR . '.' . ZC_VERSION_MINOR . '.' . ZC_VERSION_BUILD . '.' . ZC_VERSION_COMMIT);
 if (strcasecmp(ZC_VERSION_CODENAME, 'Beta') == 0 || strcasecmp(ZC_VERSION_CODENAME, 'Alpha') == 0) {
@@ -32,5 +32,6 @@ if (strcasecmp(ZC_VERSION_CODENAME, 'Beta') == 0 || strcasecmp(ZC_VERSION_CODENA
 define('ZC_VERSION_FULL', ZC_VERSION . ' (' . ZC_VERSION_CODENAME . ')');
 define('ZC_BLOG_COMMIT', ZC_VERSION_COMMIT); // 为写入系统配置统一风格
 $GLOBALS['blogversion'] = ZC_VERSION_MAJOR . ZC_VERSION_MINOR . ZC_VERSION_COMMIT;
+define('ZC_NOW_VERSION', $GLOBALS['blogversion']);
 define('ZC_BLOG_VERSION', ZC_VERSION_DISPLAY . ' Build ' . $GLOBALS['blogversion']);
 define('ZC_LAST_VERSION', '172800'); //数据库里写入的最新的数据库版本号（非系统版本号，只有更改数据库结构才会变动）

@@ -18,7 +18,7 @@ if (!$zbp->CheckPlugin('AppCentre')) {
 
 AppCentre_CheckInSecurityMode();
 
-$blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['settings'];
+$blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['settings'];
 
 
 if (GetVars('act') == 'save') {
@@ -47,7 +47,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(4); ?></div>
+<div class="SubMenu"><?php
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(4);
+?></div>
   <div id="divMain2">
 
             <form action="?act=save" method="post">
@@ -96,7 +101,12 @@ if(!is_array($zbp->Config('AppCentre')->app_ignores)) {
 foreach ($zbp->Config('AppCentre')->app_ignores as $key => $value) {
     echo "<label><input type=\"checkbox\" name=\"app_ignores[]\" checked=\"checked\" value=\"{$value}\">&nbsp;{$value}</label>&nbsp;&nbsp;&nbsp;";
 }
-$aps = array_merge(array($zbp->theme) , $GLOBALS['zbp']->GetPreActivePlugin());
+if (method_exists($zbp, 'GetPreActivePlugin')) {
+    $aps = $GLOBALS['zbp']->GetPreActivePlugin();
+} else {
+    $aps = array_unique(explode("|", $zbp->option['ZC_USING_PLUGIN_LIST']));
+}
+$aps = array_merge(array($zbp->theme) ,$aps);
 
 foreach ($aps as $key => $value) {
     if (in_array($value, $zbp->Config('AppCentre')->app_ignores) || $value == 'AppCentre') {

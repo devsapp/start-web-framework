@@ -125,4 +125,5 @@ return array(
     'move_bottom'=>'Move bottom',
     'enable_plugin_sort'=>'Enable plugin sort',
     'non_root_prohibit_operation'=>'Non-root administrators prohibit this operation',
+    'please_open_debugmode'=>'Please turn on the debugging mode',
 );

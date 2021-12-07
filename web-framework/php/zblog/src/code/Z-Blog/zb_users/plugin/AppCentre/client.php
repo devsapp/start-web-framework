@@ -15,9 +15,9 @@ if (!$zbp->CheckPlugin('AppCentre')) {
 }
 
 if (!$zbp->Config('AppCentre')->token) {
-    $blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['login_store'];
+    $blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['login_store'];
 } else {
-    $blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['my_store'];
+    $blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['my_store'];
 }
 
 Add_Filter_Plugin('Filter_Plugin_CSP_Backend', 'AppCentre_UpdateCSP');
@@ -66,7 +66,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(9); ?></div>
+<div class="SubMenu"><?php
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(9);
+?></div>
   <div id="divMain2">
 <?php if (!$zbp->Config('AppCentre')->token) { ?>
             <div class="divHeader2"><?php echo $zbp->lang['AppCentre']['account_login']; ?></div>

@@ -150,13 +150,15 @@ function api_member_get()
 {
     global $zbp;
 
-    ApiCheckAuth(true, 'MemberPst');
-
     $member = null;
     $memberId = GetVars('id');
 
     if ($memberId !== null) {
         $member = $zbp->GetMemberByID($memberId);
+        ApiCheckAuth(true, 'MemberMng');
+    } else {
+        $member = $zbp->GetMemberByID($zbp->user->ID);
+        ApiCheckAuth(false, 'api');
     }
 
     //如果不是读本人的
@@ -287,7 +289,7 @@ function api_member_get_auth()
     foreach ($GLOBALS['actions'] as $key => $value) {
         if ($zbp->CheckRights($key)) {
             $authArr['auth'][$key] = array(
-                'description' => $zbp->GetActionDescription($key),
+                'name' => $zbp->GetActionDescription($key),
                 'checked' => $zbp->CheckRights($key) ? true : false
             );
         }

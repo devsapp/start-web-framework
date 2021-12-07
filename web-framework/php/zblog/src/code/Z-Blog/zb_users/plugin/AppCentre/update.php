@@ -3,14 +3,6 @@ require '../../../zb_system/function/c_system_base.php';
 
 require '../../../zb_system/function/c_system_admin.php';
 
-if ($blogversion <= 151626) {
-    if (class_exists('Network', false) == false) {
-        AutoloadClass('Network');
-        include dirname(__FILE__) . '/networkcurl.php';
-        include dirname(__FILE__) . '/networkfile_get_contents.php';
-        include dirname(__FILE__) . '/networkfsockopen.php';
-    }
-}
 require dirname(__FILE__) . '/function.php';
 
 $zbp->Load();
@@ -28,7 +20,7 @@ if (!$zbp->CheckPlugin('AppCentre')) {
     die();
 }
 
-$blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['system_update'];
+$blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['system_update'];
 
 $checkbegin = false;
 $nowxml = '';
@@ -220,7 +212,12 @@ if (!is_object($newversion_json)) {
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(3); ?></div>
+<div class="SubMenu"><?php
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(3);
+?></div>
   <div id="divMain2">
 
             <form method="post" action="">

@@ -80,12 +80,25 @@ if (!isset($zbpvers[$GLOBALS['blogversion']])) {
         $zbpvers[$GLOBALS['blogversion']] = ZC_BLOG_VERSION;
     }
 }
+if (!defined('ZC_NOW_VERSION')) {
+    define('ZC_NOW_VERSION', $GLOBALS['blogversion']);
+}
 
 $appcentre_verified = array();
+
+DefinePluginFilter('Filter_Plugin_AppCentre_Client_SubMenu');
+if ($GLOBALS['blogversion'] < 150101) {
+    $GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] = array();
+}
 
 function ActivePlugin_AppCentre()
 {
     global $zbp;
+
+    Add_Filter_Plugin('Filter_Plugin_Admin_ThemeMng_SubMenu', 'AppCentre_CheckDebugMode');
+    Add_Filter_Plugin('Filter_Plugin_Admin_PluginMng_SubMenu', 'AppCentre_CheckDebugMode');
+    Add_Filter_Plugin('Filter_Plugin_AppCentre_Client_SubMenu', 'AppCentre_CheckDebugMode');
+
     Add_Filter_Plugin('Filter_Plugin_Admin_LeftMenu', 'AppCentre_AddMenu');
     Add_Filter_Plugin('Filter_Plugin_Admin_ThemeMng_SubMenu', 'AppCentre_AddThemeMenu');
     Add_Filter_Plugin('Filter_Plugin_Admin_PluginMng_SubMenu', 'AppCentre_AddPluginMenu');
@@ -448,6 +461,9 @@ function AppCentre_UpdateCSP(&$csp)
 function AppCentre_InSecurityMode()
 {
     global $zbp;
+    if (defined('APPCENTRE_SECURITY_MODE')) {
+        return true;
+    }
     return file_exists($zbp->path . 'zb_users/data/appcentre_security_mode.php');
 }
 
@@ -518,5 +534,23 @@ function AppCentre_CreateButton($name){
                 break;
         }
 
+    }
+}
+
+function AppCentre_GetBlogTitle() {
+    global $zbp;
+    $appc = $zbp->LoadApp('plugin', 'AppCentre');
+    return $zbp->lang['AppCentre']['name'] . '-' . '(' . $zbp->lang['AppCentre']['client'] . ' v' . $appc->version . ')';
+}
+
+function AppCentre_CheckDebugMode(){
+    global $zbp;
+    $a = $zbp->Config('AppCentre')->enabledevelop;
+    $b = $zbp->option['ZC_DEBUG_MODE'];
+    $c = (time() - (int) $zbp->Config('AppCentre')->debug_tips_interval) > (24*3600);
+    if (!$b && $a && $c) {
+        echo "<script type='text/javascript'>$('.main').prepend('<div class=\"hint\"><p class=\"hint hint_tips hint_always\"><a target=\"_blank\" href=\"https://docs.zblogcn.com/php/#/books/dev-05-start?id=%e5%bc%80%e5%8f%91%e6%a8%a1%e5%bc%8f\">{$zbp->lang['AppCentre']['please_open_debugmode']}</a></p></div>');</script>";
+        $zbp->Config('AppCentre')->debug_tips_interval = time();
+        $zbp->SaveConfig('AppCentre');
     }
 }

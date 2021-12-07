@@ -17,6 +17,7 @@ if ($zbp->option['ZC_ADDITIONAL_SECURITY']) {
 <meta name="generator" content="Z-BlogPHP <?php echo ZC_VERSION_DISPLAY; ?>" />
 <meta name="robots" content="none" />
 <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,viewport-fit=cover" />
 <meta name="csrfToken" content="<?php echo $zbp->GetCSRFToken(); ?>" />
 <meta name="csrfExpiration" content="<?php echo $zbp->csrfExpiration; ?>" />
 <title><?php echo $blogname . ' - ' . $blogtitle; ?></title>
@@ -37,3 +38,6 @@ foreach ($GLOBALS['hooks']['Filter_Plugin_Admin_Header'] as $fpname => &$fpsigna
     $fpname();
 }
 
+if (function_exists('CheckIsMoblie') && CheckIsMoblie()){
+    echo '<style>@media screen{body{font-size:15px}}@media screen and (max-width: 800px) {#divMain{overflow:scroll;}}</style>';
+}

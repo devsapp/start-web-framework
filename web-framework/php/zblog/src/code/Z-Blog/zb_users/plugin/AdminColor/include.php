@@ -57,9 +57,9 @@ function AdminColor_Css()
 {
     global $zbp;
 
-    if (stripos($zbp->currenturl, 'phpinfo') !== false) {
-        return;
-    }
+    //if (stripos($zbp->currenturl, 'phpinfo') !== false) {
+    //    return;
+    //}
     if(0 == (int)$zbp->Config('AdminColor')->FontSize)
         $zbp->Config('AdminColor')->FontSize = 14;
 
@@ -181,7 +181,7 @@ function admincolor_hideMenu(){
  $("div.main,section.main").animate({"padding-left":"46px"});
  $("#leftmenu span").animate({"margin-left":"11px"});
  $("#leftmenu span").css({"font-size":"0"});
- $("#leftmenu span i").css({"font-size":"{$fontsize}px"});
+ $("#leftmenu span i").css({"font-size": $("body").css("font-size")});
  SetCookie('admincolor_hm','1',365);
  admincolor_tooptip();
 
@@ -196,7 +196,7 @@ function admincolor_showMenu(){
  $("div.left,aside.left").animate({"width":"{$leftwidth}px"});
  $("div.main,section.main").animate({"padding-left":"{$rightwidth}px"});
  $("#leftmenu span").animate({"margin-left":"24px"});
- $("#leftmenu span").css({"font-size":"{$fontsize}px"});
+ $("#leftmenu span").css({"font-size": $("body").css("font-size")});
  SetCookie('admincolor_hm','',-1); 
  $("#leftmenu a").tooltip({disabled: true});
 }

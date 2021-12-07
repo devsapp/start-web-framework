@@ -23,7 +23,7 @@ if (count($_POST) > 0) {
     file_put_contents($zbp->path . 'zb_users/data/appcentre_security_mode.php', '');
 }
 
-$blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['safe_mode'];
+$blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['safe_mode'];
 
 require $blogpath . 'zb_system/admin/admin_header.php';
 ?>
@@ -44,7 +44,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(7); ?></div>
+<div class="SubMenu"><?php
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(7);
+?></div>
   <div id="divMain2">
   <div class="warning">
 <?php

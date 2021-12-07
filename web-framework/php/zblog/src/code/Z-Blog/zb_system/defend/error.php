@@ -26,6 +26,8 @@ unset($post_data['token']);
     <meta name="robots" content="noindex,nofollow,noarchive" />
     <meta name="generator" content="<?php echo $GLOBALS['option']['ZC_BLOG_PRODUCT_FULL']; ?>"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width,viewport-fit=cover" />
     <title><?php echo $GLOBALS['blogname'] . '-' . $GLOBALS['lang']['msg']['error']; ?></title>
     <link rel="stylesheet" href="<?php echo $GLOBALS['bloghost']; ?>zb_system/css/admin.css?<?php echo $GLOBALS['blogversion']; ?>" type="text/css" media="screen"/>
     <script src="<?php echo $GLOBALS['bloghost']; ?>zb_system/script/common.js?<?php echo $GLOBALS['blogversion']; ?>"></script>
@@ -69,7 +71,7 @@ unset($post_data['token']);
         echo '(' . $error->type . ')' . $error->typeName . ' :   ' . (FormatString($error->messagefull, '[noscript]'));
         echo ' (' . ZC_VERSION_FULL . ') ';
         if (!in_array('Status: 404 Not Found', headers_list())) {
-                echo '(' . GetEnvironment() . ') ';
+                echo '(' . GetEnvironment(true) . ') ';
         }
         ?>
                         </div>

@@ -232,17 +232,13 @@ function RunTime($isOutput = true)
     $rt['memory'] = $_SERVER['_memory_usage'];
     $rt['error'] = $_SERVER['_error_count'];
     $rt['error_detail'] = ZBlogException::$errors_msg;
-    if (function_exists('memory_get_usage')) {
-        $rt['memory'] = (int) ((memory_get_usage() - $_SERVER['_memory_usage']) / 1024);
+    if (function_exists('memory_get_peak_usage')) {
+        $rt['memory'] = (int) ((memory_get_peak_usage() - $_SERVER['_memory_usage']) / 1024);
     }
 
     $_SERVER['_runtime_result'] = $rt;
 
-    if (array_key_exists('_end_time', $_SERVER)) {
-        return $rt;
-    } else {
-        $_SERVER['_end_time'] = $_end_time;
-    }
+    $_SERVER['_end_time'] = $_end_time;
 
     if (isset($zbp->option['ZC_RUNINFO_DISPLAY']) && $zbp->option['ZC_RUNINFO_DISPLAY'] == false) {
         return $rt;
@@ -266,7 +262,7 @@ function RunTime($isOutput = true)
  *
  * @since 1.4
  */
-function GetEnvironment()
+function GetEnvironment($more = false)
 {
     global $zbp;
     $ajax = Network::Create();
@@ -295,14 +291,24 @@ function GetEnvironment()
                 str_replace(array('Microsoft-', '/'), array('', ''), GetVars('SERVER_SOFTWARE', 'SERVER'))
             ),
             0
-        ) . '; PHP' . GetPHPVersion() . (IS_X64 ? 'x64' : '') . '; ' .
-        $zbp->option['ZC_DATABASE_TYPE'] . $zbp->db->version . '; ' . $ajax;
-
+        ) . '; PHP' . GetPHPVersion() . (IS_X64 ? 'x64' : '') . '; ';
+    if (isset($zbp->option) && isset($zbp->db)) {
+        $system_environment .= $zbp->option['ZC_DATABASE_TYPE'] . $zbp->db->version;
+    }
+    $system_environment .= '; ' . $ajax;
     if (defined('OPENSSL_VERSION_TEXT')) {
         $a = explode(' ', OPENSSL_VERSION_TEXT);
         $system_environment .= '; ' . GetValueInArray($a, 0) . GetValueInArray($a, 1);
     }
 
+    if ($more) {
+        $um = ini_get('upload_max_filesize');
+        $pm = ini_get('post_max_size');
+        $ml = ini_get('memory_limit');
+        $et = ini_get('max_execution_time');
+        $system_environment .= '; memory_limit:' . $ml . '; max_execution_time:' . $et;
+        $system_environment .= '; upload_max_filesize:' . $um . '; post_max_size:' . $pm;
+    }
     return $system_environment;
 }
 
@@ -514,8 +520,13 @@ function GetCurrentHost($blogpath, &$cookiesPath)
     }
 
     if (isset($_SERVER['SCRIPT_NAME']) && $_SERVER['SCRIPT_NAME']) {
-        $x = $_SERVER['SCRIPT_NAME'];
+        $x = str_replace('\\', '/', $_SERVER['SCRIPT_NAME']);
         $y = $blogpath;
+        if (strpos($x, $y) !== false) {
+            $x = str_replace($y, '', $x);
+            $x = ltrim($x, '/');
+            $x = '/' . $x;
+        }
         for ($i = 0; $i < strlen($x); $i++) {
             $f = $y . substr($x, ($i - strlen($x)));
             $z = substr($x, 0, $i);
@@ -994,7 +1005,13 @@ function GetRequestUri()
             $url .= '?' . $_SERVER['REDIRECT_QUERY_STRIN'];
         }
     } else {
-        $url = $_SERVER['PHP_SELF'] . ($_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
+        $url = str_replace('\\', '/' ,$_SERVER['PHP_SELF']);
+        if (strpos($url, ZBP_PATH) !== false) {
+            $url = str_replace(ZBP_PATH, '/', $url);
+            $url = ltrim($url, '/');
+            $url = '/' . $url;
+        }
+        $url = $url . ($_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
     }
 
     return $url;
@@ -2193,4 +2210,22 @@ function rawurlencode_without_backslash($s)
     $s = rawurlencode($s);
     $s = str_replace('%2F', '/', $s);
     return $s;
+}
+
+function CheckIsMoblie()
+{
+    $ua = GetGuestAgent();
+    if (preg_match('/(Android|Web0S|webOS|iPad|iPhone|Mobile|Windows\sPhone|Kindle|BlackBerry|Opera\sMini)/', $ua)) {
+        return true;
+    }
+    return false;
+}
+
+function array_to_object($arr)
+{
+    if (is_array($arr)) {
+        return (object) array_map(__FUNCTION__, $arr);
+    } else {
+        return $arr;
+    }
 }

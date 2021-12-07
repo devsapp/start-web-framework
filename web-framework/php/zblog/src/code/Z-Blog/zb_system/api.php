@@ -29,6 +29,8 @@ if ($GLOBALS['option']['ZC_API_THROTTLE_ENABLE']) {
 }
 
 $mods = array();
+$mods_allow = array(); //格式为 array( array('模块名'=>'方法名') )
+$mods_disallow = array(); //如果是 array( array('模块名'=>'') )方法名为空将匹配整个模块
 
 // 载入系统和应用的 mod
 ApiLoadMods($mods);
@@ -36,11 +38,8 @@ ApiLoadMods($mods);
 $mod = strtolower(GetVars('mod', 'GET'));
 $act = strtolower(GetVars('act', 'GET'));
 
-$mods_allow = array(); //格式为 [] = array('模块名'=>'方法名')
-$mods_disallow = array(); //如果是 [] = array('模块名'=>'') 方法名为空将匹配整个模块
-
 //进行Api白名单和黑名单的检查
-ApiListCheck($mods_allow, $mods_disallow);
+ApiCheckMods($mods_allow, $mods_disallow);
 
 ApiLoadPostData();
 

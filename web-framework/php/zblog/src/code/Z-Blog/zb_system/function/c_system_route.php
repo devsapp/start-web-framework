@@ -595,7 +595,7 @@ function ViewFeed()
     $articles = $zbp->GetPostList(
         '*',
         $w,
-        array('log_UpdateTime' => 'DESC'),
+        array('log_UpdateTime' => 'DESC', 'log_ID' => 'DESC'),
         $zbp->option['ZC_RSS2_COUNT'],
         null
     );
@@ -1346,16 +1346,22 @@ function ViewPost($id = null, $alias = null, $isrewrite = false, $object = array
     $w[] = array('=', 'log_Type', $posttype);
 
     if ($id !== null && is_numeric($id)) {
+        $id = trim($id);
         if (function_exists('ctype_digit') && !ctype_digit((string) $id)) {
             $zbp->ShowError(3, __FILE__, __LINE__);
         }
 
         $w[] = array('=', 'log_ID', $id);
     } elseif ($alias !== null) {
+        $alias = trim($alias);
         if ($zbp->option['ZC_POST_ALIAS_USE_ID_NOT_TITLE'] == false) {
             $w[] = array('array', array(array('log_Alias', $alias), array('log_Title', $alias)));
         } else {
-            $w[] = array('array', array(array('log_Alias', $alias), array('log_ID', $alias)));
+            if (preg_match('/^[0-9]+$/', $alias) == 1) {
+                $w[] = array('array', array(array('log_Alias', $alias), array('log_ID', $alias)));
+            } else {
+                $w[] = array('=', 'log_Alias', $alias);
+            }
         }
     } else {
         $zbp->ShowError(2, __FILE__, __LINE__);

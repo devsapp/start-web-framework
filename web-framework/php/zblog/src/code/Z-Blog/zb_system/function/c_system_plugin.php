@@ -2596,13 +2596,13 @@ DefinePluginFilter('Filter_Plugin_API_Extend_Mods');
 /*
 '**************************************************<
 '类型:Filter
-'名称:Filter_Plugin_API_ListCheck
+'名称:Filter_Plugin_API_CheckMods
 '参数:&$mods_allow, &$mods_disallow
 '说明:API 的黑白名单机制
 '调用:
 '**************************************************>
  */
-DefinePluginFilter('Filter_Plugin_API_ListCheck');
+DefinePluginFilter('Filter_Plugin_API_CheckMods');
 
 /*
 '**************************************************<
@@ -2641,9 +2641,21 @@ DefinePluginFilter('Filter_Plugin_API_Get_Object_Array');
 '**************************************************<
 '类型:Filter
 '名称:Filter_Plugin_API_VerifyCSRF_Skip
-'参数:&$skip_acts, $csrf_token
+'参数:&$skip_acts
 '说明:API 校验 CSRF Token 跳过验证
 '调用:
 '**************************************************>
  */
 DefinePluginFilter('Filter_Plugin_API_VerifyCSRF_Skip');
+
+
+/*
+'**************************************************<
+'类型:Filter
+'名称:Filter_Plugin_API_Result_Data
+'参数:&data, $mod, $act
+'说明:处理返回数据
+'调用:
+'**************************************************>
+ */
+DefinePluginFilter('Filter_Plugin_API_Result_Data');

@@ -88,12 +88,12 @@ function ApiRemoveMods($name)
 /**
  * 检查API Mods的白名单和黑名单.
  */
-function ApiListCheck(&$mods_allow, &$mods_disallow)
+function ApiCheckMods(&$mods_allow, &$mods_disallow)
 {
     global $zbp, $mod, $act;
 
     //接口及对$mods_allow, $mods_disallow的添加
-    foreach ($GLOBALS['hooks']['Filter_Plugin_API_ListCheck'] as $fpname => &$fpsignal) {
+    foreach ($GLOBALS['hooks']['Filter_Plugin_API_CheckMods'] as $fpname => &$fpsignal) {
         $new_allow = $new_disallow = array();
         $fpname($new_allow, $new_disallow);
 
@@ -449,6 +449,10 @@ function ApiVerifyCSRF($force_check = false)
                 return;
             }
 
+            if (php_sapi_name() == 'cli') {
+                return;
+            }
+
             // 不需要校验 CSRF 的 API
             $skip_acts = array(
                 array('mod' => 'member', 'act' => 'login'),
@@ -456,12 +460,7 @@ function ApiVerifyCSRF($force_check = false)
             );
 
             foreach ($GLOBALS['hooks']['Filter_Plugin_API_VerifyCSRF_Skip'] as $fpname => &$fpsignal) {
-                $fpreturn = $fpname($skip_acts, $csrf_token);
-                if ($fpsignal == PLUGIN_EXITSIGNAL_RETURN) {
-                    $fpsignal = PLUGIN_EXITSIGNAL_NONE;
-        
-                    return $fpreturn;
-                }
+                $fpname($skip_acts);
             }
 
             foreach ($skip_acts as $api_act) {
@@ -518,7 +517,7 @@ function ApiDispatch($mods, $mod, $act)
         $func = 'api_' . $mod . '_' . $act;
         if (function_exists($func)) {
             $result = call_user_func($func);
-    
+            ApiResultData($result);
             ApiResponse(
                 isset($result['data']) ? $result['data'] : null,
                 isset($result['error']) ? $result['error'] : null,
@@ -588,4 +587,17 @@ function ApiThrottle($name = 'default', $max_reqs = 60, $period = 60)
     $zbpcache->Set($cache_key, json_encode($cached_req), ($cached_req['expire_time'] - time()));
 
     return true;
+}
+
+/**
+ * API 返回数据处理函数
+ */
+function ApiResultData(&$data)
+{
+    global $mod, $act;
+
+
+    foreach ($GLOBALS['hooks']['Filter_Plugin_API_Result_Data'] as $fpname => &$fpsignal) {
+        $fpname($data, $mod, $act);
+    }
 }

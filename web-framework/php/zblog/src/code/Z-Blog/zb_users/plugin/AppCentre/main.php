@@ -17,9 +17,8 @@ if (!$zbp->CheckPlugin('AppCentre')) {
     $zbp->ShowError(48);
     die();
 }
-$appc = $zbp->LoadApp('plugin', 'AppCentre');
-$blogtitle = $zbp->lang['AppCentre']['name'] . '-' . '(' . $zbp->lang['AppCentre']['client'] . ' v' . $appc->version . ')';
-unset($appc);
+$blogtitle = AppCentre_GetBlogTitle();
+
 if (!$zbp->Config('AppCentre')->HasKey('enabledcheck')) {
     AppCentre_CheckInSecurityMode();
     $zbp->Config('AppCentre')->enabledcheck = 1;
@@ -46,7 +45,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(GetVars('method', 'GET') == 'check' ? 2 : 1); ?></div>
+<div class="SubMenu"><?php 
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(GetVars('method', 'GET') == 'check' ? 2 : 1);
+?></div>
   <div id="divMain2">
 
 

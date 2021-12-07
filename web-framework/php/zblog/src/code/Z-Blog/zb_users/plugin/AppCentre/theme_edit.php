@@ -25,7 +25,7 @@ if (!$zbp->ValidToken(GetVars('token', 'GET'), 'AppCentre') && GetVars('id', 'GE
 
 AppCentre_CheckInSecurityMode();
 
-$blogtitle = $zbp->lang['AppCentre']['name'] . '-' . $zbp->lang['AppCentre']['edit_app'];
+$blogtitle = AppCentre_GetBlogTitle() . '-' . $zbp->lang['AppCentre']['edit_app'];
 
 if (GetVars('id')) {
     $app = $zbp->LoadApp('theme', GetVars('id'));
@@ -215,7 +215,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
 
   <div class="divHeader"><?php echo $blogtitle; ?></div>
-<div class="SubMenu"><?php AppCentre_SubMenus(GetVars('id', 'GET') == '' ? 6 : ''); ?></div>
+<div class="SubMenu"><?php
+foreach ($GLOBALS['hooks']['Filter_Plugin_AppCentre_Client_SubMenu'] as $fpname => &$fpsignal) {
+    $fpname();
+}
+AppCentre_SubMenus(GetVars('id', 'GET') == '' ? 6 : '');
+?></div>
   <div id="divMain2">
 
 <form method="post" action="">

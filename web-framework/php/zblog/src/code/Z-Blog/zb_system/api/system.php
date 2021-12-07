@@ -18,6 +18,7 @@ $GLOBALS['setting_keys'] = array(
     'ZC_TIME_ZONE_NAME',
     'ZC_BLOG_LANGUAGEPACK',
     'ZC_API_ENABLE',
+    'ZC_XMLRPC_ENABLE',
     'ZC_DEBUG_MODE',
     'ZC_DEBUG_MODE_WARNING',
     'ZC_ADDITIONAL_SECURITY',
@@ -42,6 +43,8 @@ $GLOBALS['setting_keys'] = array(
     'ZC_ARTICLE_THUMB_HEIGHT',
     'ZC_MANAGE_COUNT',
     'ZC_POST_BATCH_DELETE',
+    'ZC_DELMEMBER_WITH_ALLDATA',
+    'ZC_CATEGORY_MANAGE_LEGACY_DISPLAY',
 );
 
 /**
@@ -62,6 +65,8 @@ function api_system_basic_info()
             'host' => $zbp->host,
             'version' => $zbp->version,
             'ajaxurl' => $zbp->ajaxurl,
+            'xml_rpc' => $zbp->xmlrpcurl,
+            'cmdurl' => $zbp->cmdurl,
             'cookiespath' => $zbp->cookiespath,
             'manage_count' => $zbp->option['ZC_MANAGE_COUNT'],
             'pagebar_count' => $zbp->option['ZC_PAGEBAR_COUNT'],
@@ -104,6 +109,7 @@ function api_system_get_info()
     
     $info = array(
         'environment' => $zbp->cache->system_environment,
+        'version' => $GLOBALS['blogversion'],
         'full_version' => ZC_VERSION_FULL,
         'articles' => (int) $zbp->cache->all_article_nums,
         'categories' => (int) $zbp->cache->all_category_nums,
@@ -113,7 +119,6 @@ function api_system_get_info()
         'members' => (int) $zbp->cache->all_member_nums,
         'theme' => $zbp->theme,
         'style' => $zbp->style,
-        'xml_rpc' => $zbp->xmlrpcurl,
     );
 
     return array(

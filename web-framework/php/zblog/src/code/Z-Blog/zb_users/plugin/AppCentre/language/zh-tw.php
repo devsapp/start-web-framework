@@ -125,4 +125,5 @@ return array(
     'move_bottom'=>'移动到最底',
     'enable_plugin_sort'=>'啓用插件優先級調整',
     'non_root_prohibit_operation'=>'非root級别的管理員禁止該操作',
+    'please_open_debugmode'=>'發者模式已開啟，請開啟系統的調試模式',
 );

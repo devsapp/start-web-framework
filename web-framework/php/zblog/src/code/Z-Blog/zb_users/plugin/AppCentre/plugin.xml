@@ -5,7 +5,7 @@
 <url>https://www.zblogcn.com/</url>
 <note>Z-BlogPHP版的资源大本营</note>
 <description></description>
-<path>main.php</path>
+<path>setting.php</path>
 <include>include.php</include>
 <level>1</level>
 <author>
@@ -18,10 +18,10 @@
   <email></email>
   <url></url>
 </source>
-<adapted>150101</adapted>
-<version>2.70</version>
+<adapted>140614</adapted>
+<version>2.75</version>
 <pubdate>2013-07-07</pubdate>
-<modified>2021-10-14</modified>
+<modified>2021-11-22</modified>
 <price>0</price>
 <phpver>5.2</phpver>
 <advanced>

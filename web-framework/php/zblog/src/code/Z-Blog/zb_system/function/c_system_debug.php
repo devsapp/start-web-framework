@@ -145,7 +145,7 @@ function Debug_Error_Handler($errno, $errstr, $errfile, $errline)
     }
 
     //@符号的错误抑制功能的实现
-    if (error_reporting() == 0) {
+    if (error_reporting() == 0 || !(error_reporting() & $errno)) {
         return true;
     }
 
