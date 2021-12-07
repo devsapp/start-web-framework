@@ -4,7 +4,7 @@
 
 - 下载命令行工具：`npm install -g @serverless-devs/s`
 - 初始化一个模版项目：`s init django-blog`
-- 对数据库等进行配置，在`./ServerlessBlog/settings.py`文件中，70行的位置，对数据库等进行配置：
+- 【如果要配置Mysql，否则自动使用Sqlite】对数据库等进行配置，在`./ServerlessBlog/settings.py`文件中，70行的位置，对数据库等进行配置：
     ```python
     DATABASES = {
         'default': {

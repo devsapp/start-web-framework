@@ -23,6 +23,7 @@ services:
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
+        nasConfig: auto
       function:
         name: django
         description: 'Serverless Devs Web Framework Django Function'

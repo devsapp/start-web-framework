@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'ServerlessBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/mnt/auto/db.sqlite3',
     }
 }
 
