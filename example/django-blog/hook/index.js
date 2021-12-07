@@ -23,8 +23,8 @@ async function postInit(inputObj) {
         * Operation error: ImportError: cannot import name 'metadata' from 'importlib', you can refer to: https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib
      * Default information:
         * Admin：/admin
-        * Default Admin Username: blog
-        * Default Admin Password: myblog12345!     
+        * Default Admin Username: django
+        * Default Admin Password: djangoblog   
      \n`)
 }
 
