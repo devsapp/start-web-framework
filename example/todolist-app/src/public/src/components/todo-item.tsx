@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TodoItemInterface } from '../interfaces'
+import { TodoItemInterface } from './../interfaces'
 
 const TodoItem = (props: TodoItemInterface) => {
   return (

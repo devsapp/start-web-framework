@@ -18,7 +18,7 @@ services:
     actions:
       pre-deploy: # 在deploy之前运行
         - run: npm install --production  # 要运行的命令行
-          path: ./code # 命令行运行的路径
+          path: ./ # 命令行运行的路径
     props: #  组件的属性值
       region: cn-hangzhou
       service:
@@ -27,7 +27,7 @@ services:
         name: todoList
         description: todoList app
         runtime: nodejs12
-        codeUri: './code'
+        codeUri: './'
         handler: src/index.handler
         memorySize: 256
         timeout: 60
