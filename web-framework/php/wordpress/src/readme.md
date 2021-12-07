@@ -8,8 +8,8 @@
 
 - 初始化项目：`s init start-wordpress`
 - 进入项目后：
-  - 初始化 NAS: `s nas init`
-  - 上传工程到 NAS：`s nas upload -r code/wordpress/ /mnt/auto/wordpress`
+  - 【由于Yaml中的action字段已经写了这个过程，所以可以忽略】初始化 NAS: `s nas init`
+  - 【由于Yaml中的action字段已经写了这个过程，所以可以忽略】上传工程到 NAS：`s nas upload -r code/wordpress/ /mnt/auto/wordpress`
   - 部署：`s deploy`
 - 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
 
