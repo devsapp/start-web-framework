@@ -2,7 +2,7 @@ Type: Application
 Name: start-laravel
 Provider:
   - 阿里云
-Version: 1.0.0
+Version: 1.0.1
 Description: 快速部署一个 laravel 框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
