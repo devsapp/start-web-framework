@@ -2,7 +2,7 @@ Type: Application
 Name: start-ecshop
 Provider:
   - 阿里云
-Version: 0.1.10
+Version: 1.0.0
 Description: 快速部署一个 Ecshop 框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

@@ -907,7 +907,7 @@ default_socket_timeout = 60
 ;extension=pdo_oci
 ;extension=pdo_odbc
 ;extension=pdo_pgsql
-;extension=pdo_sqlite
+extension=pdo_sqlite
 ;extension=pgsql
 ;extension=shmop
 
@@ -917,7 +917,7 @@ default_socket_timeout = 60
 
 ;extension=soap
 ;extension=sockets
-;extension=sqlite3
+extension=sqlite3
 ;extension=tidy
 ;extension=xmlrpc
 ;extension=xsl

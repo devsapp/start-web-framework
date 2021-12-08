@@ -3,6 +3,7 @@ set +e
 
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
+mkdir -p /tmp/var/sessions/
 
 chown -R www-data:www-data /mnt/auto/typecho
 

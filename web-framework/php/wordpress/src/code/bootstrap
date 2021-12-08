@@ -3,6 +3,7 @@ set +e
 
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
+mkdir -p /tmp/var/sessions/
 
 mkdir -p /mnt/auto/wordpress/sessions
 chown -R www-data:www-data mnt/auto/wordpress/sessions

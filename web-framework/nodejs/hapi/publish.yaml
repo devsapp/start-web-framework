@@ -2,7 +2,7 @@ Type: Application
 Name: start-hapi
 Provider:
   - 阿里云
-Version: 0.1.10
+Version: 0.1.11
 Description: 快速部署一个Hapi.js框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

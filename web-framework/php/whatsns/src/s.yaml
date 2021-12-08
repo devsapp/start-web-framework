@@ -16,7 +16,7 @@ services:
     component: fc  # 组件名称
     actions:
       post-deploy:
-        - run: s framework nas upload -r code/whatsns/ /mnt/auto/whatsns
+        - run: s framework nas upload -r code/whatsns/ /mnt/auto/whatsns # 请注意这里上传的路径，如果之前已经挂载了这个nas，并且上传过这个文件夹，会导致文件的覆盖
           path: ./
     props: # 组件的属性值
       region: cn-hangzhou

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set +e
 
+mkdir -p /tmp/var/sessions/
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 

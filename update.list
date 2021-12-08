@@ -1,6 +1,10 @@
-./web-framework/php/whatsns
-./web-framework/php/zblog
-./web-framework/php/metinfo
 ./web-framework/php/discuz
 ./web-framework/php/ecshop
+./web-framework/php/laravel
+./web-framework/php/metinfo
+./web-framework/php/thinkphp
+./web-framework/php/typecho
+./web-framework/php/whatsns
 ./web-framework/php/wordpress
+./web-framework/php/zblog
+./web-framework/nodejs/hapi
