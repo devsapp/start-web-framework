@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean php session files
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/php/sessionclean
+ProtectHome=true
+ProtectSystem=true
+PrivateTmp=true
