@@ -21,7 +21,7 @@ services:
         - run: s framework nas upload -r code/wordpress/ /mnt/auto/wordpress
           path: ./
     props: # 组件的属性值
-      region: cn-hangzhou
+      region: cn-shenzhen
       service:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
