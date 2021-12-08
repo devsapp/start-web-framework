@@ -30,6 +30,7 @@ services:
         runtime: custom
         timeout: 60
         caPort: 9000
+        memorySize: 1024
       triggers:
         - name: httpTrigger
           type: http
