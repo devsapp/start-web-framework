@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.left-userinfo{
+	padding-top:20px;
+}
+h2{
+	font-size:15px;
+	    font-weight: 700;
+}
+.basicinfo p{
+	padding:0px;
+	margin:0px;
+}
+.basicinfo p label{
+	 font-weight: 200;
+}

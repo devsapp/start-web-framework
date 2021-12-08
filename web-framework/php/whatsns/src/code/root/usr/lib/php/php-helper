@@ -1,0 +1,208 @@
+#!/bin/sh
+#
+# php-helper - a PHP module manager for Debian
+#
+# Copyright 2013-2015 Ondřej Surý <ondrej@sury.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+warning() {
+    echo "WARNING: ${@}" >&2
+}
+
+remove_state() {
+    local action=$1
+    local version=$2
+    local sapi=$3
+    local modname=$4
+
+    local state_dir="$(get_state_dir "$version" "$sapi")"
+    rm -f "${state_dir}/${action}_by_admin/${modname}"
+    rm -f "${state_dir}/${action}_by_maint/${modname}"
+
+    return 0
+}
+
+mod_registry() {
+    local action=$1
+    local version=$2
+    local modname=$3
+    local registry_dir="$(get_registry_dir "$version")"
+    local registry_file="${registry_dir}/${modname}"
+
+    case $action in
+	register)
+	    if [ ! -d "$registry_dir" ]; then
+		mkdir -p "$registry_dir"
+	    fi
+	    touch "$registry_file"
+	    ;;
+	unregister)
+	    rm -f "$registry_file"
+	    ;;
+	status)
+	    if [ -e "$registry_file" ]; then
+		return 0
+	    else
+		return 1
+	    fi
+	    ;;
+	*)
+	    return 1
+	    ;;
+    esac
+
+    return 0
+}
+
+record_state() {
+    local action=$1
+    local version=$2
+    local sapi=$3
+    local modname=$4
+
+    local state_dir="$(get_state_dir "$version" $sapi)"
+    local admin_state="${state_dir}/${action}_by_admin/$modname"
+    local maint_state="${state_dir}/${action}_by_maint/$modname"
+
+    if [ -e "$admin_state" ]; then
+	return
+    fi
+
+    if [ -e "$maint_state" ]; then
+	if [ "$MAINT_MODE" = "yes" ]; then
+	    return
+	else
+	    rm "$maint_state"
+	fi
+    fi
+
+    # cleanup previous state
+    remove_state disabled "$version" "$sapi" "$modname"
+    remove_state enabled "$version" "$sapi" "$modname"
+
+    if [ "$MAINT_MODE" = "yes" ]; then
+	mkdir -p "$(dirname $maint_state)"
+	touch "$maint_state"
+    else
+	mkdir -p "$(dirname $admin_state)"
+	touch "$admin_state"
+    fi
+
+    return 0
+}
+
+output() {
+    if [ "$QUIET" != "yes" ]; then
+	echo "$@"
+    fi
+}
+
+get_priority() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+
+    local source_ini="/etc/php/${version}/mods-available/${modname}.ini"
+
+    module_ret=0
+    module_exists "$version" "$modname" || module_ret=$?
+
+    if [ "$module_ret" -eq 0 ]; then
+	priority=$(sed -ne "s/^;[[:space:]]*priority[[:space:]]*=[[:space:]]*\([0-9]\+\)[[:space:]]*$/\\1/p; /^[0-9]\+$/q" "$source_ini")
+	[ -z "$priority" ] && priority=20
+	echo "$priority"
+	return 0
+    fi
+
+    return $module_ret
+}
+
+get_live_link() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+    local priority=$4
+    echo "/etc/php/${version}/${sapi}/conf.d/${priority}-${modname}.ini"
+}
+
+get_live_link_content() {
+    local version=$1
+    local sapi=$2
+    local modname=$3
+    local priority=$4
+    echo "/etc/php/${version}/mods-available/${modname}.ini"
+}
+
+module_exists() {
+    local version=$1
+    local modname=$2
+    local source_ini="/etc/php/${version}/mods-available/${modname}.ini"
+
+    if [ ! -r "${source_ini}" ]; then
+	return 1
+    fi
+    return 0
+}
+
+get_state_dir() {
+    local version=$1
+    local sapi=$2
+    echo "/var/lib/php/modules/${version}/${sapi}"
+    return 0
+}
+
+get_registry_dir() {
+    local version=$1
+    echo "/var/lib/php/modules/${version}/registry"
+    return 0
+}
+
+get_version_dir() {
+    echo "/usr/lib/php"
+    return 0
+}
+
+get_sapi_dir() {
+    local version=$1
+    echo "/usr/lib/php/${version}/sapi"
+    return 0
+}
+
+list_parts() {
+    local dir=$1
+    local regex=${2:-}
+
+    if [ -d "$dir" ]; then
+	find "$dir" -mindepth 1 -maxdepth 1 \! \( -name '*.dpkg-old' -name '*.dpkg-new' -name '*.dpkg-dist' -name '*~' -name '*.bak' -name '*.ucf-old' -name '*.ucf-new' -name '*.ucf-dist' -name '*%' \) -printf '%f\n'
+	return $?
+    else
+	return 1
+    fi    
+}
+
+list_parts_regex() {
+    local dir=$1
+    local regex=$2
+    if [ -d "$dir" ]; then
+	find "$dir" -mindepth 1 -maxdepth 1 -regex "$regex" -printf '%f\n'
+	return $?
+    else
+	return 1
+    fi    
+}

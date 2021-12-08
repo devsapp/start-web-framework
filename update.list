@@ -1,2 +1,4 @@
 ./web-framework/nodejs/hapi
 ./web-framework/php/whatsns
+./web-framework/php/zblog
+./web-framework/php/metinfo

@@ -15,9 +15,7 @@ services:
   framework: # 服务名称
     component: fc  # 组件名称
     actions:
-      pre-deploy:
-        - run: s framework nas init
-          path: ./
+      post-deploy:
         - run: s framework nas upload -r code/Z-Blog/ /mnt/auto/Z-Blog
           path: ./
     props: # 组件的属性值

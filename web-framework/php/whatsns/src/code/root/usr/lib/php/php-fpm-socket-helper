@@ -1,0 +1,25 @@
+#!/bin/sh
+
+DEFAULT_SOCKET="${2}"
+POOL_FILE="${3}"
+PRIORITY="${4}"
+
+[ -r "${POOL_FILE}" ] || exit 0
+
+SOCKET=$(sed -n 's/^listen[[:space:]]*=[[:space:]]*\([^[:space:]]*\)/\1/p' "${POOL_FILE}")
+
+[ -S "${SOCKET}" ] || exit 0
+
+case "$1" in
+    start|install)
+	/usr/bin/update-alternatives --quiet --install "${DEFAULT_SOCKET}" php-fpm.sock "${SOCKET}" "${PRIORITY}" 2>/dev/null
+	;;
+    stop|remove)
+	/usr/bin/update-alternatives --quiet --remove php-fpm.sock "${SOCKET}" 2>/dev/null
+	;;
+    *)
+	exit 1
+	;;
+esac
+
+exit 0
