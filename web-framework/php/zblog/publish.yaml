@@ -2,7 +2,7 @@ Type: Application
 Name: start-zblog
 Provider:
   - 阿里云
-Version: 0.1.6
+Version: 0.1.10
 Description: 快速部署一个 Zblog 框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
