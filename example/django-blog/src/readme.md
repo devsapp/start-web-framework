@@ -35,7 +35,7 @@
 >         部署前执行：pip3 install -r requirements.txt -t .    
 >         部署后执行：s nas upload ./db.sqlite3 /mnt/auto    
 >        如果遇到pip3命令找不到等问题，可以适当进行手动项目构建，并适当取消actions内容     
->      * 项目初始化完成，您可以直接使用 s deploy 进行项目部署
+>      * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署
 
 ## 相关命令
 
