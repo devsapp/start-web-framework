@@ -27,10 +27,10 @@ services:
         name: web-framework
         description: 'Serverless Devs Web Framework Service'
       function:
-        name: bottle
-        description: 'Serverless Devs Web Framework Bottle Function'
+        name: fastapi
+        description: 'Serverless Devs Web Framework Fastapi Function'
         codeUri: './code'
-        runtime: python3
+        runtime: custom
         timeout: 60
       triggers:
         - name: httpTrigger
