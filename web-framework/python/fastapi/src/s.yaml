@@ -19,7 +19,7 @@ services:
     component: fc  # 组件名称
     actions:
       pre-deploy: # 在deploy之前运行
-        - run: pip3 install -r requirements.txt -t .  # 要运行的命令行
+        - run: s build --use-docker  # 要运行的命令行
           path: ./code # 命令行运行的路径
     props: # 组件的属性值
       region: cn-beijing
