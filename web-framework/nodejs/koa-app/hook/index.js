@@ -1,19 +1,22 @@
 async function preInit(inputObj) {
-
+    console.log(`\n     ____  __.            
+    |    |/ _|_________   
+    |      < /  _ \\__  \\  
+    |    |  (  <_> ) __ \\_
+    |____|__ \\____(____  /
+            \\/         \\/ `)
 }
 
 async function postInit(inputObj) {
-    console.log(`\n     _   __            
-    | | / /            
-    | |/ /  ___   __ _ 
-    |    \\ / _ \\ / _\` |
-    | |\\  \\ (_) | (_| |
-    \\_| \\_/\\___/ \\__,_|
-                                        `)
-    console.log(`\n    Welcome to the Koa application, you can execute the following commands to develop application：`)
-    console.log('\x1b[32m%s\x1b[0m', '    npm install');
-    console.log('\x1b[32m%s\x1b[0m', '    npm run dev');
-    console.log('\x1b[32m%s\x1b[0m', '    s deploy \n');
+
+    console.log(`\n    Welcome to the start-egg application
+     This application requires to open these services: 
+         FC : https://fc.console.aliyun.com/
+     
+     * 额外说明：s.yaml中声明了actions：
+        部署前执行：npm install --production
+       如果遇到npm命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容 
+     * 项目初始化完成，您可以直接使用 s deploy 进行项目部署\n\n`)
 }
 
 module.exports = {

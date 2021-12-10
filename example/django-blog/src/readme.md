@@ -23,6 +23,20 @@
 
 > 运行出错：ImportError: cannot import name 'metadata' from 'importlib'的解决方法：https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib
 
+> * 推荐Python版本：python3.7;   
+>      * 如果版本超过3.7，可能会提示以下错误：   
+>         Operation error: ImportError: cannot import name 'metadata' from 'importlib'   
+>         此时可以参考文档：https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib   
+>      * 本项目默认的信息:
+>         * Django管理后台：/admin   
+>         * 默认用户：django
+>         * 默认密码：djangoblog   
+>      * 额外说明：s.yaml中声明了actions：
+>         部署前执行：pip3 install -r requirements.txt -t .    
+>         部署后执行：s nas upload ./db.sqlite3 /mnt/auto    
+>        如果遇到pip3命令找不到等问题，可以适当进行手动项目构建，并适当取消actions内容     
+>      * 项目初始化完成，您可以直接使用 s deploy 进行项目部署
+
 ## 相关命令
 
 由于该框架直接部署在阿里云函数计算平台，所以可以参考函数计算组件相关的命令：

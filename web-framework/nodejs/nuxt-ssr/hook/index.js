@@ -1,8 +1,4 @@
 async function preInit(inputObj) {
-
-}
-
-async function postInit(inputObj) {
     console.log(`\n     _   _            _     _     
     | \\ | |          | |   (_)    
     |  \\| |_   ___  _| |_   _ ___ 
@@ -12,10 +8,18 @@ async function postInit(inputObj) {
                           _/ |    
                          |__/     
                                         `);
-    console.log(`\n    Welcome to the nuxt SSR application, you can execute the following commands to develop application：`)
-    console.log('\x1b[32m%s\x1b[0m', '    npm install');
-    console.log('\x1b[32m%s\x1b[0m', '    npm run dev');
-    console.log('\x1b[32m%s\x1b[0m', '    s deploy \n');
+}
+
+async function postInit(inputObj) {
+
+    console.log(`\n    Welcome to the start-nuxt application
+     This application requires to open these services: 
+         FC : https://fc.console.aliyun.com/
+
+     * 额外说明：s.yaml中声明了actions：
+        部署前执行：npm install --production
+       如果遇到npm命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容 
+     * 项目初始化完成，您可以直接使用 s deploy 进行项目部署\n`)
 }
 
 module.exports = {

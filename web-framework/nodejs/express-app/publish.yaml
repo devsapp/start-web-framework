@@ -1,6 +1,6 @@
 Type: Application
 Name: express-app
-Version: 0.1.0
+Version: 0.1.1
 Provider:
   - 阿里云
 Description: express 应用

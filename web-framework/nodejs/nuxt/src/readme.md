@@ -58,7 +58,7 @@
     access: "{{ access }}"       #  秘钥别名
     
     services:
-      framework: # 服务名称
+      framework: # 业务名称/模块名称
         component: fc  # 组件名称
         actions:
           pre-deploy: # 在deploy之前运行

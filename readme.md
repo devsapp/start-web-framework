@@ -57,7 +57,7 @@
 <tr>
 <td align="center">6</td>
 <td align="center"><a href="./web-framework/nodejs/koa/src">Koa [custom]</a></td>
-    <td align="center">FastAPI</td>
+<td align="center"><a href="./web-framework/python/fastapi/src" >FastAPI [custom]</a></td>
 <td align="center"><a href="./web-framework/php/ecshop/src" >Ecshop [custom]</a></td><td></td><td></td><td></td>
 </tr>
 <tr>
@@ -65,7 +65,7 @@
 <td align="center"><a href="./web-framework/nodejs/nest/src">Nest [nodejs12]</a></td>
 <td align="center">Web2py</td>
 <td align="center"><a href="./web-framework/php/metinfo/src" >Metinfo [custom]</a></td>
-    <td></td><td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
 <tr>
 <td align="center">8</td>

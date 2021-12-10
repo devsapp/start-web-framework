@@ -14,6 +14,11 @@
 
 > 权限与Yaml配置可以参考 [FC Yaml 规范文档](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md)
 
+> * 额外说明：s.yaml中声明了actions：   
+>    部署前执行：npm install --production   
+>   如果遇到npm命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容    
+> * 项目初始化完成，您可以直接使用 s deploy 进行项目部署
+
 ## 相关命令
 
 由于该框架直接部署在阿里云函数计算平台，所以可以参考函数计算组件相关的命令：
@@ -58,7 +63,7 @@
     access: "{{ access }}"       #  秘钥别名
     
     services:
-      framework: # 服务名称
+      framework: # 业务名称/模块名称
         component: fc  # 组件名称
         actions:
           pre-deploy: # 在deploy之前运行
