@@ -10,9 +10,15 @@
 #   有问题快来钉钉群问一下吧：33947367
 # ------------------------------------
 
-edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
-name: framework       # 项目名称
-access: '{{access}}'    #  秘钥别名
+edition: 1.0.0
+name: hello-world-app
+access: "{{ access }}"
+
+vars: # 全局变量
+  region: cn-beijing
+  service:
+    name: web-framework
+    description: 'Serverless Devs Web Framework Service'
 
 services:
   framework: # 业务名称/模块名称
@@ -21,10 +27,12 @@ services:
       pre-deploy: # 在deploy之前运行
         - run: npm install --production  # 要运行的命令行
           path: ./code # 命令行运行的路径
-    props: #  组件的属性值
-      region: cn-hangzhou
-      service:
-        name: web-framework
+#      post-deploy: # 在deploy之前运行
+#        - run: s nas upload ./db.sqlite3 /mnt/auto  # 要运行的命令行
+#          path: ./ # 命令行运行的路径
+    props: # 组件的属性值
+      region: ${vars.region}
+      service: ${vars.service}
       function:
         name: express-app
         description: express runtime app
@@ -48,3 +56,18 @@ services:
           protocol: HTTP
           routeConfigs:
             - path: /*
+
+#  next-function: # 第二个函数的案例，仅供参考
+#    # 如果在当前项目下执行 s deploy，会同时部署模块：
+#    #   framework：服务web-framework，函数express-app
+#    #   next-function：服务hello-world-service，函数next-function-example
+#    # 如果想单独部署当前服务与函数，可以执行 s + 模块名/业务名 + deploy，例如：s next-function deploy
+#    # 如果想单独部署当前函数，可以执行 s + 模块名/业务名 + deploy function，例如：s next-function deploy function
+#    # 更多命令可参考：https://github.com/devsapp/fc/tree/jiangyu-docs/docs#文档相关
+#    component: fc
+#    props:
+#      region: ${vars.region}
+#      service: ${vars.service} # 应用整体的服务配置
+#      function: # 定义一个新的函数
+#        name: next-function-example
+#        description: 'hello world by serverless devs'

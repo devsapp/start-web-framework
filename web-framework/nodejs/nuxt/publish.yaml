@@ -2,7 +2,7 @@ Type: Application
 Name: start-nuxt
 Provider:
   - 阿里云
-Version: 1.1.14
+Version: 1.1.15
 Description: 快速部署一个Nuxt.js框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

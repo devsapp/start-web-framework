@@ -1,6 +1,6 @@
 Type: Application
 Name: start-nest
-Version: 1.1.14
+Version: 1.1.15
 Provider:
   - 阿里云
 Description: 快速部署一个 nest 应用到阿里云函数计算
