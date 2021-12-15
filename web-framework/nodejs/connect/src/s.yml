@@ -11,7 +11,7 @@
 # ------------------------------------
 
 edition: 1.0.0
-name: hello-world-app
+name: web-framework-app
 access: "{{ access }}"
 
 vars: # 全局变量
@@ -60,7 +60,7 @@ services:
 #  next-function: # 第二个函数的案例，仅供参考
 #    # 如果在当前项目下执行 s deploy，会同时部署模块：
 #    #   framework：服务web-framework，函数connect
-#    #   next-function：服务hello-world-service，函数next-function-example
+#    #   next-function：服务web-framework，函数next-function-example
 #    # 如果想单独部署当前服务与函数，可以执行 s + 模块名/业务名 + deploy，例如：s next-function deploy
 #    # 如果想单独部署当前函数，可以执行 s + 模块名/业务名 + deploy function，例如：s next-function deploy function
 #    # 更多命令可参考：https://github.com/devsapp/fc/tree/jiangyu-docs/docs#文档相关
