@@ -1,5 +1,6 @@
 
 export default {
+  telemetry: false,
   mode: 'universal',
   /*
   ** Headers of the page
