@@ -14,6 +14,13 @@ edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（S
 name: framework         #  项目名称
 access: "{{ access }}"       #  秘钥别名
 
+vars:
+  region: cn-hangzhou
+  service:
+    name: web-framework
+    description: 'Serverless Devs Web Framework Service'
+    nasConfig: auto
+
 services:
   framework: # 业务名称/模块名称
     component: fc  # 组件名称
@@ -24,19 +31,17 @@ services:
         - run: s framework nas upload -r code/wordpress/ /mnt/auto/wordpress # 请注意这里上传的路径，如果之前已经挂载了这个nas，并且上传过这个文件夹，会导致文件的覆盖
           path: ./
     props: # 组件的属性值
-      region: cn-shenzhen
-      service:
-        name: web-framework
-        description: 'Serverless Devs Web Framework Service'
-        nasConfig: auto
+      region: ${vars.region}
+      service: ${vars.service}
       function:
         name: wordpress
         description: 'Serverless Devs Web Framework Wordpress Function'
         codeUri: './code'
         runtime: custom
-        timeout: 30
+        timeout: 300
         memorySize: 1536
-        instanceConcurrency: 12
+        instanceConcurrency: 4
+        instanceType: e1
       triggers:
         - name: httpTrigger
           type: http
@@ -47,6 +52,8 @@ services:
               - POST
               - PUT
               - DELETE
+              - HEAD
+              - OPTIONS
       customDomains:
         - domainName: auto
           protocol: HTTP
@@ -57,3 +64,29 @@ services:
                 - POST
                 - PUT
                 - DELETE
+                - HEAD
+                - OPTIONS
+
+  helper: # 辅助函数, 2 min 定时预热
+    component: fc  # 组件名称
+    props: # 组件的属性值
+      region: ${vars.region}
+      service: ${vars.service}
+      function:
+        name: keep-warm
+        description: 'Serverless Devs Web Framework Helper Function'
+        codeUri: './helper'
+        runtime: python3
+        timeout: 30
+        memorySize: 128
+        instanceConcurrency: 1
+        environmentVariables:
+          WP_URL: ${framework.output.url.custom_domain[0].domain}
+      triggers:
+        - name: timerTrigger     
+          type: timer   
+          # qualifier: LATEST    
+          config:    
+            payload: '{}'    
+            cronExpression: '@every 2m'    
+            enable: true
