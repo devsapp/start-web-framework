@@ -3,17 +3,18 @@ set +e
 
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
-mkdir -p /tmp/var/sessions/
+
+mkdir -p /mnt/auto/wordpress/cookies
+chown -R www-data:www-data /mnt/auto/wordpress/cookies
 
 mkdir -p /mnt/auto/wordpress/sessions
-chown -R www-data:www-data mnt/auto/wordpress/sessions
+chown -R www-data:www-data /mnt/auto/wordpress/sessions
 
-mkdir -p /mnt/auto/wordpress/log
-chown -R www-data:www-data /mnt/auto/wordpress/log
-
+mkdir -p /mnt/auto/wordpress/wp-content/database 
+chown -R www-data:www-data /mnt/auto/wordpress/wp-content/database 
 
 echo "start php-fpm"
-php-fpm7.4 -c /code/php.ini-production -y /code/php-fpm.conf
+php-fpm7.4 -c /code/php.ini -y /code/php-fpm.conf
 
 echo "start nginx"
 nginx -c /code/nginx.conf

@@ -20,12 +20,12 @@ msgstr "我们的2020年默认主题旨在充分利用区块编辑器的灵活�
 msgid "Twenty Twenty"
 msgstr "二〇二〇"
 
-#: classes/class-twentytwenty-customize.php:130
+#: classes/class-twentytwenty-customize.php:131
 msgctxt "color"
 msgid "Custom"
 msgstr "自定义"
 
-#: classes/class-twentytwenty-customize.php:129
+#: classes/class-twentytwenty-customize.php:130
 msgctxt "color"
 msgid "Default"
 msgstr "默认"
@@ -140,7 +140,7 @@ msgstr "主要"
 msgid "Nothing Found"
 msgstr "暂无内容"
 
-#: classes/class-twentytwenty-customize.php:250
+#: classes/class-twentytwenty-customize.php:251
 msgid "Show author bio"
 msgstr "显示作者简介"
 
@@ -221,35 +221,35 @@ msgstr "瑞典北部现代艺术的主要目的地。在夏季每天从10时到1
 msgid "The New UMoMA Opens its Doors"
 msgstr "全新UMoMA开门迎客"
 
-#: classes/class-twentytwenty-customize.php:399
+#: classes/class-twentytwenty-customize.php:400
 msgid "Overlay Opacity"
 msgstr "覆层不透明度"
 
-#: classes/class-twentytwenty-customize.php:379
+#: classes/class-twentytwenty-customize.php:380
 msgid "The color used for the text in the overlay."
 msgstr "覆层内文字的颜色。"
 
-#: classes/class-twentytwenty-customize.php:378
+#: classes/class-twentytwenty-customize.php:379
 msgid "Overlay Text Color"
 msgstr "覆层文字颜色"
 
-#: classes/class-twentytwenty-customize.php:357
+#: classes/class-twentytwenty-customize.php:358
 msgid "The color used for the overlay. Defaults to the accent color."
 msgstr "覆层的颜色，默认为强调色。"
 
-#: classes/class-twentytwenty-customize.php:356
+#: classes/class-twentytwenty-customize.php:357
 msgid "Overlay Background Color"
 msgstr "覆层背景色"
 
-#: classes/class-twentytwenty-customize.php:287
+#: classes/class-twentytwenty-customize.php:288
 msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 msgstr "“封面模板”页面模板设置。将特色图片用作页面背景。"
 
-#: classes/class-twentytwenty-customize.php:187
+#: classes/class-twentytwenty-customize.php:188
 msgid "Apply a custom color for links, buttons, featured images."
 msgstr "向按钮、链接、特色图像应用自定义颜色"
 
-#: classes/class-twentytwenty-customize.php:127
+#: classes/class-twentytwenty-customize.php:128
 msgid "Primary Color"
 msgstr "主颜色"
 
@@ -268,12 +268,12 @@ msgid_plural "We found %s results for your search."
 msgstr[0] "我们搜索到了%s个结果。"
 
 #. translators: %s: HTML character for up arrow.
-#: footer.php:49
+#: footer.php:55
 msgid "Up %s"
 msgstr "向上 %s"
 
 #. translators: %s: HTML character for up arrow.
-#: footer.php:43
+#: footer.php:49
 msgid "To the top %s"
 msgstr "返回顶部%s"
 
@@ -330,7 +330,6 @@ msgstr "社交网络链接"
 msgid "Footer"
 msgstr "页脚"
 
-#. translators: %s: Author name.
 #. translators: %s: Author name.
 #: inc/template-tags.php:375 template-parts/entry-author-bio.php:20
 msgid "By %s"
@@ -500,7 +499,7 @@ msgstr "桌面展开式菜单"
 msgid "Desktop Horizontal Menu"
 msgstr "桌面水平菜单"
 
-#: footer.php:33
+#: footer.php:39
 msgid "Powered by WordPress"
 msgstr "由WordPress强力驱动"
 
@@ -537,12 +536,12 @@ msgstr "&ldquo;%s&rdquo;上的一条回复"
 msgid "Leave a comment"
 msgstr "留下评论"
 
-#: classes/class-twentytwenty-walker-page.php:110 inc/template-tags.php:580
+#: classes/class-twentytwenty-walker-page.php:115 inc/template-tags.php:580
 msgid "Show sub menu"
 msgstr "显示子菜单"
 
 #. translators: %d: ID of a post.
-#: classes/class-twentytwenty-walker-page.php:73
+#: classes/class-twentytwenty-walker-page.php:78
 msgid "#%d (no title)"
 msgstr "#%d（无标题）"
 
@@ -567,52 +566,52 @@ msgstr "%1$s %2$s"
 msgid "says:"
 msgstr "说："
 
-#: classes/class-twentytwenty-customize.php:400
+#: classes/class-twentytwenty-customize.php:401
 msgid "Make sure that the contrast is high enough so that the text is readable."
 msgstr "确保对比度足够高，以使文本可读。"
 
-#: classes/class-twentytwenty-customize.php:310
+#: classes/class-twentytwenty-customize.php:311
 msgid "Creates a parallax effect when the visitor scrolls."
 msgstr "在访客滚动时创建视差效果。"
 
-#: classes/class-twentytwenty-customize.php:309
+#: classes/class-twentytwenty-customize.php:310
 msgid "Fixed Background Image"
 msgstr "固定背景图像"
 
 #. Template Name of the theme
-#: classes/class-twentytwenty-customize.php:285
+#: classes/class-twentytwenty-customize.php:286
 msgid "Cover Template"
 msgstr "封面模板"
 
-#: classes/class-twentytwenty-customize.php:274
+#: classes/class-twentytwenty-customize.php:275
 msgid "Summary"
 msgstr "摘要"
 
-#: classes/class-twentytwenty-customize.php:273
+#: classes/class-twentytwenty-customize.php:274
 msgid "Full text"
 msgstr "全文"
 
-#: classes/class-twentytwenty-customize.php:271
+#: classes/class-twentytwenty-customize.php:272
 msgid "On archive pages, posts show:"
 msgstr "在归档页面上，文章显示："
 
-#: classes/class-twentytwenty-customize.php:229
+#: classes/class-twentytwenty-customize.php:230
 msgid "Show search in header"
 msgstr "在页首显示搜索栏"
 
-#: classes/class-twentytwenty-customize.php:206
+#: classes/class-twentytwenty-customize.php:207
 msgid "Theme Options"
 msgstr "主题选项"
 
-#: classes/class-twentytwenty-customize.php:105
+#: classes/class-twentytwenty-customize.php:106
 msgid "Header &amp; Footer Background Color"
 msgstr "页首、页脚背景色"
 
-#: classes/class-twentytwenty-customize.php:86
+#: classes/class-twentytwenty-customize.php:87
 msgid "Scales the logo to half its uploaded size, making it sharp on high-res screens."
 msgstr "将标志缩小到上传尺寸的一半，让其在高分辨率屏幕上清晰可见。"
 
-#: classes/class-twentytwenty-customize.php:85
+#: classes/class-twentytwenty-customize.php:86
 msgid "Retina logo"
 msgstr "视网膜显示屏标志"
 
@@ -625,7 +624,7 @@ msgid "Page Not Found"
 msgstr "页面未找到"
 
 #. Author URI of the theme
-#: footer.php:32
+#: footer.php:38
 msgid "https://wordpress.org/"
 msgstr "https://cn.wordpress.org/"
 
