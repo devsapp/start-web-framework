@@ -69,6 +69,10 @@ services:
 
   helper: # 辅助函数, 2 min 定时预热
     component: fc  # 组件名称
+    actions:
+      post-deploy: 
+        - run: s helper invoke
+          path: ./
     props: # 组件的属性值
       region: ${vars.region}
       service: ${vars.service}

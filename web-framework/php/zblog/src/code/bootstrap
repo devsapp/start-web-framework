@@ -10,7 +10,7 @@ chown -R www-data:www-data /mnt/auto/Z-Blog
 
 
 echo "start php-fpm"
-php-fpm7.4 -c /code/php.ini-production -y /code/php-fpm.conf
+php-fpm7.4 -c /code/php.ini -y /code/php-fpm.conf
 
 echo "start nginx"
 nginx -c /code/nginx.conf
