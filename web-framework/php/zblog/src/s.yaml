@@ -21,19 +21,25 @@ services:
         - run: s framework nas upload -r code/Z-Blog/ /mnt/auto/Z-Blog # 请注意这里上传的路径，如果之前已经挂载了这个nas，并且上传过这个文件夹，会导致文件的覆盖
           path: ./
     props: # 组件的属性值
-      region: cn-shenzhen
+      region: "{{ region }}"
       service:
-        name: web-framework
+        name: "{{ serviceName }}"
         description: 'Serverless Devs Web Framework Service'
         nasConfig: auto
       function:
-        name: zblog
+        name: "{{ functionName }}"
         description: 'Serverless Devs Web Framework zblog Function'
         codeUri: './code'
         runtime: custom
         timeout: 300
         memorySize: 1536
-        instanceConcurrency: 12
+        instanceConcurrency: 8
+        customRuntimeConfig:
+          command:
+            - bash
+          args:
+            - '-c'
+            - 'start.sh'
       triggers:
         - name: httpTrigger
           type: http
@@ -44,6 +50,8 @@ services:
               - POST
               - PUT
               - DELETE
+              - HEAD
+              - OPTIONS
       customDomains:
         - domainName: auto
           protocol: HTTP
@@ -54,3 +62,5 @@ services:
                 - POST
                 - PUT
                 - DELETE
+                - HEAD
+                - OPTIONS
