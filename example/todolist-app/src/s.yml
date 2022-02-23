@@ -19,7 +19,6 @@ vars: # 全局变量
   service:
     name: web-framework
     description: 'Serverless Devs Web Framework Service'
-    nasConfig: auto
 
 services:
   framework: # 业务名称/模块名称
