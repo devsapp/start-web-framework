@@ -1,102 +1,71 @@
-# 阿里云 Django 框架案例
+# Django 框架
 
-- [阿里云 Django 框架案例](#阿里云-django-框架案例)
-  - [快速体验](#快速体验)
-  - [相关命令](#相关命令)
-  - [依赖过大部署方案](#依赖过大部署方案)
-    - [最佳实践案例](#最佳实践案例)
-      - [通过Container进行部署](#通过container进行部署)
+> 快速部署和体验Serverless架构下的Django项目
 
-## 快速体验
+- [体验前准备](#体验前准备)
+- [代码与预览](#代码与预览)
+- [快速部署和体验](#快速部署和体验)
+    - [在线快速体验](#在线快速体验)
+    - [在本地部署体验](#在本地部署体验)
+- [项目使用注意事项](#项目使用注意事项)
+- [应用详情](#应用详情)
 
-- 初始化项目：`s init start-django`
-- 进入项目后部署：`s deploy`
-- 部署过程中可能需要阿里云密钥的支持，部署完成之后会获得到临时域名可供测试
+## 体验前准备
 
-> 权限与Yaml配置可以参考 [FC Yaml 规范文档](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md)
+该应用案例，需要您开通[阿里云函数计算](https://fcnext.console.aliyun.com/) 产品；并建议您当前的账号有一下权限存在`FCDefaultRole`。
 
-> * 额外说明：s.yaml中声明了actions：    
->    部署前执行：pip3 install -r requirements.txt -t .   
->   如果遇到pip3命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容     
-> * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署
+## 代码与预览
 
-## 相关命令
+- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/python/django/src)
+- [:earth_africa: 效果预览](http://django.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
 
-由于该框架直接部署在阿里云函数计算平台，所以可以参考函数计算组件相关的命令：
+## 快速部署和体验
+### 在线快速体验
 
-| 构建&部署 | 可观测性 | 调用&调试 |  发布&配置  |  其他功能 |
-| --- | --- | --- |--- | --- |
-| [**部署 deploy**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/deploy.md)   | [指标查询 metrics](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/metrics.md) | [**本地调用 local**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/local.md)      | [**版本 version**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/version.md)      | [**硬盘挂载 nas**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/nas.md) | 
-| [**构建 build**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/build.md)     | [日志查询 logs](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/logs.md)       | [远程调用 invoke](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/invoke.md)    | [**别名 alias**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/alias.md)         | [计划变更 plan](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/plan.md)  | 
-| [移除 remove](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remove.md)   |                                              | [**端云联调 proxied**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/proxied.md) | [预留 provision](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/provision.md)   | [查看函数 info](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/info.md)  | 
-|                                          |                                              | [远程调试 remote](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remote.md)    | [按量资源 ondemand](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/ondemand.md) |[**资源同步 sync**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/sync.md)  | 
-|                                          |                                              | [内存&并发度探测 eval](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/eval.md)  | [层 layer](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/layer.md) |      [压测 stress](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/stress.md)               | 
-|                                          |                                              |   |  | [API调用 api](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/api.md)                     | 
-|                                          |                                              |   |  |  [Fun项目迁移 fun2s](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/fun2s.md)                   | 
+- 通过阿里云 **Serverless 应用中心**： 可以点击 [【🚀 部署】](https://fcnext.console.aliyun.com/applications/create?clone_url=https://github.com/huangfushan/hfs-test-5.git) ，按照引导填入参数，快速进行部署和体验。
+- 通过阿里云 **CloudShell**：可以点击 [【🏄 部署】](https://api.aliyun.com/new#/tutorial?action=git_open&git_repo=https://github.com/devsapp/devsapp-cloudshell-example.git&tutorial=tutorial/start-django.md) ，按照引导填入参数，快速进行部署和体验。
 
-## 依赖过大部署方案
+### 在本地部署体验
 
-函数计算的接口本身默认只支持 100M 的代码包，如果想要部署超过 100M 的代码包，可以考虑：
+1. 下载安装 Serverless Devs：`npm install @serverless-devs/s` 
+    > 详细文档可以参考 [Serverless Devs 安装文档](https://github.com/Serverless-Devs/Serverless-Devs/blob/master/docs/zh/install.md)
+2. 配置密钥信息：`s config add`
+    > 详细文档可以参考 [阿里云密钥配置文档](https://github.com/devsapp/fc/blob/main/docs/zh/config.md)
+3. 初始化项目：`s init start-django -d start-django`
+4. 进入项目并部署：`cd start-django && s deploy`
 
-- 将 `nasConfig` 配置为 `auto`，然后基于 nas 指令将大文件（可能是训练集/依赖包）传输到 NAS 指定位置，然后配置相应的环境变量到 `s.yml` 中的函数配置中；
-- 将非 custom-container 的函数转换成 custom-container，这需要对代码进行一定的改造，并新增 dockerfile，然后创建这个函数（此方式冷启动时间相对其他 runtime 会有一点点的延长）；
-    
-### 最佳实践案例
+> 在本地使用该项目时，不仅可以部署，还可以进行更多的操作，例如查看日志，查看指标，进行多种模式的调试等，这些操作详情可以参考[函数计算组件命令文档](https://github.com/devsapp/fc#%E6%96%87%E6%A1%A3%E7%9B%B8%E5%85%B3) ;
 
-#### 通过Container进行部署
+## 项目使用注意事项
 
-1. 在项目下，创建Dockerfile文件，例如：
-    ```dockerfile
-    FROM python:3.6.3-slim
-    
-    WORKDIR /home/code
-    COPY . .
-    ```
-2. 编写资源描述文件（`s.yaml`）：
-    ```yaml
-    # Yaml参考文档：https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/yaml.md
-    edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
-    name: framework         #  项目名称
-    access: "{{ access }}"       #  秘钥别名
-    
-    services:
-      framework: # 业务名称/模块名称
-        component: fc  # 组件名称
-        actions:
-          pre-deploy: # 在deploy之前运行
-            - run: pip3 install -r requirements.txt -t .  # 要运行的命令行
-              path: ./code # 命令行运行的路径
-            - run: s build --use-docker
-              path: ./code
-        props: # 组件的属性值
-          region: cn-beijing
-          service:
-            name: web-framework
-            description: 'Serverless Devs Web Framework Service'
-          function:
-            name: django
-            description: 'Serverless Devs Web Framework Django Function'
-            codeUri: './code'
-            runtime: custom-container
-            timeout: 60
-            caPort: 9000
-            customContainerConfig:
-              image: 'registry.cn-beijing.aliyuncs.com/custom-container/web-framework:0.0.1'    # 需要替换为自己的镜像地址，或者自己目标的镜像地址，需要开通阿里云容器镜像服务等
-              command: '["./bootstrap"]'
-          triggers:
-            - name: httpTrigger
-              type: http
-              config:
-                authType: anonymous
-                methods:
-                  - GET
-          customDomains:
-            - domainName: auto
-              protocol: HTTP
-              routeConfigs:
-                - path: '/*'
-    ```
-3. 进行项目的一键部署：`s deploy --use-local -y`，此时系统就可以自动安装依赖、构建镜像，并将业务以Container形式部署到线上
+1. 项目Yaml中，声明了`actions`，其对应的命令为`pip3 install -r requirements.txt -t .`，如果在使用项目时，遇到类似找不到`python`命令、`pip`命令的情况，请根据自身电脑关于`python`与`pip`的配置对此出进行修改，或者手动进行依赖安装，并注释掉这`actions`部分代码；
+2. 目前函数计算支持的项目代码包大小为100M，如果一个完整的Django项目依赖包过大，可以按照以下方法进行优化和处理：
+    - 将部分静态资源等，放在对象存储中，以降低代码包的体积；
+    - 将 `nasConfig` 配置为 `auto`，然后基于 nas 指令将大文件（可能是训练集/依赖包）传输到 NAS 指定位置，然后配置相应的环境变量到 `s.yml` 中的函数配置中；
+    - 将非 custom-container 的函数转换成 custom-container，这需要对代码进行一定的改造，并新增 dockerfile，然后创建这个函数（此方式冷启动时间相对其他 runtime 会有一点点的延长）；
+3. 通过custom-container运行时，将Django框架部署到Serverless架构，可以按照以下流程进行操作和处理：
+    - 开通阿里云[容器镜像服务](https://cr.console.aliyun.com/), 并创建对应的镜像仓库，设置密钥；
+    - 在项目中`s.container.yaml`中，修改44行的`image`参数为自己的容器镜像服务对应的镜像仓库地址；
+    - 在项目中执行`s build --use-docker -t s.container.yaml`进行项目的构建；
+    - 构建完成之后执行`s deploy -y`进行项目的部署;
+
+## 应用详情
+
+本项目是将 Python Web 框架中，非常受欢迎的 Django 框架，部署到阿里云 Serverless 平台（函数计算 FC）。
+
+> Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式，即模型M，视图V和模版T。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的吉普赛爵士吉他手Django Reinhardt来命名的。2019年12月2日，Django 3. 0发布
+
+通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+
+本案例应用是一个非常简单的 Hello World 案例，部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1644567419851_20220211081700122623.png)
+
+此时，打开案例地址，就可以看到测试的应用详情：
+
+![图片alt](https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1644567448674_20220211081728869982.png)
+
+当然，除了这样一个 Django 的 Hello World 之外，我们还有一个[基于 Django 框架的博客案例](https://github.com/devsapp/start-web-framework/tree/master/example/django-blog/src) ，可供学习和参考。
 
 -----
 

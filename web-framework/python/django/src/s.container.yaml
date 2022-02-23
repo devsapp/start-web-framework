@@ -15,9 +15,9 @@ name: web-framework-app
 access: "{{ access }}"
 
 vars: # 全局变量
-  region: "{{ region }}"
+  region: cn-beijing
   service:
-    name: "{{ serviceName }}"
+    name: web-framework
     description: 'Serverless Devs Web Framework Service'
 
 services:
@@ -34,12 +34,15 @@ services:
       region: ${vars.region}
       service: ${vars.service}
       function:
-        name: "{{ functionName }}"
+        name: django
         description: 'Serverless Devs Web Framework Django Function'
         codeUri: './code'
-        runtime: python3
-        handler: app.application
+        runtime: custom-container
         timeout: 60
+        caPort: 9000
+        customContainerConfig:
+          image: 'registry.cn-beijing.aliyuncs.com/custom-container/web-framework:0.0.1'    # 需要替换为自己的镜像地址，或者自己目标的镜像地址，需要开通阿里云容器镜像服务等
+          command: '["./bootstrap"]'
       triggers:
         - name: httpTrigger
           type: http
