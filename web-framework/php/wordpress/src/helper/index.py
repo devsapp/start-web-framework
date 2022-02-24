@@ -6,5 +6,5 @@ import os
 
 def handler(event, context):
     url = os.environ['WP_URL']
-    res = requests.get(url)
+    res = requests.head(url)
     print(res.status_code)

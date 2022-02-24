@@ -12,12 +12,12 @@
 
 edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
 name: framework         #  项目名称
-access: "{{ access }}"       #  秘钥别名
+access: "{{ access }}"  #  秘钥别名
 
 vars:
-  region: cn-hangzhou
+  region: "{{ region }}"
   service:
-    name: web-framework
+    name: "{{ serviceName }}"
     description: 'Serverless Devs Web Framework Service'
     nasConfig: auto
 
@@ -28,13 +28,17 @@ services:
       pre-deploy:
         - run: s framework nas init
           path: ./
-        - run: s framework nas upload -r code/wordpress/ /mnt/auto/wordpress # 请注意这里上传的路径，如果之前已经挂载了这个nas，并且上传过这个文件夹，会导致文件的覆盖
+        # 请注意这里上传的路径，如果之前已经挂载了这个nas，并且上传过这个文件夹，会导致文件的覆盖
+        - run: s framework nas upload -r code/wordpress/ /mnt/auto/wordpress 
+          path: ./
+      post-deploy:
+        - run: s helper invoke
           path: ./
     props: # 组件的属性值
       region: ${vars.region}
       service: ${vars.service}
       function:
-        name: wordpress
+        name: "{{ functionName }}"
         description: 'Serverless Devs Web Framework Wordpress Function'
         codeUri: './code'
         runtime: custom
@@ -42,6 +46,12 @@ services:
         memorySize: 1536
         instanceConcurrency: 4
         instanceType: e1
+        customRuntimeConfig:
+          command:
+            - bash
+          args:
+            - '-c'
+            - 'start.sh'
       triggers:
         - name: httpTrigger
           type: http
@@ -81,7 +91,7 @@ services:
         description: 'Serverless Devs Web Framework Helper Function'
         codeUri: './helper'
         runtime: python3
-        timeout: 30
+        timeout: 60
         memorySize: 128
         instanceConcurrency: 1
         environmentVariables:
@@ -92,5 +102,5 @@ services:
           # qualifier: LATEST    
           config:    
             payload: '{}'    
-            cronExpression: '@every 2m'    
+            cronExpression: '@every 2m'
             enable: true
