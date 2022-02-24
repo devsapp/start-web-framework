@@ -4,10 +4,8 @@ set +e
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 mkdir -p /tmp/var/sessions/
-mkdir -p /mnt/auto/sessions/
 
 chown -R www-data:www-data /mnt/auto/Z-Blog
-
 
 echo "start php-fpm"
 php-fpm7.4 -c /code/php.ini -y /code/php-fpm.conf
