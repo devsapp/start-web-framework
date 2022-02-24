@@ -13,9 +13,6 @@ Service:
   函数计算:
     Authorities:
       - 管理员权限
-  文件存储:
-    Authorities:
-      - 管理员权限
 Parameters:
   region:
     type: string
