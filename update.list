@@ -1,2 +1,12 @@
 web-framework/php/zblog
+web-framework/php/ecshop
+web-framework/php/laravel
+web-framework/php/thinkphp
 web-framework/php/wordpress
+web-framework/python/flask
+web-framework/python/django
+web-framework/nodejs/koa
+web-framework/nodejs/egg
+web-framework/nodejs/express
+web-framework/nodejs/nuxt-ssr
+web-framework/example/todolist-app
