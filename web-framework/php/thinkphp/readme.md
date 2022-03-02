@@ -22,8 +22,7 @@
 ## 快速部署和体验
 ### 在线快速体验
 
-- 通过阿里云 **Serverless 应用中心**： 可以点击 [【🚀 部署】](https://fcnext.console.aliyun.com/applications/create?clone_url=https://github.com/huangfushan/hfs-test-5.git) ，按照引导填入参数，快速进行部署和体验。
-- 通过阿里云 **CloudShell**：可以点击 [【🏄 部署】](https://api.aliyun.com/new#/tutorial?action=git_open&git_repo=https://github.com/devsapp/devsapp-cloudshell-example.git&tutorial=tutorial/start-zblog.md) ，按照引导填入参数，快速进行部署和体验。
+- 通过阿里云 **Serverless 应用中心**： 可以点击 [【🚀 部署】](https://fcnext.console.aliyun.com/applications/create?template=start-thinkphp) ，按照引导填入参数，快速进行部署和体验。
 
 ### 在本地部署体验
 

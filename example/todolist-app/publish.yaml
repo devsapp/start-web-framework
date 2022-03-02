@@ -1,6 +1,6 @@
 Type: Application
 Name: todolist-app
-Version: 1.1.17
+Version: 1.1.18
 Provider:
   - 阿里云
 Description: 一款基于Node.JS的网页TodoList应用
@@ -18,3 +18,46 @@ Service:
       - 创建服务
       - 删除服务
     Runtime: Node.JS
+Parameters:
+  type: object
+  additionalProperties: false # 不允许增加其他属性
+  required: # 必填项
+    - region
+    - serviceName
+    - functionName
+  properties:
+    region:
+      title: 地域
+      type: string
+      default: cn-hangzhou
+      description: 创建应用所在的地区
+      enum:
+        - cn-beijing
+        - cn-hangzhou
+        - cn-shanghai
+        - cn-qingdao
+        - cn-zhangjiakou
+        - cn-huhehaote
+        - cn-shenzhen
+        - cn-chengdu
+        - cn-hongkong
+        - ap-southeast-1
+        - ap-southeast-2
+        - ap-southeast-3
+        - ap-southeast-5
+        - ap-northeast-1
+        - eu-central-1
+        - eu-west-1
+        - us-west-1
+        - us-east-1
+        - ap-south-1
+    serviceName:
+      title: 服务名
+      type: string
+      default: web-framework
+      description: 应用所属的函数计算服务
+    functionName:
+      title: 函数名
+      type: string
+      default: todolist
+      description: 应用的函数名称

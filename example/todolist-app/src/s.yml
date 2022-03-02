@@ -15,9 +15,9 @@ name: web-framework-app
 access: "{{ access }}"
 
 vars: # 全局变量
-  region: cn-beijing
+  region: "{{ region }}"
   service:
-    name: web-framework
+    name: "{{ serviceName }}"
     description: 'Serverless Devs Web Framework Service'
 
 services:
@@ -34,7 +34,7 @@ services:
       region: ${vars.region}
       service: ${vars.service}
       function:
-        name: todoList
+        name: "{{ functionName }}"
         description: todoList app
         runtime: nodejs12
         codeUri: './'

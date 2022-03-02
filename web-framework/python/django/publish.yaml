@@ -2,7 +2,7 @@ Type: Application
 Name: start-django
 Provider:
   - 阿里云
-Version: 1.1.17
+Version: 1.1.18
 Description: 快速部署一个Django框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
