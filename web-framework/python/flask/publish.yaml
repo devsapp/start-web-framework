@@ -12,7 +12,8 @@ Category: Web框架
 Service:
   函数计算:
     Authorities:
-      - 管理员权限
+      - AliyunFCFullAccess
+      - AliyunFCInvocationAccess
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性
