@@ -12,7 +12,17 @@ Category: Web框架
 Service:
   函数计算:
     Authorities:
-      - 管理员权限
+      - AliyunFCInvocationAccess
+      - AliyunFCFullAccess
+  硬盘挂载:
+    Authorities:
+      - AliyunNASFullAccess
+  VPC:
+    Authorities:
+      - AliyunVPCFullAccess
+  其它:
+    Authorities:
+      - AliyunECSNetworkInterfaceManagementAccess
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性
