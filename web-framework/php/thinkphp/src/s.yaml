@@ -39,7 +39,7 @@ services:
             - bash
           args:
             - '-c'
-            - 'start.sh'
+            - '/code/start.sh'
       triggers:
         - name: httpTrigger
           type: http
