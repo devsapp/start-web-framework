@@ -12,11 +12,8 @@ Category: 基础云服务
 Service:
   函数计算:
     Authorities:
-      - 创建函数
-      - 删除函数
-      - 创建服务
-      - 删除服务
-    Runtime: Node.JS
+      - AliyunFCFullAccess
+      - AliyunFCInvocationAccess
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性

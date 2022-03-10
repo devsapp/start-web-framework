@@ -2,17 +2,18 @@ Type: Application
 Name: start-springboot
 Provider:
   - 阿里云
-Version: 1.1.18
+Version: 1.1.19
 Description: 快速部署一个Springboot应用到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
   - Web框架
   - Spring Boot
 Category: Web框架
-Service: 
+Service:
   函数计算:
     Authorities:
-      - 管理员权限
+      - AliyunFCFullAccess
+      - AliyunFCInvocationAccess
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性

@@ -16,7 +16,7 @@
 
 ## 代码与预览
 
-- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/example/todolist-app/src)
+- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/example/todolist-app/src)
 
 ## 快速部署和体验
 ### 在线快速体验
