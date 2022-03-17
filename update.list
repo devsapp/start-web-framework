@@ -1,13 +1,3 @@
-example/todolist-app
-web-framework/java/springboot
-web-framework/nodejs/nuxt-ssr
-web-framework/nodejs/koa
-web-framework/nodejs/egg
-web-framework/nodejs/express
 web-framework/php/wordpress
 web-framework/php/ecshop
-web-framework/php/thinkphp
-web-framework/php/laravel
 web-framework/php/zblog
-web-framework/python/django
-web-framework/python/flask

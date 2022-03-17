@@ -2,7 +2,7 @@ Type: Application
 Name: start-wordpress
 Provider:
   - 阿里云
-Version: 1.1.25
+Version: 1.1.26
 Description: 快速部署一个 wordpress 框架到阿里云函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
@@ -21,7 +21,7 @@ Service:
       - AliyunVPCFullAccess
   其它:
     Authorities:
-      - AliyunECSNetworkInterfaceManagementAccess
+      - AliyunECSFullAccess
 Parameters:
   type: object
   additionalProperties: false # 不允许增加其他属性
