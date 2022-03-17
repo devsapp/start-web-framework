@@ -1,3 +1,12 @@
 web-framework/php/wordpress
-web-framework/php/ecshop
 web-framework/php/zblog
+web-framework/nodejs/connect
+web-framework/nodejs/egg
+web-framework/nodejs/egg-app
+web-framework/nodejs/express
+web-framework/nodejs/express-app
+web-framework/nodejs/hapi
+web-framework/nodejs/koa
+web-framework/nodejs/koa-app
+web-framework/nodejs/next
+web-framework/nodejs/nuxt-ssr
