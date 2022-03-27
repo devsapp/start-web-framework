@@ -28,8 +28,7 @@ services:
         - run: s build --use-docker  # 要运行的命令行
           path: ./ # 命令行运行的路径
 #      post-deploy: # 在deploy之前运行
-#        - run: s nas upload ./db.sqlite3 /mnt/auto  # 要运行的命令行
-#          path: ./ # 命令行运行的路径
+#        - component: fc nas upload ./db.sqlite3 /mnt/auto  # 要运行的命令行
     props: # 组件的属性值
       region: ${vars.region}
       service: ${vars.service}
