@@ -1,11 +1,1 @@
-web-framework/php/typecho
-web-framework/php/whatsns
-web-framework/php/wordpress
-web-framework/php/zblog
-web-framework/python/bottle
-web-framework/python/django
-web-framework/python/fastapi
-web-framework/python/flask
-web-framework/python/pyramid
-web-framework/python/tornado
-web-framework/python/webpy
+web-framework/nodejs/hapi
