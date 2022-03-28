@@ -4,7 +4,8 @@ async function preInit(inputObj) {
     _/ ___\\/  _ \\ /    \\ /    \\_/ __ \\_/ ___\\   __\\
     \\  \\__(  <_> )   |  \\   |  \\  ___/\\  \\___|  |  
      \\___  >____/|___|  /___|  /\\___  >\\___  >__|  
-         \\/           \\/     \\/     \\/     \\/      `)
+         \\/           \\/     \\/     \\/     \\/      
+         `)
 }
 
 async function postInit(inputObj) {
@@ -12,10 +13,12 @@ async function postInit(inputObj) {
      This application requires to open these services: 
          FC : https://fc.console.aliyun.com/
      
-     * 额外说明：s.yaml中声明了actions：
-        部署前执行：npm install --production
-       如果遇到npm命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容 
-     * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署\n`)
+     * Additional note: 
+      1. [actions] are declared in s.yaml, execute before deployment
+         If you don't need to build the project every time, or you don't need to build before deployment, or you have built it manually, you can comment out this part
+      2. The Serverless Devs version required by the current project is at least v2.0.103. You can view the current version through [s -v] and upgrade the version through [npm install -g @serverless-devs/s].
+     * After the project is initialized, you can directly enter the project directory and use s deploy to deploy the project
+    \n`)
 }
 
 module.exports = {

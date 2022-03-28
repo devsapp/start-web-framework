@@ -1,43 +1,43 @@
-# Springboot 框架
+# SpringBoot 案例
 
-> 快速部署和体验Serverless架构下的Springboot项目
+<toc>
 
-- [Springboot 框架](#springboot-框架)
-  - [体验前准备](#体验前准备)
-  - [代码与预览](#代码与预览)
-  - [快速部署和体验](#快速部署和体验)
-    - [在线快速体验](#在线快速体验)
-    - [在本地部署体验](#在本地部署体验)
-  - [应用详情](#应用详情)
+<p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
 
-## 体验前准备
+- [快速开始](#快速开始)
+    - [通过应用中心部署](#通过应用中心部署)
+    - [通过命令行工具部署](#通过命令行工具部署)
+    - [通过阿里云CloudShell部署](#通过阿里云CloudShell部署)
+- [应用详情](#应用详情)
+- [关于我们](#关于我们)
 
-该应用案例，需要您开通[阿里云函数计算](https://fcnext.console.aliyun.com/) 产品；并建议您当前的账号有一下权限存在`FCDefaultRole`。
+</toc>
 
-## 代码与预览
+# 快速开始
 
 - [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/java/springboot/src)
-- [:earth_africa: 效果预览](https://img.alicdn.com/imgextra/i3/O1CN01jLfCaE1amQGuXQI8Q_!!6000000003372-2-tps-2594-1558.png)
+- [:earth_africa: 效果预览](http://springboot.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
 
-## 快速部署和体验
-### 在线快速体验
+## 通过应用中心部署
 
-- 通过阿里云 **Serverless 应用中心**： 可以点击 [【🚀 部署】](https://fcnext.console.aliyun.com/applications/create?template=start-springboot) ，按照引导填入参数，快速进行部署和体验。
+<appcenter>
 
-### 在本地部署体验
+您可以在阿里云 [:earth_asia: Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-springboot) ，快速体验该应用：   
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-springboot) 
 
-1. 下载安装 Serverless Devs：`npm install @serverless-devs/s` 
-    > 详细文档可以参考 [Serverless Devs 安装文档](https://github.com/Serverless-Devs/Serverless-Devs/blob/master/docs/zh/install.md)
-2. 配置密钥信息：`s config add`
-    > 详细文档可以参考 [阿里云密钥配置文档](https://github.com/devsapp/fc/blob/main/docs/zh/config.md)
-3. 初始化项目：`s init start-springboot -d start-springboot`
-4. 进入项目并部署：`cd start-springboot && s deploy`
+</appcenter>
 
-> 在本地使用该项目时，不仅可以部署，还可以进行更多的操作，例如查看日志，查看指标，进行多种模式的调试等，这些操作详情可以参考[函数计算组件命令文档](https://github.com/devsapp/fc#%E6%96%87%E6%A1%A3%E7%9B%B8%E5%85%B3) ;
+## 通过命令行工具部署
+> 在开始之前，需要先安装 Serverless Devs 开发者工具：`npm install @serverless-devs/s -g`，更多安装方法，可以参考[Serverless Devs 安装文档](https://www.serverless-devs.com/serverless-devs/install) ，针对阿里云还需要配置密钥信息，配置密钥信息的方法可以参考[阿里云密钥配置文档](https://www.serverless-devs.com/fc/config)
+- 初始化项目：`s init start-springboot -d start-springboot`    
+    > 涉及到确定密钥的选择、服务名称的确定、函数名称的确定以及容器镜像的确定    
+- 进入项目：`cd start-springboot`
+- 部署项目：`s deploy -y`
+- 调用函数： 根据返回的`url`信息，在浏览器中进行请求即可
 
-
-## 应用详情
-
+## 通过阿里云CloudShell部署
+如果您不想在应用中心中快速体验，也不想下载命令行工具体验，您也可以在[ :rocket:  阿里云 CloudShell](https://api.aliyun.com/new#/tutorial?action=git_open&git_repo=https://github.com/devsapp/start-web-framework.git&tutorial=web-framework/java/springboot/cloudshell.md) 中快速体验。
+# 应用详情
 本项目是将 Springboot 项目部署到阿里云 Serverless 平台（函数计算 FC）。
 
 通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
@@ -52,8 +52,12 @@
 
 > 注意: 如果您这边部署的 Springboot 项目的 jar 包很大， 超过了函数计算最大的 100M 限制，可以参考[函数计算大代码包部署的实践](https://github.com/awesome-fc/fc-faq/blob/main/docs/%E5%A4%A7%E4%BB%A3%E7%A0%81%E5%8C%85%E9%83%A8%E7%BD%B2%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B.md)
 
------
-
-> - Serverless Devs 项目：https://www.github.com/serverless-devs/serverless-devs   
-> - Serverless Devs 文档：https://www.github.com/serverless-devs/docs   
-> - Serverless Devs 钉钉交流群：33947367    
+# 关于我们
+- Serverless Devs 工具：
+    - 仓库：[https://www.github.com/serverless-devs/serverless-devs](https://www.github.com/serverless-devs/serverless-devs)    
+      > 欢迎帮我们增加一个 :star2: 
+    - 官网：[https://www.serverless-devs.com/](https://www.serverless-devs.com/)
+- 阿里云函数计算组件：
+    - 仓库：[https://github.com/devsapp/fc](https://github.com/devsapp/fc)
+    - 帮助文档：[https://www.serverless-devs.com/fc/readme](https://www.serverless-devs.com/fc/readme)
+- 钉钉交流群：33947367    

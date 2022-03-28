@@ -1,58 +1,50 @@
-# 阿里云函数计算：django-blog
+# Django Blog 案例
 
-通过该应用，您可以简单快速的创建一个Django Blog到阿里云函数计算服务。
+<toc>
 
-- 下载命令行工具：`npm install -g @serverless-devs/s`
-- 初始化一个模版项目：`s init django-blog`
-- 【如果要配置Mysql，否则自动使用Sqlite】对数据库等进行配置，在`./ServerlessBlog/settings.py`文件中，70行的位置，对数据库等进行配置：
-    ```python
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': 3306,
-        }
-    }
-    ```
-- 进入项目后部署项目：`s deploy`
+<p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
 
-关于初始化管理员等操作，可以参考Django框架的开发指南： https://docs.djangoproject.com/en/3.2/
+- [快速开始](#快速开始)
+    - [通过应用中心部署](#通过应用中心部署)
+    - [通过命令行工具部署](#通过命令行工具部署)
+    - [通过阿里云CloudShell部署](#通过阿里云CloudShell部署)
+- [应用详情](#应用详情)
+- [关于我们](#关于我们)
 
-> 运行出错：ImportError: cannot import name 'metadata' from 'importlib'的解决方法：https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib
+</toc>
 
-> * 推荐Python版本：python3.7;   
->      * 如果版本超过3.7，可能会提示以下错误：   
->         Operation error: ImportError: cannot import name 'metadata' from 'importlib'   
->         此时可以参考文档：https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib   
->      * 本项目默认的信息:
->         * Django管理后台：/admin   
->         * 默认用户：django
->         * 默认密码：djangoblog   
->      * 额外说明：s.yaml中声明了actions：
->         部署前执行：pip3 install -r requirements.txt -t .    
->         部署后执行：s nas upload ./db.sqlite3 /mnt/auto    
->        如果遇到pip3命令找不到等问题，可以适当进行手动项目构建，并适当取消actions内容     
->      * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署
+# 快速开始
 
-## 相关命令
+- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/example/django-blog/src)
+- [:earth_africa: 效果预览](http://django-blog.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
 
-由于该框架直接部署在阿里云函数计算平台，所以可以参考函数计算组件相关的命令：
+## 通过应用中心部署
 
-| 构建&部署 | 可观测性 | 调用&调试 |  发布&配置  |  其他功能 |
-| --- | --- | --- |--- | --- |
-| [**部署 deploy**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/deploy.md)   | [指标查询 metrics](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/metrics.md) | [**本地调用 local**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/local.md)      | [**版本 version**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/version.md)      | [**硬盘挂载 nas**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/nas.md) | 
-| [**构建 build**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/build.md)     | [日志查询 logs](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/logs.md)       | [远程调用 invoke](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/invoke.md)    | [**别名 alias**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/alias.md)         | [计划变更 plan](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/plan.md)  | 
-| [移除 remove](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remove.md)   |                                              | [**端云联调 proxied**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/proxied.md) | [预留 provision](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/provision.md)   | [查看函数 info](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/info.md)  | 
-|                                          |                                              | [远程调试 remote](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/remote.md)    | [按量资源 ondemand](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/ondemand.md) |[**资源同步 sync**](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/sync.md)  | 
-|                                          |                                              | [内存&并发度探测 eval](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/eval.md)  | [层 layer](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/layer.md) |      [压测 stress](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/stress.md)               | 
-|                                          |                                              |   |  | [API调用 api](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/api.md)                     | 
-|                                          |                                              |   |  |  [Fun项目迁移 fun2s](https://github.com/devsapp/fc/blob/jiangyu-docs/docs/zh/command/fun2s.md)                   | 
+<appcenter>
 
------
+您可以在阿里云 [:earth_asia: Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=django-blog) ，快速体验该应用：   
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=django-blog) 
 
-> - Serverless Devs 项目：https://www.github.com/serverless-devs/serverless-devs   
-> - Serverless Devs 文档：https://www.github.com/serverless-devs/docs   
-> - Serverless Devs 钉钉交流群：33947367    
+</appcenter>
+
+## 通过命令行工具部署
+> 在开始之前，需要先安装 Serverless Devs 开发者工具：`npm install @serverless-devs/s -g`，更多安装方法，可以参考[Serverless Devs 安装文档](https://www.serverless-devs.com/serverless-devs/install) ，针对阿里云还需要配置密钥信息，配置密钥信息的方法可以参考[阿里云密钥配置文档](https://www.serverless-devs.com/fc/config)
+- 初始化项目：`s init django-blog -d django-blog`    
+    > 涉及到确定密钥的选择、服务名称的确定、函数名称的确定以及容器镜像的确定    
+- 进入项目：`cd django-blog`
+- 部署项目：`s deploy -y`
+- 调用函数： 根据返回的`url`信息，在浏览器中进行请求即可
+
+## 通过阿里云CloudShell部署
+如果您不想在应用中心中快速体验，也不想下载命令行工具体验，您也可以在[ :rocket:  阿里云 CloudShell](https://api.aliyun.com/new#/tutorial?action=git_open&git_repo=https://github.com/devsapp/start-web-framework.git&tutorial=example/django-blog/cloudshell.md) 中快速体验。
+# 应用详情
+本应用仅作为学习和参考使用，您可以基于本项目进行二次开发和完善，实现自己的业务逻辑
+# 关于我们
+- Serverless Devs 工具：
+    - 仓库：[https://www.github.com/serverless-devs/serverless-devs](https://www.github.com/serverless-devs/serverless-devs)    
+      > 欢迎帮我们增加一个 :star2: 
+    - 官网：[https://www.serverless-devs.com/](https://www.serverless-devs.com/)
+- 阿里云函数计算组件：
+    - 仓库：[https://github.com/devsapp/fc](https://github.com/devsapp/fc)
+    - 帮助文档：[https://www.serverless-devs.com/fc/readme](https://www.serverless-devs.com/fc/readme)
+- 钉钉交流群：33947367    

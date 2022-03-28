@@ -4,7 +4,8 @@ async function preInit(inputObj) {
     \\   \\/\\/   /  _ \\_  __ \\/ __ |\\____ \\_  __ \\_/ __ \\ /  ___//  ___/
      \\        (  <_> )  | \\/ /_/ ||  |_> >  | \\/\\  ___/ \\___ \\ \\___ \\ 
       \\__/\\  / \\____/|__|  \\____ ||   __/|__|    \\___  >____  >____  >
-           \\/                   \\/|__|               \\/     \\/     \\/ `)
+           \\/                   \\/|__|               \\/     \\/     \\/ 
+           `)
 }
 
 async function postInit(inputObj) {
@@ -13,13 +14,15 @@ async function postInit(inputObj) {
          FC : https://fc.console.aliyun.com/
          NAS: https://nas.console.aliyun.com/
      
-     * 额外说明：为了保证项目可以正常的安装插件、模板，为了保证项目0改造，当前案例实现逻辑：
-        1. 函数计算仅作为环境执行
-        2. 业务代码被放到了NAS中
-        > 所以在Yaml中，存在post-deploy部分，将业务代码上传到NAS，此时需要额外注意：
-        > - 版本/别名等，可能不会对业务代码生效
-        > - 在使用同一个NAS前提下，部署其他函数请注意文件夹是否会被覆盖，以免相互影响
-     * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署\n`)
+     * Additional instructions: In order to ensure that the project can install plug-ins and templates normally, and to ensure the project 0 transformation, the current case implementation logic:
+         1. Function Compute is only executed as an environment
+         2. The business code is placed in the NAS
+         > So in Yaml, there is a post-deploy section to upload the business code to the NAS. At this time, you need to pay extra attention:
+         > - version/alias, etc., may not take effect for business code
+         > - Under the premise of using the same NAS, please pay attention to whether the folder will be overwritten when deploying other functions, so as not to affect each other
+         3. The Serverless Devs version required by the current project is at least v2.0.103. You can view the current version through [s -v] and upgrade the version through [npm install -g @serverless-devs/s].
+     * After the project is initialized, you can directly enter the project directory and use s deploy to deploy the project
+     \n`)
 }
 
 module.exports = {

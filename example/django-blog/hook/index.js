@@ -15,19 +15,19 @@ async function postInit(inputObj) {
          NAS: https://nas.console.aliyun.com/
      The application can help you quickly deploy the django-blog project
      
-     * 推荐Python版本：python3.7;
-     * 如果版本超过3.7，可能会提示以下错误：
-        Operation error: ImportError: cannot import name 'metadata' from 'importlib'
-        此时可以参考文档：https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib
-     * 本项目默认的信息:
-        * Django管理后台：/admin
-        * 默认用户：django
-        * 默认密码：djangoblog   
-     * 额外说明：s.yaml中声明了actions：
-        部署前执行：pip3 install -r requirements.txt -t .
-        部署后执行：s nas upload ./db.sqlite3 /mnt/auto
-       如果遇到npm命令找不到等问题，可以适当进行手动项目构建，并根据需要取消actions内容 
-     * 项目初始化完成，您可以直接进入项目目录下，并使用 s deploy 进行项目部署
+      * Recommended Python version: python3.7;
+      * If the version is over 3.7, the following error may be prompted:
+         Operation error: ImportError: cannot import name 'metadata' from 'importlib'
+         You can refer to the documentation at this point: https://stackoverflow.com/questions/59216175/importerror-cannot-import-name-metadata-from-importlib
+      * Default information for this project:
+         * Django management background: /admin
+         * Default user: django
+         * Default password: djangoblog
+      * Additional note: actions are declared in s.yaml:
+         Execute before deployment: pip3 install -r requirements.txt -t .
+         Execute after deployment: s nas upload ./db.sqlite3 /mnt/auto
+        If you encounter problems such as npm command cannot be found, you can manually build the project appropriately, and cancel the content of actions as needed
+      * After the project is initialized, you can directly enter the project directory and use s deploy to deploy the project
      \n`)
 }
 
