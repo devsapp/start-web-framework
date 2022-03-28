@@ -1,7 +1,3 @@
-web-framework/java/springboot
-web-framework/nodejs/connect
-web-framework/nodejs/egg
-web-framework/nodejs/egg-app
 web-framework/nodejs/express
 web-framework/nodejs/express-app
 web-framework/nodejs/hapi
