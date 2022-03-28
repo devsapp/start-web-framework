@@ -1,5 +1,7 @@
 常见的 Node.js 框架案例：
 
+<p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
+
 - [Egg [custom]](./egg/src)
 - [Express [custom]](./express/src)
 - [Hapi [custom]](./hapi/src)

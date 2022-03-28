@@ -1,5 +1,7 @@
 Common Node.js framework cases:
 
+<p align="center"><b> <a href="./readme.md"> 中文 </a> | English </b></p>
+
 - [Egg [custom]](./egg/src)
 - [Express [custom]](./express/src)
 - [Hapi [custom]](./hapi/src)
