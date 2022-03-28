@@ -2,8 +2,8 @@ Type: Application
 Name: start-flask
 Provider:
   - 阿里云
-Version: 1.2.0
-Description: 快速部署一个Flask框架到阿里云函数计算
+Version: 1.2.1
+Description: Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
   - Web框架

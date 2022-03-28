@@ -1,9 +1,9 @@
 Type: Application
 Name: start-thinkjs
-Version: 1.2.0
+Version: 1.2.1
 Provider:
   - 阿里云
-Description: 快速部署一个Think.js框架到阿里云函数计算
+Description: ThinkJS 是一款面向未来开发的 Node.js 框架，整合了大量的项目最佳实践，让企业级开发变得更简单、高效。从 3.0 开始，框架底层基于 Koa 2.x 实现，兼容 Koa 的所有功能。
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
   - thinkjs

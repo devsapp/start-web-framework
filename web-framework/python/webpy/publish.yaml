@@ -2,8 +2,8 @@ Type: Application
 Name: start-webpy
 Provider:
   - 阿里云
-Version: 1.2.0
-Description: 快速部署一个WebPy框架到阿里云函数计算
+Version: 1.2.1
+Description: web.py 是一个轻量级Python web框架，它简单而且功能强大。web.py是一个开源项目
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
   - Web框架
