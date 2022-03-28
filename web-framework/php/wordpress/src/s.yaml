@@ -83,8 +83,7 @@ services:
     component: fc
     actions:
       post-deploy:
-        - run: s helper invoke
-          path: ./
+        - component: fc invoke
     props:
       region: ${vars.region}
       service: ${vars.service}
