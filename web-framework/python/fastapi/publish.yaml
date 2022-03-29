@@ -2,7 +2,7 @@ Type: Application
 Name: start-fastapi
 Provider:
   - 阿里云
-Version: 1.2.1
+Version: 1.2.2
 Description: FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 Python 语言编写
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

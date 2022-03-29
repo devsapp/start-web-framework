@@ -1,27 +1,24 @@
 async function preInit(inputObj) {
-    console.log(`\n    ________  .__                            
-    \\______ \\ |__| ______ ____  __ __________
-     |    |  \\|  |/  ___// ___\\|  |  \\___   /
-     |    \`   \\  |\\___ \\\\  \\___|  |  //    / 
-    /_______  /__/____  >\\___  >____//_____ \\
-            \\/        \\/     \\/            \\/`)
+    console.log(`
+  Serverless Devs Application Case
+    
+    Cloud services required：
+    - FC : https://fc.console.aliyun.com/
+    - NAS: https://nas.console.aliyun.com/
+    
+    Tips：
+    - Serverless Devs Version >= v2.0.103 
+    - FC Component: https://www.serverless-devs.com/fc/readme
+    `)
 }
 
 async function postInit(inputObj) {
-    console.log(`\n    Welcome to the start-bottle application
-     This application requires to open these services: 
-         FC : https://fc.console.aliyun.com/
-         NAS: https://nas.console.aliyun.com/
-     
-     * Additional instructions: In order to ensure that the project can install plug-ins and templates normally, and to ensure the project 0 transformation, the current case implementation logic:
-         1. Function Compute is only executed as an environment
-         2. The business code is placed in the NAS
-         > So in Yaml, there is a post-deploy section to upload the business code to the NAS. At this time, you need to pay extra attention:
-         > - version/alias, etc., may not take effect for business code
-         > - Under the premise of using the same NAS, please pay attention to whether the folder will be overwritten when deploying other functions, so as not to affect each other
-         3. The Serverless Devs version required by the current project is at least v2.0.103. You can view the current version through [s -v] and upgrade the version through [npm install -g @serverless-devs/s].
-     * After the project is initialized, you can directly enter the project directory and use s deploy to deploy the project
-     \n`)
+    console.log(`
+    * Before using, please check whether the actions command in Yaml file is available
+    * Carefully reading the notes in s.yaml is helpful for the use of the tool
+    * FC is only used as the execution environment, and the business code is in NAS
+    * If need help in the use process, please apply to join the Dingtalk Group: 33947367
+    `)
 }
 
 module.exports = {
