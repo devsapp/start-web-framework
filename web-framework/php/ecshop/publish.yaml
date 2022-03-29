@@ -2,7 +2,7 @@ Type: Application
 Name: start-ecshop
 Provider:
   - 阿里云
-Version: 1.2.2
+Version: 1.2.3
 Description: ECShop是一款B2C独立网店系统，适合企业及个人快速构建个性化网上商店。系统是基于PHP语言及MYSQL数据库构架开发的跨平台开源程序
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

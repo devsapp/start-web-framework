@@ -33,8 +33,11 @@ app.get('*', (req, res) => {
 `)
 })
 
-app.listen(9000, () => {
+const server = app.listen(9000, () => {
     console.log('start success.');
 }).on('error', (e) => {
     console.error(e.code, e.message)
 })
+
+server.timeout = 0; // never timeout
+server.keepAliveTimeout = 0; // keepalive, never timeout

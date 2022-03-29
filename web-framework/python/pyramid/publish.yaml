@@ -2,7 +2,7 @@ Type: Application
 Name: start-pyramid
 Provider:
   - 阿里云
-Version: 1.2.2
+Version: 1.2.3
 Description: Pyramid是一个小型，快速的Python web framework.，是Pylons Project的一部分，采用的授权协议是BSD-like license
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
