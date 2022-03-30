@@ -1,0 +1,48 @@
+edition: 1.0.0 #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: framework #  项目名称
+access: "{{ access }}" #  秘钥别名
+
+vars: # 全局变量
+  region: "{{ region }}"
+
+services:
+  framework: # 业务名称/模块名称
+    component: fc # 组件名称
+    actions:
+      pre-deploy:
+        - run: npm install
+          path: ./code
+        - run: npm run build
+          path: ./code
+        - plugin: website-fc
+    props: # 组件的属性值
+      region: ${vars.region}
+      service:
+        name: "{{ serviceName }}"
+        description: "Serverless Devs Website Service"
+      function:
+        name: "{{ functionName }}"
+        description: "Serverless Devs Website Docusaurus Function"
+        codeUri: ./code/build
+        timeout: 30
+        memorySize: 512
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
+              methods:
+                - GET
+                - POST
+                - PUT
+                - DELETE

@@ -1,0 +1,33 @@
+# ------------------------------------
+#   欢迎您使用阿里云对象存储 OSS 组件进行项目开发
+#   组件仓库地址/帮助文档：https://github.com/devsapp/oss
+#   Yaml参考文档：https://github.com/devsapp/oss/blob/master/readme.md
+#   关于如何做CICD等问题，可以参考：https://github.com/Serverless-Devs/Serverless-Devs/blob/master/docs/zh/cicd.md
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
+edition: 1.0.0
+access: "{{ access }}"
+
+vars: # 全局变量
+  region: "{{ region }}"
+
+services:
+  website-vuepress:
+    component: oss
+    actions:
+      pre-deploy:
+        - run: npm install
+          path: ./code/vuepress
+        - run: npm run build
+          path: ./code/vuepress
+    props:
+      bucket: auto
+      codeUri: ./code/vuepress/docs/.vuepress/dist
+      region: ${vars.region}
+      website:
+        index: index.html
+        error: 404.html
+        subDirType: index
+      customDomains:
+        - domainName: auto
