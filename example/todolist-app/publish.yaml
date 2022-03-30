@@ -1,6 +1,6 @@
 Type: Application
 Name: todolist-app
-Version: 1.2.2
+Version: 1.2.3
 Provider:
   - 阿里云
 Description: 一款基于Node.JS的网页TodoList应用
