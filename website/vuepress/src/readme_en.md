@@ -13,7 +13,7 @@
 
 # Quick start
 
-- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master//website/vuepress/src)
+- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/website/vuepress/src)
 - [:earth_africa: Effect Preview](
 http://vuepress.website.1767215449378635.cn-hangzhou.fc.devsapp.net)
 

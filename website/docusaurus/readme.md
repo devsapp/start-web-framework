@@ -15,7 +15,7 @@
 
 # 快速开始
 
-- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master//website/docusaurus/src)
+- [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/website/docusaurus/src)
 - [:earth_africa: 效果预览](http://docusaurus.website.1767215449378635.cn-hangzhou.fc.devsapp.net)
 
 ## 通过应用中心部署

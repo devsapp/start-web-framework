@@ -13,7 +13,7 @@
 
 # Quick start
 
-- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master//website/docusaurus/src)
+- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/website/docusaurus/src)
 - [:earth_africa: Effect Preview](http://docusaurus.website.1767215449378635.cn-hangzhou.fc.devsapp.net)
 
 ## Deploy via command line tools
