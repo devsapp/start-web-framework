@@ -2,7 +2,7 @@ Type: Application
 Name: start-tornado
 Provider:
   - 阿里云
-Version: 1.2.3
+Version: 1.2.10
 Description: Tornado是一种 Web 服务器软件的开源版本。Tornado 和主流Web 服务器框架（包括大多数 Python 的框架）有着明显的区别：它是非阻塞式服务器，而且速度相当快
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
