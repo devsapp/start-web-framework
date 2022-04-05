@@ -24,7 +24,7 @@
 >
 > | Framework name | Custom runtime | Node.js 12 runtime |
 > | ----- | ----------- | ----------------|
-> | Egg.js | [egg](./custom-runtime/egg/src) | [egg-app](./nodejs-runtime/egg-app/src) |
-> | Express.js | [express](./custom-runtime/express/src) | [express-app](./nodejs-runtime/express-app/src) |
-> | Koa.js | [koa](./custom-runtime/koa/src) | [koa-app](./nodejs-runtime/koa-app/src) |
-> | Hapi.js | [hapi](./custom-runtime/hapi/src) | [hapi-app](./nodejs-runtime/hapi-app/src) |
+> | Egg.js | [egg](./custom-runtime/egg/src) | [egg-app](./nodejs-runtime/egg/src) |
+> | Express.js | [express](./custom-runtime/express/src) | [express-app](./nodejs-runtime/express/src) |
+> | Koa.js | [koa](./custom-runtime/koa/src) | [koa-app](./nodejs-runtime/koa/src) |
+> | Hapi.js | [hapi](./custom-runtime/hapi/src) | [hapi-app](./nodejs-runtime/hapi/src) |
