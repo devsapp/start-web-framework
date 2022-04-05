@@ -1,13 +1,5 @@
-import Server from './server';
-import * as serverless from '@serverless-devs/fc-http';
+const server = require('./server');
+const serverless = require('@serverless-devs/fc-http');
 
-// Cache
-let handler;
 
-exports.handler = async (req, resp, context) => {
-  if (!handler) {
-    const app = await Server.start();
-    handler = serverless(app);
-  }
-  handler(req, resp, context);
-};
+exports.handler = serverless(server);

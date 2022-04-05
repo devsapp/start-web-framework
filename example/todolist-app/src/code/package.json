@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@webserverless/fc-express": "latest",
+    "@serverless-devs/fc-http": "latest",
     "body-parser": "^1.19.0",
     "express": "^4.17.0"
   }

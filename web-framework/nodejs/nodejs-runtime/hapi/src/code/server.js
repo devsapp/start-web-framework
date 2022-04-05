@@ -1,9 +1,6 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 
-const server = Hapi.server({
-    port: 9000,
-    host: '0.0.0.0'
-});
+const server = Hapi.server();
 
 server.route({
     path: '/',

@@ -11,7 +11,6 @@
   "author": "wss-git",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^18.1.0",
-    "mime-db": "^1.51.0"
+    "@hapi/hapi": "^20.2.1"
   }
 }

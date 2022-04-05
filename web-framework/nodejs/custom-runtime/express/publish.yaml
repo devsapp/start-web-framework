@@ -13,9 +13,6 @@ Service:
   函数计算:
     Authorities:
       - AliyunFCFullAccess
-  日志服务:
-    Authorities:
-      - AliyunLogFullAccess
 
 Parameters:
   type: object
