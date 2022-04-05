@@ -1,4 +1,4 @@
-logs/
+code/logs/
 npm-debug.log
 yarn-error.log
 node_modules/
@@ -6,10 +6,10 @@ package-lock.json
 yarn.lock
 coverage/
 .idea/
-run/
+code/run/
 .DS_Store
 *.sw*
 *.un~
-typings/
-.nyc_output/
+code/typings/
+code/.nyc_output/
 node_modules

@@ -10,6 +10,11 @@ a:visited {
   text-decoration: none;
 }
 
+header .logo {
+  width: 40px;
+  height: 40px;
+}
+
 header {
   color: #f0f0f0;
   padding: 16px 16px 40px 16px;

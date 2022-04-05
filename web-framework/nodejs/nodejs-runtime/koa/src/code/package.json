@@ -13,7 +13,6 @@
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
-    "koa-logger": "^3.2.1",
     "koa-onerror": "^4.1.0",
     "koa-router": "^10.1.1",
     "koa-static": "^5.0.0",

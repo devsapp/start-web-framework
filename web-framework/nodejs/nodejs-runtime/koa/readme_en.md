@@ -14,7 +14,7 @@
 # Quick start
 
 - [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/koa-app/src)
-- [:earth_africa: Effect Preview](http://koa-app.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
+- [:earth_africa: Effect Preview](http://koa-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net)
 
 ## Deploy via command line tools
 

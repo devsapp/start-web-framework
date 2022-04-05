@@ -16,7 +16,7 @@
 # 快速开始
 
 - [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/egg-app/src)
-- [:earth_africa: 效果预览](http://egg-app.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
+- [:earth_africa: 效果预览](http://egg-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net/)
 
 ## 通过应用中心部署
 
