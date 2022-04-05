@@ -1,0 +1,58 @@
+Type: Application
+Name: thinkjs-app
+Version: 1.2.5
+Provider:
+  - 阿里云
+Description: ThinkJS 是一款面向未来开发的 Node.js 框架，整合了大量的项目最佳实践，让企业级开发变得更简单、高效。从 3.0 开始，框架底层基于 Koa 2.x 实现，兼容 Koa 的所有功能。
+HomePage: https://github.com/devsapp/start-web-framework
+Tags:
+  - thinkjs
+  - 云应用
+Category: 基础云服务
+Service:
+  函数计算:
+    Authorities:
+      - AliyunFCFullAccess
+Parameters:
+  type: object
+  additionalProperties: false # 不允许增加其他属性
+  required: # 必填项
+    - region
+    - serviceName
+    - functionName
+  properties:
+    region:
+      title: 地域
+      type: string
+      default: cn-hangzhou
+      description: 创建应用所在的地区
+      enum:
+        - cn-beijing
+        - cn-hangzhou
+        - cn-shanghai
+        - cn-qingdao
+        - cn-zhangjiakou
+        - cn-huhehaote
+        - cn-shenzhen
+        - cn-chengdu
+        - cn-hongkong
+        - ap-southeast-1
+        - ap-southeast-2
+        - ap-southeast-3
+        - ap-southeast-5
+        - ap-northeast-1
+        - eu-central-1
+        - eu-west-1
+        - us-west-1
+        - us-east-1
+        - ap-south-1
+    serviceName:
+      title: 服务名
+      type: string
+      default: web-framework
+      description: 服务名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-128 之间
+    functionName:
+      title: 函数名
+      type: string
+      default: thinkjs
+      description:  函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-64 之间
