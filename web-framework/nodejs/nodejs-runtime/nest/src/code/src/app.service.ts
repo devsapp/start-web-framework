@@ -200,6 +200,9 @@ export class AppService {
             <h3>帮助文档</h3>
             <ul>
               <li>
+                Serverless Devs 钉钉交流群：33947367
+              </li>
+              <li>
                 <a href="https://github.com/Serverless-Devs/Serverless-Devs"
                    target="_blank">Serverless Devs 开发部署工具</a>
               </li>
@@ -218,7 +221,12 @@ export class AppService {
             </ul>
           </div>
         </div>
-      </div>
+        <div class="item">
+            <div class="step">4</div>
+            <h2>Github</h2>
+            <p>您对此应用有任何问题或者建议，欢迎给我们 <a href="https://github.com/devsapp/start-web-framework/issues/" target="_blank">提issue</a></p>
+        </div>
+    </div>
 </body>
 
 </html>`;

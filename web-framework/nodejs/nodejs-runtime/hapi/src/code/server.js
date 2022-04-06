@@ -229,6 +229,11 @@ server.route({
                   </div>
                 </div>
               </div>
+              <div class="item">
+                <div class="step">4</div>
+                <h2>Github</h2>
+                <p>您对此应用有任何问题或者建议，欢迎给我们 <a href="https://github.com/devsapp/start-web-framework/issues/" target="_blank">提issue</a></p>
+              </div>
           </div>
         </body>
         
