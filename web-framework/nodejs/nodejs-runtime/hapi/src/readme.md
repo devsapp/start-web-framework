@@ -5,6 +5,7 @@
 <p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
 
 - [快速开始](#快速开始)
+    - [效果预览](#效果预览)
     - [通过应用中心部署](#通过应用中心部署)
     - [通过命令行工具部署](#通过命令行工具部署)
     - [通过阿里云CloudShell部署](#通过阿里云CloudShell部署)
@@ -16,7 +17,10 @@
 # 快速开始
 
 - [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/hapi/src)
-- [:earth_africa: 效果预览](http://hapi-app.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
+- [:earth_africa: 效果预览](http://hapi.web-framework.1740298130743624.cn-hangzhou.fc.devsapp.net/documentation)
+
+## 效果预览
+![](https://img.alicdn.com/imgextra/i2/O1CN01GBXbui1Cq2dMI1fFN_!!6000000000131-2-tps-2720-992.png)
 
 ## 通过应用中心部署
 
