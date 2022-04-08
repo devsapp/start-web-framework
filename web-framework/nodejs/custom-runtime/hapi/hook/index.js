@@ -1,3 +1,5 @@
+const path = require('path');
+
 async function preInit(inputObj) {
     console.log(`
   Serverless Devs Application Case
@@ -24,6 +26,10 @@ async function preInit(inputObj) {
 }
 
 async function postInit(inputObj) {
+    await inputObj.downloadRequest("https://serverless-devs-app-pkg.oss-cn-beijing.aliyuncs.com/node16/node", 
+        path.join(inputObj.targetPath, 'code/bin')
+    );
+
     console.log(`
     * Before using, please check whether the actions command in Yaml file is available
     * Carefully reading the notes in s.yaml is helpful for the use of the tool
