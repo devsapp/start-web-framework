@@ -54,6 +54,8 @@ services:
         timeout: 60
         caPort: 9000
         memorySize: 1024
+        environmentVariables:
+          PATH: "/code/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin"
       triggers:
         - name: httpTrigger
           type: http
