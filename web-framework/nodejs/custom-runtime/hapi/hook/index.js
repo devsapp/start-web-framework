@@ -26,8 +26,8 @@ async function preInit(inputObj) {
 }
 
 async function postInit(inputObj) {
-    await inputObj.downloadRequest("https://serverless-devs-app-pkg.oss-cn-beijing.aliyuncs.com/node16/node", 
-        path.join(inputObj.targetPath, 'code/bin')
+    await inputObj.downloadRequest("https://serverless-devs-app-pkg.oss-cn-beijing.aliyuncs.com/node16.zip", 
+        path.join(inputObj.targetPath, 'code/bin'), {  extract: true, strip: 1 }
     );
 
     console.log(`
