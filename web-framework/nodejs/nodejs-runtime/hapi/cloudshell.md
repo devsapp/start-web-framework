@@ -8,7 +8,7 @@
 - [更多信息](#更多信息)
 
 > - [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/hapi/src)
-> - [:earth_africa: 效果预览](http://hapi.web-framework.1740298130743624.cn-hangzhou.fc.devsapp.net/documentation)
+> - [:earth_africa: 效果预览](http://hapi-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net/documentation)
 
 ## 下载工具
 > 由于本系统已经默认集成了Serverless Devs，所以该步骤在本次试验中可以跳过

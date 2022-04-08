@@ -17,9 +17,10 @@
 # 快速开始
 
 - [:octocat: 源代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/hapi/src)
-- [:earth_africa: 效果预览](http://hapi.web-framework.1740298130743624.cn-hangzhou.fc.devsapp.net/documentation)
+- [:earth_africa: 效果预览](http://hapi-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net/documentation)
 
 ## 效果预览
+通过访问 `${url}/documentation` 可以访问到`swagger-ui`的效果
 ![](https://img.alicdn.com/imgextra/i2/O1CN01GBXbui1Cq2dMI1fFN_!!6000000000131-2-tps-2720-992.png)
 
 ## 通过应用中心部署

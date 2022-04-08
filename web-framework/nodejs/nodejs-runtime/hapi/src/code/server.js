@@ -186,6 +186,7 @@ const homeView = (nodeVersion) => `<!DOCTYPE html>
             <h2>文档</h2>
             <p>Hapi 官方在线文档，参见 <a
                     href="https://hapi.dev/tutorials/?lang=zh_CN" target="_blank">https://hapi.dev/tutorials/?lang=zh_CN</a></p>
+            <p>Swagger UI 效果，点击 <a href="/documentation" target="_blank">链接</a>查看</p>
         </div>
         <div class="item">
             <div class="step">3</div>

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
+    "joi": "^17.6.0",
     "@serverless-devs/fc-http": "latest",
     "@hapi/inert": "^6.0.5",
     "@hapi/vision": "^6.1.0",

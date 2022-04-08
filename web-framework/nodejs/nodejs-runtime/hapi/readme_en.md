@@ -14,7 +14,7 @@
 # Quick start
 
 - [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/hapi/src)
-- [:earth_africa: Effect Preview](http://hapi.web-framework.1740298130743624.cn-hangzhou.fc.devsapp.net/documentation)
+- [:earth_africa: Effect Preview](http://hapi-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net/documentation)
 
 ## Deploy via command line tools
 
