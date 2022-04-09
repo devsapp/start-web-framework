@@ -1,6 +1,6 @@
 Type: Application
 Name: koa-app
-Version: 1.2.7
+Version: 1.2.8
 Provider:
   - 阿里云
 Description: Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石（部署到Node.js运行时）

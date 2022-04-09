@@ -13,7 +13,7 @@
 
 # Quick start
 
-- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/nuxt/src)
+- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/nodejs-runtime/nuxt/src)
 - [:earth_africa: Effect Preview](http://nuxt-spa.web-framework.1583208943291465.cn-shenzhen.fc.devsapp.net/)
 
 ## Deploy via command line tools
