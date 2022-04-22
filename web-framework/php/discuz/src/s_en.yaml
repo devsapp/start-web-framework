@@ -57,10 +57,12 @@ services:
         timeout: 30
         memorySize: 1536
         instanceConcurrency: 12
-        environmentVariables:
-          PATH: /code/root/usr/bin:/code/root/usr/sbin:/code/root/sbin:/code/root/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin
-          LD_LIBRARY_PATH: /code/root/usr/lib:/code/root/usr/lib/x86_64-linux-gnu:/code/root/lib:/code/root/lib/x86_64-linux-gnu:/code:/code/lib:/usr/local/lib
-          PHP_INI_SCAN_DIR: /code/root/usr/lib/php/7.2
+        customRuntimeConfig:
+          command:
+            - bash
+          args:
+            - '-c'
+            - '/code/start.sh'
       triggers:
         - name: httpTrigger
           type: http
