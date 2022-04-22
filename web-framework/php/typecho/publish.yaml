@@ -2,7 +2,7 @@ Type: Application
 Name: start-typecho
 Provider:
   - 阿里云
-Version: 1.2.6
+Version: 1.2.7
 Description: Typecho是由type和echo两个词合成的，来自于开发团队的头脑风暴。Typecho基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
@@ -63,6 +63,6 @@ Parameters:
     functionName:
       title: 函数名
       type: string
-      default: whatsns
+      default: typecho
       description:  函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-64 之间
 

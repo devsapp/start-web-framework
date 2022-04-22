@@ -4,6 +4,8 @@ set +e
 mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 mkdir -p /tmp/var/sessions/
+mkdir -p /mnt/auto/Z-Blog/sessions
+chown -R www-data:www-data /mnt/auto/Z-Blog/sessions
 
 chown -R www-data:www-data /mnt/auto/Z-Blog
 
