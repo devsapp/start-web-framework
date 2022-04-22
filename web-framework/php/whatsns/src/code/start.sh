@@ -5,6 +5,9 @@ mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 mkdir -p /tmp/var/sessions/
 
+mkdir -p /mnt/auto/whatsns/sessions
+chown -R www-data:www-data /mnt/auto/whatsns/sessions
+
 chown -R www-data:www-data /mnt/auto/whatsns
 
 echo "start php-fpm"

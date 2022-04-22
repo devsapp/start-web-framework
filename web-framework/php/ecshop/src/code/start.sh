@@ -5,6 +5,9 @@ mkdir -p /tmp/log/nginx/
 mkdir -p /tmp/var/nginx/
 mkdir -p /tmp/var/sessions/
 
+mkdir -p /mnt/auto/ecshop/sessions
+chown -R www-data:www-data /mnt/auto/ecshop/sessions
+
 chown -R www-data:www-data /mnt/auto/ecshop
 
 echo "start php-fpm"
