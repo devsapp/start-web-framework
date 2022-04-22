@@ -1,2 +1,0 @@
-# /var/www/html is the default document root
-nginx-common: dir-or-file-in-var-www var/www/html/
