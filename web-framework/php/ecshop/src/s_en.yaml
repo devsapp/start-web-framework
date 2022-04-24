@@ -45,7 +45,7 @@ services:
 #          args:                                  # parameter information of the plugin
 #            testKey: testValue
       post-deploy:                                                       # run after deploy
-        - component: fc nas upload -r code/ecshop/ /mnt/auto/ecshop      # command line to run
+        - component: fc nas upload -ro code/ecshop/ /mnt/auto/ecshop      # command line to run
     props:
       region: ${vars.region} # For the usage of variables, please refer to: https://www.serverless-devs.com/serverless-devs/yaml#Variable assignment
       service: ${vars.service}
