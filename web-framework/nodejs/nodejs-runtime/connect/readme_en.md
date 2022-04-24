@@ -13,7 +13,7 @@
 
 # Quick start
 
-- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/nodejs-runtime/connect/src)
+- [:octocat: source](https://github.com/devsapp/start-web-framework/tree/master/web-framework/nodejs/nodejs-runtime/connect/src)
 - [:earth_africa: Effect Preview](http://connect-app.web-framework.1767215449378635.cn-hangzhou.fc.devsapp.net/)
 
 ## Deploy via command line tools
