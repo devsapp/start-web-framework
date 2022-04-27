@@ -2,7 +2,7 @@ Type: Application
 Name: start-thinkphp
 Provider:
   - 阿里云
-Version: 1.2.5
+Version: 1.2.6
 Description: ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生的开源轻量级PHP框架
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
