@@ -1,6 +1,6 @@
 Type: Application
 Name: express-app
-Version: 1.2.11
+Version: 1.2.13
 Provider:
   - 阿里云
 Description: 基于 Node.js 平台，快速、开放、极简的 Web 开发框架（部署到Node.js运行时）

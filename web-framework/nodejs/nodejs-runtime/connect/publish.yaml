@@ -1,6 +1,6 @@
 Type: Application
 Name: connect-app
-Version: 1.2.11
+Version: 1.2.13
 Provider:
   - 阿里云
 Description: Connect是一个Node.js框架，它使用被称为中间件的模块化组件，以可重用的方式实现web程序的逻辑
