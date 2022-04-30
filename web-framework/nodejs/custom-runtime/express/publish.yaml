@@ -2,7 +2,7 @@ Type: Application
 Name: start-express
 Provider:
   - 阿里云
-Version: 1.2.10
+Version: 1.2.11
 Description: 基于 Node.js 平台，快速、开放、极简的 Web 开发框架（部署到Custom运行时）
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

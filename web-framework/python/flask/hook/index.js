@@ -12,6 +12,7 @@ async function preInit(inputObj) {
 
 async function postInit(inputObj) {
     console.log(`
+    * Python version: Python 3.6
     * Before using, please check whether the actions command in Yaml file is available
     * Carefully reading the notes in s.yaml is helpful for the use of the tool
     * If you want to use the container mode, please refer to s.container.yaml

@@ -2,7 +2,7 @@ Type: Application
 Name: start-bottle
 Provider:
   - 阿里云
-Version: 1.2.5
+Version: 1.2.6
 Description: Bottle是一个Python Web框架，整个框架只有一个文件，几十K，却自带了路径映射、模板、简单的数据库访问等web框架组件，确实是个可用的框架
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
