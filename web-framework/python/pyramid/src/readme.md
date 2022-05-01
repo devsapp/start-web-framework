@@ -33,7 +33,7 @@ Pyramid是一个小型，快速的Python web framework.，是Pylons Project的�
 
 # 代码 & 预览
 
-- [😼 源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/pyramid)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/pyramid)
 
 </codepre>
 
@@ -43,15 +43,15 @@ Pyramid是一个小型，快速的Python web framework.，是Pylons Project的�
 
 <appcenter>
 
-- 🔥 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-pyramid) ，
+-  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-pyramid) ，
 [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-pyramid)  该应用。 
 
 </appcenter>
 
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
     - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://www.serverless-devs.com/fc/config) ；
-    - 初始化项目：\`s init start-pyramid -d start-pyramid\`   
-    - 进入项目，并进行项目部署：\`cd start-pyramid && s deploy -y\`
+    - 初始化项目：`s init start-pyramid -d start-pyramid`   
+    - 进入项目，并进行项目部署：`cd start-pyramid && s deploy -y`
 
 </deploy>
 
@@ -75,7 +75,7 @@ Pyramid是一个小型，快速的Python web framework.，是Pylons Project的�
 
 | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407252200_20211028074732517533.png" width="130px" > |
 |--- | --- | --- |
-| <center>微信公众号：\`serverless\`</center> | <center>微信小助手：\`xiaojiangwh\`</center> | <center>钉钉交流群：\`33947367\`</center> | 
+| <center>微信公众号：`serverless`</center> | <center>微信小助手：`xiaojiangwh`</center> | <center>钉钉交流群：`33947367`</center> | 
 
 </p>
 

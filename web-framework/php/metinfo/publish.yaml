@@ -2,7 +2,7 @@ Type: Application
 Name: start-metinfo
 Provider:
   - 阿里云
-Version: 1.2.11
+Version: 1.2.12
 Description: MetInfo 又称米拓企业建站系统，是采用PHP+Mysql架构的企业建站系统
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
