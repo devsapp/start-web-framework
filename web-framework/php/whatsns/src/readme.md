@@ -33,7 +33,7 @@ whatsns是一款社交类APP软件，站长可以对使用whatsns产品进行交
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/whatsns)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/whatsns)
 
 </codepre>
 

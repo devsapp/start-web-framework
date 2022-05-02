@@ -33,7 +33,7 @@ Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/laravel)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/laravel)
 
 </codepre>
 

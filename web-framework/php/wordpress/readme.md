@@ -33,7 +33,7 @@ WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和My
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/wordpress)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/wordpress)
 
 </codepre>
 

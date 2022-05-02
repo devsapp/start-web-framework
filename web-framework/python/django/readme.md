@@ -33,7 +33,7 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/django)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/python/django)
 
 </codepre>
 

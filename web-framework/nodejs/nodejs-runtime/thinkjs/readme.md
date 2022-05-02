@@ -33,7 +33,7 @@ ThinkJS 是一款面向未来开发的 Node.js 框架，整合了大量的项目
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/nodejs/nodejs-runtime/thinkjs)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/nodejs/nodejs-runtime/thinkjs)
 
 </codepre>
 

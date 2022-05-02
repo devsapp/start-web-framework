@@ -33,7 +33,7 @@ Pyramid是一个小型，快速的Python web framework.，是Pylons Project的�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/pyramid)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/python/pyramid)
 
 </codepre>
 

@@ -33,7 +33,7 @@ Crossday Discuz! Board（简称 Discuz!）是一套通用的社区论坛软件�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/discuz)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/discuz)
 
 </codepre>
 

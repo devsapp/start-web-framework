@@ -2,7 +2,7 @@ Type: Application
 Name: start-discuz
 Provider:
   - 阿里云
-Version: 1.2.13
+Version: 1.2.15
 Description: Crossday Discuz! Board（简称 Discuz!）是一套通用的社区论坛软件系统
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

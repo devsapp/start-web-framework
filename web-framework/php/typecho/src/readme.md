@@ -33,7 +33,7 @@ Typecho是由type和echo两个词合成的，来自于开发团队的头脑风�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/typecho)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/typecho)
 
 </codepre>
 

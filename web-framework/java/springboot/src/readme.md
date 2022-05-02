@@ -33,7 +33,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/java/springboot)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/java/springboot)
 
 </codepre>
 

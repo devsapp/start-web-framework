@@ -33,7 +33,7 @@ nuxt.js简单的说是Vue.js的通用框架，最常用的就是用来作SSR（�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/nodejs/custom-runtime/nuxt-ssr)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/nodejs/custom-runtime/nuxt-ssr)
 
 </codepre>
 

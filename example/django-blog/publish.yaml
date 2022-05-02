@@ -2,7 +2,7 @@ Type: Application
 Name: django-blog
 Provider:
   - 阿里云
-Version: 1.2.8
+Version: 1.2.10
 Description: 基于Django框架的博客系统
 HomePage: https://github.com/devsapp/native-runtime-framework-example
 Tags:

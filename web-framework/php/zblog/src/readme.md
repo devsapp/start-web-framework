@@ -33,7 +33,7 @@ Z-Blog是由Z-Blog开发团队开发的一款小巧而强大的基于Asp和PHP�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/zblog)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/zblog)
 
 </codepre>
 

@@ -33,7 +33,7 @@ web.py 是一个轻量级Python web框架，它简单而且功能强大。web.py
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/webpy)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/python/webpy)
 
 </codepre>
 

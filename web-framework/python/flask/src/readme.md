@@ -33,7 +33,7 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/flask)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/python/flask)
 
 </codepre>
 

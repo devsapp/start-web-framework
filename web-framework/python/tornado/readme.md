@@ -33,7 +33,7 @@ Tornado是一种 Web 服务器软件的开源版本。Tornado 和主流Web 服�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/python/tornado)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/python/tornado)
 
 </codepre>
 

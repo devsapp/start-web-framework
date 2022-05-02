@@ -33,7 +33,7 @@ MetInfo 又称米拓企业建站系统，是采用PHP+Mysql架构的企业建站
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/metinfo)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/metinfo)
 
 </codepre>
 

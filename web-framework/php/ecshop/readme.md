@@ -33,7 +33,7 @@ ECShop是一款B2C独立网店系统，适合企业及个人快速构建个性�
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/web-framework/php/ecshop)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/php/ecshop)
 
 </codepre>
 
