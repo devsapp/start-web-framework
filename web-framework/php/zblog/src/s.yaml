@@ -54,6 +54,7 @@ services:
         runtime: custom
         timeout: 300
         memorySize: 1536
+        caPort: 80
         instanceConcurrency: 8
         customRuntimeConfig:
           command:

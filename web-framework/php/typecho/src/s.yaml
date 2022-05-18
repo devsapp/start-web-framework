@@ -55,6 +55,7 @@ services:
         timeout: 30
         memorySize: 1536
         instanceConcurrency: 12
+        caPort: 80
         customRuntimeConfig:
           command:
             - bash
