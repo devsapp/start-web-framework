@@ -51,7 +51,7 @@ services:
       function:
         name: springboot
         description: 'Serverless Devs Web Framework Function'
-        codeUri: ./code
+        codeUri: ./code/target/webframework.jar
         runtime: custom
         memorySize: 1024
         timeout: 30
@@ -59,8 +59,9 @@ services:
           command:
             - java
           args:
-            - '-jar'
-            - 'target/webframework.jar'
+            - '-cp'
+            - '/code'
+            - 'org.springframework.boot.loader.JarLauncher'
       triggers:
           - name: httpTrigger
             type: http
