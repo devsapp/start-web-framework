@@ -2,7 +2,7 @@ Type: Application
 Name: start-springboot
 Provider:
   - 阿里云
-Version: 1.2.11
+Version: 1.2.12
 Description: Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

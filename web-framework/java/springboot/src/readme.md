@@ -72,7 +72,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01jLfCaE1amQGuXQI8Q_!!6000000003372-2-tps-2594-1558.png)
 
-> 注意: 如果您这边部署的 Springboot 项目的 jar 包很大， 超过了函数计算最大的 100M 限制，可以参考[函数计算大代码包部署的实践](https://github.com/awesome-fc/fc-faq/blob/main/docs/%E5%A4%A7%E4%BB%A3%E7%A0%81%E5%8C%85%E9%83%A8%E7%BD%B2%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B.md)
+> 注意: 如果您这边部署的 Springboot 项目的 jar 包很大， 超过了函数计算最大的 500M 限制，可以参考[函数计算大代码包部署的实践](https://github.com/awesome-fc/fc-faq/blob/main/docs/%E5%A4%A7%E4%BB%A3%E7%A0%81%E5%8C%85%E9%83%A8%E7%BD%B2%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B.md)
 
 
 
