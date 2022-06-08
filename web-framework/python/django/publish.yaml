@@ -2,7 +2,7 @@ Type: Application
 Name: start-django
 Provider:
   - 阿里云
-Version: 1.2.12
+Version: 1.2.13
 Description: Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式，即模型M，视图V和模版T
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:

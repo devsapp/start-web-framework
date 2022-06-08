@@ -52,7 +52,7 @@ services:
         name: pyramid
         description: 'Serverless Devs Web Framework Function'
         codeUri: './code'
-        runtime: python3
+        runtime: python3.9
         handler: index.app
         timeout: 60
       triggers:
