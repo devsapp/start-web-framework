@@ -1,6 +1,1 @@
-web-framework/python/django
-web-framework/python/fastapi
-web-framework/python/bottle
-web-framework/python/pyramid
-web-framework/python/tornado
 web-framework/python/webpy

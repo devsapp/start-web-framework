@@ -59,9 +59,8 @@ services:
           command:
             - python
           args:
-            - -u
             - index.py
-            - 9000
+            - '9000'
       triggers:
         - name: httpTrigger
           type: http
