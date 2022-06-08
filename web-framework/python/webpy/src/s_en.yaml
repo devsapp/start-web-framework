@@ -55,6 +55,13 @@ services:
         runtime: custom
         caPort: 9000
         timeout: 60
+        customRuntimeConfig:
+          command:
+            - python
+          args:
+            - -u
+            - index.py
+            - 9000
       triggers:
         - name: httpTrigger
           type: http

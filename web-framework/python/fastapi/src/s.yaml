@@ -52,6 +52,12 @@ services:
         codeUri: './code'
         runtime: custom
         timeout: 60
+        customRuntimeConfig:
+          command:
+            - python
+          args:
+            - -u
+            - index.py
       triggers:
         - name: httpTrigger
           type: http
