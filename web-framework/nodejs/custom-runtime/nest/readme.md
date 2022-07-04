@@ -1,14 +1,14 @@
-# nest-app 帮助文档
+# start-nest 帮助文档
 
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=nest-app&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=start-nest&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=nest-app" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=nest-app&type=packageVersion">
+  <a href="http://www.devsapp.cn/details.html?name=start-nest" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-nest&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=nest-app" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=nest-app&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=start-nest" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-nest&type=packageDownload">
   </a>
 </p>
 
@@ -43,15 +43,15 @@ Nest (NestJS) 是一个用于构建高效、可扩展的 Node.js 服务器端应
 
 <appcenter>
 
--  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=nest-app) ，
-[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=nest-app)  该应用。 
+-  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-nest) ，
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-nest)  该应用。 
 
 </appcenter>
 
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
     - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://www.serverless-devs.com/fc/config) ；
-    - 初始化项目：`s init nest-app -d nest-app`   
-    - 进入项目，并进行项目部署：`cd nest-app && s deploy -y`
+    - 初始化项目：`s init start-nest -d start-nest`   
+    - 进入项目，并进行项目部署：`cd start-nest && s deploy -y`
 
 </deploy>
 
