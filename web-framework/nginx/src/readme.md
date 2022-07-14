@@ -14,7 +14,7 @@
 
 <description>
 
-Z-Blog是由Z-Blog开发团队开发的一款小巧而强大的基于Asp和PHP平台的开源程序，致力于给用户提供优秀的博客写作体验
+快速将 nginx 应用部署到函数计算
 
 </description>
 
