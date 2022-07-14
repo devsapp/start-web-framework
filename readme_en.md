@@ -92,6 +92,9 @@ At present, this case repository contains the deployment cases of the following 
 > SSR frameworks
 > - [nuxt-ssr](./web-framework/nodejs/custom-runtime/nuxt-ssr/src): `s init start-nuxt-ssr`
 
+> Nginx：
+> - [nginx](./web-framework/nginx/src): `s init start-nginx`
+
 > In order to compare the framework migration differences between the Custom runtime and the programming language native runtime, you can refer to the following cases for your own comparison:
 >
 > | Framework name | Custom runtime | Node.js 12 runtime |
