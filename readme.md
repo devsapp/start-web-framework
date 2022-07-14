@@ -91,6 +91,9 @@
 > SSR 框架：
 > - [nuxt-ssr](./web-framework/nodejs/custom-runtime/nuxt-ssr/src): `s init start-nuxt-ssr`
 
+> Nginx 框架：
+> - [nginx](./web-framework/nginx/src): `s init start-nginx`
+
 > 为了对比Custom运行时和编程语言原生运行时的框架迁移区别，可以参考以下案例进行自行对比：
 >
 > | 框架名 | Custom运行时 | Node.js 12运行时 |
