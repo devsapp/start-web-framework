@@ -2,7 +2,7 @@ Type: Application
 Name: start-whatsns
 Provider:
   - 阿里云
-Version: 1.2.16
+Version: 1.2.17
 Description: whatsns是一款社交类APP软件，站长可以对使用whatsns产品进行交流，可以搭建垂直领域社区的软件
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
