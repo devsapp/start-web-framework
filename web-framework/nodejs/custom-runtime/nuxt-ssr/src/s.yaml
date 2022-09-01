@@ -53,6 +53,15 @@ services:
         runtime: custom
         timeout: 60
         caPort: 9000
+        customRuntimeConfig:
+          command:
+            - npx
+            - nuxt
+            - start
+            - --hostname
+            - 0.0.0.0
+            - --port
+            - '9000'
       triggers:
         - name: httpTrigger
           type: http

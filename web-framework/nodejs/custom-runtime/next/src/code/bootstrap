@@ -1,2 +1,0 @@
-#!/bin/bash
-npx next start --port 9000

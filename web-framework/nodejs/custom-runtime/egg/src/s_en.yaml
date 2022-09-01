@@ -56,6 +56,13 @@ services:
         timeout: 60
         memorySize: 512
         caPort: 9000
+        customRuntimeConfig:
+          command:
+            - npx
+            - --no-install
+            - egg-scripts
+            - start
+            - --workers=1
       triggers:
         - name: httpTrigger
           type: http

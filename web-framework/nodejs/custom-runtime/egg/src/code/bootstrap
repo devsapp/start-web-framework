@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-npx --no-install egg-scripts start --workers=1

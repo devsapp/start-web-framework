@@ -2,7 +2,7 @@ Type: Application
 Name: start-midway-koa
 Provider:
   - 阿里云
-Version: 0.0.10
+Version: 0.0.11
 Description: 为企业级框架和应用而生（部署到Custom运行时）
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
