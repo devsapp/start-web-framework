@@ -55,6 +55,10 @@ services:
         runtime: custom
         timeout: 60
         caPort: 9000
+        customRuntimeConfig:
+          command:
+            - node
+            - index.js
       triggers:
         - name: httpTrigger
           type: http

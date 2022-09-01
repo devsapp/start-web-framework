@@ -58,6 +58,10 @@ services:
         memorySize: 512
         timeout: 6
         caPort: 3000
+        customRuntimeConfig:
+          command:
+            - node
+            - dist/main
       triggers:
         - name: http-trigger
           type: http

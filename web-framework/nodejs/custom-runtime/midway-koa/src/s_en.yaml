@@ -55,6 +55,13 @@ services:
         runtime: custom
         timeout: 60
         caPort: 9000
+        environmentVariables:
+          PATH: /code/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
+          NODE_ENV: production
+        customRuntimeConfig:
+          command:
+            - node
+            - ./bootstrap.js
       triggers:
         - name: httpTrigger
           type: http

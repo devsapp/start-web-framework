@@ -55,6 +55,13 @@ services:
         runtime: custom
         timeout: 60
         caPort: 9000
+        customRuntimeConfig:
+          command:
+            - npx
+            - next
+            - start
+            - --port
+            - '9000'
       triggers:
         - name: httpTrigger
           type: http
