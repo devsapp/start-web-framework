@@ -55,7 +55,9 @@ services:
         timeout: 30
         customRuntimeConfig:
           command:
-            - java -jar webframework.jar
+            - java
+          args:
+            - 'org.springframework.boot.loader.JarLauncher'
       triggers:
         - name: httpTrigger
           type: http
