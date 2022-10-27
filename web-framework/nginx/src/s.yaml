@@ -26,7 +26,6 @@ vars: # 全局变量
   service:
     name: "{{ serviceName }}"
     description: 'Serverless Devs Web Framework Service'
-    nasConfig: auto
 
 services:
   framework: # 业务名称/模块名称
