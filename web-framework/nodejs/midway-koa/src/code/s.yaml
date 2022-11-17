@@ -1,0 +1,49 @@
+edition: 1.0.0
+name: compoent-test
+access: default
+vars: # 全局变量
+  region: "cn-beijing"
+  service:
+    name: "fe-workbench"
+    description: 'Serverless Devs Web Framework Service'
+    logConfig: auto
+
+
+services:
+  cn-beijing-fe-workbench-admin:
+    component: devsapp/fc
+    props:
+      region: ${vars.region}
+      service: ${vars.service}
+      function:
+        handler: index.handler
+        description: Serverless Devs Web Framework Function
+        timeout: 60
+        caPort: 7001
+        layers:
+          - acs:fc:${vars.region}:official:layers/Nodejs16/versions/1
+        customRuntimeConfig:
+          command:
+            - node
+            - index.js
+        instanceType: e1
+        runtime: custom
+        instanceConcurrency: 1
+        memorySize: 128
+        environmentVariables:
+          PATH: >-
+            /opt/nodejs16/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+          NODE_PATH: /opt/nodejs/node_modules
+        internetAccess: true
+        name: admin
+        asyncConfiguration: {}
+        codeUri: ./build
+      triggers:
+        - name: httpTrigger
+          description: ''
+          type: http
+          config:
+            methods:
+              - GET
+            authType: anonymous
+            disableURLInternet: false
