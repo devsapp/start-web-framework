@@ -26,7 +26,6 @@ vars: # global variables
   service:
     name: hello-world-service
     description: 'Serverless Devs Web Framework Service'
-    nasConfig: auto
 
 services:
   framework: # business name/module name

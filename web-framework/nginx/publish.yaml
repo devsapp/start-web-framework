@@ -2,7 +2,7 @@ Type: Application
 Name: start-nginx
 Provider:
   - 阿里云
-Version: 0.0.5
+Version: 0.0.6
 Description: 快速部署 nginx 到函数计算
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
