@@ -19,15 +19,14 @@ name: web-framework-app
 # access 是当前应用所需要的密钥信息配置：
 # 密钥配置可以参考：https://www.serverless-devs.com/serverless-devs/command/config
 # 密钥使用顺序可以参考：https://www.serverless-devs.com/serverless-devs/tool#密钥使用顺序与规范
-access: "fc-console-access"
+access: "{{ access }}"
 
 vars: # 全局变量
-  region: "cn-hangzhou"
-  functionName: "nuxt-ssr"
+  region: "{{ region }}"
+  functionName: "{{ functionName }}"
   service:
-    name: "web-framework-demo"
+    name: "{{ serviceName }}"
     description: 'Serverless Devs Web Framework Service'
-
 
 services:
   framework: # 业务名称/模块名称
