@@ -45,7 +45,7 @@ At present, this case repository contains the deployment cases of the following 
 </tr>
 <tr>
 <td align="center">4</td>
-<td align="center"><a href="./web-framework/nodejs/nuxt/src">Nuxtjs [custom]</a></td>
+<td align="center"><a href="./web-framework/nodejs/nuxt-ssr/src">Nuxtjs [custom]</a></td>
 <td align="center"><a href="./web-framework/python/webpy/src">Web.py [python3]</a></td>
 <td align="center"> :fire::fire::fire: <a href="./web-framework/php/wordpress/src" >WordPress [custom]</a></td><td> </td><td></td>
 <td align="center"></td>
@@ -66,7 +66,7 @@ At present, this case repository contains the deployment cases of the following 
 </tr>
 <tr>
 <td align="center">7</td>
-<td align="center"><a href="./web-framework/nodejs/nest/src">Nest [nodejs12]</a></td>
+<td align="center"><a href="./web-framework/nodejs/nest/src">Nest [custom]</a></td>
 <td align="center">Web2py</td>
 <td align="center"><a href="./web-framework/php/metinfo/src" >Metinfo [custom]</a></td>
 <td></td><td></td><td></td>
@@ -79,7 +79,7 @@ At present, this case repository contains the deployment cases of the following 
 </tr>
 <tr>
 <td align="center">9</td>
-<td align="center"><a href="./web-framework/nodejs/thinkjs/src">Think.js [nodejs12]</a></td>
+<td align="center"><a href="https://github.com/zjy2414/start-vue3">Vue.js [custom]</a></td>
 <td align="center"></td>
 <td align="center"><a href="./web-framework/php/typecho/src" >Typecho [custom]</a></td><td></td><td></ td><td></td>
 </tr>
