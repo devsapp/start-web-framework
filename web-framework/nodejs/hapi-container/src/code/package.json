@@ -1,0 +1,21 @@
+{
+  "name": "start-hapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "watch": "onchange -i -k '**/*.js' -- npm run dev"
+  },
+  "author": "heimanba",
+  "license": "ISC",
+  "dependencies": {
+    "joi": "^17.6.0",
+    "@hapi/hapi": "^20.2.1",
+    "@serverless-devs/fc-http": "latest",
+    "@hapi/inert": "^6.0.5",
+    "@hapi/vision": "^6.1.0",
+    "hapi-swagger": "^14.2.5"
+  }
+}
