@@ -1,0 +1,30 @@
+{
+  "name": "eggjs",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "egg": "^2.15.1",
+    "egg-view-nunjucks": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "node ./start.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "mamba",
+  "license": "MIT"
+}
