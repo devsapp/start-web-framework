@@ -1,0 +1,10 @@
+.s
+./pages
+./assets
+./components
+./layouts
+./middleware
+./pages
+./plugins
+./static
+./store
