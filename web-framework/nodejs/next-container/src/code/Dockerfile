@@ -6,4 +6,4 @@ RUN npm install --registry=https://registry.npmmirror.com
 RUN npm run build
 
 EXPOSE 9000
-ENTRYPOINT [ "node", "dist/main" ]
+ENTRYPOINT [ "node", "server.js" ]
