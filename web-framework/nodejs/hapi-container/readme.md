@@ -1,20 +1,20 @@
-# start-express-container 帮助文档
+# start-hapi-container 帮助文档
 
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-express-container&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=start-hapi-container&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-express-container" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-express-container&type=packageVersion">
+  <a href="http://www.devsapp.cn/details.html?name=start-hapi-container" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-hapi-container&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-express-container" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-express-container&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=start-hapi-container" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-hapi-container&type=packageDownload">
   </a>
 </p>
 
 <description>
 
-基于 Node.js 平台，快速、开放、极简的 Web 开发框架（部署到Custom运行时）
+HapiJS是一个开源的、基于Node.js的应用框架，它适用于构建应用程序和服务，其设计目标是让开发者把精力集中于开发可重用的应用程序的业务逻辑，向开发者提供构建应用程序业务逻辑所需的基础设施。
 
 </description>
 
@@ -33,7 +33,7 @@
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/nodejs/express)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/start-web-framework/blob/master/web-framework/nodejs/hapi)
 
 </codepre>
 
@@ -43,15 +43,15 @@
 
 <appcenter>
 
--  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-express-container) ，
-[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-express-container)  该应用。 
+-  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-hapi-container) ，
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-hapi-container)  该应用。 
 
 </appcenter>
 
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
     - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://www.serverless-devs.com/fc/config) ；
-    - 初始化项目：`s init start-express-container -d start-express-container`   
-    - 进入项目，并进行项目部署：`cd start-express-container && s deploy -y`
+    - 初始化项目：`s init start-hapi-container -d start-hapi-container`   
+    - 进入项目，并进行项目部署：`cd start-hapi-container && s deploy -y`
 
 </deploy>
 
