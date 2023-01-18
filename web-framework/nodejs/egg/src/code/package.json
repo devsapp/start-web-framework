@@ -1,5 +1,5 @@
 {
-  "name": "eggjs",
+  "name": "demo",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -7,24 +7,34 @@
     "declarations": true
   },
   "dependencies": {
-    "egg": "^2.15.1",
-    "egg-view-nunjucks": "^2.2.0"
+    "egg": "^3",
+    "egg-view-nunjucks": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
-    "eslint-config-egg": "^7.1.0"
+    "egg-bin": "^5",
+    "eslint": "^8",
+    "eslint-config-egg": "^12"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "node ./start.js",
-    "lint": "eslint ."
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov"
+  },
+  "ci": {
+    "version": "16, 18",
+    "type": "github"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
-  "author": "mamba",
+  "author": "",
   "license": "MIT"
 }
