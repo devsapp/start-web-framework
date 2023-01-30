@@ -56,8 +56,7 @@ services:
         caPort: 9000
         customRuntimeConfig:
           command:
-            - node
-            - index.js
+            - ./bootstrap
       triggers:
         - name: httpTrigger
           type: http
