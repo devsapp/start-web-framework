@@ -56,10 +56,7 @@ services:
         caPort: 9000
         customRuntimeConfig:
           command:
-            - bash
-          args:
-            - '-c'
-            - '/code/start.sh'
+            - ./bootstrap
       triggers:
         - name: httpTrigger
           type: http
