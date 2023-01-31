@@ -57,9 +57,7 @@ services:
         timeout: 30
         customRuntimeConfig:
           command:
-            - java
-          args:
-            - 'org.springframework.boot.loader.JarLauncher'
+            - ./bootstrap
       triggers:
           - name: httpTrigger
             type: http
