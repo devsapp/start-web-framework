@@ -2,12 +2,13 @@ Type: Application
 Name: start-koa
 Provider:
   - 阿里云
-Version: 1.2.21
+Version: 1.2.22
 Description: Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石（部署到Custom运行时）
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
   - Web框架
   - Koa.js
+  - Custom Runtime
 Category: Web框架
 Service:
   函数计算:
