@@ -49,15 +49,13 @@ services:
       function:
         name: '{{ functionName }}'
         description: 'Serverless Devs Web Framework Function'
-        codeUri: ./code/target/webframework.jar
+        codeUri: ./code
         runtime: custom
         memorySize: 1024
         timeout: 30
         customRuntimeConfig:
           command:
-            - java
-          args:
-            - 'org.springframework.boot.loader.JarLauncher'
+            - ./bootstrap
       triggers:
         - name: httpTrigger
           type: http
