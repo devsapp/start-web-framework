@@ -2,7 +2,7 @@ Type: Application
 Name: start-gin
 Provider:
   - 阿里云
-Version: 0.0.1
+Version: 1.0.7
 Description: Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能极高。
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
