@@ -35,8 +35,10 @@ services:
     component: fc # 组件名称，Serverless Devs 工具本身类似于一种游戏机，不具备具体的业务能力，组件类似于游戏卡，用户通过向游戏机中插入不同的游戏卡实现不同的功能，即通过使用不同的组件实现不同的具体业务能力
     actions: # 自定义执行逻辑，关于actions 的使用，可以参考：https://www.serverless-devs.com/serverless-devs/yaml#行为描述
       pre-deploy: # 在deploy之前运行
-        - run: mvn package -DskipTests # 要执行的系统命令，类似于一种钩子的形式
-          path: ./code # 执行系统命令/钩子的路径
+        - run: go mod tidy
+          path: ./code
+        - run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o target/main main.go
+          path: ./code
     #        - component: fc build --use-docker               # 要运行的组件，格式为【component: 组件名 命令 参数】（可以通过s cli registry search --type Component 获取组件列表）
     #        - plugin: myplugin                               # 与运行的插件 （可以通过s cli registry search --type Plugin 获取组件列表）
     #          args:                                          # 插件的参数信息
@@ -49,14 +51,15 @@ services:
       function:
         name: '{{ functionName }}'
         description: 'Serverless Devs Web Framework Function'
-        codeUri: ./code
+        codeUri: ./code/target
         runtime: custom
         memorySize: 1024
         timeout: 30
         instanceConcurrency: 100
+        caPort: 8080
         customRuntimeConfig:
           command:
-            - ./bootstrap
+            - '/code/main'
       triggers:
         - name: httpTrigger
           type: http
