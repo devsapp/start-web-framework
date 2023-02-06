@@ -54,7 +54,7 @@ services:
         name: gin
         description: 'Serverless Devs Web Framework Function'
         codeUri: ./code/target
-        runtime: custom
+        runtime: custom.debian10
         memorySize: 1024
         timeout: 30
         instanceConcurrency: 100
