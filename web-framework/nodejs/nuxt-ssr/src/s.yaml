@@ -54,11 +54,16 @@ services:
         description: 'Serverless Devs Web Framework Function'
         codeUri: './code'
         runtime: custom
+        layers:
+          - acs:fc:${vars.region}:official:layers/Nodejs16/versions/1
+        environmentVariables:
+          PATH: /opt/nodejs16/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
         timeout: 60
         caPort: 9000
         customRuntimeConfig:
           command:
-            - ./bootstrap
+            - node
+            - server.js
       triggers:
         - name: httpTrigger
           type: http
