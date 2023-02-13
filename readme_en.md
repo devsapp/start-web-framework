@@ -23,7 +23,7 @@ At present, this case repository contains the deployment cases of the following 
 <td align="center">:fire:<a href="./web-framework/nodejs/express/src">Express [custom]</a></td>
 <td align="center">:fire::fire:<a href="./web-framework/python/flask/src">Flask [python3]</a></td>
 <td align="center"><a href="./web-framework/php/thinkphp/src">Think PHP [custom]</a></td>
-<td align="center">BeeGo</td>
+<td align="center"><a href="https://github.com/devsapp/start-web-framework/tree/master/web-framework/beego/gin/src">BeeGo  [custom]</a></td>
 <td align="center">Tomcat/Jetty</td>
 <td align="center">Gatsby</td>
 </tr>
@@ -32,7 +32,7 @@ At present, this case repository contains the deployment cases of the following 
 <td align="center"><a href="./web-framework/nodejs/egg/src">Egg [custom]</a></td>
 <td align="center"><a href="./web-framework/python/tornado/src">Tornado [custom]</a></td>
 <td align="center"><a href="./web-framework/php/laravel/src">laravel [custom]</a></td>
-<td align="center"><a href="https://github.com/liufangchen/start-gin">Gin [custom]</a></td>
+<td align="center"><a href="https://github.com/devsapp/start-web-framework/tree/master/web-framework/go/gin/src">Gin [custom]</a></td>
     <td align="center"><a href="./web-framework/java/springboot">SpringBoot [custom]</a></td>
     <td align="center"><a href="https://github.com/liufangchen/start-hugo">Hugo [custom]</a></td>
 </tr>
@@ -86,11 +86,14 @@ At present, this case repository contains the deployment cases of the following 
 </table>
 
 > In addition to the above cases, two simple practical applications are provided:
+>
 > - [Express framework based todoList app](./example/todolist-app/src): `s init todolist-app`
-> - [Django framework based blog application](./example/django-blog/src): `s init django-blog`      
+> - [Django framework based blog application](./example/django-blog/src): `s init django-blog`
 
 > SSR frameworks
+>
 > - [nuxt-ssr](./web-framework/nodejs/nuxt-ssr/src): `s init start-nuxt-ssr`
 
 > Nginx：
+>
 > - [nginx](./web-framework/nginx/src): `s init start-nginx`
