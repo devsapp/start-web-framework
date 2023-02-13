@@ -23,7 +23,7 @@ At present, this case repository contains the deployment cases of the following 
 <td align="center">:fire:<a href="./web-framework/nodejs/express/src">Express [custom]</a></td>
 <td align="center">:fire::fire:<a href="./web-framework/python/flask/src">Flask [python3]</a></td>
 <td align="center"><a href="./web-framework/php/thinkphp/src">Think PHP [custom]</a></td>
-<td align="center"><a href="https://github.com/devsapp/start-web-framework/tree/master/web-framework/beego/gin/src">BeeGo  [custom]</a></td>
+<td align="center"><a href="https://github.com/devsapp/start-web-framework/tree/master/web-framework/go/beego/src">BeeGo  [custom]</a></td>
 <td align="center">Tomcat/Jetty</td>
 <td align="center">Gatsby</td>
 </tr>
