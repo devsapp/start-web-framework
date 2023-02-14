@@ -2,8 +2,8 @@ Type: Application
 Name: start-beego
 Provider:
   - 阿里云
-Version: 1.1.1
-Description: beego是一个使用Go语言来开发WEB引用的GoWeb框架，为大家提供一个高效率的web应用开发框架。
+Version: 1.1.2
+Description: beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架。
 HomePage: https://github.com/zhaohang88/start-beego
 Tags: 
   - Web框架

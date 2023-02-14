@@ -16,13 +16,13 @@
 
 <description>
 
-Beego 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能极高。
+beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架。
 
 </description>
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/zhaohang88/start-beego)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/go/beego/src)
 
 </codeUrl>
 <preview>
@@ -42,7 +42,7 @@ Beego 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性�
 
 | 服务 |  备注  |
 | --- |  --- |
-| 函数计算 FC |  基于Beego框架的Web函数部署在函数计算 |
+| 函数计算 FC |  基于 Beego 框架的 Web 函数部署在函数计算 |
 
 </service>
 
@@ -53,7 +53,7 @@ Beego 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性�
 
 | 服务/业务 |  权限 |  备注  |
 | --- |  --- |   --- |
-| 函数计算 | AliyunFCFullAccess |  创建或者更新基于Beego框架的Web函数 |
+| 函数计算 | AliyunFCFullAccess |  创建或者更新基于 Beego 框架的 Web 函数 |
 
 </auth>
 
@@ -90,11 +90,11 @@ Beego 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性�
 
 <appdetail id="flushContent">
 
-本项目是将 Beego  web 框架部署到阿里云 Serverless 平台（函数计算 FC）。
+本项目是将 Beego web 框架部署到阿里云 Serverless 平台（函数计算 FC）。
 
-通过本应用，您可以部署一个 Beego 框架web应用，效果如下：
+通过本应用，您可以部署一个 Beego 框架 web 应用，效果如下：
 
-![](http://image.editor.devsapp.cn/alibaba/xkv59yxZqA6s1Gw8vvEs.png)
+![](http://image.editor.devsapp.cn/alibaba/1vj5d8FAA5hcsjkiFA6A.png)
 
 </appdetail>
 
@@ -106,14 +106,11 @@ Beego 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性�
 
 例如，在应用中心完成业务功能部署：
 
-![](http://image.editor.devsapp.cn/alibaba/Z6xiav5SZgEG5i22khhg.png)
+![](http://image.editor.devsapp.cn/alibaba/Z3BjurkivswZtbkjyeyC.png)
 
+此时，使用浏览器打开测试域名即可：
 
-此时，使用浏览器或者 curl 工具， 就可以对测试域名进行请求：
-
-![](http://image.editor.devsapp.cn/alibaba/xkv59yxZqA6s1Gw8vvEs.png)
-
-![](http://image.editor.devsapp.cn/alibaba/vdZkiv1xyrxkjGv1blr9.png)
+![](http://image.editor.devsapp.cn/alibaba/1vj5d8FAA5hcsjkiFA6A.png)
 
 </usedetail>
 
