@@ -24,6 +24,7 @@ access: "{{ access }}"
 vars: # 全局变量
   region: "{{ region }}"
   functionName: "{{ functionName }}"
+  domainName: "{{ domainName }}"
   service:
     name: "{{ serviceName }}"
     description: 'Serverless Devs Web Framework Service'
@@ -65,7 +66,7 @@ services:
             methods:
               - GET
       customDomains:
-        - domainName: auto
+        - domainName: ${vars.domainName}
           protocol: HTTP
           routeConfigs:
             - path: '/*'
