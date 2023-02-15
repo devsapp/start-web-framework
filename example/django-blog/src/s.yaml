@@ -61,6 +61,9 @@ services:
             authType: anonymous
             methods:
               - GET
+              - POST
+              - DELETE
+              - PUT
       customDomains:
         - domainName: auto
           protocol: HTTP
