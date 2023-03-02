@@ -1,2 +1,3 @@
 web.py==0.61
 importlib_metadata
+typing_extensions
