@@ -1,1 +1,2 @@
 web.py==0.61
+importlib_metadata
