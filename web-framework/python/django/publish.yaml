@@ -1,5 +1,5 @@
 Type: Application
-Name: start-django-test
+Name: start-django
 Provider:
   - 阿里云
 Version: 1.2.15
