@@ -1,16 +1,16 @@
 
 > 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、服务名、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-django-test 帮助文档
+# start-django 帮助文档
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-django-test&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=start-django&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-django-test" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-django-test&type=packageVersion">
+  <a href="http://www.devsapp.cn/details.html?name=start-django" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-django&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-django-test" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-django-test&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=start-django" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-django&type=packageDownload">
   </a>
 </p>
 
@@ -27,7 +27,7 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 </codeUrl>
 <preview>
 
-- [:eyes: 预览](http://django.web-framework-2bxw.1431999136518149.cn-hangzhou.fc.devsapp.net/)
+
 
 </preview>
 
@@ -59,15 +59,13 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 <remark>
 
-您还需要注意：   
-如果部署的项目的代码包很大， 超过了函数计算最大的 500M 限制，可以参考[函数计算大代码包部署的实践](https://github.com/awesome-fc/fc-faq/blob/main/docs/%E5%A4%A7%E4%BB%A3%E7%A0%81%E5%8C%85%E9%83%A8%E7%BD%B2%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B.md)
+
 
 </remark>
 
 <disclaimers>
 
-免责声明：   
-Django 是一个高级 Python Web 框架，它鼓励快速开发和干净、实用的设计。由经验丰富的开发人员构建，它解决了 Web 开发的大部分麻烦，因此您可以专注于编写您的应用程序，而无需重新发明轮子。它是免费和开源的。具体的使用所需遵循的协议，请参考 https://www.djangoproject.com/
+
 
 </disclaimers>
 
@@ -75,16 +73,16 @@ Django 是一个高级 Python Web 框架，它鼓励快速开发和干净、实�
 
 <appcenter>
    
-- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-django-test) ，
-  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-django-test) 该应用。
+- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-django) ，
+  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-django) 该应用。
    
 </appcenter>
 <deploy>
     
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
   - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init start-django-test -d start-django-test `
-  - 进入项目，并进行项目部署：`cd start-django-test && s deploy - y`
+  - 初始化项目：`s init start-django -d start-django `
+  - 进入项目，并进行项目部署：`cd start-django && s deploy - y`
    
 </deploy>
 
