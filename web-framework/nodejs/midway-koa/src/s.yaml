@@ -63,6 +63,8 @@ services:
             /opt/nodejs16/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
           NODE_PATH: /opt/nodejs/node_modules
           NODE_ENV: production
+          DB_USERNAME: ${env.DB_USERNAME}
+          DB_PASSWORD: ${env.DB_PASSWORD}
         customRuntimeConfig:
           command:
             - node
