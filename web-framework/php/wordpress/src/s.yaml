@@ -61,7 +61,7 @@ services:
       #        - plugin: myplugin                               # 与运行的插件 （可以通过s cli registry search --type Plugin 获取组件列表）
       #          args:                                          # 插件的参数信息
       #            testKey: testValue
-      ost-deploy: # 在deploy之前运行
+      post-deploy: # 在deploy之前运行
         - component: fc invoke --service-name ${fc-nas-init.output.service.name} --function-name nas-init
         - component: fc ondemand put --qualifier LATEST --max 1
     props: # 组件的属性值
