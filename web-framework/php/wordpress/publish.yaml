@@ -2,7 +2,7 @@ Type: Application
 Name: start-wordpress
 Provider:
   - 阿里云
-Version: 1.2.18
+Version: 1.2.19
 Description: WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设属于自己的网站。也可以把 WordPress当作一个内容管理系统（CMS）来使用
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
