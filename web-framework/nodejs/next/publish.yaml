@@ -2,7 +2,7 @@ Type: Application
 Name: start-next
 Provider:
   - 阿里云
-Version: 1.2.23
+Version: 1.2.24
 Description: 一个 React 开发框架，Next.js 被用于数以万计的的网站和 Web 应用程序，包括许多世界上许多最大的品牌都在使用 Next.js
 HomePage: https://github.com/devsapp/start-web-framework
 Tags:
