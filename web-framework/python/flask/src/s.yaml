@@ -8,13 +8,6 @@ resources:
     component: fc3
     props:
       region: ${vars.region}
-      triggers:
-        - triggerName: httpTrigger
-          triggerType: http
-          triggerConfig:
-            authType: anonymous
-            methods:
-              - GET
       description: Serverless Devs Web Framework Function
       runtime: custom.debian10
       customRuntimeConfig:

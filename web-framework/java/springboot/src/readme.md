@@ -68,7 +68,7 @@ Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用�
     
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
   - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init start-springboot-v3 -d start-springboot-v3`
+  - 初始化项目：`s init --project start-springboot-v3 -d start-springboot-v3`
   - 进入项目，并进行项目部署：`cd start-springboot-v3 && s deploy -y`
    
 </deploy>

@@ -28,18 +28,6 @@ resources:
           path: ./code
     props:
       region: ${vars.region}
-      triggers:
-        - triggerName: httpTrigger
-          triggerType: http
-          triggerConfig:
-            authType: anonymous
-            methods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - HEAD
-              - OPTIONS
       description: Serverless Devs Web Framework Function
       runtime: custom
       memorySize: 1024
