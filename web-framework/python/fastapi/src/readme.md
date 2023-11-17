@@ -22,7 +22,7 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/python/fastapi)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/python/fastapi/src)
 
 </codeUrl>
 <preview>
@@ -98,9 +98,9 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 
 ![图片alt](https://img.alicdn.com/imgextra/i2/O1CN01SjXRdK1dMGeum9IP3_!!6000000003721-0-tps-1100-320.jpg)
 
-此时，打开案例地址，就可以进入 nginx 默认的首页：
+此时，打开案例地址，就可以进入基于 fastapi 设置的首页：
 
-![图片alt](https://img.alicdn.com/imgextra/i2/O1CN017mW97C1hOnJ5bt5X8_!!6000000004268-0-tps-1724-1186.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i2/O1CN01ZW07Ph1pbAwPFnlCh_!!6000000005378-0-tps-2296-1612.jpg)
 
 </appdetail>
 
