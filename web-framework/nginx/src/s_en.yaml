@@ -1,5 +1,5 @@
 edition: 3.0.0
-name: web-framework-app
+name: nginx-app
 access: '{{ access }}'
 vars:
   region: '{{ region }}'
