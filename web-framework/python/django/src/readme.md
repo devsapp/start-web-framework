@@ -22,7 +22,7 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/V3/web-framework/python/django)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/V3/web-framework/python/django/src)
 
 </codeUrl>
 <preview>
@@ -100,7 +100,7 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 ![图片alt](https://img.alicdn.com/imgextra/i4/O1CN019DHro51NlQYyyFzn7_!!6000000001610-0-tps-1104-322.jpg)
 
-此时，打开案例地址，就可以进入 nginx 默认的首页：
+此时，打开案例地址，就可以进入 django 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01JLsNRB1Y75S7gElqI_!!6000000003011-0-tps-1492-1122.jpg)
 
@@ -109,19 +109,6 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 ## 使用文档
 
 <usedetail id="flushContent">
-
-# 返回的地址进行测试
-
-本案例应用是一个非常简单的 Hello World 案例，部署完成之后，您可以看到系统返回给您的案例地址，例如：
-
-![图片alt](https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1644567419851_20220211081700122623.png)
-
-此时，打开案例地址，就可以看到测试的应用详情：
-
-![图片alt](https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1644567448674_20220211081728869982.png)
-
-当然，除了这样一个 Django 的 Hello World 之外，我们还有一个[基于 Django 框架的博客案例](https://github.com/devsapp/start-web-framework/tree/master/example/django-blog/src) ，可供学习和参考。
-
 </usedetail>
 
 

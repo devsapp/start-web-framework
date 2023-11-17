@@ -23,7 +23,7 @@ async def hello():
         <br/>
         <p>您也可以快速体验： <br/>
             • 下载Serverless Devs工具：npm install @serverless-devs/s<br/>
-            • 初始化项目：s init --project start-fastapi<br/>
+            • 初始化项目：s init --project start-fastapi-v3<br/>
 
             • 项目部署：s deploy<br/>
             <br/>
