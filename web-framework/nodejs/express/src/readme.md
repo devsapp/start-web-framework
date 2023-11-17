@@ -22,7 +22,7 @@
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/V3/web-framework/nodejs/express)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/V3/web-framework/nodejs/express/src)
 
 </codeUrl>
 <preview>

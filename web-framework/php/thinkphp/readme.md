@@ -22,7 +22,7 @@ ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/php/thinkphp)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/php/thinkphp/src)
 
 </codeUrl>
 <preview>

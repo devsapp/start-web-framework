@@ -22,7 +22,7 @@
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/nginx)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/blob/V3/web-framework/nginx/src)
 
 </codeUrl>
 <preview>
@@ -101,7 +101,6 @@
 此时，打开案例地址，就可以进入 nginx 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01RmhpnB1ZAa5cVZOKN_!!6000000003154-0-tps-1598-634.jpg)
-
 
 </appdetail>
 
