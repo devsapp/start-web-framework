@@ -1,5 +1,5 @@
 
-> 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、服务名、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
+> 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init --project ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
 # start-gin 帮助文档
 <p align="center" class="flex justify-center">
@@ -22,7 +22,7 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/go/gin)
+- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/V3/web-framework/go/gin/src)
 
 </codeUrl>
 <preview>
@@ -81,8 +81,8 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
     
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
   - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init start-gin -d start-gin `
-  - 进入项目，并进行项目部署：`cd start-gin && s deploy - y`
+  - 初始化项目：`s init --project start-gin -d start-gin`
+  - 进入项目，并进行项目部署：`cd start-gin && s deploy -y`
    
 </deploy>
 
@@ -96,11 +96,6 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 
 ![](http://image.editor.devsapp.cn/alibaba/xkv59yxZqA6s1Gw8vvEs.png)
 
-</appdetail>
-
-## 使用文档
-
-<usedetail id="flushContent">
 
 项目部署完成会出现系统分配的域名地址，该域名地址可作为 API 地址。
 
@@ -115,6 +110,11 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 
 ![](http://image.editor.devsapp.cn/alibaba/vdZkiv1xyrxkjGv1blr9.png)
 
+</appdetail>
+
+## 使用文档
+
+<usedetail id="flushContent">
 </usedetail>
 
 
