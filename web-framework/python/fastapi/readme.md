@@ -100,7 +100,7 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 
 此时，打开案例地址，就可以进入基于 fastapi 设置的首页：
 
-![图片alt](https://img.alicdn.com/imgextra/i2/O1CN01ZW07Ph1pbAwPFnlCh_!!6000000005378-0-tps-2296-1612.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01nQPOsI1TeSEI2TzRL_!!6000000002407-0-tps-1838-1212.jpg)
 
 </appdetail>
 
