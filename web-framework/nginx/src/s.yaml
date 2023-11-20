@@ -51,18 +51,6 @@ resources:
           - 'daemon off;'
       functionName: '{{ functionName }}'
       code: ./code
-      triggers:
-        - triggerName: httpTrigger
-          triggerType: http
-          triggerConfig:
-            authType: anonymous
-            methods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - HEAD
-              - OPTIONS
   fc3_domain_0:
     component: fc3-domain
     props:

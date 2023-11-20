@@ -37,13 +37,6 @@ resources:
         port: 9000
       functionName: '{{ functionName }}'
       code: ./code
-      triggers:
-        - triggerName: httpTrigger
-          triggerType: http
-          triggerConfig:
-            authType: anonymous
-            methods:
-              - GET
   fc3_domain_0:
     component: fc3-domain
     props:
