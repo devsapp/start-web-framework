@@ -1,5 +1,5 @@
 Type: Application
-Name: start-nest
+Name: nest-app
 Version: 1.2.25
 Provider:
   - 阿里云
