@@ -52,7 +52,7 @@ export class AppService {
             <h3>步骤一. 准备工作</h3>
             <p>具体步骤请参照 <a href="http://www.serverless-devs.com/zh-cn/docs/installed/cliinstall.html" target="_blank"> Serverless Cli 安装</a></p>
             <h3>步骤二. 初始化应用示例</h3>
-            <pre>s init start-nest</pre>
+            <pre>s init start-nest-v3</pre>
             <h3>步骤三. 一键部署</h3>
             <p>进入到项目目录，在命令行执行</p>
             <pre>s deploy</pre>
