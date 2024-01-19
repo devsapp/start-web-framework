@@ -53,5 +53,5 @@ Parameters:
     functionName:
       title: 函数名
       type: string
-      default: thinkjs
+      default: thinkjs-${default-suffix}
       description:  函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-64 之间
