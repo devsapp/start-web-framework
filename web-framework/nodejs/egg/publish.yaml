@@ -1,10 +1,13 @@
-Type: Application
-Name: start-egg
+Edition: 3.0.0
+Type: Project
+Name: start-egg-v3
 Provider:
   - 阿里云
-Version: 1.2.24
+Version: 0.0.1
 Description: 为企业级框架和应用而生（部署到Custom运行时）
 HomePage: https://github.com/devsapp/start-web-framework
+Organization: 阿里云函数计算（FC）
+Effective: Public
 Tags:
   - Web框架
   - Egg
@@ -19,7 +22,6 @@ Parameters:
   additionalProperties: false # 不允许增加其他属性
   required: # 必填项
     - region
-    - serviceName
     - functionName
   properties:
     region:
@@ -47,14 +49,8 @@ Parameters:
         - us-west-1
         - us-east-1
         - ap-south-1
-    serviceName:
-      title: 服务名
-      type: string
-      default: web-framework-${default-suffix}
-      pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
-      description: 服务名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-128 之间
     functionName:
       title: 函数名
       type: string
-      default: egg
+      default: egg-${default-suffix}
       description:  函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-64 之间
