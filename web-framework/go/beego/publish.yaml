@@ -1,10 +1,13 @@
-Type: Application
-Name: start-beego
+Edition: 3.0.0
+Type: Project
+Name: start-beego-v3
+Version: 0.0.1
 Provider:
   - 阿里云
-Version: 1.1.2
 Description: beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架。
-HomePage: https://github.com/zhaohang88/start-beego
+HomePage: https://github.com/devsapp/start-web-framework/tree/V3/web-framework/go/beego/src
+Organization: 阿里云函数计算（FC）
+Effective: Public
 Tags: 
   - Web框架
   - beego
@@ -19,7 +22,6 @@ Parameters:
   additionalProperties: false 
   required: 
     - region
-    - serviceName
     - functionName
   properties:
     region:
@@ -47,15 +49,9 @@ Parameters:
         - us-west-1
         - us-east-1
         - ap-south-1
-    serviceName:
-      title: 服务名
-      type: string
-      default: web-framework-${default-suffix}
-      pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
-      description: 服务名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-128 之间
     functionName:
       title: 函数名
       type: string
-      default: beego
+      default: beego-${default-suffix}
       pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,63}$"
       description: 函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-64 之间

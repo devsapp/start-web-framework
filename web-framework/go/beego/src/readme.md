@@ -1,16 +1,16 @@
 
-> 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、服务名、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
+> 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-beego 帮助文档
+# start-beego-v3 帮助文档
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-beego&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=start-beego-v3&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-beego" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-beego&type=packageVersion">
+  <a href="http://www.devsapp.cn/details.html?name=start-beego-v3" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-beego-v3&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-beego" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-beego&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=start-beego-v3" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=start-beego-v3&type=packageDownload">
   </a>
 </p>
 
@@ -22,7 +22,7 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
 
 <codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/devsapp/start-web-framework/tree/master/web-framework/go/beego/src)
+
 
 </codeUrl>
 <preview>
@@ -34,28 +34,17 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
 
 ## 前期准备
 
-使用该项目，您需要有开通以下服务：
+使用该项目，您需要有开通以下服务并拥有对应权限：
 
 <service>
 
 
 
-| 服务 |  备注  |
+| 服务/业务 |  权限  |
 | --- |  --- |
-| 函数计算 FC |  基于 Beego 框架的 Web 函数部署在函数计算 |
+| 函数计算 |  AliyunFCFullAccess |
 
 </service>
-
-推荐您拥有以下的产品权限 / 策略：
-<auth>
-
-
-
-| 服务/业务 |  权限 |  备注  |
-| --- |  --- |   --- |
-| 函数计算 | AliyunFCFullAccess |  创建或者更新基于 Beego 框架的 Web 函数 |
-
-</auth>
 
 <remark>
 
@@ -73,16 +62,16 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
 
 <appcenter>
    
-- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-beego) ，
-  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-beego) 该应用。
+- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-beego-v3) ，
+  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-beego-v3) 该应用。
    
 </appcenter>
 <deploy>
     
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
   - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init start-beego -d start-beego `
-  - 进入项目，并进行项目部署：`cd start-beego && s deploy - y`
+  - 初始化项目：`s init start-beego-v3 -d start-beego-v3`
+  - 进入项目，并进行项目部署：`cd start-beego-v3 && s deploy -y`
    
 </deploy>
 
@@ -94,24 +83,13 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
 
 通过本应用，您可以部署一个 Beego 框架 web 应用，效果如下：
 
-![](http://image.editor.devsapp.cn/alibaba/1vj5d8FAA5hcsjkiFA6A.png)
+![](https://img.alicdn.com/imgextra/i3/O1CN012UO6hK1zErpTfg0vY_!!6000000006683-0-tps-2546-1390.jpg)
 
 </appdetail>
 
 ## 使用文档
 
 <usedetail id="flushContent">
-
-项目部署完成会出现系统分配的域名地址，该域名地址可作为 API 地址。
-
-例如，在应用中心完成业务功能部署：
-
-![](http://image.editor.devsapp.cn/alibaba/Z3BjurkivswZtbkjyeyC.png)
-
-此时，使用浏览器打开测试域名即可：
-
-![](http://image.editor.devsapp.cn/alibaba/1vj5d8FAA5hcsjkiFA6A.png)
-
 </usedetail>
 
 
