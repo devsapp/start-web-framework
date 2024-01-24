@@ -1,14 +1,12 @@
 import web
 
-urls = (
-    '/(.*)', 'index'
-)
+urls = ("/(.*)", "index")
 
 
 class index:
     def GET(self, request):
-        web.header('content-type','text/html')
-        return '''<html xmlns="http://www.w3.org/1999/xhtml">
+        web.header("content-type", "text/html")
+        return """<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Serverless Devs - Powered By Serverless Devs</title>
@@ -23,7 +21,7 @@ class index:
         <br/>
         <p>您也可以快速体验： <br/>
             • 下载Serverless Devs工具：npm install @serverless-devs/s<br/>
-            • 初始化项目：s init start-webpy<br/>
+            • 初始化项目：s init start-webpy-v3<br/>
 
             • 项目部署：s deploy<br/>
             <br/>
@@ -33,7 +31,7 @@ class index:
 </div>
 </body>
 </html>
-'''
+"""
 
 
 if __name__ == "__main__":
