@@ -16,9 +16,13 @@ resources:
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom
+      runtime: custom.debian10
       memorySize: 512
       timeout: 6
+      layers:
+        - acs:fc:${vars.region}:official:layers/Nodejs18/versions/3
+      environmentVariables:
+        PATH: '/opt/nodejs18/bin:/bin'
       customRuntimeConfig:
         command:
           - ./bootstrap
@@ -33,6 +37,11 @@ resources:
             methods:
               - GET
               - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - HEAD
+              - OPTIONS
   fc3_domain_0:
     component: fc3-domain
     props:
