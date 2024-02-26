@@ -68,6 +68,11 @@ services:
             methods:
               - GET
               - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - HEAD
+              - OPTIONS
       customDomains:
         - domainName: auto
           protocol: HTTP
