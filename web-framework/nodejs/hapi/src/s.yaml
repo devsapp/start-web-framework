@@ -1,6 +1,6 @@
 edition: 3.0.0
 name: web-framework-app
-aaccess: '{{ access }}'
+access: '{{ access }}'
 vars:
   region: '{{ region }}'
   functionName: '{{ functionName }}'
