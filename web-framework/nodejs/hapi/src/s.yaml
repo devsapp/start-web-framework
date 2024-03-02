@@ -51,16 +51,15 @@ services:
         name: ${vars.functionName}
         description: 'Serverless Devs Web Framework Function'
         codeUri: './code'
-        runtime: custom
+        runtime: custom.debian10
         timeout: 60
         caPort: 9000
         memorySize: 1024
-        layers:
-          - acs:fc:${vars.region}:official:layers/Nodejs16/versions/1
         environmentVariables:
           PATH: >-
-            /opt/nodejs16/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
-          NODE_PATH: /opt/nodejs/node_modules
+            /opt/nodejs18/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+        layers:
+          - acs:fc:${vars.region}:official:layers/Nodejs18/versions/3
         customRuntimeConfig:
           command:
             - node
