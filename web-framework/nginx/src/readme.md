@@ -113,6 +113,3 @@
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>

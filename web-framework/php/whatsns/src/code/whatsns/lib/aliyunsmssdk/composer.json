@@ -1,5 +1,0 @@
-{
-    "require": {
-        "alibabacloud/sdk": "^1.7"
-    }
-}
