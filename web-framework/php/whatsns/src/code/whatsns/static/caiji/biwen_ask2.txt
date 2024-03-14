@@ -1,9 +1,0 @@
-﻿https://www.biask.com/sort_type-new__day-0__is_recommend-0__page-{#num}|
-.bold a|
-.Paran_box|
-.p1|
-|
-.details_top dd .aw-user-name|
-.details_top img|
-
-|币问(<a href="https://www.biask.com" target="_blank">https://www.biask.com</a>)|0

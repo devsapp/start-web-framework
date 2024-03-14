@@ -3,11 +3,10 @@
 <p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
 
 ### custom runtime
-- [Midway-Koa](./midway-koa/src)
 - [Egg](./egg/src)
 - [Express](./express/src)
 - [Hapi](./hapi/src)
 - [Koa](./koa/src)
 - [Next](./next/src)
-- [nuxt](./nuxt-ssr/src)
+- [nuxt](./nuxt/src)
 - [thinkjs](./thinkjs/src)
