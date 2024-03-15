@@ -1,11 +1,5 @@
 # ------------------------------------
-#   If you need English case, you can refer to [s_en.yaml] file
-# ------------------------------------
-#   欢迎您使用阿里云函数计算 FC 组件进行项目开发
-#   组件仓库地址：https://github.com/devsapp/fc3
-#   组件帮助文档：https://docs.serverless-devs.com/fc3/readme
-#   Yaml参考文档：https://docs.serverless-devs.com/fc3/yaml/readme
-#   常见小贴士可以参考文档：https://docs.serverless-devs.com/fc3/tips
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
 #   有问题快来钉钉群问一下吧：33947367
 # ------------------------------------
 
