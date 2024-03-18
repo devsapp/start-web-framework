@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - V3
 env:
   REGISTRY_TOKEN:  ${{secrets.ALIBABA_REGISTRY_V3_PUBLISH_TOKEN}} 
 
