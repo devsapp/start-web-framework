@@ -2,7 +2,7 @@
 
 ![图片alt](https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1638188430695_20211129122031251935.png)
 
-> 注意，如果您使用函数计算2.0，请切换到 V2 分支
+> 注意，如果您使用函数计算2.0，请切换到 V2 分支。
 
 <p align="center"><b> 中文 | <a href="./readme_en.md"> English </a>  </b></p>
 
