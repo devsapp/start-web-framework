@@ -16,7 +16,7 @@
 
 <description>
 
-Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权
+本案例将Flask框架，这一非常受欢迎的Python Web框架，快捷创建并部署到阿里云函数计算 FC。
 
 </description>
 
@@ -40,9 +40,9 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,16 +75,27 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 Python Web 框架中，非常受欢迎的 Flask 框架，部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例将Flask框架，这一非常受欢迎的Python Web框架，快捷创建并部署到阿里云函数计算 FC。
 
-> Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。
+Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+该框架全网下载量超过四千万次，在github上获得了超过6w star，是最为主流的Python Web应用框架之一。
 
+该框架特别适用于小型、简单的Web应用或API开发。对于这类项目，Flask的简洁性和易用性使得开发过程更加高效和快速。开发者可以利用Flask的核心组件快速搭建起项目的基本框架，并通过扩展库来增加额外的功能。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Flask 框架，并享受Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 本案例应用是一个非常简单的 Hello World 案例，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
 ![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01TRmXgG1DmD5FlW8Lv_!!6000000000258-0-tps-1072-326.jpg)
@@ -93,12 +104,15 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN018qgtEE1aw2kepgdpg_!!6000000003393-0-tps-1608-1286.jpg)
 
-</appdetail>
+### 二次开发
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-flask-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
 
-## 使用文档
-
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -115,6 +129,3 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>

@@ -16,7 +16,7 @@
 
 <description>
 
-快速部署 nginx 到函数计算
+本案例快速部署一个 Nignx 项目到阿里云函数计算 FC。
 
 </description>
 
@@ -40,9 +40,9 @@
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,14 +75,25 @@
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 nginx 部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例快速部署一个 Nignx 项目到阿里云函数计算 FC。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+Nginx的流行程度非常高，是全球范围内广泛使用的Web服务器和反向代理服务器。它的高性能、稳定性、丰富的功能、易用性，使得它在Web开发领域得到了广泛的应用，无论是大型网站还是小型应用，都可以看到Nginx的身影。此外，Nginx还在CDN、API网关、实时通信等领域发挥着重要作用。
 
+Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。最初由俄罗斯人Igor Sysoev开发并公开源代码，供广大用户使用。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Nginx，并享受 Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 部署完成之后，您可以看到系统返回给您的案例地址, 如图:
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01n1xyJM1Jor405clzC_!!6000000001076-0-tps-1056-330.jpg)
@@ -91,12 +102,16 @@
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01RmhpnB1ZAa5cVZOKN_!!6000000003154-0-tps-1598-634.jpg)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-nginx-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>

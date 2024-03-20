@@ -38,4 +38,4 @@ resources:
       routeConfig:
         routes:
           - path: /*
-            functionName: '{{ functionName }}'
+            functionName: ${resources.framework.props.functionName}
