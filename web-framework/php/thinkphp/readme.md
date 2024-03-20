@@ -16,7 +16,7 @@
 
 <description>
 
-ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生的开源轻量级PHP框架
+本案例将 ThinkPHP 框架，这一款非常流行的web应用开发框架，快速创建部署到阿里云函数计算 FC 。
 
 </description>
 
@@ -40,9 +40,9 @@ ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,13 +75,27 @@ ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将非常流行的开发框架 ThinkPHP 部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例将 ThinkPHP 框架，这一款非常流行的web应用开发框架，快速创建部署到阿里云函数计算 FC 。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+ThinkPHP是一个使用纯PHP开发，面向对象和面向过程的优秀安全敏捷的web应用框架，旨在简化企业级应用开发和敏捷web应用开发。它遵循MVC分层开发模式和单一入口等简洁规范的思想，并且内置了大量的开发模块和常用功能，以便开发者能够快速构建web应用程序。
+
+ThinkPHP是一个非常流行的PHP开发框架，在web开发领域有着广泛的应用。其流行程度主要得益于其出色的性能、易用性、功能丰富性以及强大的社区支持。
+
+ThinkPHP适用于各种规模的项目开发，特别是中大型项目。由于其具有丰富的功能和易用的操作方法，ThinkPHP特别适合构建需要复杂业务逻辑和数据库操作的应用程序。无论是企业级应用、网站开发还是API接口开发，ThinkPHP都能提供高效、稳定的解决方案。ThinkPHP还具有良好的跨平台性，支持多种服务器环境和数据库，这使得开发者可以根据项目需求灵活选择技术栈。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 ThinkPHP 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 
 部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
@@ -91,12 +105,16 @@ ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生
 
 ![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01sJoYbl1gMDSbmIVzC_!!6000000004127-0-tps-1548-934.jpg)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-thinkphp-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -113,6 +131,3 @@ ThinkPHP，是为了简化企业级应用开发和敏捷WEB应用开发而诞生
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>

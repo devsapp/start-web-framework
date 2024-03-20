@@ -1,10 +1,10 @@
 Edition: 3.0.0
 Type: Project
 Name: start-laravel-v3
-Version: 0.0.1
+Version: 0.0.2
 Provider:
   - 阿里云
-Description: Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)
+Description: 本案例是将非常流行的基于PHP编程语言的开发框架 Laravel 快速部署到阿里云函数计算 FC。
 HomePage: https://github.com/devsapp/start-web-framework
 Organization: 阿里云函数计算（FC）
 Effective: Public

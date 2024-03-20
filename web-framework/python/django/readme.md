@@ -16,7 +16,7 @@
 
 <description>
 
-Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式，即模型M，视图V和模版T
+本案例是将 Python Web 框架中，非常受欢迎的 Django 框架，快速创建并部署到阿里云函数计算 FC。
 
 </description>
 
@@ -40,9 +40,9 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,16 +75,27 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 Python Web 框架中，非常受欢迎的 Django 框架，部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例是将 Python Web 框架中，非常受欢迎的 Django 框架，快速创建并部署到阿里云函数计算 FC。
 
-> Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式，即模型M，视图V和模版T。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的吉普赛爵士吉他手Django Reinhardt来命名的。2019年12月2日，Django 3. 0发布
+Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式，即模型M，视图V和模版T。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的吉普赛爵士吉他手Django Reinhardt来命名的。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+Django凭借其强大的功能和易用性，赢得了全球大量开发者的青睐。其优势包括开发效率高、生态完善，并且有官方社区长期支持。Django不仅适合大型公司使用，也适合个人开发者进行项目开发，因此它在各种规模和类型的项目中都有广泛的应用。主要适用于Web应用开发、API服务、数据分析平台、以及后台管理系统等。
 
+Django还具有高度的安全性，包括防止常见的Web攻击、CSRF保护、XSS预防等，有助于开发相对安全的Web应用。同时，其可扩展性也支持模块化开发和可插拔的应用，使得系统易于扩展和维护。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Django 框架，并享受Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 部署完成之后，您可以看到系统返回给您的案例地址, 如图:
 
 ![图片alt](https://img.alicdn.com/imgextra/i4/O1CN019DHro51NlQYyyFzn7_!!6000000001610-0-tps-1104-322.jpg)
@@ -93,12 +104,16 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 
 ![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01dS1RL71CEUJCVIj2I_!!6000000000049-0-tps-1814-1278.jpg)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-django-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -115,6 +130,3 @@ Django是一个开放源代码的Web应用框架，由Python写成。采用了MT
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>
