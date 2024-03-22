@@ -40,9 +40,9 @@ Nest (NestJS) 是一个用于构建高效、可扩展的 Node.js 服务器端应
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,21 +75,44 @@ Nest (NestJS) 是一个用于构建高效、可扩展的 Node.js 服务器端应
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本应用仅作为学习和参考使用，您可以基于本项目进行二次开发和完善，实现自己的业务逻辑
+本案例 Nest.js ，这一灵活的 Node.js 框架，快速创建并部署到阿里云函数计算 FC 。
 
-### 项目截图
-<img src="https://img.alicdn.com/imgextra/i1/O1CN01wCeC0D238EYKSZW3J_!!6000000007210-0-tps-2518-1454.jpg" >
+NestJS 旨在为开发者提供构建高效、可维护和可扩展Web应用程序的工具。使用 TypeScript 作为主要语言，NestJS 提供了严格的类型检查，极大地提高了代码的质量和可维护性。它的架构灵感来源于 Angular，采用了模块化和面向切面编程的概念，从而使得代码组织结构清晰，且易于测试。
+
+在GitHub上，NestJS 凭借其一致性、可扩展性和集成了现代技术的特点，赢得了大量的 stars (63.5k) 和一个活跃的开发社区。世界各地的开发者和许多公司都在采用 NestJS 来构建他们的后端服务，特别是当需要一个结构化、维护性强的解决方案时。
+
+NestJS 的一个突出特点是它的模块化系统，允许将应用程序划分为多个模块，每个模块都专注于特定的任务或功能区域。这有助于保持代码的整洁和组织，同时也方便在团队中协作。框架同时支持依赖注入，这使得每个部分都能够轻松地测试和模拟。
+
+结合 Serverless 开发平台，NestJS 可以在无服务器环境中运行，这让开发者能够专注于编写业务逻辑，而无需处理服务器的配置和管理。Serverless 开发平台的自动扩展功能意味着应用程序可以根据需求动态调整资源，这为处理不可预见的流量提供了灵活性，并且可能会降低运营成本。
 
 </appdetail>
 
-## 使用文档
+## 使用流程
 
 <usedetail id="flushContent">
+
+### 查看部署的应用
+本项目案例是 nest 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://img.alicdn.com/imgextra/i2/O1CN01B5lXdl1cdqHT3P8ps_!!6000000003624-0-tps-1272-342.jpg)
+
+此时，打开案例地址，就可以进入 nest 默认的首页：
+
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01wCeC0D238EYKSZW3J_!!6000000007210-0-tps-2518-1454.jpg)
+
+### 二次开发
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-nest-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
+
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>

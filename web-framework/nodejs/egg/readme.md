@@ -40,9 +40,9 @@
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,21 +75,42 @@
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本应用仅作为学习和参考使用，您可以基于本项目进行二次开发和完善，实现自己的业务逻辑
+本案例将Egg.js，这一被开发者广泛使用的企业级 Node.js 框架，快速创建并部署到阿里云函数计算 FC 。
 
-### 项目截图
-<img src="https://img.alicdn.com/imgextra/i1/O1CN01D62QIp1pzRxBLab8V_!!6000000005431-0-tps-2526-1502.jpg">
+Egg.js 的设计哲学强调约定优于配置，以及一致的开发规范，从而使得团队协作变得更加顺畅。它的插件体系和完善的文档允许开发者快速构建 RESTful API、Web 应用服务器、微服务架构，以及处理各种网络协议的后端服务。Egg.js 的高度扩展性还意味着它可以与现代前端技术栈无缝集成，比如 React、Vue、Angular 等。
+
+该框架在业界获得了显著的认可，其 GitHub 仓库拥有 18.8k star，得到了包括阿里巴巴、腾讯等知名企业的青睐和采用。凭借 Egg.js，开发者可以专注于业务逻辑的实现，而将安全性、稳定性和可维护性交由框架来保障。
+
+利用 Egg.js 构建的服务端应用，当部署在 Serverless 开发平台上时，将能够享受到更高效的资源利用率和弹性伸缩的能力。Serverless 架构可以极大地减少运维负担，开发者无需担心底层服务器的配置和管理，能够迅速响应市场需求，推出新功能。Egg.js 与 Serverless 开发平台的结合，为企业带来了敏捷开发的同时，也保证了长期的项目可维护性和稳定性。
 
 </appdetail>
 
-## 使用文档
+## 使用流程
 
 <usedetail id="flushContent">
+
+### 查看部署的应用
+本项目案例是 egg 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01T9BLMX22ux5PZbryb_!!6000000007181-0-tps-1220-350.jpg)
+
+此时，打开案例地址，就可以看到测试的应用详情：
+
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01D62QIp1pzRxBLab8V_!!6000000005431-0-tps-2526-1502.jpg)
+
+### 二次开发
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-egg-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
+
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>

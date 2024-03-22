@@ -40,9 +40,9 @@
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,22 +75,44 @@
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本应用仅作为学习和参考使用，您可以基于本项目进行二次开发和完善，实现自己的业务逻辑
+本案例将 Next.js ，这一功能强大的 React 框架，快速创建并部署到阿里云函数计算 FC 。
 
-### 项目截图
+Next.js 是一个功能强大的 React 框架，专为开发高性能页面和应用而设计。通过集成了服务器端渲染（SSR）和静态站点生成（SSG），Next.js 能够提高首屏加载速度，优化搜索引擎可见性，从而为用户提供更加流畅的浏览体验。同时，它保持了React开发的灵活性和组件化的优势，使得开发者能够快速构建丰富的交互式用户界面。
 
-<img src="https://img.alicdn.com/imgextra/i1/O1CN01PYytWv1Duud5spdd5_!!6000000000277-0-tps-2552-1422.jpg" >
+在GitHub上，Next.js 凭借它直观的页面路由系统、自动的代码拆分、内置的CSS支持，以及对API路由的原生支持等特点，赢得了大量的 stars 和开发者社区的广泛支持。许多初创公司和大型企业都选择Next.js来构建他们的前端项目，因为它提供了快速开发、高度优化和易于部署的解决方案。
+
+Next.js 的设计理念之一是“约定优于配置”，这意味着开发者可以通过简单的文件和目录结构来设置路由，而无需复杂的路由配置。此外，Next.js 的 API 路由功能允许开发者轻松创建无服务器函数，为应用程序提供后端逻辑和API端点。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Next 框架，并享受 Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
-## 使用文档
+## 使用流程
 
 <usedetail id="flushContent">
+
+### 查看部署的应用
+本项目案例是 next 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01PdwCpN1T71M7dKBdl_!!6000000002334-0-tps-1124-328.jpg)
+
+此时，打开案例地址，就可以进入 next 默认的首页：
+
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01PYytWv1Duud5spdd5_!!6000000000277-0-tps-2552-1422.jpg)
+
+### 二次开发
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-next-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
+
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
