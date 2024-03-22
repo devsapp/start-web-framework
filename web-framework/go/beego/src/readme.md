@@ -16,7 +16,7 @@
 
 <description>
 
-beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架。
+本案例是将 Beego web 框架，快速搭建部署到阿里云函数计算 FC 。
 
 </description>
 
@@ -40,9 +40,9 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,22 +75,42 @@ beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架�
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 Beego web 框架部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例是将 Beego ，这一快速开发Go应用的 web 框架，快速搭建部署到阿里云函数计算 FC 。
 
-通过本应用，您可以部署一个 Beego 框架 web 应用，效果如下：
+Beego是一个快速开发Go应用的http框架，它旨在简化Web应用、API以及后端服务的开发过程。这个框架的主要设计灵感来源于tornado、sinatra和flask，同时结合了Go语言本身的一些特性，如interface和struct继承等。
 
-![](https://img.alicdn.com/imgextra/i3/O1CN012UO6hK1zErpTfg0vY_!!6000000006683-0-tps-2546-1390.jpg)
+Beego的流行程度在Go语言的Web开发领域中是相当高的。作为一款基于Go语言的高性能Web应用框架，Beego因其简单易用、功能丰富以及性能优越等特点而备受欢迎。它在社区中的活跃度和开发者支持度都很高，这使得Beego成为许多Go语言开发者的首选框架之一。
+
+Beego具有广泛的应用范围。它适用于构建各种类型的Web应用，包括企业级应用、电商网站、博客系统、RESTful API等。Beego的MVC模式使得代码结构清晰，易于维护和扩展，这对于大型项目的开发尤为重要。同时，Beego也支持构建微服务架构的Web应用，通过拆分功能模块为独立的服务，实现高内聚、低耦合的架构设计。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Beego 框架，并享受 Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
-## 使用文档
+## 使用流程
 
 <usedetail id="flushContent">
+
+### 查看部署的案例
+
+通过本案例，您可以部署一个 Beego 框架 web 应用，效果如下：
+
+![](https://img.alicdn.com/imgextra/i3/O1CN012UO6hK1zErpTfg0vY_!!6000000006683-0-tps-2546-1390.jpg)
+
+### 二次开发
+
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-beego-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
+
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>

@@ -1,10 +1,10 @@
 Edition: 3.0.0
 Type: Project
 Name: start-beego-v3
-Version: 0.0.1
+Version: 0.0.2  
 Provider:
   - 阿里云
-Description: beego 是一个使用 Go 语言来开发的高效率的 web 应用开发框架。
+Description: 本案例是将 Beego ，这一快速开发Go应用的 web 框架，快速搭建部署到阿里云函数计算 FC 。
 HomePage: https://github.com/devsapp/start-web-framework/tree/V3/web-framework/go/beego/src
 Organization: 阿里云函数计算（FC）
 Effective: Public
