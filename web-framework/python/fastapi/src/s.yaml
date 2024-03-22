@@ -10,7 +10,8 @@ vars:
   region: '{{ region }}'
 resources:
   framework: 
-    component: fc3 
+    component: fc3
+    actions: 
       pre-deploy: 
         - run: >-
             export PATH=/usr/local/envs/py310/bin:$PATH && pip3 install -r
@@ -41,4 +42,4 @@ resources:
       routeConfig:
         routes:
           - path: /*
-            functionName: '{{ functionName }}'
+            functionName: ${resources.framework.props.functionName}

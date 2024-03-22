@@ -16,7 +16,7 @@
 
 <description>
 
-基于 Node.js 平台，快速、开放、极简的 Web 开发框架（部署到Custom运行时）
+本案例是将 Express 框架，这一基于 Node.js 平台的极简且灵活的 web 应用开发框架，快速创建并部署到阿里云函数计算 FC 。
 
 </description>
 
@@ -40,9 +40,9 @@
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,13 +75,27 @@
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 express 部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例是将 Express 框架，这一基于 Node.js 平台的极简且灵活的 web 应用开发框架，快速创建并部署到阿里云函数计算 FC 。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+Express 提供了一系列强大的特性用于开发 web 和移动应用。Express 框架遵循了 MVC（模型-视图-控制器）架构模式，使得开发过程更加清晰和易于管理。
+
+Express 框架具有许多优点，提供了路由管理、中间件支持、模板引擎，是一个高度可扩展的框架，开发者可以通过添加第三方中间件和库来扩展其功能，使得 Express 可以适应各种复杂的 web 应用需求。
+
+由于 Express 是基于 Node.js 的，因此它可以充分利用 Node.js 的非阻塞 I/O 模型和事件驱动机制，实现高性能的 web 应用。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Express 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 
 部署完成之后，您可以看到系统返回给您的案例地址, 如图:
 
@@ -91,12 +105,16 @@
 
 ![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01Dinmp01HHlDIadmsw_!!6000000000733-0-tps-2286-1660.jpg)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-express-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -113,6 +131,3 @@
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>

@@ -16,7 +16,7 @@
 
 <description>
 
-FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 Python 语言编写
+本案例是将 fastapi 框架，快速创建部署到阿里云函数计算 FC 。
 
 </description>
 
@@ -40,9 +40,9 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,13 +75,29 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 fastapi 部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例是将 fastapi 框架，这一快速且高效的Web框架，快速创建部署到阿里云函数计算 FC 。
 
-通过 Serverless Devs 开发者工具，您只需要几步，就可以体验 Serverless 架构，带来的降本提效的技术红利。
+FastAPI是一个现代、快速且高效的Web框架，用于构建基于Python的API。它建立在Starlette和Pydantic之上，并利用了Python的异步生态系统，提供了出色的性能和吞吐量。FastAPI的主要特点包括：快速高效、自动文档生成、数据验证和转换、类型注解支持。
+
+FastAPI适用于构建RESTful API、微服务架构、数据处理API以及实时通信等场景。它支持前后端分离的Web应用，快速开发和部署微服务，处理数据并接收和返回JSON数据，以及支持WebSocket实现实时通信。
+
+FastAPI的灵活性使得它能够满足不同项目的需求。例如，对于需要快速迭代和构建高性能API的项目，FastAPI提供了快速编码和减少错误的功能，使得开发者能够更高效地完成开发任务。同时，FastAPI也支持构建微服务和云应用，为开发者提供了更多的选择和可能性。
+
+FastAPI还提供了出色的编辑器支持和自动交互式文档功能，这进一步简化了开发过程并提高了开发效率。开发者可以利用这些功能快速定位问题、调试代码，并生成清晰的API文档，方便与其他团队成员协作和沟通。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 fastapi 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
 
 部署完成之后，您可以看到系统返回给您的案例地址, 如图:
 
@@ -91,12 +107,16 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 
 ![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01KcFj1P1xggdLYuCWH_!!6000000006473-0-tps-1666-1318.jpg)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-fastapi-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -113,6 +133,3 @@ FastAPI是一个现代、快速（高性能）的 Web 框架，基于标准的 P
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>

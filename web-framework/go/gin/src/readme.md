@@ -16,7 +16,7 @@
 
 <description>
 
-Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能极高。
+本案例是将 Gin ，这一非常受欢迎的 web 框架，快速创建并部署到阿里云函数计算 FC 。
 
 </description>
 
@@ -40,9 +40,9 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,20 +75,34 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
-本项目是将 Gin  web 框架部署到阿里云 Serverless 平台（函数计算 FC）。
+本案例是将 Gin ，这一非常受欢迎的 web 框架，快速创建并部署到阿里云函数计算 FC 。
 
-通过本应用，您可以部署一个 Gin 框架web应用，效果如下：
+Gin在Go语言的Web开发社区中非常受欢迎，并且拥有大量的用户和贡献者。它的简洁性、性能和灵活性使得它成为许多Go语言开发者的首选框架。Gin在GitHub等代码托管平台上的star数和fork数都很高，这表明了它的广泛使用和影响力。
+
+Gin框架的应用场景非常广泛，如：RESTful API开发、Web服务开发、微服务架构、实时通信等。它的高性能、简洁易用和灵活扩展等特点使得它成为Go语言开发者的优选之一。
+
+通过 Serverless 开发平台，您只需要几步，就可以体验 Gin 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+
+</appdetail>
+
+## 使用流程
+
+<usedetail id="flushContent">
+
+### 查看部署的案例
+
+通过本案例，您可以部署一个 Gin 框架web应用，效果如下：
 
 ![](http://image.editor.devsapp.cn/alibaba/xkv59yxZqA6s1Gw8vvEs.png)
 
 
 项目部署完成会出现系统分配的域名地址，该域名地址可作为 API 地址。
 
-例如，在应用中心完成业务功能部署：
+例如，在控制台完成业务功能部署：
 
 ![](http://image.editor.devsapp.cn/alibaba/Z6xiav5SZgEG5i22khhg.png)
 
@@ -99,12 +113,16 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 
 ![](http://image.editor.devsapp.cn/alibaba/vdZkiv1xyrxkjGv1blr9.png)
 
-</appdetail>
+### 二次开发
 
-## 使用文档
+您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-gin-v3`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
 
-<usedetail id="flushContent">
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
@@ -121,6 +139,3 @@ Gin 是使用 Go/golang 语言实现的 HTTP Web 框架。接口简洁，性能�
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
 </p>
 </devgroup>
-
-<testEvent>
-</testEvent>
