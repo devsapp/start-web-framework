@@ -40,9 +40,9 @@ ThinkJS 是一款面向未来开发的 Node.js 框架，整合了大量的项目
 
 
 
-| 服务/业务 |  权限  |
-| --- |  --- |
-| 函数计算 |  AliyunFCFullAccess |
+| 服务/业务 |  权限  | 相关文档 |
+| --- |  --- | --- |
+| 函数计算 |  AliyunFCFullAccess | [帮助文档](https://help.aliyun.com/product/2508973.html) [计费文档](https://help.aliyun.com/document_detail/2512928.html) |
 
 </service>
 
@@ -75,23 +75,44 @@ ThinkJS 是一款面向未来开发的 Node.js 框架，整合了大量的项目
    
 </deploy>
 
-## 应用详情
+## 案例介绍
 
 <appdetail id="flushContent">
 
+本案例将ThinkJS，这一高效的Node.js 框架，快速创建并部署到阿里云函数计算 FC 。
 
-本应用仅作为学习和参考使用，您可以基于本项目进行二次开发和完善，实现自己的业务逻辑
+ThinkJS 是一个高效的 Node.js 框架，专为企业级用户和快速开发的现代网络应用程序设计。它采用了全新的 ES6/7 语法，支持 async/await 避免了回调地狱，提供了更优雅的异步代码编写方式。它的 MVC 模式让应用逻辑清晰分层，同时它的自动化工具和组件化支持显著提高了开发效率。
 
-## 项目截图
+在 GitHub 上，ThinkJS 以其稳定性和前瞻性特性赢得了开发者的青睐，拥有一定数量的 stars。它是由国内开发者团队维护的，因此在国内社区中有着不错的知名度和使用基础。很多中国开发者和公司选择 ThinkJS 作为他们的后端解决方案，特别适用于追求快速开发节奏和期望使用最新JavaScript功能的团队。
 
-<img src="https://img.alicdn.com/imgextra/i3/O1CN01Tf3ApY1Unu2JwOrXp_!!6000000002563-0-tps-2990-1510.jpg" >
+ThinkJS 的另一个特点是其插件系统，开发者可以很容易地添加新功能或者在现有功能上进行定制。此外，它还提供了一个强大的 CLI 工具，可以帮助开发者生成项目骨架、创建控制器、模型等，进一步加速开发流程。
+
+将 ThinkJS 应用部署在 Serverless 开发平台上，可以帮助开发团队减少关于服务器配置和维护的烦恼，使他们能够更专注于业务逻辑的实现。Serverless 环境还可以根据应用负载自动调整资源，从而提高应用的伸缩性能和成本效率。
 
 </appdetail>
 
-## 使用文档
+## 使用流程
 
 <usedetail id="flushContent">
+
+### 查看部署的应用
+本项目案例是 thinkjs 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01LEAovF1hqH6udRWqY_!!6000000004328-0-tps-1160-330.jpg)
+
+此时，打开案例地址，就可以进入 thinkjs 默认的首页：
+
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01Tf3ApY1Unu2JwOrXp_!!6000000002563-0-tps-2990-1510.jpg)
+
+### 二次开发
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-thinkjs-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
+
 </usedetail>
+
+## 注意事项
+
+<matters id="flushContent">
+</matters>
 
 
 <devgroup>
