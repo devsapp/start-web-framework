@@ -13,7 +13,7 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install --production --registry=https://registry.npmmirror.com
+        - run: npm install --production
           path: ./code
     props:
       region: ${vars.region}

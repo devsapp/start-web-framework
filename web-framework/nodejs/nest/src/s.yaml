@@ -9,7 +9,7 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install --registry=https://registry.npmmirror.com
+        - run: npm install
           path: ./code
         - run: npm run build
           path: ./code
