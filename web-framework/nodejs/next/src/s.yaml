@@ -9,31 +9,21 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install --production --registry=https://registry.npmmirror.com
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --registry=https://registry.npmmirror.com 
+          path: ./code 
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./code
-        - run: npm run build
-          path: ./code
-        - run: cp -r public .next/standalone/public
-          path: ./code
-        - run: mv static standalone/.next/static
-          path: ./code/.next
+        - plugin: website-plugin-v3
+          args:
+            port: 80            # 监听端口, http 为 80, https 为 443
+            dist: /code/out    # build 后生成的代码目录, 以根目录文件夹名称作为绝对路径
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom
+      runtime: custom.debian10
       timeout: 60
-      layers:
-        - acs:fc:${vars.region}:official:layers/Nodejs16/versions/1
-      environmentVariables:
-        PATH: >-
-          /opt/nodejs16/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
-      customRuntimeConfig:
-        command:
-          - node
-          - server.js
-        port: 3000
       functionName: ${vars.functionName}
-      code: ./code/.next/standalone
+      code: ./code
       triggers:
         - triggerName: httpTrigger
           triggerType: http
