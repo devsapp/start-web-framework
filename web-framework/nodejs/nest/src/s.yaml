@@ -9,9 +9,9 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install --registry=https://registry.npmmirror.com
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
           path: ./code
-        - run: npm run build
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./code
     props:
       region: ${vars.region}
@@ -20,9 +20,10 @@ resources:
       memorySize: 512
       timeout: 6
       layers:
-        - acs:fc:${vars.region}:official:layers/Nodejs18/versions/3
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
       environmentVariables:
-        PATH: '/opt/nodejs18/bin:/bin'
+        PATH: >-
+          /opt/nodejs20/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
       customRuntimeConfig:
         command:
           - ./bootstrap
