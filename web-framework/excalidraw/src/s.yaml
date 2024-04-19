@@ -1,0 +1,33 @@
+edition: 3.0.0
+name: web-framework-app
+access: '{{ access }}'
+vars:
+  region: '{{ region }}'
+  functionName: '{{ functionName }}'
+resources:
+  framework:
+    component: fc3
+    actions:
+      pre-deploy:
+        - plugin: website-plugin-v3
+          args:
+            port: 80
+            dist: /code/examples/excalidraw/with-script-in-browser/dist
+    props:
+      region: ${vars.region}
+      description: Serverless Devs Web Framework Function
+      runtime: custom
+      timeout: 60
+      functionName: ${vars.functionName}
+      code: ./code
+
+  fc3_domain_0:
+    component: fc3-domain
+    props:
+      region: ${vars.region}
+      domainName: auto
+      protocol: HTTP
+      routeConfig:
+        routes:
+          - path: /*
+            functionName: ${vars.functionName}
