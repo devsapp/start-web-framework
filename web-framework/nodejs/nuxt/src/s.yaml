@@ -10,9 +10,9 @@ resources:
     actions:
       # CICD 阶段执行构建，且声明 node18 版本
       pre-deploy:
-        - run: export PATH=/usr/local/versions/node/v18.14.2/bin:$PATH && npm install --production
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --production
           path: ./code
-        - run: export PATH=/usr/local/versions/node/v18.14.2/bin:$PATH && npm run build
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./code
     props:
       region: ${vars.region}
@@ -20,10 +20,10 @@ resources:
       runtime: custom.debian10
       # 注入 运行时环境:nodejs18 layer，详细可见 https://github.com/awesome-fc/awesome-layers/blob/main/docs/Nodejs18/README.md
       layers:
-        - acs:fc:${vars.region}:official:layers/Nodejs18/versions/3
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
       environmentVariables:
         PATH: >-
-          /opt/nodejs18/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+          /opt/nodejs20/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
       timeout: 60
       customRuntimeConfig:
         command:

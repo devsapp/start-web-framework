@@ -9,7 +9,7 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --registry=https://registry.npmmirror.com 
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
           path: ./code 
         - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./code

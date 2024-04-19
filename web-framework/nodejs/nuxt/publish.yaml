@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-nuxt-v3
-Version: 0.0.8
+Version: 0.0.9
 Provider:
   - 阿里云
 Description: 本案例将 Nuxt.js ，这一在前端开发者社区中非常流行的web框架，快速创建并部署到阿里云函数计算 FC 。

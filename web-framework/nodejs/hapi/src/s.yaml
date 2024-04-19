@@ -9,19 +9,19 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install --production --registry=https://registry.npmmirror.com
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --production 
           path: ./code
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom
+      runtime: custom.debian10
       timeout: 60
       memorySize: 1024
       layers:
-        - acs:fc:${vars.region}:official:layers/Nodejs16/versions/1
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
       environmentVariables:
         PATH: >-
-          /opt/nodejs16/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+          /opt/nodejs20/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
         NODE_PATH: /opt/nodejs/node_modules
       customRuntimeConfig:
         command:
