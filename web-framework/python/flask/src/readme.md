@@ -102,7 +102,7 @@ Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工�
 
 此时，打开案例地址，就可以看到测试的应用详情：
 
-![图片alt](https://img.alicdn.com/imgextra/i3/O1CN018qgtEE1aw2kepgdpg_!!6000000003393-0-tps-1608-1286.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01WUPmli1j20tgwId81_!!6000000004489-0-tps-1232-514.jpg)
 
 ### 二次开发
 您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-flask-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
