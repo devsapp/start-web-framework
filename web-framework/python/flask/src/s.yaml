@@ -5,14 +5,18 @@
 
 edition: 3.0.0
 name: flask-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 resources:
-  framework: 
-    component: fc3 
-    props: 
-      region: ${vars.region} 
+  framework:
+    component: fc3
+    actions:
+      pre-deploy:
+        - run: pip install -t . -r requirements.txt
+          path: ./code
+    props:
+      region: ${vars.region}
       description: Serverless Devs Web Framework Function
       runtime: custom.debian10
       customRuntimeConfig:
@@ -21,10 +25,12 @@ resources:
           - index.py
         port: 9000
       environmentVariables:
-        PYTHONPATH: /opt/python
+        PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
+        PYTHONPATH: /opt/python:/code
+        TZ: Asia/Shanghai
       instanceConcurrency: 100
       timeout: 60
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
