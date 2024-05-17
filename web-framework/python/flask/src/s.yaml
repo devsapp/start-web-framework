@@ -13,7 +13,9 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: pip install -t . -r requirements.txt
+        - run: mkdir extra-packages
+          path: ./code
+        - run: pip install -r requirements.txt -t ./extra-packages
           path: ./code
     props:
       region: ${vars.region}
@@ -26,7 +28,7 @@ resources:
         port: 9000
       environmentVariables:
         PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
-        PYTHONPATH: /opt/python:/code
+        PYTHONPATH: /opt/python:/code/extra-packages:/code
         TZ: Asia/Shanghai
       instanceConcurrency: 100
       timeout: 60
