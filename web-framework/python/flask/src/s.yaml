@@ -36,6 +36,17 @@ resources:
       code: ./code
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            authType: anonymous
+
   fc3_domain_0:
     component: fc3-domain
     props:
