@@ -5,9 +5,9 @@
 
 edition: 3.0.0
 name: express-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 resources:
   framework:
     component: fc3
@@ -27,9 +27,10 @@ resources:
           /opt/nodejs20/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
       customRuntimeConfig:
         command:
-          - ./bootstrap
+          - node
+          - ./index.js
         port: 9000
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
   fc3_domain_0:
     component: fc3-domain
