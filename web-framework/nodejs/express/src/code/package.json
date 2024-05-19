@@ -1,14 +1,8 @@
 {
-  "name": "app-express",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "nodejs-express",
+  "version": "0.0.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.19.2"
   }
 }
