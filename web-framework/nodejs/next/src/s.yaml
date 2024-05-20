@@ -1,36 +1,53 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
 edition: 3.0.0
-name: web-framework-app
-access: '{{ access }}'
+name: express-app
+access: "{{ access }}"
 vars:
-  region: '{{ region }}'
-  functionName: '{{ functionName }}'
+  region: "{{ region }}"
 resources:
   framework:
     component: fc3
     actions:
       pre-deploy:
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
-          path: ./code 
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --production
+          path: ./code
         - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./code
-        - plugin: website-plugin-v3
-          args:
-            port: 80            # 监听端口, http 为 80, https 为 443
-            dist: /code/out    # build 后生成的代码目录, 以根目录文件夹名称作为绝对路径
+        - run: cp -r public .next/standalone/public
+          path: ./code
+        - run: cp -r static standalone/.next/static
+          path: ./code/.next
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
       runtime: custom.debian10
       timeout: 60
-      functionName: ${vars.functionName}
-      code: ./code
+      layers:
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
+      environmentVariables:
+        PATH: >-
+          /opt/nodejs20/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
+      customRuntimeConfig:
+        command:
+          - node
+          - ./server.js
+        port: 3000
+      functionName: "{{ functionName }}"
+      code: ./code/.next/standalone
       triggers:
         - triggerName: httpTrigger
           triggerType: http
           triggerConfig:
-            authType: anonymous
             methods:
               - GET
+              - POST
+              - PUT
+              - DELETE
+            authType: anonymous
   fc3_domain_0:
     component: fc3-domain
     props:
@@ -40,4 +57,4 @@ resources:
       routeConfig:
         routes:
           - path: /*
-            functionName: ${vars.functionName}
+            functionName: ${resources.framework.props.functionName}
