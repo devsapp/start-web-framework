@@ -5,14 +5,14 @@
 
 edition: 3.0.0
 name: nginx-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 resources:
-  framework: 
-    component: fc3 
-    props: 
-      region: ${vars.region} 
+  framework:
+    component: fc3
+    props:
+      region: ${vars.region}
       description: Serverless Devs Web Framework Function
       runtime: custom
       timeout: 300
@@ -21,14 +21,23 @@ resources:
       customRuntimeConfig:
         command:
           - nginx
+          - "-c"
+          - "/code/nginx.conf"
+          - "-g"
+          - "daemon off;"
         port: 9000
-        args:
-          - '-c'
-          - '/code/nginx.conf'
-          - '-g'
-          - 'daemon off;'
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            authType: anonymous
   fc3_domain_0:
     component: fc3-domain
     props:
