@@ -15,9 +15,9 @@ resources:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
       runtime: custom
-      timeout: 300
-      memorySize: 1536
-      instanceConcurrency: 8
+      timeout: 60
+      memorySize: 1024
+      instanceConcurrency: 100
       customRuntimeConfig:
         command:
           - nginx
