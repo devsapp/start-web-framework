@@ -20,7 +20,9 @@ resources:
       description: Serverless Devs Web Framework Function
       runtime: custom.debian10
       timeout: 60
-      memorySize: 1024
+      cpu: 1
+      memorySize: 2048
+      diskSize: 512
       instanceConcurrency: 100
       layers:
         - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
