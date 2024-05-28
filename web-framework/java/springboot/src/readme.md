@@ -16,7 +16,7 @@
 
 <description>
 
-本案例是基于Pivota团队提供的全新的Spring Boot框架，简化Spring应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
+本案例是基于Pivotal团队提供的全新的Spring Boot框架，简化Spring应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
 
 </description>
 
@@ -79,7 +79,7 @@
 
 <appdetail id="flushContent">
 
-本案例是基于 Pivota 团队提供的全新的 Spring Boot 框架，简化 Spring 应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
+本案例是基于 Pivotal 团队提供的全新的 Spring Boot 框架，简化 Spring 应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
 
 Spring Boot 是一个快速开发 Spring 框架应用的脚手架，它使用“习惯优于配置”（约定优于配置）的理念让你的项目快速运行起来。Spring Boot 并不是对 Spring 功能上的增强，而是提供了一种快速使用 Spring 的方式。
 
