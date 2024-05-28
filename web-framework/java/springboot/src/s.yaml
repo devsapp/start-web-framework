@@ -5,29 +5,41 @@
 
 edition: 3.0.0
 name: springboot-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 
 resources:
-  framework: 
-    component: fc3 
-    actions: 
-      pre-deploy: 
+  framework:
+    component: fc3
+    actions:
+      pre-deploy:
         - run: mvn package -DskipTests
           path: ./code
-    props: 
+    props:
       region: ${vars.region} #
       description: Serverless Devs Web Framework Function
       runtime: custom
-      memorySize: 1024
-      timeout: 30
+      cpu: 1
+      memorySize: 2048
+      diskSize: 512
       instanceConcurrency: 100
       customRuntimeConfig:
         command:
           - ./bootstrap
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            authType: anonymous
+
   fc3_domain_0:
     component: fc3-domain
     props:
