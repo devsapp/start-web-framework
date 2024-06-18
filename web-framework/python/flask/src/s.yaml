@@ -8,37 +8,38 @@ name: flask-app
 access: "{{ access }}"
 vars:
   region: "{{ region }}"
+  functionName: '{{ functionName }}'
+  memorySize: 2048 # 实例内存默认为2GB
+  cpu: 1 # 实例CPU默认为1核
+  timeout: 30 # 后端超时时间默认为30s
+  instanceConcurrency: 100 # 单个实例最多同时承载100个请求
+  runtime: 'custom.debian10'
+  path: "/code/python/bin:/var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin"
+
 resources:
   framework:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: mkdir python
-          path: ./code
-        - run: pip install -r requirements.txt -t ./python
-          path: ./code
     props:
-      timeout: 60
-      cpu: 1
-      memorySize: 2048
+      timeout: ${vars.timeout}
+      cpu: ${vars.cpu}
+      memorySize: ${vars.memorySize}
+      role: acs:ram::${config('AccountID')}:role/aliyunfcdefaultrole
       diskSize: 512
-      instanceConcurrency: 100
+      instanceConcurrency: ${vars.instanceConcurrency}
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom.debian10
+      runtime: ${vars.runtime}
       customRuntimeConfig:
         command:
           - python3
           - index.py
         port: 9000
       environmentVariables:
-        PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
-        PYTHONPATH: /opt/python:/code/python:/code
+        PATH: ${vars.path}
+        PYTHONPATH: /code/python
         TZ: Asia/Shanghai
-      functionName: "{{ functionName }}"
-      code: ./code
-      layers:
-        - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
+      functionName: ${vars.functionName}
+      code: ./
       triggers:
         - triggerName: httpTrigger
           triggerType: http
@@ -48,6 +49,8 @@ resources:
               - POST
               - PUT
               - DELETE
+              - PATCH
+              - OPTIONS
             authType: anonymous
 
   fc3_domain_0:
