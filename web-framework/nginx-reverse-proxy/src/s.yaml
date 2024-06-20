@@ -1,0 +1,54 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
+edition: 3.0.0
+name: nginx-app
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
+  proxyPass: "{{ proxyPass }}"
+resources:
+  framework:
+    component: fc3
+    props:
+      region: ${vars.region}
+      description: Serverless Devs Web Framework Function
+      runtime: custom
+      timeout: 60
+      cpu: 0.35
+      memorySize: 512
+      diskSize: 512
+      instanceConcurrency: 100
+      customRuntimeConfig:
+        command:
+          - ./start.sh
+        port: 9000
+      functionName: "{{ functionName }}"
+      code: ./code
+      environmentVariables:
+        PROXY_PASS: ${vars.proxyPass}
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - HEAD
+              - PATCH
+            authType: anonymous
+  fc3_domain_0:
+    component: fc3-domain
+    props:
+      region: ${vars.region}
+      domainName: auto
+      protocol: HTTP
+      routeConfig:
+        routes:
+          - path: /*
+            functionName: ${resources.framework.props.functionName}
