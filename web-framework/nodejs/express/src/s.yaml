@@ -6,36 +6,43 @@
 edition: 3.0.0
 name: express-app
 access: "{{ access }}"
+
 vars:
   region: "{{ region }}"
+  functionName: '{{ functionName }}'
+  memorySize: 2048 # 实例内存默认为2GB
+  cpu: 1 # 实例CPU默认为1核
+  timeout: 30 # 后端超时时间默认为30s
+  diskSize: 512 # 实例磁盘默认为512MB
+  instanceConcurrency: 100 # 单个实例最多同时承载100个请求
+  runtime: 'custom.debian10'
+  path: '/opt/nodejs20/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin'
+  nodejsLayers: 'acs:fc:${vars.region}:official:layers/Nodejs20/versions/1'
+
 resources:
   framework:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --production
-          path: ./code
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom.debian10
-      timeout: 60
-      cpu: 1
-      memorySize: 2048
-      diskSize: 512
-      instanceConcurrency: 100
+      runtime: ${vars.runtime}
+      timeout: ${vars.timeout}
+      cpu: ${vars.cpu}
+      memorySize: ${vars.memorySize}
+      diskSize: ${vars.diskSize}
+      instanceConcurrency: ${vars.instanceConcurrency}
       layers:
-        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
+        - ${vars.nodejsLayers}
       environmentVariables:
-        PATH: >-
-          /opt/nodejs20/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin
+        PATH: ${vars.path}
       customRuntimeConfig:
         command:
           - node
-          - ./index.js
+          - ./bin/www
         port: 9000
-      functionName: "{{ functionName }}"
-      code: ./code
+      functionName: ${vars.functionName}
+      role: acs:ram::${config('AccountID')}:role/aliyunfcdefaultrole
+      code: ./myapp
       triggers:
         - triggerName: httpTrigger
           triggerType: http
@@ -45,6 +52,8 @@ resources:
               - POST
               - PUT
               - DELETE
+              - PATCH
+              - OPTIONS
             authType: anonymous
   fc3_domain_0:
     component: fc3-domain

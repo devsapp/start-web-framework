@@ -1,0 +1,9 @@
+build.sh
+go.mod
+go.sum
+main.go
+vendor/
+src/
+pkg/
+bin/
+.fcignore

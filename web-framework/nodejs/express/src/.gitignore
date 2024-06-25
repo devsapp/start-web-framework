@@ -1,1 +1,4 @@
-node_modules
+myapp/node_modules
+.idea
+.s/
+.s.cache/

@@ -1,32 +1,37 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
 edition: 3.0.0
-name: web-framework-app
+name: my-gin-app
 access: '{{ access }}'
 vars:
-  region: '{{ region }}'
+  region: "{{ region }}"
+  functionName: '{{ functionName }}'
+  memorySize: 2048 # 实例内存默认为2GB
+  cpu: 1 # 实例CPU默认为1核
+  timeout: 30 # 后端超时时间默认为30s
+  instanceConcurrency: 100 # 单个实例最多同时承载100个请求
+  runtime: 'custom.debian10'
+
 resources:
   framework:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: go mod tidy
-          path: ./code
-        - run: >-
-            GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o target/main
-            main.go
-          path: ./code
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Gin Function
-      runtime: custom.debian10
-      memorySize: 1024
-      timeout: 30
-      instanceConcurrency: 100
+      runtime: ${vars.runtime}
+      memorySize: ${vars.memorySize}
+      timeout: ${vars.timeout}
+      instanceConcurrency: ${vars.instanceConcurrency}
       customRuntimeConfig:
         command:
           - /code/main
         port: 8080
-      functionName: '{{ functionName }}'
-      code: ./code/target
+      functionName: ${vars.functionName}
+      code: ./myapp
+      role: acs:ram::${config('AccountID')}:role/aliyunfcdefaultrole
       triggers:
         - triggerName: httpTrigger
           triggerType: http

@@ -4,49 +4,58 @@
 # ------------------------------------
 
 edition: 3.0.0
-name: springboot-app
-access: "{{ access }}"
+name: my-springboot-app
+access: '{{ access }}'
 vars:
-  region: "{{ region }}"
-
+  region: 'cn-qingdao'
+  functionName: 'my-springboot-app'
+  memorySize: 2048
+  cpu: 1
+  timeout: 30
+  instanceConcurrency: 100
+  runtime: 'custom'
+  path: '/opt/java17/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin'
+  javaHome: '/opt/java17'
+  javaLayers: 'acs:fc:${vars.region}:official:layers/Java17/versions/2'
 resources:
-  framework:
+  function_1:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: mvn package -DskipTests
-          path: ./code
     props:
-      region: ${vars.region} #
-      description: Serverless Devs Web Framework Function
-      runtime: custom
-      cpu: 1
-      memorySize: 2048
+      region: ${vars.region}
+      functionName: ${vars.functionName}
+      runtime: ${vars.runtime}
+      description: 'Serverless Devs Web Framework Demo Function update'
+      timeout: ${vars.timeout}
+      memorySize: ${vars.memorySize}
+      instanceConcurrency: ${vars.instanceConcurrency}
+      logConfig: auto
+      role: acs:ram::${config('AccountID')}:role/aliyunfcdefaultrole
+      cpu: ${vars.cpu}
       diskSize: 512
-      instanceConcurrency: 100
+      code: ./code
       customRuntimeConfig:
         command:
           - ./bootstrap
-      functionName: "{{ functionName }}"
-      code: ./code
-      triggers:
-        - triggerName: httpTrigger
-          triggerType: http
-          triggerConfig:
+      environmentVariables:
+        PATH: ${vars.path}
+        JAVA_HOME: ${vars.javaHome}
+      layers:
+        - ${vars.javaLayers}
+  domain_1:
+    component: fc3-domain
+    props: #  组件的属性值
+      region: ${vars.region}
+      domainName: auto # 使用 auto 自动获取一个临时测试域名, 生产请务必使用自己的域名
+      protocol: HTTP  # HTTP | HTTPS | HTTP,HTTPS
+      routeConfig:
+        routes:
+          - functionName: ${vars.functionName}
             methods:
               - GET
               - POST
               - PUT
               - DELETE
-            authType: anonymous
+              - PATCH
+            path: /*
+            qualifier: LATEST
 
-  fc3_domain_0:
-    component: fc3-domain
-    props:
-      region: ${vars.region}
-      domainName: auto
-      protocol: HTTP
-      routeConfig:
-        routes:
-          - path: /*
-            functionName: ${resources.framework.props.functionName}

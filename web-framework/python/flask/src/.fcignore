@@ -1,0 +1,10 @@
+.idea/
+.venv/
+.vscode/
+.DS_Store
+.env
+s.yaml
+readme.md
+build.sh
+.fcignore
+.gitignore

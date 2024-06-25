@@ -1,0 +1,73 @@
+# 使用YAML文件定义发布的流水线，详见文档：https://help.aliyun.com/zh/functioncompute/user-guide/use-a-yaml-file-to-define-a-pipeline
+kind: Pipeline
+# 流水线名称，需要全局唯一
+name: p-<%.appName%>-<%.releaseVersion%>
+spec:
+  context:
+    data:
+      dingdingNotification:
+        enable: false
+        skipOnSuccess: false
+        message:
+          at:
+            isAtAll: false
+            atMobiles: []
+            atUserIds: []
+          text: {}
+          msgtype: text
+  templateSpec:
+    tasks:
+      - context:
+          data:
+            enable: true
+            steps:
+              # 配置s工具
+              - plugin: '@serverless-cd/s-setup'
+              # 从git或模板仓库拉取代码
+              - plugin: '@serverless-cd/checkout'
+              # 预览配置变更
+              - run: s plan -t s.yaml --debug
+        name: pre-check
+        runAfters: []
+        taskTemplate: serverless-runner-task
+      - context:
+          data:
+            # 如果是测试环境不需要部署确认，可以改为false
+            enable: false
+        name: pre-check-approval
+        runAfters:
+          - name: pre-check
+        taskTemplate: need-approval
+      - context:
+          data:
+            enable: true
+            steps:
+              - plugin: '@serverless-cd/s-setup'
+              - plugin: '@serverless-cd/checkout'
+              # 设置构建工具版本
+              - plugin: "@serverless-cd/runtime-setup"
+                inputs:
+                  runtime:
+                    # - java11
+                    # - java8
+                    - java17
+              # 设置maven
+              - run: cp ./configs/settings-hz.xml ~/.m2/settings.xml
+              - run: java -version
+              # 设置依赖缓存
+              - plugin: "@serverless-cd/cache"
+                inputs:
+                  # 缓存的key，相同key的缓存会被共享并更新。
+                  # 在Bucket中缓存路径为cache-home/cache-<% .appName %>
+                  key: "cache-<% .appName %>"
+                  # 按照当前构建的工具要求，配置缓存的路径
+                  # maven场景这里是~/.m2
+                  path: ~/.m2
+              # 执行构建命令
+              - run: cd ./code && bash build.sh
+              # 执行构建部署
+              - plugin: '@serverless-cd/s-deploy'
+        name: build-and-deploy
+        runAfters:
+          - name: pre-check-approval
+        taskTemplate: serverless-runner-task
