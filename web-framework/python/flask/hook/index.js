@@ -6,7 +6,7 @@ async function preInit(inputObj) {
     - FC : https://fc.console.aliyun.com/
     
     Tips：
-    - FC Component: https://www.serverless-devs.com/fc/readme`)
+    - FC3 Component: https://docs.serverless-devs.com/user-guide/aliyun/#fc3`)
 
 }
 
@@ -14,7 +14,6 @@ async function postInit(inputObj) {
     console.log(`
     * Before using, please check whether the actions command in Yaml file is available
     * Carefully reading the notes in s.yaml is helpful for the use of the tool
-    * If you want to use the container mode, please refer to s.container.yaml
     * If need help in the use process, please apply to join the Dingtalk Group: 33947367
     `)
 }
