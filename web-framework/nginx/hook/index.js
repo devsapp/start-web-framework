@@ -7,7 +7,7 @@ async function preInit(inputObj) {
     
     Tips：
     - Serverless Devs Version >= v2.0.103 
-    - FC Component: https://www.serverless-devs.com/fc/readme
+    - FC3 Component: https://docs.serverless-devs.com/user-guide/aliyun/#fc3
     `)
 }
 

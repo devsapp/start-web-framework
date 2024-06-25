@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-express-v3
-Version: 0.0.13
+Version: 0.0.14
 Provider:
   - 阿里云
 Description: 本案例是将 Express 框架，这一基于 Node.js 平台的极简且灵活的 web 应用开发框架，快速创建并部署到阿里云函数计算 FC 。
