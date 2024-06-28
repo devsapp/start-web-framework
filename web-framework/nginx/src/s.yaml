@@ -14,11 +14,13 @@ resources:
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: custom
+      runtime: custom.debian10
+      layers:
+        - acs:fc:${vars.region}:official:layers/Nginx/versions/1
       timeout: 60
       cpu: 1
       memorySize: 2048
-      diskSize: 512
+      diskSize: 10240
       instanceConcurrency: 100
       customRuntimeConfig:
         command:
