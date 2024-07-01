@@ -24,7 +24,7 @@ resources:
       instanceConcurrency: 100
       customRuntimeConfig:
         command:
-          - nginx
+          - "/opt/bin/nginx"
           - "-c"
           - "/code/nginx.conf"
           - "-g"

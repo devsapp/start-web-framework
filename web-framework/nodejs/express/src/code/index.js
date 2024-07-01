@@ -15,7 +15,7 @@ app.all("/*", (req, res) => {
   res.send(
     JSON.stringify({
       msg: "Hello, World! ",
-      reqeust: {
+      request: {
         query: req.query,
         path: req.originalUrl,
         data: req.body,

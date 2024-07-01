@@ -13,7 +13,7 @@ def hello_world(path):
     response = jsonify(
         {
             "msg": "Hello, World!" + " at " + arrow.now().format("YYYY-MM-DD HH:mm:ss"),
-            "reqeust": {
+            "request": {
                 "query": str(request.query_string, "utf-8"),
                 "path": path,
                 "data": str(request.stream.read(), "utf-8"),
