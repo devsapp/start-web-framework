@@ -8,15 +8,16 @@ name: flask-app
 access: "{{ access }}"
 vars:
   region: "{{ region }}"
+  functionName: "{{ functionName }}"
 resources:
   framework:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: mkdir python
-          path: ./code
-        - run: pip install -r requirements.txt -t ./python
-          path: ./code
+    # actions:
+    #   pre-deploy:
+    #     - run: mkdir python
+    #       path: ./code
+    #     - run: pip install -r requirements.txt -t ./python
+    #       path: ./code
     props:
       timeout: 60
       cpu: 1
@@ -35,7 +36,7 @@ resources:
         PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
         PYTHONPATH: /opt/python:/code/python:/code
         TZ: Asia/Shanghai
-      functionName: "{{ functionName }}"
+      functionName: ${vars.functionName}
       code: ./code
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
@@ -54,9 +55,9 @@ resources:
     component: fc3-domain
     props:
       region: ${vars.region}
-      domainName: auto
+      domainName: "{{ domainName }}"
       protocol: HTTP
       routeConfig:
         routes:
           - path: /*
-            functionName: ${resources.framework.props.functionName}
+            functionName: ${vars.functionName}
