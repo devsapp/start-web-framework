@@ -1,0 +1,90 @@
+Edition: 3.0.0
+Type: Project
+Name: start-springboot-database
+Provider:
+  - 阿里云
+Version: 0.0.3
+Description: 本案例是Springboot-Database模板，帮助用户拉起Springboot Web的函数服务和MySQL数据库服务，快速搭建一个基于RDS和Springboot的Java Web脚手架应用，并基于此进行二次开发。
+HomePage: https://github.com/devsapp/start-web-framework
+Organization: 阿里云函数计算（FC）
+Effective: Public
+Tags:
+  - Web框架
+  - Spring Boot
+  - Custom Runtime
+Category: Web框架
+Service:
+  函数计算:
+    Authorities:
+      - AliyunFCFullAccess
+Parameters:
+  type: object
+  additionalProperties: false # 不允许增加其他属性
+  required: # 必填项
+    - region
+    - functionName
+    - DB_NAME
+    - DB_USER
+    - DB_PASSWORD
+    - DB_INSTANCE_NAME
+  properties:
+    region:
+      title: 地域
+      type: string
+      default: cn-hangzhou
+      description: 创建应用所在的地区
+      enum:
+        - cn-beijing
+        - cn-hangzhou
+        - cn-shanghai
+        - cn-qingdao
+        - cn-zhangjiakou
+        - cn-huhehaote
+        - cn-shenzhen
+        - cn-chengdu
+        - cn-hongkong
+        - ap-southeast-1
+        - ap-southeast-2
+        - ap-southeast-3
+        - ap-southeast-5
+        - ap-northeast-1
+        - ap-northeast-2
+        - eu-central-1
+        - eu-west-1
+        - us-west-1
+        - us-east-1
+        - ap-south-1
+    functionName:
+      title: 函数名
+      type: string
+      default: springboot-${default-suffix}
+      pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
+      description: 函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-128 之间
+    DB_INSTANCE_NAME:
+      title: 数据库实例名
+      value: springboot-db
+      sensitive: false
+      description: '数据库实例名'
+      type: string
+      default: springboot-db
+    DB_NAME:
+      title: 数据库名称
+      value: springboot-database
+      sensitive: false
+      description: '以字母开头，可含数字、字母（大小写敏感）、下划线和中划线，长度小于64个字符'
+      type: string
+      default: springboot-database
+    DB_USER:
+      title: 数据库用户
+      value: capuser
+      sensitive: false
+      description: '长度为 2 到 32 个字符。以字母开头，可含数字、字母（大小写敏感）、连字符、下划线'
+      type: string
+      default: capuser
+    DB_PASSWORD:
+      title: 数据库密码
+      value: Devs20230714@
+      sensitive: true
+      description: '长度为 8 到 32 个字符。必须包含大写字母、小写字母、数字和特殊字符'
+      type: string
+      default: Devs20230714@

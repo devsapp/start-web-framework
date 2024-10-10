@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%; /* 表格宽度自适应 */
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        async function loadUsers() {
+            const response = await fetch('/users');
+            const users = await response.json();
+            const userTableBody = document.getElementById('userTableBody');
+            userTableBody.innerHTML = ''; // 清空现有条目
+            users.forEach(user => {
+                userTableBody.innerHTML += `<tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.email}</td>
+                    <td><button onclick="confirmDeleteUser(${user.id})">删除</button></td>
+                </tr>`;
+            });
+        }
+
+        function confirmDeleteUser(id) {
+            if (confirm('确定要删除这个用户吗？')) {
+                deleteUser(id);
+            }
+        }
+
+        async function deleteUser(id) {
+            await fetch(`/users/${id}`, { method: 'DELETE' });
+            loadUsers();
+        }
+
+        async function addUser(event) {
+            event.preventDefault();
+            const form = event.target;
+            const newUser = {
+                name: form.name.value,
+                phone: form.phone.value,
+                email: form.email.value
+            };
+            await fetch('/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            });
+            form.reset();
+            loadUsers();
+        }
+        window.onload = loadUsers;
+    </script>
+</head>
+<body>
+<h1>用户管理</h1>
+<div>
+    这是一个Springboot-Database模板，帮助用户拉起Springboot Web的函数服务和MySQL数据库服务，快速搭建一个基于RDS和Springboot的Java Web
+    脚手架应用，并基于此进行二次开发。此页面是一个用于演示的用户管理页面，您可以在页面上创建或删除用户信息，并查看用户信息列表。
+</div>
+
+<div class="form-container">
+    <h2>添加用户</h2>
+    <form onsubmit="addUser(event)">
+        <label for="name">姓名: </label>
+        <input type="text" id="name" name="name" required>
+        <label for="phone">电话: </label>
+        <input type="text" id="phone" name="phone" required>
+        <label for="email">邮箱: </label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">添加用户</button>
+    </form>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>电话</th>
+        <th>邮箱</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="userTableBody"></tbody>
+</table>
+<br>
+<hr>
+<div style="color: blue;">
+    <span>自豪地通过CAP进行部署</span>
+    <br>
+    <span>云应用开发平台CAP交流群：32245557</span>
+</div>
+</body>
+</html>

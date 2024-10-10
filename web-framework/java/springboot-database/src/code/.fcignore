@@ -1,0 +1,7 @@
+.s
+Dockerfile
+mvnw
+pom.xml
+src
+mvnw.cmd
+.fcignore

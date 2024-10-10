@@ -1,0 +1,68 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
+edition: 3.0.0
+name: springboot-app
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
+  functionName: "{{ functionName }}"
+  dbName: "{{ DB_NAME }}"
+  dbUser: "{{ DB_USER }}"
+  dbPassword: "{{ DB_PASSWORD }}"
+
+resources:
+  springboot_db:
+    component: rds
+    props:
+      region: ${vars.region}
+      name: "{{ DB_INSTANCE_NAME }}"
+      engine: "MySQL:8.0"
+      database: ${vars.dbName}
+      username: ${vars.dbUser}
+      password: ${vars.dbPassword}
+      vpcID: auto
+  start_springboot:
+    component: fc3
+    actions:
+      pre-deploy:
+        - run: mvn package -DskipTests
+          path: ./code
+    props:
+      region: ${vars.region}
+      environmentVariables:
+        DB_HOST: ${resources.springboot_db.output.host}
+        DB_NAME: ${vars.dbName}
+        DB_USER: ${vars.dbUser}
+        DB_PASSWORD: ${vars.dbPassword}
+      description: Serverless Devs Web Framework Function
+      vpcConfig: auto
+      runtime: custom
+      cpu: 1
+      memorySize: 2048
+      diskSize: 512
+      instanceConcurrency: 100
+      customRuntimeConfig:
+        command:
+          - ./bootstrap
+      functionName: ${vars.functionName}
+      code: ./code
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            authType: anonymous
+      customDomain:
+        domainName: auto
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST
+

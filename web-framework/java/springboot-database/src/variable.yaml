@@ -1,0 +1,20 @@
+shared: #共享变量
+  DB_NAME:
+    value: springboot-database
+    sensitive: false
+    description: '以字母开头，可含数字、字母（大小写敏感）、下划线和中划线，长度小于64个字符'
+    type: string
+    default: springboot-database
+  DB_USER:
+    value: capuser
+    sensitive: false
+    description: '长度为 2 到 32 个字符。以字母开头，可含数字、字母（大小写敏感）、连字符、下划线'
+    type: string
+    default: capuser
+  DB_PASSWORD:
+    value: Devs20230714@
+    sensitive: true
+    description: '长度为 8 到 32 个字符。必须包含大写字母、小写字母、数字和特殊字符'
+    type: string
+    default: Devs20230714@
+
