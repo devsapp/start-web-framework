@@ -3,7 +3,7 @@ Type: Project
 Name: start-gin-cap
 Provider:
   - 阿里云
-Version: 0.0.3
+Version: 0.0.4
 Description: 本案例展示了如何将 Gin，Go 语言社区中倍受追捧的轻量级 Web 框架，迅速构建并部署至云原生应用开发平台（CAP）。Gin 凭借其高效的处理能力、极简设计及高度灵活性，赢得了众多 Go 开发者的芳心，成为快速开发高质量 Web 应用和服务的首选武器。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/go/gin
 Organization: 阿里云函数计算（FC）

@@ -1,7 +1,13 @@
 start_tornado:
+  default:
+    languages:
+      - python3.10
+    steps:
+      - run: pip3 install -r requirements.txt -t .
+        path: ./code
   defaultBuilder:
     languages:
       - python3.10
     steps:
-      - run: PATH=/usr/local/envs/py37/bin:$PATH && pip3 install -r requirements.txt -t .
+      - run: pip3 install -r requirements.txt -t .
         path: ./code

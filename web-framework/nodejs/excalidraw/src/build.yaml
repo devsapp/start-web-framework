@@ -1,4 +1,13 @@
 website_excalidraw:
+  default:
+    languages:
+      - nodejs20
+    steps:
+      # todo 之后改成不使用这个插件的形式
+      - plugin: website-plugin-v3
+        args:
+          port: 80
+          dist: /code/examples/excalidraw/with-script-in-browser/dist
   defaultBuilder:
     languages:
       - nodejs20

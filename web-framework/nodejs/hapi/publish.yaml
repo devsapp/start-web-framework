@@ -3,7 +3,7 @@ Type: Project
 Name: start-hapi-cap
 Provider:
   - 阿里云
-Version: 0.0.3
+Version: 0.0.4
 Description: 本案例展示了如何将 hapi.js，一款功能齐全的 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP。hapi.js其内置的输入验证、缓存、身份验证、错误处理和强大的插件系统，广泛应用于构建可扩展和健壮的服务器端应用程序和服务。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nodejs/hapi
 Organization: 阿里云函数计算（FC）
