@@ -1,4 +1,10 @@
 start_beego: 
+  default:
+    languages:
+      - go1.8
+    steps:
+      - run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
+        path: ./code
   defaultBuilder:
     languages:
       - go1.8

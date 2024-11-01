@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-nest-cap
-Version: 0.0.3
+Version: 0.0.4
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Nest.js，一款灵活的 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP。Nest.js 使用 TypeScript 作为主要语言，提供了严格的类型检查，采用模块化和面向切面编程的概念，使得代码组织结构清晰且易于测试。

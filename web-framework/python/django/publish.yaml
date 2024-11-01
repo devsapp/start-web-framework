@@ -3,7 +3,7 @@ Type: Project
 Name: start-django-cap
 Provider:
   - 阿里云
-Version: 0.0.3
+Version: 0.0.4
 Description: 本案例展示了如何将 Django，一款非常受欢迎的 Web 框架，快速创建并部署到云原生应用开发平台 CAP。Django 以其强大的功能、易用性、完善的生态系统和长期的社区支持，广泛应用于 Web 应用开发、API 以及后台管理系统等多种场景。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/python/django
 Organization: 阿里云函数计算（FC）

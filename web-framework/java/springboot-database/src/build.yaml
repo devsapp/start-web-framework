@@ -1,13 +1,13 @@
-start_egg:
+start_springboot:
   default:
     languages:
-      - nodejs20
+      - java8
     steps:
-      - run: npm install --production
+      - run: mvn package -DskipTests
         path: ./code
   defaultBuilder:
     languages:
-      - nodejs20
+      - java8
     steps:
-      - run: npm install --production
+      - run: mvn package -DskipTests
         path: ./code

@@ -1,9 +1,17 @@
 start_nest:
+  default:
+    languages:
+      - nodejs20
+    steps:
+      - run: npm install
+        path: ./code
+      - run: npm run build
+        path: ./code
   defaultBuilder:
     languages:
       - nodejs20
     steps:
-      - run: PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
+      - run: npm install
         path: ./code
-      - run: PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
+      - run: npm run build
         path: ./code
