@@ -7,11 +7,3 @@ start_fastapi:
         path: ./code
       - run: pip install -r requirements.txt -t ./python
         path: ./code
-  defaultBuilder:
-    languages:
-      - python3.10
-    steps:
-      - run: mkdir -p python
-        path: ./code
-      - run: pip install -r requirements.txt -t ./python
-        path: ./code

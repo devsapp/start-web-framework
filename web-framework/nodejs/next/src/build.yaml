@@ -11,15 +11,3 @@ start_next:
         path: ./code
       - run: cp -r static standalone/.next/static
         path: ./code/.next
-  defaultBuilder:
-    languages:
-      - nodejs20
-    steps:
-      - run: npm install
-        path: ./code
-      - run: npm run build
-        path: ./code
-      - run: cp -r public .next/standalone/public
-        path: ./code
-      - run: cp -r static standalone/.next/static
-        path: ./code/.next

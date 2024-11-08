@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-beego-cap
-Version: 0.0.5
+Version: 0.0.6
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Beego —— 一款高效的Go语言Web框架，无缝部署至云原生应用开发平台，实现快速构建云原生应用的实践。Beego以其对Go特性的深度整合、简洁的MVC设计模式以及高性能著称，广泛应用于各类Web开发场景中。

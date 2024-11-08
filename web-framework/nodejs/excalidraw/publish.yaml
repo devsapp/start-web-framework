@@ -3,7 +3,7 @@ Type: Project
 Name: website-excalidraw-cap
 Provider:
   - 阿里云
-Version: 0.0.4
+Version: 0.0.5
 Description: 本案例展示了如何将 Excalidraw，一款功能强大、易于使用的绘图工具，快速创建并部署到云原生应用开发平台 CAP。Excalidraw 其简单直观的在线界面、手绘风格的图表和草图创作功能，广泛应用于在线会议、教育、软件设计等多种场景。
 Organization: 阿里云函数计算（FC）
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nodejs/excalidraw
