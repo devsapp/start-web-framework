@@ -5,9 +5,3 @@ start_webpy:
     steps:
       - run: pip3 install -r requirements.txt -t .
         path: ./code
-  defaultBuilder:
-    languages:
-      - python3.10
-    steps:
-      - run: pip3 install -r requirements.txt -t .
-        path: ./code

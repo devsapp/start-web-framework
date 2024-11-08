@@ -3,7 +3,7 @@ Type: Project
 Name: start-fastapi-cap
 Provider:
   - 阿里云
-Version: 0.0.4
+Version: 0.0.5
 Description: 本案例展示了如何将 FastAPI，一款快速且高效的 Web 框架，快速创建并部署到云原生应用开发平台 CAP。FastAPI 以其出色性能、自动文档生成、数据验证和转换、类型注解支持等特点。
 Organization: 阿里云函数计算（FC）
 Effective: Public

@@ -7,11 +7,3 @@ start_nest:
         path: ./code
       - run: npm run build
         path: ./code
-  defaultBuilder:
-    languages:
-      - nodejs20
-    steps:
-      - run: npm install
-        path: ./code
-      - run: npm run build
-        path: ./code

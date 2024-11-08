@@ -5,9 +5,3 @@ start_springboot:
     steps:
       - run: mvn package -DskipTests
         path: ./code
-  defaultBuilder:
-    languages:
-      - java8
-    steps:
-      - run: mvn package -DskipTests
-        path: ./code
