@@ -22,6 +22,8 @@ resources:
           - /code/start.sh
       functionName: "{{ functionName }}"
       code: ./code
+      environmentVariables:
+        APP_KEY: base64:1484xsuUgwXy8fjnW82sDJH9KKBoDYSb88LUlass3Og=
       logConfig: auto
       triggers:
         - triggerName: httpTrigger
