@@ -21,6 +21,8 @@ resources:
           - /code/start.sh
       functionName: ${vars.functionName}
       code: ./code
+      environmentVariables:
+        APP_KEY: base64:1484xsuUgwXy8fjnW82sDJH9KKBoDYSb88LUlass3Og=
       triggers:
         - triggerName: httpTrigger
           triggerType: http
