@@ -8,6 +8,9 @@ name: springboot-app
 access: "{{ access }}"
 vars:
   region: "{{ region }}"
+  path: '/opt/java17/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin'
+  javaHome: '/opt/java17'
+  javaLayers: 'acs:fc:${vars.region}:official:layers/Java17/versions/2'
 
 resources:
   start_springboot:
@@ -15,7 +18,7 @@ resources:
     actions:
       pre-deploy:
         - run: mvn package -DskipTests
-          path: ./code
+          path: ./
     props:
       region: ${vars.region}
       description: springboot function
@@ -24,15 +27,21 @@ resources:
       memorySize: 2048
       diskSize: 512
       instanceConcurrency: 100
+      environmentVariables:
+        PATH: ${vars.path}
+        JAVA_HOME: ${vars.javaHome}
+      layers:
+        - ${vars.javaLayers}
       customRuntimeConfig:
         command:
           - java
         args:
           - -Dserver.port=9000
           - -jar
-          - target/webframework.jar
+          - webframework.jar
       functionName: "{{ functionName }}"
-      code: ./code
+      code: ./target/
+      role: "{{ roleArn }}"
       logConfig: auto
       triggers:
         - triggerName: httpTrigger

@@ -1,0 +1,10 @@
+.s
+pom.xml
+src
+.fcignore
+build.yaml
+readme.md
+s.yaml
+target/classes/
+target/maven-status/
+target/maven-archiver/

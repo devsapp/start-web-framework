@@ -2,6 +2,9 @@ start_express:
   default:
     languages:
       - nodejs20
+    cache:
+      paths:
+        - "~/.npm"
     steps:
       - run: npm install --production
-        path: ./code
+        path: ./myapp
