@@ -4,6 +4,6 @@ start_flask:
       - python3.10
     steps:
       - run: mkdir -p python
-        path: ./code
+        path: ./
       - run: pip install -r requirements.txt -t ./python
-        path: ./code
+        path: ./
