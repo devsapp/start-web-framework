@@ -10,9 +10,9 @@ resources:
     actions:
       pre-deploy:
         - run: >-
-            GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o target/main
+            GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main
             main.go
-          path: ./code
+          path: ./myapp
     props:
       region: ${vars.region}
       description: gin function
@@ -27,7 +27,8 @@ resources:
           - /code/main
         port: 8080
       functionName: "{{ functionName }}"
-      code: ./code/target
+      code: ./myapp
+      role: "{{ roleArn }}"
       logConfig: auto
       triggers:
         - triggerName: httpTrigger
