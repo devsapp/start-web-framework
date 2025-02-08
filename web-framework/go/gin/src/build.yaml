@@ -1,7 +1,9 @@
 start_gin:
   default:
     languages:
-      - go1.8
+      - go1.18
     steps:
-      - run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o target/main
-        path: ./code
+      - run: go mod tidy
+        path: ./myapp
+      - run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main
+        path: ./myapp
