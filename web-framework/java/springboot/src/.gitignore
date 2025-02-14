@@ -1,0 +1,5 @@
+# tips，s工具可以在gitignore工具中添加自己的中间产物路径，方便用户生成
+.idea/
+.s/
+.s.cache/
+src/target/

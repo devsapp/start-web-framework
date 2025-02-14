@@ -15,9 +15,9 @@ resources:
     actions:
       pre-deploy:
         - run: mkdir -p python
-          path: ./code
+          path: ./
         - run: export PATH=/usr/local/envs/py310/bin:$PATH && pip install -r requirements.txt -t ./python
-          path: ./code
+          path: ./
     props:
       timeout: 60
       cpu: 1
@@ -37,8 +37,9 @@ resources:
         PYTHONPATH: /opt/python:/code/python:/code
         TZ: Asia/Shanghai
       functionName: "{{ functionName }}"
-      code: ./code
+      code: ./
       logConfig: auto
+      role: "{{ roleArn }}"
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
       triggers:

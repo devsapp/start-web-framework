@@ -33,10 +33,11 @@ resources:
       customRuntimeConfig:
         command:
           - node
-          - ./index.js
+          - ./bin/www
         port: 9000
       functionName: "{{ functionName }}"
-      code: ./code
+      code: ./myapp
+      role: "{{ roleArn }}"
       logConfig: auto
       triggers:
         - triggerName: httpTrigger
