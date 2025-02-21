@@ -1,0 +1,9 @@
+start_vite_react:
+  default:
+    languages:
+      - nodejs20
+    steps:
+      - run: npm install && npm run build
+        path: ./code
+      - run: cp nginx.conf ./dist/nginx.conf
+        path: ./code
