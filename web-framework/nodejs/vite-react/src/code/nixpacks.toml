@@ -1,0 +1,21 @@
+# https://nixpacks.com/docs/configuration/file
+
+# set up some variables to minimize annoyance
+[variables]
+    NPM_CONFIG_UPDATE_NOTIFIER = 'false' # the update notification is relatively useless in a production environment
+    NPM_CONFIG_FUND = 'false' # the fund notification is also pretty useless in a production environment
+
+# download caddy from nix
+[phases.caddy]
+    dependsOn = ['setup'] # make sure this phase runs after the default 'setup' phase
+    nixpkgsArchive = 'ba913eda2df8eb72147259189d55932012df6301' # Caddy v2.8.4 - https://github.com/NixOS/nixpkgs/commit/ba913eda2df8eb72147259189d55932012df6301
+    nixPkgs = ['caddy'] # install caddy as a nix package
+
+# format the Caddyfile with fmt
+[phases.fmt]
+    dependsOn = ['caddy'] # make sure this phase runs after the 'caddy' phase so that we know we have caddy downloaded
+    cmds = ['caddy fmt --overwrite Caddyfile'] # format the Caddyfile to fix any formatting inconsistencies
+
+# start the caddy web server
+[start]
+    cmd = 'exec caddy run --config Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter

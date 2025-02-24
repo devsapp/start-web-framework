@@ -1,0 +1,75 @@
+# ------------------------------------
+#   欢迎您使用阿里云函数计算 fc3 组件进行项目开发
+#   组件仓库地址：https://github.com/devsapp/fc3
+#   组件帮助文档：https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   Yaml参考文档：https://manual.serverless-devs.com/user-guide/aliyun/fc3/spec/
+#   关于Serverless Devs和FC组件的关系、如何声明/部署多个函数等问题，可以参考文档：https://manual.serverless-devs.com/user-guide/tips/
+#   关于如何做CICD等问题，可以参考：https://manual.serverless-devs.com/user-guide/cicd/
+#   关于如何进行环境划分等问题，可以参考：https://docs.serverless-devs.com/practices/multi-env/
+#   更多函数计算案例，可参考：https://github.com/devsapp/awesome/
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+edition: 3.0.0
+name: vite-react-app
+# access 是当前应用所需要的密钥信息配置：
+# 密钥配置可以参考：https://docs.serverless-devs.com/user-guide/builtin/config/
+# 密钥使用顺序可以参考：https://docs.serverless-devs.com/dev-guide/cli_design/#_11
+access: "{{ access }}"
+
+vars: # 全局变量
+  region: "{{ region }}"
+
+resources:
+  start_vite_react:
+    component: fc3 # 组件名称，Serverless Devs 工具本身类似于一种游戏机，不具备具体的业务能力，组件类似于游戏卡，用户通过向游戏机中插入不同的游戏卡实现不同的功能，即通过使用不同的组件实现不同的具体业务能力
+    actions:
+      pre-deploy:
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install --production
+          path: ./code
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
+          path: ./code
+        - run: cp nginx.conf ./dist/nginx.conf
+          path: ./code
+    props:
+      region: ${vars.region} 
+      functionName: "{{ functionName }}"
+      description: "基于 React 的可扩展企业级前端应用框架"
+      runtime: custom.debian10
+      code: ./code/dist
+      timeout: 60
+      cpu: 1
+      memorySize: 1024
+      diskSize: 512
+      instanceConcurrency: 1
+      customRuntimeConfig:
+        command:
+          - "/opt/bin/nginx"
+          - "-c"
+          - "/code/nginx.conf"
+          - "-g"
+          - "daemon off;"
+        port: 9000
+      layers:
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
+        - acs:fc:${vars.region}:official:layers/Nginx/versions/1
+      environmentVariables:
+        PATH: >-
+          /opt/nodejs20/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+        NODE_PATH: /opt/nodejs/node_modules
+      logConfig: auto
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      customDomain:
+        domainName: auto
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST
