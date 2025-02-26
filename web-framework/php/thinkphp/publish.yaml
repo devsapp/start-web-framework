@@ -3,7 +3,7 @@ Type: Project
 Name: start-thinkphp-cap
 Provider:
   - 阿里云
-Version: 0.0.3
+Version: 0.0.4
 Description: 本案例展示了如何将 ThinkPHP，一款非常流行的 PHP Web 应用开发框架，快速创建并部署到云原生应用开发平台 CAP。ThinkPHP 以其出色的性能、易用性、丰富的功能和强大的社区支持，广泛应用于各种规模的项目开发，特别是在中大型项目中表现出色。
 Organization: 阿里云函数计算（FC）
 Effective: Public

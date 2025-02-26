@@ -10,7 +10,7 @@
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-beego-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-beego-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-beego-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-beego-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,23 +65,35 @@ Beego具有广泛的应用范围。它适用于构建各种类型的Web应用，
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
 ### 查看部署的案例
 
-通过本案例，您可以部署一个 Beego 框架 web 应用，效果如下：
+本项目案例是 Beego 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
+
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01UdFyDQ1D6XB9YqkXo_!!6000000000167-0-tps-1331-153.jpg)
+
+此时，打开案例地址，就可以进入 Beego 默认的首页：
 
 ![](https://img.alicdn.com/imgextra/i3/O1CN012UO6hK1zErpTfg0vY_!!6000000006683-0-tps-2546-1390.jpg)
 
-### 二次开发
-
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-beego-cap`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

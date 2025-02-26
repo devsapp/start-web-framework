@@ -3,7 +3,7 @@ Type: Project
 Name: start-thinkjs-cap
 Provider:
   - 阿里云
-Version: 0.0.5
+Version: 0.0.6
 Description: 本案例展示了如何将 ThinkJS，一款高效的 Node.js 框架，快速创建并部署到阿里云函数计算 FC。ThinkJS 采用了全新的 ES6/7 语法，提供了更优雅的异步代码编写方式，显著提高了开发效率。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nodejs/thinkjs
 Organization: 阿里云函数计算（FC）

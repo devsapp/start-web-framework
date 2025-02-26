@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 hapi.js —— 一款功能齐全的 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。hapi.js 以其内置的输入验证、缓存、身份验证、错误处理和强大的插件系统著称，广泛应用于构建可扩展和健壮的服务器端应用程序和服务。
+本案例展示了如何将 hapi.js，一款功能齐全的 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP。hapi.js其内置的输入验证、缓存、身份验证、错误处理和强大的插件系统，广泛应用于构建可扩展和健壮的服务器端应用程序和服务。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-hapi-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-hapi-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-hapi-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-hapi-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,24 +65,33 @@ hapi.js 为开发者提供了一套工具来构建可扩展和健壮的服务器
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
-本项目案例是将 hapi 部署到阿里云 Serverless 平台 (函数计算 FC) 。部署完成之后，您可以看到系统返回给您的案例地址, 如图:
+本项目案例是将 hapi 部署到云原生应用开发平台 CAP 。部署完成之后，您可以看到系统返回给您的案例地址, 如图:
 
-![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01wLm5Gn25WAV8q7Qw0_!!6000000007533-0-tps-1176-338.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01dig9VC1nIjtyIEYmi_!!6000000005067-0-tps-1304-133.jpg)
 
 此时，打开案例地址，就可以进入 hapi 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i1/O1CN019eIc1K1w9sfJirPVk_!!6000000006266-0-tps-2738-1418.jpg)
 
-### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-hapi-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

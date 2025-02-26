@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Egg.js —— 一款被开发者广泛使用的企业级 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Egg.js 以其约定优于配置的设计哲学、高度扩展性和完善的文档著称，广泛应用于构建 RESTful API、Web 应用服务器、微服务架构以及处理各种网络协议的后端服务。
+本案例展示了如何将 Egg.js，一款被开发者广泛使用的企业级 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP。Egg.js其约定优于配置的设计哲学、高度扩展性和完善的文档。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-egg-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-egg-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-egg-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-egg-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -63,25 +63,34 @@ Egg.js 的设计哲学强调约定优于配置，以及一致的开发规范，�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
 ### 查看部署的应用
-本项目案例是 egg 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+本项目案例是 egg 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
-![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01T9BLMX22ux5PZbryb_!!6000000007181-0-tps-1220-350.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN019zedRH20L6xPGld7m_!!6000000006832-0-tps-1301-130.jpg)
 
 此时，打开案例地址，就可以看到测试的应用详情：
 
 ![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01D62QIp1pzRxBLab8V_!!6000000005431-0-tps-2526-1502.jpg)
 
-### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-egg-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

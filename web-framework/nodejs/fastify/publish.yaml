@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-fastify-cap
-Version: 0.0.5
+Version: 0.0.6
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Fastify，一款基于 Node.js 平台的极简且灵活的 Web 应用开发框架，快速创建并部署到云原生应用开发平台 CAP。Fastify其高效的性能、最少的开销和强大的插件结构，是速度最快的 Web 框架之一。

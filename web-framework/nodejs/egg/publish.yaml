@@ -3,7 +3,7 @@ Type: Project
 Name: start-egg-cap
 Provider:
   - 阿里云
-Version: 0.0.5
+Version: 0.0.7
 Description: 本案例展示了如何将 Egg.js，一款被开发者广泛使用的企业级 Node.js 框架，快速创建并部署到云原生应用开发平台 CAP。Egg.js其约定优于配置的设计哲学、高度扩展性和完善的文档。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nodejs/egg
 Organization: 阿里云函数计算（FC）

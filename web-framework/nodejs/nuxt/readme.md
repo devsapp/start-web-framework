@@ -10,7 +10,7 @@
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-nuxt-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-nuxt-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-nuxt-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-nuxt-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,25 +65,34 @@ Nuxt.js 还提供了一套强大的模块系统，允许开发者通过安装插
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
 ### 查看部署的应用
-本项目案例是 nuxt 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+本项目案例是 nuxt 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
-![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01rBUqnl1UK8JKS7opn_!!6000000002498-0-tps-1102-336.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01Bdv7HX1le9BQuiewf_!!6000000004843-0-tps-1313-121.jpg)
 
 此时，打开案例地址，就可以进入 nuxt 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01ygZ6b01ihrQwrtS76_!!6000000004445-0-tps-2014-926.jpg)
 
-### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-nuxt-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+
