@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Tornado —— 一款优秀的 Python Web 框架，快速搭建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Tornado 以其优异的性能和灵活的设计著称，广泛应用于构建高性能的 Web 应用程序、实时 Web 服务、长连接的实时通信以及网络爬虫等领域。
+本案例展示了如何将 Tornado，一款优秀的 Web 框架，快速搭建并部署到云原生应用开发平台 CAP。Tornado 以其优异的性能和灵活的设计著称，广泛应用于构建高性能的 Web 应用程序、实时 Web 服务、长连接的实时通信以及网络爬虫等领域。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-tornado-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-tornado-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-tornado-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-tornado-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,6 +65,12 @@ Tornado特别适合用于处理实时应用程序，如聊天室、推送服务�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -75,13 +81,15 @@ Tornado特别适合用于处理实时应用程序，如聊天室、推送服务�
 
 ![](https://img.alicdn.com/imgextra/i2/O1CN01Lr2pOA1MqdUX5buXH_!!6000000001486-0-tps-1202-956.jpg)
 
-### 二次开发
-
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-tornado-cap`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

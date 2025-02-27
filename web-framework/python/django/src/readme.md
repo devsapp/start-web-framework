@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Django —— 一款非常受欢迎的 Python Web 框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Django 以其强大的功能、易用性、完善的生态系统和长期的社区支持著称，广泛应用于 Web 应用开发、API 服务、数据分析平台以及后台管理系统等多种场景。
+本案例展示了如何将 Django，一款非常受欢迎的 Web 框架，快速创建并部署到云原生应用开发平台 CAP。Django 以其强大的功能、易用性、完善的生态系统和长期的社区支持，广泛应用于 Web 应用开发、API 以及后台管理系统等多种场景。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-django-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-django-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-django-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-django-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,6 +65,12 @@ Django还具有高度的安全性，包括防止常见的Web攻击、CSRF保护�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -76,7 +82,13 @@ Django还具有高度的安全性，包括防止常见的Web攻击、CSRF保护�
 
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

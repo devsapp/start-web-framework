@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Koa.js —— 一款现代化的 Node.js Web 框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Koa.js 通过利用 async 函数，提供了一种更有效的方式来处理和响应 HTTP 请求，其精简的中间件层和流式执行模式使得代码编写更加高效和可维护。
+本案例展示了如何将 Koa.js，一款现代化的 Node.js Web 框架，快速创建并部署到云原生应用开发平台 CAP。Koa.js 通过利用 async 函数，提供了一种更有效的方式来处理和响应 HTTP 请求，其精简的中间件层和流式执行模式使得代码编写更加高效和可维护。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-koa-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-koa-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-koa-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-koa-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,25 +65,34 @@ Koa.js 是一个现代化的Node.js web框架，通过利用 async 函数，它�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
 ### 查看部署的应用
-本项目案例是 koa 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+本项目案例是 koa 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
-![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01PiiXG01xMzdovGWIm_!!6000000006430-0-tps-1182-330.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i2/O1CN01mOjlrV1usBrwddByy_!!6000000006092-0-tps-1316-131.jpg)
 
 此时，打开案例地址，就可以进入 koa 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i2/O1CN010YYmHs1GKg8sK5WqU_!!6000000000604-0-tps-2298-1314.jpg)
 
-### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-koa-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

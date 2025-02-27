@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: nginx-reverse-proxy-cap
-Version: 0.0.3
+Version: 0.0.4
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Nginx，一款高性能的 Web 服务器和反向代理服务器，部署至云原生应用开发平台 CAP。Nginx其高性能、稳定性、丰富的功能和易用性，广泛应用于 Web 服务器、反向代理、CDN、API 网关和实时通信等领域。

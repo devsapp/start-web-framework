@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-laravel-cap
-Version: 0.0.4
+Version: 0.0.5
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Laravel，一款基于 PHP 编程语言的流行 Web 应用框架，快速部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Laravel 以其简洁优雅的语法、全面而先进的工具和功能著称，广泛应用于 Web 应用程序开发。

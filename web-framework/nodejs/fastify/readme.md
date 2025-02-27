@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Fastify —— 一款基于 Node.js 平台的极简且灵活的 Web 应用开发框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Fastify 以其高效的性能、最少的开销和强大的插件结构著称，是速度最快的 Web 框架之一。
+本案例展示了如何将 Fastify，一款基于 Node.js 平台的极简且灵活的 Web 应用开发框架，快速创建并部署到云原生应用开发平台 CAP。Fastify其高效的性能、最少的开销和强大的插件结构，是速度最快的 Web 框架之一。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-fastify-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-fastify-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-fastify-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-fastify-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -61,17 +61,33 @@
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
-### 二次开发
+本项目案例是 Fastify 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-fastify-cap`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01D4gm6N1MmW1dn6cz7_!!6000000001477-0-tps-1316-132.jpg)
+
+此时，打开案例地址，就可以看到测试的应用详情：
+
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01WgV9KE1I0eAPuTgZJ_!!6000000000831-0-tps-916-580.jpg)
 
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Nginx —— 一款高性能的 Web 服务器和反向代理服务器，部署至云原生应用开发平台，实现快速构建云原生应用的实践。Nginx 以其高性能、稳定性、丰富的功能和易用性著称，广泛应用于 Web 服务器、反向代理、CDN、API 网关和实时通信等多个领域。
+本案例展示了如何将 Nginx，一款高性能的 Web 服务器和反向代理服务器，部署至云原生应用开发平台。Nginx其高性能、稳定性、丰富的功能和易用性，广泛应用于 Web 服务器、反向代理、CDN、API 网关和实时通信等领域。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-nginx-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-nginx-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-nginx-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-nginx-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -63,6 +63,12 @@ Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -74,7 +80,13 @@ Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/
 
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

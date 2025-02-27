@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Laravel —— 一款基于 PHP 编程语言的流行 Web 应用框架，快速部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Laravel 以其简洁优雅的语法、全面而先进的工具和功能著称，广泛应用于 Web 应用程序开发。Laravel 提供了丰富的功能，包括面向对象的代码结构、强大的路由和请求处理能力等。
+本案例展示了如何将 Laravel，一款基于 PHP 编程语言的流行 Web 应用框架，快速部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Laravel 以其简洁优雅的语法、全面而先进的工具和功能著称，广泛应用于 Web 应用程序开发。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-laravel-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-laravel-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-laravel-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-laravel-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -63,6 +63,12 @@ Laravel框架是一种基于PHP编程语言开发的开源web应用框架。该�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -72,13 +78,15 @@ Laravel框架是一种基于PHP编程语言开发的开源web应用框架。该�
 
 ![](https://img.alicdn.com/imgextra/i4/O1CN01zFNnFg24O5t2dI6V9_!!6000000007380-0-tps-2708-1300.jpg)
 
-### 二次开发
-
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-laravel-cap`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

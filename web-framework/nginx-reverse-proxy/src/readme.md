@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Nginx —— 一款高性能的 Web 服务器和反向代理服务器，部署至云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Nginx 以其高性能、稳定性、丰富的功能和易用性著称，广泛应用于 Web 服务器、反向代理、CDN、API 网关和实时通信等多个领域。
+本案例展示了如何将 Nginx，一款高性能的 Web 服务器和反向代理服务器，部署至云原生应用开发平台 CAP。Nginx其高性能、稳定性、丰富的功能和易用性，广泛应用于 Web 服务器、反向代理、CDN、API 网关和实时通信等领域。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=nginx-reverse-proxy-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=nginx-reverse-proxy-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=nginx-reverse-proxy-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=nginx-reverse-proxy-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -63,6 +63,12 @@ Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -71,13 +77,17 @@ Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/
 
 部署完成之后，您可以看到系统返回给您的案例地址。
 
-### 二次开发
-
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`nginx-reverse-proxy`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
+![](https://img.alicdn.com/imgextra/i2/O1CN01g91UY01sAYuPrALbO_!!6000000005726-0-tps-1415-130.jpg)
 
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

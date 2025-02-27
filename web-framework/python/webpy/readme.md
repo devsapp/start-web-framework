@@ -5,12 +5,12 @@
 
 <description>
 
-本案例展示了如何将 Web.py —— 一款简单而功能强大的 Python Web 框架，快速创建并部署到云原生应用开发平台 CAP，实现快速构建云原生应用的实践。Web.py 以其轻量级、强大的 URL 路由系统、内置模板引擎和灵活的数据库集成能力著称，广泛应用于构建 Web 应用程序和 RESTful API。
+本案例展示了如何将 Web.py，一款简单而功能强大的 Web 框架，快速创建并部署到云原生应用开发平台 CAP。Web.py 其轻量级、强大的 URL 路由系统、内置模板引擎和灵活的数据库集成能力，广泛应用于构建 Web 应用程序和 RESTful API。
 
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-webpy-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-webpy-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-webpy-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-webpy-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -63,6 +63,12 @@ web.py还内置了一个简单但有效的模板引擎，用于生成动态HTML�
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
@@ -73,14 +79,15 @@ web.py还内置了一个简单但有效的模板引擎，用于生成动态HTML�
 
 ![](https://img.alicdn.com/imgextra/i2/O1CN01oQDlE01HlzOa7INYR_!!6000000000799-0-tps-1282-960.jpg)
 
-
-### 二次开发
-
-您可以通过云端控制台的开发功能进行二次开发。如果您之前是在本地创建的项目案例，也可以在本地项目目录`start-webpy-cap`文件夹下，对项目进行二次开发。开发完成后，可以通过`s deploy`进行快速部署。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+

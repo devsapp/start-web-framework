@@ -10,7 +10,7 @@
 </description>
 
 
-## 前期准备
+## 资源准备
 
 使用该项目，您需要有开通以下服务并拥有对应权限：
 
@@ -41,7 +41,7 @@
 
 <appcenter>
    
-- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-thinkjs-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-thinkjs-cap) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://cap.console.aliyun.com/template-detail?template=start-thinkjs-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://cap.console.aliyun.com/template-detail?template=start-thinkjs-cap) 该应用。
    
 </appcenter>
 <deploy>
@@ -65,25 +65,34 @@ ThinkJS 的另一个特点是其插件系统，开发者可以很容易地添加
 
 </appdetail>
 
+
+
+
+
+
+
 ## 使用流程
 
 <usedetail id="flushContent">
 
 ### 查看部署的应用
-本项目案例是 thinkjs 部署到阿里云 Serverless 平台（函数计算 FC），部署完成之后，您可以看到系统返回给您的案例地址，例如：
+本项目案例是 thinkjs 部署到云原生应用开发平台 CAP，部署完成之后，您可以看到系统返回给您的案例地址，例如：
 
-![图片alt](https://img.alicdn.com/imgextra/i4/O1CN01LEAovF1hqH6udRWqY_!!6000000004328-0-tps-1160-330.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01zXv1jQ1SMlS3DQo8Z_!!6000000002233-0-tps-1313-129.jpg)
 
 此时，打开案例地址，就可以进入 thinkjs 默认的首页：
 
 ![图片alt](https://img.alicdn.com/imgextra/i3/O1CN01Tf3ApY1Unu2JwOrXp_!!6000000002563-0-tps-2990-1510.jpg)
 
-### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-thinkjs-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
-
 </usedetail>
 
-## 注意事项
+## 二次开发指南
 
-<matters id="flushContent">
-</matters>
+<development id="flushContent">
+</development>
+
+
+
+
+
+
