@@ -3,7 +3,7 @@ Type: Project
 Name: start-springboot-database
 Provider:
   - 阿里云
-Version: 0.0.6
+Version: 0.0.7
 Description: 本案例是Springboot-Database模板，帮助用户拉起Springboot Web的函数服务和MySQL数据库服务，快速搭建一个基于RDS和Springboot的Java Web脚手架应用，并基于此进行二次开发。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/java/springboot-database
 Organization: 阿里云函数计算（FC）
@@ -12,6 +12,8 @@ Tags:
   - Web框架
   - Spring Boot
   - Custom Runtime
+  - Develop
+  - Java
 Category: Web框架
 Service:
   函数计算:

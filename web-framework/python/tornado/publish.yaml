@@ -1,7 +1,7 @@
 Edition: 3.0.0
 Type: Project
 Name: start-tornado-cap
-Version: 0.0.6
+Version: 0.0.7
 Provider:
   - 阿里云
 Description: 本案例展示了如何将 Tornado，一款优秀的 Web 框架，快速搭建并部署到云原生应用开发平台 CAP。Tornado 以其优异的性能和灵活的设计著称，广泛应用于构建高性能的 Web 应用程序、实时 Web 服务、长连接的实时通信以及网络爬虫等领域。
@@ -11,6 +11,8 @@ Effective: Public
 Tags:
   - Web框架
   - Tornado
+  - Develop
+  - Python
 Category: Web框架
 Service:
   函数计算:
