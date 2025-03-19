@@ -89,6 +89,11 @@ Koa.js 是一个现代化的Node.js web框架，通过利用 async 函数，它�
 ## 二次开发指南
 
 <development id="flushContent">
+
+本项目可以用于二次开发。
+
+初始化项目时，需要绑定代码仓库，CAP平台会自动配置代码仓库的Webhook。当仓库对应的分支有任何提交时，CAP平台会收到Webhook推送，并自动完成构建与部署。
+
 </development>
 
 

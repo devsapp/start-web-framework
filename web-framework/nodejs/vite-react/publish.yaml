@@ -1,14 +1,17 @@
 Edition: 3.0.0
 Type: Project
 Name: start-vite-react-cap
-Version: 0.0.3
+Version: 0.0.4
 Provider:
   - 阿里云 # 取值内容参考：https://api.devsapp.cn/v3/common/args.html
 Description: 基于 React 的可扩展企业级前端应用框架快速创建并部署到云原生应用开发平台 CAP 。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nodejs/vite-react
 Tags: #标签详情
-  - Web 应用
-  - Serverless Devs
+  - Web框架
+  - react
+  - Custom Runtime
+  - Develop
+  - Node.js
 Category: Web 应用 # 取值内容参考：https://api.devsapp.cn/v3/common/args.html
 Service: # 使用的服务
   函数计算: # 取值内容参考：https://api.devsapp.cn/v3/common/args.html

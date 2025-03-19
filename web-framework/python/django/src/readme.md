@@ -85,6 +85,11 @@ Django还具有高度的安全性，包括防止常见的Web攻击、CSRF保护�
 ## 二次开发指南
 
 <development id="flushContent">
+
+本项目可以用于二次开发。
+
+初始化项目时，需要绑定代码仓库，CAP平台会自动配置代码仓库的 Webhook。当仓库对应的分支有任何提交时，CAP平台会收到 Webhook 推送，并自动完成构建与部署。
+
 </development>
 
 
