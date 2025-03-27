@@ -3,7 +3,7 @@ start_springboot:
     languages:
       - java17
     cache:
-      path:
+      paths:
         - "~/.m2"
     steps:
       - run: mvn package -DskipTests
