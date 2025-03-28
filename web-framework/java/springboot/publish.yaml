@@ -3,7 +3,7 @@ Type: Project
 Name: start-springboot-cap
 Provider:
   - 阿里云
-Version: 0.1.4
+Version: 0.1.5
 Description: 本案例展示了如何将 Spring Boot，一款高效的 Web 框架，部署至云原生应用开发平台。SpringBoot其“习惯优于配置”的理念、快速开发能力和微服务架构支持，广泛应用于 Web 应用程序开发、微服务架构、批处理和数据处理等场景中。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/java/springboot
 Organization: 阿里云函数计算（FC）
