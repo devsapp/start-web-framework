@@ -1,0 +1,65 @@
+Edition: 3.0.0
+Type: Project
+Name: start-springaialibaba-hk-cap
+Provider:
+  - 阿里云
+Version: 0.0.2
+Description: 本案例提供了一个基于 Spring AI Alibaba 框架开发的 AI 智能机票助手，您可以将应用部署到阿里云函数计算 FC 上快速体验运行效果。
+HomePage: https://github.com/chickenlj/start-web-framework/tree/dipper/web-framework/java/springai
+Organization: 阿里云函数计算（FC）
+Effective: Public
+Tags:
+  - Web框架
+  - Spring Boot
+  - Custom Runtime
+Category: Web框架
+Service:
+  函数计算:
+    Authorities:
+      - AliyunFCFullAccess
+Parameters:
+  type: object
+  additionalProperties: false # 不允许增加其他属性
+  required: # 必填项
+    - region
+    - functionName
+    - apiKey
+  properties:
+    region:
+      title: 地域
+      type: string
+      default: cn-hangzhou
+      description: 创建应用所在的地区
+      enum:
+        - cn-beijing
+        - cn-hangzhou
+        - cn-shanghai
+        - cn-qingdao
+        - cn-zhangjiakou
+        - cn-huhehaote
+        - cn-shenzhen
+        - cn-chengdu
+        - cn-hongkong
+        - ap-southeast-1
+        - ap-southeast-2
+        - ap-southeast-3
+        - ap-southeast-5
+        - ap-northeast-1
+        - ap-northeast-2
+        - eu-central-1
+        - eu-west-1
+        - us-west-1
+        - us-east-1
+        - ap-south-1
+    functionName:
+      title: 函数名
+      type: string
+      default: springai-${default-suffix}
+      pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
+      description: 函数名称，只能包含字母、数字、下划线和中划线。不能以数字、中划线开头。长度在 1-128 之间
+    apiKey:
+          title: 访问模型的API-KEY
+          type: string
+          default: ""
+          pattern: "^[a-zA-Z_][a-zA-Z0-9-_]{0,127}$"
+          description: "请访问阿里云百炼模型服务平台了解如何获取API-KEY，https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key"

@@ -1,0 +1,59 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+
+edition: 3.0.0
+name: springai-app
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
+
+resources:
+  playground-flight-booking:
+    component: fc3
+#     actions:
+#       pre-deploy:
+#         - run: "echo fake command"
+#           path: ./code
+    props:
+      region: ${vars.region}
+      description: spring ai alibaba function
+      runtime: custom.debian10
+      cpu: 2
+      memorySize: 2048
+      diskSize: 512
+      layers:
+        - acs:fc:cn-hangzhou:official:layers/Java17/versions/2
+      environmentVariables:
+        AI_DASHSCOPE_API_KEY: '{{ apiKey }}'
+        PATH: "/opt/java17/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin"
+        JAVA_HOME: "/opt/java17"
+      instanceConcurrency: 100
+      timeout: 20
+      customRuntimeConfig:
+        port: 9000
+        command:
+          - java
+        args:
+          - -jar
+          - target/playground-flight-booking-0.0.1-SNAPSHOT.jar
+      functionName: "{{ functionName }}"
+      code: ./code
+      logConfig: auto
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      customDomain:
+        domainName: auto
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST
